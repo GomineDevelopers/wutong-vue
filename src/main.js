@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+
+
 import $ from 'jquery'
 import '@/utils/page.js'
 import '@/utils/element_ui.js'
@@ -17,8 +19,7 @@ Vue.config.productionTip = false
 
 import store from '@/store'
 
-
-
+import '@/utils/rem.js'
 
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
