@@ -2,8 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
-
-
 import $ from 'jquery'
 import '@/utils/page.js'
 import '@/utils/element_ui.js'
@@ -21,6 +19,9 @@ import store from '@/store'
 
 import '@/utils/rem.js'
 
+import '@/styles/common.css'
+
+
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 router.beforeEach((to, from, next) => {
@@ -29,7 +30,6 @@ router.beforeEach((to, from, next) => {
 
 new Vue({
   router,
-  Utils,
   store,
   // mapGetters,
   render: h => h(App)

@@ -1,11 +1,11 @@
 <template>
-    <div class='Home'>
-      <vue-headful title="首页"></vue-headful>
+    <div class='PersonalData'>
+      <vue-headful title="个人资料"></vue-headful>
     </div>
 </template>
 <script>
 export default {
-  name: "home",
+  name: "PersonalData",
   components: {},
   data() {
     return {};
@@ -17,7 +17,7 @@ export default {
 };
 </script>
 <style scoped>
-.Home{
+.PersonalData{
   
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
-    <div class='Home'>
-      <vue-headful title="首页"></vue-headful>
+    <div class='CardTicketManagement'>
+      <vue-headful title="卡券管理"></vue-headful>
     </div>
 </template>
 <script>
 export default {
-  name: "home",
+  name: "CardTicketManagement",
   components: {},
   data() {
     return {};
@@ -17,7 +17,7 @@ export default {
 };
 </script>
 <style scoped>
-.Home{
+.CardTicketManagement{
   
 }
 </style>

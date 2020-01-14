@@ -1,160 +1,47 @@
-/* iconfont字体图标 */
-/* project id 1314644 */
-/* @font-face {
-  font-family: 'iconfont';
-  src: url('//at.alicdn.com/t/font_1314644_5b5h5nisydy.eot');
-  src: url('//at.alicdn.com/t/font_1314644_5b5h5nisydy.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_1314644_5b5h5nisydy.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_1314644_5b5h5nisydy.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1314644_5b5h5nisydy.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1314644_5b5h5nisydy.svg#iconfont') format('svg');
-} */
 
-@font-face {
-  font-family: 'iconfont';
-  /* project id 1314644 */
-  src: url('ali_font/iconfont.eot');
-  src: url('ali_font/iconfont.eot?#iefix') format('embedded-opentype'),
-    url('ali_font/iconfont.woff2') format('woff2'),
-    url('ali_font/iconfont.woff') format('woff'),
-    url('ali_font/iconfont.ttf') format('truetype'),
-    url('ali_font/iconfont.svg#iconfont') format('svg');
+
+
+/* 主题字体：黑色 */
+.theme_font_color{
+    color:#111A34;
 }
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
+/* 主题字体：绿色 */
+.theme_font_color2{
+    color:#81D8CE;
 }
-.height_auto {
-  height: 100%;
+/* 主题字背景：白色 */
+.theme_background_color{
+    color:#ffffff;
 }
-.height_33 {
-  height: calc((100% - 0.24rem) / 3);
-  border: 0.01rem solid #ccc;
+/* 主题背景：绿色 */
+.theme_background_color2{
+    color:#81D8CE;
 }
-/* 设置图表高度为100%减去title的高 */
-.chart_height {
-  height: calc(100% - 0.3rem);
+
+/* 通用小标题字体 */
+.common_Stitle_font{
+    color:#111A34;
+    font-size:32px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
 }
-/* 每个标题前面的渐变边框设置 */
-.title_row {
-  display: flex;
-  align-items: center;
-  height: 0.3rem;
-  line-height: 0.3rem;
-  font-size: 0.18rem;
-  text-align: left;
+/* 通用小灰字体 */
+.common_Sgray_font{
+    color:#C5CAD5;
+    font-size:28px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
 }
-.title_row2 {
-  display: flex;
-  align-items: center;
-  height: 0.22rem;
-  line-height: 0.2rem;
-  font-size: 0.18rem;
-  text-align: left;
+/* 通用小黑字体 */
+.common_Sblack_font{
+    font-size:28px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:#666F83;
 }
-.title_border_left {
-  display: inline-block;
-  height: 0.2rem;
-  width: 0.05rem;
-  border-radius: 0.03rem;
-  margin-right: 0.05rem;
-  background: -webkit-linear-gradient(180deg, #00E5FF 0%, #0032DC 100%);
-  /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(180deg, #00E5FF 0%, #0032DC 100%);
-  /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(180deg, #00E5FF 0%, #0032DC 100%);
-  /* Firefox 3.6 - 15 */
-  background: linear-gradient(180deg, #00E5FF 0%, #0032DC 100%);
-  /* 标准的语法 */
+/* 通用绿色按钮 */
+.common_middle_btn{
+    background-color:#81D8CE;
+    color: #ffffff;
 }
-/* 每个标题前面的渐变边框设置结束 */
-/* 每个模块的Title开始 */
-.model_title {
-  height: 50px;
-  line-height: 50px;
-  padding-left: 10px;
-  width: 100%;
-  text-align: left;
-  font-size: 16px;
-  font-weight: bold;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.85);
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-}
-.model_title span {
-  display: inline-block;
-  height: 20px;
-  line-height: 20px;
-  width: 3px;
-  border-radius: 2.5px;
-  background: #FF4800;
-  margin-right: 7px;
-}
-/* 计算每个模块除去title的高 */
-.chart_body {
-  height: calc(100% - 50px);
-  padding: 0px 10px 10px 10px;
-}
-/* 每个模块的Title结束 */
-/* 设置每个模块的padding和背景白色，圆角2px */
-.padding_10 {
-  padding: 10px;
-}
-.back_white {
-  background: #fff;
-  border-radius: 2px;
-  color: #333;
-}
-/* 设置每个模块的padding和背景白色，圆角2px结束 */
-/* 设置右侧padding */
-.padding_right {
-  padding-right: 7px;
-}
-/* 设置左侧padding */
-.padding_left {
-  padding-left: 7px;
-}
-/* 定期报告大标题 */
-.periodic_report_title {
-  background: #fff;
-  height: 50px;
-  line-height: 50px;
-  color: #333;
-  font-size: 20px;
-  font-weight: bold;
-  border-bottom: 1px dashed #f0f0f0;
-}
-/* flex布局 */
-/* 水平垂直居中 */
-.flex {
-  display: -webkit-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* 水平居中 */
-.flex_justify {
-  display: -webkit-flex;
-  display: flex;
-  justify-content: center;
-}
-/* 图表模块分割线 */
-.cut_off_rule {
-  border-bottom: 1px dashed #f0f0f0;
-  margin: 40px 0px;
-}
-.marginbottom_14 {
-  margin-bottom: 14px;
-}
-.marginbottom_24 {
-  margin-bottom: 24px;
-}
-.margintop_14 {
-  margin-top: 14px;
-}
+
