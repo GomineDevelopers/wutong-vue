@@ -1,7 +1,8 @@
 <template>
   <van-row class="login_body">
     <van-row class="login_title">
-      <img src="../assets/pic/logo.svg" />
+      <!-- <img src="../assets/pic/logo.svg" /> -->
+      <img src="../assets/pic/logo.png" />
     </van-row>
     <van-row class="login_main">
       <van-row class="login_title2 theme_color2">登录</van-row>
@@ -42,6 +43,11 @@ export default {
   }
 };
 </script>
+<style>
+.login_main .van-cell.van-field .van-field__control {
+  font-size: 0.32rem;
+}
+</style>
 <style scoped>
 .login_body {
   height: 100%;
@@ -59,8 +65,8 @@ export default {
 }
 .login_main {
   padding: 0.6rem;
-  height: 11rem;
-  border-radius: 0.375rem;
+  /* height: 6.5rem; */
+  border-radius: 0.24rem;
   background: #fff;
 }
 .login_title2 {
@@ -73,8 +79,10 @@ export default {
 }
 .login_main .van-cell.van-field {
   padding-top: 0.56rem;
-  font-size: 0.32rem;
   font-weight: 400;
+}
+.login_main .van-cell.van-field .van-field__control {
+  font-size: 0.32rem;
 }
 .login_main .forget_password_btn {
   padding-top: 0.56rem;
@@ -90,33 +98,31 @@ export default {
 .login_main .forget_password_btn .disabled_i {
   color: #999;
 }
-
 .login_main .forget_password_btn span {
   display: inline-block;
   margin-right: 0.625rem;
   width: 0.01rem;
   height: 0.4rem;
-  border-left: 1px solid rgba(216, 216, 216, 1);
+  border-left: 1px solid #d8d8d8;
 }
 .login_button {
   text-align: center;
   color: #fff;
-  font-size: 0.75rem;
-  padding: 0.3125rem 0rem;
+  font-size: 0.32rem;
+  height: 0.9rem;
+  line-height: 0.9rem;
   background: rgba(239, 239, 244, 1);
   border-radius: 1.125rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .login_protocol {
   text-align: center;
-  font-size: 0.625rem;
-  margin-top: 5.625rem;
+  font-size: 0.26rem;
+  margin-top: 3.25rem;
 }
-.van-checkbox__icon {
-  font-size: 0.75rem;
-}
+
 .login_protocol span {
-  font-size: 0.625rem;
+  font-size: 0.26rem;
 }
 .login_protocol a {
   color: #81d8ce;
