@@ -1,6 +1,6 @@
 <template>
   <div class="Identity">
-    <vue-headful title="身份"></vue-headful>
+    <!-- <vue-headful title="身份"></vue-headful> -->
     <div :style="{height: '1.44rem'}"></div>
     <div class="textAlignCenter_w100">
       <img class="avatar" :src="avatar1" alt />
@@ -55,7 +55,7 @@ export default {
   width: 3.6rem;
 }
 .Identity .i_or {
-  font-size: 0.175rem;
+  font-size: 0.26rem;
 }
 .Identity .i_line {
   height: 1px;

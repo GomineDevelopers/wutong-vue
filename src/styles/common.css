@@ -46,7 +46,7 @@ body {
 }
 .common_Stitle_font2 {
   color: #111a34;
-  font-size: 0.24rem;
+  font-size: 0.32rem;
   font-weight: bold;
   display: inline-block;
   width: 1.024rem;
@@ -58,7 +58,7 @@ body {
 
 /* 通用约定字体大小 */
 .common_fontsize{
-    font-size: 0.24rem;
+    font-size: 0.32rem;
 }
 /* 通用小灰字体 */
 .common_Sgray_font {

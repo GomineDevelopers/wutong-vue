@@ -1,6 +1,6 @@
 <template>
   <div class="PatientBaseInfo">
-    <vue-headful title="基本信息"></vue-headful>
+    <!-- <vue-headful title="基本信息"></vue-headful> -->
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">手机号</div>
       <input class="i_input" type="text" placeholder="请填写您的手机号" />
@@ -61,11 +61,11 @@
       <div class="common_Stitle_font2 title_spaceRight">我的医生</div>
       <input class="i_input" type="text" placeholder="陈平安" />
     </div>
-    <div :style="{height: '1.5rem'}"></div>
+    <div :style="{height: '0.48rem'}"></div>
     <div class="textAlignCenter_w100">
       <van-button round class="common_middle_btn i_btn common_fontsize">提交</van-button>
     </div>
-    <div :style="{height: '1.5rem'}"></div>
+    <div :style="{height: '0.48rem'}"></div>
   </div>
 </template>
 <script>
@@ -94,21 +94,21 @@ export default {
   display: inline-block;
 }
 .PatientBaseInfo .van-dropdown-menu__title {
-  /* padding: 0 5.5rem 0 0; */
   padding: 0;
   color: #c5cad5;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.32rem;
+  line-height: 0.32rem;
 }
 .PatientBaseInfo .van-ellipsis {
-  width: 9.8rem;
+  width: 3.2rem;
+  font-size: 0.32rem;
 }
 .PatientBaseInfo .van-hairline--top-bottom::after,
 .van-hairline-unset--top-bottom::after {
   border-width: 0px 0;
 }
 .PatientBaseInfo .van-dropdown-item__option {
-  font-size: 0.75rem;
+  font-size: 0.32rem;
   color: #41485d;
 }
 
@@ -117,11 +117,11 @@ export default {
   display: inline-block;
 }
 .PatientBaseInfo .van-radio {
-  width: 3rem;
+  width: 0.96rem;
   display: inline-flex;
 }
 .PatientBaseInfo .van-radio__label {
-  font-size: 0.75rem;
+  font-size: 0.32rem;
 }
 /* ***********  */
 </style>
@@ -129,49 +129,49 @@ export default {
 .PatientBaseInfo {
 }
 .PatientBaseInfo input::-webkit-input-placeholder {
-  font-size: 0.75rem;
+  font-size: 0.32rem;
   color: #c5cad5;
-  height: 1.25rem;
+  height: 0.4rem;
 }
 /* 通用输入框 */
 .PatientBaseInfo .i_input {
-  font-size: 0.75rem;
+  font-size: 0.32rem;
   color: #41485d;
-  height: 1.25rem;
+  height: 0.4rem;
   outline: none;
   border: 0;
 }
 .PatientBaseInfo .i_input2 {
-  width: 5.4rem;
+  width: 1.728rem;
 }
 .PatientBaseInfo .PerRow {
-  height: 1.25rem;
+  height: 0.4rem;
   /* width: 100%; */
   border-top: 1px #f6f6f6 solid;
-  padding: 1.1875rem 1.25rem 1.15625rem 1.25rem;
+  padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 .PatientBaseInfo .PerRow_borderBottom {
   border-bottom: 1px #f6f6f6 solid;
 }
 .PatientBaseInfo .title_spaceRight {
-  margin-right: 0.3rem;
+  margin-right: 0.096‬rem;
 }
 .PatientBaseInfo .title_spaceRight2 {
   margin-right: 0rem;
 }
 
 .PatientBaseInfo .i_btn {
-  width: 11.25rem;
-  height: 2.8125rem;
+  width: 3.6rem;
+  height: 0.9rem;
 }
 .PatientBaseInfo .VeriCode {
   display: inline-block;
-  width: 3.8rem;
+  width: 1.216rem;
   border-left: 1px solid #e4e4e4;
-  padding-left: 0.3rem;
-  font-size: 0.75rem;
+  padding-left: 0.096rem;
+  font-size: 0.32rem;
   color: #81d8ce;
-  margin-left: 0.3rem;
+  margin-left: 0.096rem;
 }
 </style>
 
