@@ -1,0 +1,41 @@
+@media screen and (max-width: 375px) {
+  div {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 414px) {
+  div {
+    font-size: 13px;
+  }
+}
+.flex {
+  display: -webkit-flex;
+  display: flex;
+}
+.flex_align_center {
+  align-items: center;
+}
+.flex_justify_content {
+  justify-content: center;
+}
+
+/* vant样式重写 */
+.van-cell {
+  padding: 0rem;
+}
+.van-cell .van-field__control {
+  color: #41485d;
+}
+/* 修改input默认placeholder颜色 */
+.van-cell .van-field__control::-webkit-input-placeholder {
+  color: #d1d1d6;
+}
+.van-cell .van-field__control:-moz-placeholder {
+  color: #d1d1d6;
+}
+.van-cell .van-field__control::-moz-placeholder {
+  color: #d1d1d6;
+}
+.van-cell .van-field__control::-ms-input-placeholder {
+  color: #d1d1d6;
+}
