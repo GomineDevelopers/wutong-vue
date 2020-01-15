@@ -22,6 +22,9 @@ body {
 .theme_color5 {
   color: #c5cad5;
 }
+.theme_backgroundcolor5 {
+  background-color: #c5cad5;
+}
 /* 主题字体：绿色 */
 .theme_color6 {
   color: #81d8ce;
@@ -41,6 +44,22 @@ body {
   font-size: 1rem;
   font-weight: 500;
 }
+.common_Stitle_font2 {
+  color: #111a34;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: inline-block;
+  width: 3.2rem;
+}
+.common_Stitle_font3 {
+  width: 3.5rem;
+}
+
+
+/* 通用约定字体大小 */
+.common_fontsize{
+    font-size: 0.75rem;
+}
 /* 通用小灰字体 */
 .common_Sgray_font {
   color: #c5cad5;
@@ -58,3 +77,18 @@ body {
   background-color: #81d8ce;
   color: #ffffff;
 }
+
+
+
+/* text-align: center */
+.textAlignCenter_w100{
+    text-align: center;
+    width:100vw;
+}
+.inlineBlock{
+    display:inline-block ;
+}
+.m_test{
+  font-size: .75rem;
+}
+

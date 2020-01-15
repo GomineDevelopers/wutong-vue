@@ -8,13 +8,14 @@ Vue.use(Router)
 // 404 - 404
 // 个人中心 - PersonalCenter 
 // 个人资料 - PersonalData
-// 医生基本信息 - DoctorInfo
+// 基本信息-医生 - DoctorBaseInfo
+// 基本信息-患者 - PatientBaseInfo
+// 患者信息 - PatientInfo
 // 卡券管理 - CardTicketManagement
 // 实名认证 - Certification
 // 积分管理 - PointManagement
 // 身份 - Identity 
 // 扫码邀请 - SweepAndInvite
-// 患者信息 - PatientInfo
 // 病例通 - CasesOfTong
 
 export default new Router({
@@ -44,9 +45,19 @@ export default new Router({
       component: () => import('@/views/PersonalData'),
     },
     {
-      path: '/doctorinfo',
-      name: 'DoctorInfo',
-      component: () => import('@/views/DoctorInfo'),
+      path: '/doctorbaseinfo',
+      name: 'DoctorBaseInfo',
+      component: () => import('@/views/DoctorBaseInfo'),
+    },
+    {
+      path: '/patientBaseinfo',
+      name: 'PatientBaseInfo',
+      component: () => import('@/views/PatientBaseInfo'),
+    },
+    {
+      path: '/patientinfo',
+      name: 'PatientInfo',
+      component: () => import('@/views/PatientInfo'),
     },
     {
       path: '/cardticketmanagement',
@@ -72,11 +83,6 @@ export default new Router({
       path: '/sweepandinvite',
       name: 'SweepAndInvite',
       component: () => import('@/views/SweepAndInvite'),
-    },
-    {
-      path: '/patientinfo',
-      name: 'PatientInfo',
-      component: () => import('@/views/PatientInfo'),
     },
     {
       path: '/casesoftong',
