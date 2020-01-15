@@ -41,34 +41,34 @@ body {
 /* 通用小标题字体 */
 .common_Stitle_font {
   color: #111a34;
-  font-size: 1rem;
+  font-size: 0.32rem;
   font-weight: 500;
 }
 .common_Stitle_font2 {
   color: #111a34;
-  font-size: 0.75rem;
+  font-size: 0.24rem;
   font-weight: bold;
   display: inline-block;
-  width: 3.2rem;
+  width: 1.024rem;
 }
 .common_Stitle_font3 {
-  width: 3.5rem;
+  width: 1.024rem;
 }
 
 
 /* 通用约定字体大小 */
 .common_fontsize{
-    font-size: 0.75rem;
+    font-size: 0.24rem;
 }
 /* 通用小灰字体 */
 .common_Sgray_font {
   color: #c5cad5;
-  font-size: 0.875rem;
+  font-size: 0.28rem;
   font-weight: 400;
 }
 /* 通用小黑字体 */
 .common_Sblack_font {
-  font-size: 0.875rem;
+  font-size: 0.28rem;
   font-weight: 400;
   color: #666f83;
 }
