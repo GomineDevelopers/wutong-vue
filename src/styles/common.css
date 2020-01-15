@@ -1,47 +1,43 @@
-
-
-
 /* 主题字体：黑色 */
-.theme_font_color{
-    color:#111A34;
+.theme_font_color {
+  color: #111a34;
 }
 /* 主题字体：绿色 */
-.theme_font_color2{
-    color:#81D8CE;
+.theme_font_color2 {
+  color: #81d8ce;
 }
 /* 主题字背景：白色 */
-.theme_background_color{
-    color:#ffffff;
+.theme_background_color {
+  color: #ffffff;
 }
 /* 主题背景：绿色 */
-.theme_background_color2{
-    color:#81D8CE;
+.theme_background_color2 {
+  color: #81d8ce;
 }
 
 /* 通用小标题字体 */
-.common_Stitle_font{
-    color:#111A34;
-    font-size:32px;
-    font-family:PingFangSC-Medium,PingFang SC;
-    font-weight:500;
+.common_Stitle_font {
+  color: #111a34;
+  font-size: 32px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
 }
 /* 通用小灰字体 */
-.common_Sgray_font{
-    color:#C5CAD5;
-    font-size:28px;
-    font-family:PingFangSC-Regular,PingFang SC;
-    font-weight:400;
+.common_Sgray_font {
+  color: #c5cad5;
+  font-size: 28px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
 }
 /* 通用小黑字体 */
-.common_Sblack_font{
-    font-size:28px;
-    font-family:PingFangSC-Regular,PingFang SC;
-    font-weight:400;
-    color:#666F83;
+.common_Sblack_font {
+  font-size: 28px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666f83;
 }
 /* 通用绿色按钮 */
-.common_middle_btn{
-    background-color:#81D8CE;
-    color: #ffffff;
+.common_middle_btn {
+  background-color: #81d8ce;
+  color: #ffffff;
 }
-

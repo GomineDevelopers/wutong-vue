@@ -33,7 +33,7 @@ export default {
   font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
+  color: #41485d;
   height: 100%;
 }
 </style>
