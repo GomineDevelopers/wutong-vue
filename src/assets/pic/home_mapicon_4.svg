@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>医院选点/优质1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="6" cy="6" r="6"></circle>
+        <filter x="-250.0%" y="-250.0%" width="600.0%" height="600.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.31372549   0 0 0 0 0.435294118  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="组件/地图" transform="translate(-591.000000, -920.000000)">
+            <g id="地图">
+                <g id="点" transform="translate(27.000000, 165.000000)">
+                    <g id="医院选点/圆点/优质" transform="translate(583.000000, 774.000000)">
+                        <g id="编组">
+                            <g id="椭圆形备份-11">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill="#FF506F" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            </g>
+                            <g id="医院" transform="translate(2.000000, 2.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                <path d="M6.85708657,2.85714398 L5.14285827,2.85714398 L5.14285827,1.14285602 C5.14285827,0.511657522 4.631143,0 3.99994484,0 C3.36880184,0 2.85714173,0.51165831 2.85714173,1.14285602 L2.85714173,2.85714398 L1.14280311,2.85714398 C0.511660106,2.85714398 0,3.36880229 0,4 C0,4.63114176 0.511659318,5.14285602 1.14280311,5.14285602 L2.85714961,5.14285602 L2.85714961,6.85714398 C2.85714961,7.48834248 3.36880893,8 3.99995272,8 C4.63115246,8 5.14286615,7.48834169 5.14286615,6.85714398 L5.14286615,5.14284814 L6.85708657,5.14284814 C7.48828631,5.14284814 8,4.63113388 8,4 C8,3.36879362 7.48828473,2.85714398 6.85708657,2.85714398 Z" id="路径"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

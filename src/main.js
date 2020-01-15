@@ -6,10 +6,12 @@ import api from "./api/api";
 import $ from "jquery";
 import "./utils/vant";
 import { Toast } from "vant";
+import Icon from "vue-svg-icon/Icon";
 Vue.prototype.$api = api;
 Vue.prototype.$ = $;
 
 Vue.config.productionTip = false;
+Vue.component("Icon", Icon); //引入svg-icon
 
 import store from "@/store";
 
