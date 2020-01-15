@@ -6,7 +6,6 @@ import api from "./api/api";
 import $ from "jquery";
 import "./utils/vant";
 import { Toast } from "vant";
-import "./css/public.css";
 Vue.prototype.$api = api;
 Vue.prototype.$ = $;
 
@@ -19,9 +18,8 @@ import "@/utils/rem.js";
 import "@/styles/common.css";
 import "@/styles/common2.css";
 
-import vueHeadful from 'vue-headful';
-Vue.component('vue-headful', vueHeadful);
-
+import vueHeadful from "vue-headful";
+Vue.component("vue-headful", vueHeadful);
 
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 

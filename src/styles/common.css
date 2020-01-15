@@ -34,21 +34,18 @@
 /* 通用小标题字体 */
 .common_Stitle_font {
   color: #111a34;
-  font-size: 16px;
-  font-family: PingFangSC-Medium, PingFang SC;
+  font-size: 1rem;
   font-weight: 500;
 }
 /* 通用小灰字体 */
 .common_Sgray_font {
   color: #c5cad5;
-  font-size: 14px;
-  font-family: PingFangSC-Regular, PingFang SC;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 /* 通用小黑字体 */
 .common_Sblack_font {
-  font-size: 14px;
-  font-family: PingFangSC-Regular, PingFang SC;
+  font-size: 0.875rem;
   font-weight: 400;
   color: #666f83;
 }
