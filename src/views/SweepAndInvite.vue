@@ -1,11 +1,11 @@
 <template>
-    <div class='Home'>
-      <vue-headful title="首页"></vue-headful>
+    <div class='SweepAndInvite'>
+      <vue-headful title="扫码邀请"></vue-headful>
     </div>
 </template>
 <script>
 export default {
-  name: "home",
+  name: "SweepAndInvite",
   components: {},
   data() {
     return {};
@@ -17,7 +17,7 @@ export default {
 };
 </script>
 <style scoped>
-.Home{
+.SweepAndInvite{
   
 }
 </style>

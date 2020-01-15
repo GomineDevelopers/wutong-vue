@@ -16,6 +16,8 @@ import store from "@/store";
 
 import "@/utils/rem.js";
 
+import "@/styles/common.css";
+
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 router.beforeEach((to, from, next) => {
