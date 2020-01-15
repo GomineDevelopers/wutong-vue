@@ -18,6 +18,10 @@ import "@/utils/rem.js";
 
 import "@/styles/common.css";
 
+import vueHeadful from 'vue-headful';
+Vue.component('vue-headful', vueHeadful);
+
+
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 router.beforeEach((to, from, next) => {
