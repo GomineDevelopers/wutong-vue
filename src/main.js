@@ -1,38 +1,30 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
 
+import api from "./api/api";
+import $ from "jquery";
+import "./utils/vant";
+import { Toast } from "vant";
+import "./css/public.css";
+Vue.prototype.$api = api;
+Vue.prototype.$ = $;
 
+Vue.config.productionTip = false;
 
-import $ from 'jquery'
-import '@/utils/page.js'
-import '@/utils/element_ui.js'
-Vue.prototype.$ = $
+import store from "@/store";
 
-import echarts from 'echarts'
-Vue.prototype.$echarts = echarts
-
-import axios from 'axios'
-Vue.prototype.$http = axios;
-
-Vue.config.productionTip = false
-
-import store from '@/store'
-
-import '@/utils/rem.js'
+import "@/utils/rem.js";
 
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 router.beforeEach((to, from, next) => {
   next();
-})
+});
 
 new Vue({
   router,
-  Utils,
   store,
   // mapGetters,
   render: h => h(App)
-}).$mount('#app')
-
-
+}).$mount("#app");

@@ -5,29 +5,35 @@
 </template>
 
 <script>
-import "@/styles/comcom_3_new.css";
-
-export default {};
+export default {
+  name: "App",
+  provide() {
+    return {
+      reload: this.reload
+    };
+  }, //为子页面刷新提供机制
+  data() {
+    return {
+      isRouterAlive: true
+    };
+  },
+  methods: {
+    //为子页面刷新提供机制
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(function() {
+        this.isRouterAlive = true;
+      });
+    }
+  }
+};
 </script>
-
 <style>
 #app {
-  font-family: "微软雅黑";
+  font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #fff;
-  font-size: 0.24rem;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  /* min-height: 900px;
-  min-width: 1500px; */
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
+  color: #333;
   height: 100%;
 }
 </style>

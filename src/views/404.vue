@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import { login, get_user_permissions } from "@/api/api_main";
+// import { login, get_user_permissions } from "@/api/api";
 
 export default {
   name: "404",
