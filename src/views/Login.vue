@@ -90,7 +90,6 @@ export default {
 .login_main .forget_password_btn .disabled_i {
   color: #999;
 }
-
 .login_main .forget_password_btn span {
   display: inline-block;
   margin-right: 0.625rem;
