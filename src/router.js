@@ -9,8 +9,8 @@ Vue.use(Router);
 // 个人中心 - PersonalCenter
 // 个人资料 - PersonalData
 // 个人资料-编辑 - PersonalDataEdit
-// 基本信息-医生 - DoctorBaseInfo  
-// 基本信息-患者 - PatientBaseInfo 
+// 基本信息-医生 - DoctorBaseInfo
+// 基本信息-患者 - PatientBaseInfo
 // 个人中心-医生 - DoctorPersonCenter
 // 个人中心-患者 - PatientPersonCenter
 // 患者信息 - PatientInfo
@@ -20,6 +20,7 @@ Vue.use(Router);
 // 身份 - Identity
 // 扫码邀请 - SweepAndInvite
 // 病例通 - CasesOfTong
+// 病例通-疾病助手 - SicknessHelper
 
 export default new Router({
   mode: "history",
@@ -48,15 +49,15 @@ export default new Router({
       component: () => import("@/views/PersonalData")
     },
     {
-      path: '/personaldataedit',
-      name: 'PersonalDataEdit',
-      component: () => import('@/views/PersonalDataEdit'),
+      path: "/personaldataedit",
+      name: "PersonalDataEdit",
+      component: () => import("@/views/PersonalDataEdit")
     },
 
     {
-      path: '/doctorbaseinfo',
-      name: 'DoctorBaseInfo',
-      component: () => import('@/views/Doctor/DoctorBaseInfo'),
+      path: "/doctorbaseinfo",
+      name: "DoctorBaseInfo",
+      component: () => import("@/views/Doctor/DoctorBaseInfo"),
       path: "/doctorbaseinfo",
       name: "DoctorBaseInfo",
       component: () => import("@/views/Doctor/DoctorBaseInfo")
@@ -109,7 +110,12 @@ export default new Router({
     {
       path: "/casesoftong",
       name: "CasesOfTong",
-      component: () => import("@/views/CasesOfTong")
+      component: () => import("@/views//casesoftong/CasesOfTong")
+    },
+    {
+      path: "/sicknesshelper",
+      name: "SicknessHelper",
+      component: () => import("@/views//casesoftong/SicknessHelper")
     }
   ]
 });
