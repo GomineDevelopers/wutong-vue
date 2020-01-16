@@ -108,23 +108,29 @@ export default {
 /* ****** 输入框 */
 
 .MyPatient .van-cell .van-field__control {
-  font-size: 0.32rem;
+  font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
+  height: 0.4rem;
 }
 .van-field__left-icon .van-icon,
 .van-field__right-icon .van-icon {
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   color: #81d8ce;
+  margin-top: 0.05rem;
 }
 .MyPatient .van-field__left-icon {
   display: none;
 }
 .MyPatient .van-cell__value--alone {
   padding-left: 0rem;
+  height: 0.4rem;
+}
+.MyPatient .van-field__body {
+  height: 0.4rem;
 }
 .MyPatient .van-search .van-cell {
-  padding: 0.2rem 0.48rem;
+  padding: 0.16rem 0.48rem;
   background: rgba(255, 255, 255, 1);
   border-radius: 0.44rem;
   border: 2px solid #81d8ce;
@@ -140,7 +146,6 @@ export default {
   vertical-align: top;
   color: #efeff4;
 }
-
 </style>
 <style scoped>
 .MyPatient {
