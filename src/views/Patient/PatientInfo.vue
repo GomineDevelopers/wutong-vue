@@ -88,7 +88,7 @@ export default {
   border-bottom: 1px #f6f6f6 solid;
 }
 .PatientInfo .title_spaceRight {
-  margin-right: 0.096rem;
+  margin-right: 0;
 }
 .PatientInfo .title_spaceRight2 {
   margin-right: 0rem;

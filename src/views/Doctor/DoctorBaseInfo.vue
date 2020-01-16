@@ -142,7 +142,7 @@ export default {
   border-bottom: 1px #f6f6f6 solid;
 }
 .DoctorBaseInfo .title_spaceRight {
-  margin-right: 0.16rem;
+  margin-right: 0rem;
 }
 .DoctorBaseInfo .i_btn {
   width: 3.6rem;

@@ -154,10 +154,10 @@ export default {
   border-bottom: 1px #f6f6f6 solid;
 }
 .PatientBaseInfo .title_spaceRight {
-  margin-right: 0.096‬rem;
+  margin-right: 0‬;
 }
 .PatientBaseInfo .title_spaceRight2 {
-  margin-right: 0rem;
+  margin-right: 0;
 }
 
 .PatientBaseInfo .i_btn {

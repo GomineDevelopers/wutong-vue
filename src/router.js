@@ -47,17 +47,17 @@ export default new Router({
     {
       path: '/doctorbaseinfo',
       name: 'DoctorBaseInfo',
-      component: () => import('@/views/DoctorBaseInfo'),
+      component: () => import('@/views/Doctor/DoctorBaseInfo'),
     },
     {
       path: '/patientBaseinfo',
       name: 'PatientBaseInfo',
-      component: () => import('@/views/PatientBaseInfo'),
+      component: () => import('@/views/Patient/PatientBaseInfo'),
     },
     {
       path: '/patientinfo',
       name: 'PatientInfo',
-      component: () => import('@/views/PatientInfo'),
+      component: () => import('@/views/Patient/PatientInfo'),
     },
     {
       path: '/cardticketmanagement',
