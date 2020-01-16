@@ -50,6 +50,7 @@ body {
   font-weight: bold;
   display: inline-block;
   width: 1.68rem;
+  vertical-align: top;
 }
 .common_Stitle_font3 {
   /* width: 1.024rem; */
@@ -85,10 +86,19 @@ body {
     text-align: center;
     width:100vw;
 }
+.textAlignCenter{
+    text-align: center;
+}
 .inlineBlock{
     display:inline-block ;
 }
-.m_test{
-  font-size: .75rem;
+
+.verticalAlignTop{
+  vertical-align: top;
 }
 
+
+/* ***** */
+.m_test{
+  font-size: 6.7rem;
+}

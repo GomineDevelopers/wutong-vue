@@ -89,39 +89,26 @@ export default {
 </script>
 
 <style >
-/* *********** 下拉框样式 */
-.PatientBaseInfo .van-dropdown-menu {
-  display: inline-block;
-}
-.PatientBaseInfo .van-dropdown-menu__title {
-  padding: 0;
-  color: #c5cad5;
-  font-size: 0.32rem;
-  line-height: 0.32rem;
-}
-.PatientBaseInfo .van-ellipsis {
-  width: 3.2rem;
-  font-size: 0.32rem;
-}
-.PatientBaseInfo .van-hairline--top-bottom::after,
-.van-hairline-unset--top-bottom::after {
-  border-width: 0px 0;
-}
-.PatientBaseInfo .van-dropdown-item__option {
-  font-size: 0.32rem;
-  color: #41485d;
-}
-
 /* *********** 单选框样式  */
 .PatientBaseInfo .van-radio-group {
   display: inline-block;
 }
 .PatientBaseInfo .van-radio {
-  width: 0.96rem;
-  display: inline-flex;
+  width: 1.5rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.12rem;
+  /* display: inline-flex; */
+}
+.PatientBaseInfo .van-radio__icon {
+  vertical-align: top;
+  display: inline-block;
 }
 .PatientBaseInfo .van-radio__label {
   font-size: 0.32rem;
+  vertical-align: text-top;
+  display: inline-block;
+  line-height: 0.32rem;
 }
 /* ***********  */
 </style>
@@ -140,9 +127,10 @@ export default {
   height: 0.4rem;
   outline: none;
   border: 0;
+  vertical-align: top;
 }
 .PatientBaseInfo .i_input2 {
-  width: 1.728rem;
+  width: 2.7rem;
 }
 .PatientBaseInfo .PerRow {
   height: 0.4rem;
@@ -166,12 +154,13 @@ export default {
 }
 .PatientBaseInfo .VeriCode {
   display: inline-block;
-  width: 1.216rem;
+  width: 1.8rem;
   border-left: 1px solid #e4e4e4;
   padding-left: 0.096rem;
   font-size: 0.32rem;
   color: #81d8ce;
   margin-left: 0.096rem;
+  vertical-align: top;
 }
 </style>
 

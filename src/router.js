@@ -8,6 +8,9 @@ Vue.use(Router)
 // 404 - 404
 // 个人中心 - PersonalCenter 
 // 个人资料 - PersonalData
+
+// 个人资料-编辑 - PersonalDataEdit
+
 // 基本信息-医生 - DoctorBaseInfo
 // 基本信息-患者 - PatientBaseInfo
 // 患者信息 - PatientInfo
@@ -44,6 +47,12 @@ export default new Router({
       name: 'PersonalData',
       component: () => import('@/views/PersonalData'),
     },
+    {
+      path: '/personaldataedit',
+      name: 'PersonalDataEdit',
+      component: () => import('@/views/PersonalDataEdit'),
+    },
+
     {
       path: '/doctorbaseinfo',
       name: 'DoctorBaseInfo',

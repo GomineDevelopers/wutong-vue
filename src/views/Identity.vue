@@ -1,7 +1,7 @@
 <template>
   <div class="Identity">
     <!-- <vue-headful title="身份"></vue-headful> -->
-    <div :style="{height: '1.44rem'}"></div>
+    <div :style="{height: '1rem'}"></div>
     <div class="textAlignCenter_w100">
       <img class="avatar" :src="avatar1" alt />
     </div>
@@ -9,13 +9,13 @@
     <div class="textAlignCenter_w100">
       <van-button round class="common_middle_btn i_btn common_fontsize">我是患者</van-button>
     </div>
-    <div :style="{height: '1.8rem'}"></div>
+    <div :style="{height: '0.8rem'}"></div>
     <div class="textAlignCenter_w100 inlineBlock">
       <div class="inlineBlock theme_backgroundcolor5 i_line"></div>
       <div class="inlineBlock theme_color5 i_or">&nbsp;或者&nbsp;</div>
       <div class="inlineBlock theme_backgroundcolor5 i_line"></div>
     </div>
-    <div :style="{height: '1.8rem'}"></div>
+    <div :style="{height: '0.8rem'}"></div>
     <div class="textAlignCenter_w100">
       <img class="avatar" :src="avatar2" alt />
     </div>

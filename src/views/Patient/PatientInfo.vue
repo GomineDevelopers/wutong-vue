@@ -97,7 +97,8 @@ export default {
   display: inline-block;
   text-align: right;
   font-size: 0.32rem;
-  width: 3.2rem;
+  width: 4.8rem;
+  vertical-align: top;
 }
 </style>
 

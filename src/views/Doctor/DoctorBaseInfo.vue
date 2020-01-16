@@ -7,7 +7,7 @@
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">性别</div>
-      <van-radio-group v-model="radio">
+      <van-radio-group class="verticalAlignTop" v-model="radio">
         <van-radio name="1" icon-size="16px" checked-color="#81D8CE">男</van-radio>
         <van-radio name="2" icon-size="16px" checked-color="#81D8CE">女</van-radio>
       </van-radio-group>
@@ -82,6 +82,8 @@ export default {
 /* *********** 下拉框样式 */
 .DoctorBaseInfo .van-dropdown-menu {
   display: inline-block;
+  vertical-align: top;
+  margin-top: 0.12rem;
 }
 .DoctorBaseInfo .van-dropdown-menu__title {
   /* padding: 0 5.5rem 0 0; */
@@ -91,7 +93,7 @@ export default {
   line-height: 0.32rem;
 }
 .DoctorBaseInfo .van-ellipsis {
-  width: 3.2rem;
+  width: 4.7rem;
   font-size: 0.32rem;
 }
 .DoctorBaseInfo .van-hairline--top-bottom::after,
@@ -108,11 +110,21 @@ export default {
   display: inline-block;
 }
 .DoctorBaseInfo .van-radio {
-  width: 0.96rem;
-  display: inline-flex;
+  width: 1.5rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.12rem;
+  /* display: inline-flex; */
+}
+.DoctorBaseInfo .van-radio__icon {
+  vertical-align: top;
+  display: inline-block;
 }
 .DoctorBaseInfo .van-radio__label {
   font-size: 0.32rem;
+  vertical-align: text-top;
+  display: inline-block;
+  line-height: 0.32rem;
 }
 /* ***********  */
 </style>
@@ -131,6 +143,7 @@ export default {
   height: 0.4rem;
   outline: none;
   border: 0;
+  vertical-align: top;
 }
 .DoctorBaseInfo .PerRow {
   height: 0.4rem;

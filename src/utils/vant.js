@@ -9,7 +9,10 @@ import {
     RadioGroup,
     Radio,
     Field,
-    Checkbox
+    Checkbox,
+    Icon,
+    Tab,
+    Tabs
 } from "vant";
 
 Vue.use(Button);
@@ -21,3 +24,5 @@ Vue.use(RadioGroup);
 Vue.use(Radio);
 Vue.use(Field);
 Vue.use(Checkbox);
+Vue.use(Icon);
+Vue.use(Tab).use(Tabs);
