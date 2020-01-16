@@ -133,13 +133,14 @@ export default {
   background: rgba(255, 255, 255, 1);
 }
 /* ****** icon */
-.MyPatient .van-icon {
+.MyPatient .patientCard .van-icon {
   font-size: 0.5rem;
   margin-top: 0.34rem;
   margin-left: 0.3rem;
   vertical-align: top;
   color: #efeff4;
 }
+
 </style>
 <style scoped>
 .MyPatient {
