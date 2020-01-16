@@ -10,10 +10,10 @@
         <van-field v-model="tel" type="number" placeholder="请输入手机号" />
       </van-row>
       <van-row class="login_main_input flex flex_align_center">
-        <van-col span="14">
+        <van-col span="16">
           <van-field v-model="code" placeholder="请输入验证码" />
         </van-col>
-        <van-col span="10" class="forget_password_btn theme_color6">
+        <van-col span="8" class="forget_password_btn theme_color6">
           <span></span> 获取验证码
         </van-col>
       </van-row>
@@ -116,8 +116,8 @@ export default {
 }
 .login_main .forget_password_btn span {
   display: inline-block;
-  margin-right: 0.625rem;
-  width: 0.01rem;
+  margin-right: 0.3rem;
+  /* width: 0.01rem; */
   height: 0.4rem;
   border-left: 1px solid #d8d8d8;
 }
