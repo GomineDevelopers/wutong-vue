@@ -12,11 +12,20 @@
   display: -webkit-flex;
   display: flex;
 }
+.flex_1 {
+  flex: 1;
+}
 .flex_align_center {
   align-items: center;
 }
+.flex_direction {
+  flex-direction: column;
+}
 .flex_justify_content {
   justify-content: center;
+}
+.flex_justify_between {
+  justify-content: space-between;
 }
 
 /* vant样式重写 */
@@ -38,4 +47,56 @@
 }
 .van-cell .van-field__control::-ms-input-placeholder {
   color: #d1d1d6;
+}
+
+/* 外层容器 */
+.van_container {
+  height: 100%;
+}
+.height_auto {
+  height: 100%;
+}
+.font_weight_500 {
+  font-weight: 500;
+}
+
+/* 字体设置 */
+.main_font {
+  font-size: 0.3rem;
+  color: #41485d;
+  font-weight: 500;
+}
+.main_font2 {
+  font-size: 0.32rem;
+  color: #111a34;
+  font-weight: 500;
+}
+.public_green_small {
+  font-size: 0.26rem;
+  color: #81d8ce;
+  font-weight: 400;
+}
+.padding_mudule {
+  padding: 0rem 0.32rem;
+}
+
+/* 按钮 */
+.public_button_middle {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+.public_button_middle button {
+  display: block;
+  width: 3.6rem;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  text-align: center;
+  background: rgba(129, 216, 206, 1);
+  border-radius: 0.45rem;
+  font-size: 0.32rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0rem auto;
+  border: none;
+  letter-spacing: 0.1rem;
 }

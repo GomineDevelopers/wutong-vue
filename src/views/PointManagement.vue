@@ -1,12 +1,11 @@
 <template>
-    <div class='PointManagement'>
-      <vue-headful title="积分管理"></vue-headful>
-    </div>
+  <div class="van_container">
+    <vue-headful title="积分管理"></vue-headful>
+  </div>
 </template>
 <script>
 export default {
   name: "PointManagement",
-  components: {},
   data() {
     return {};
   },
@@ -17,8 +16,6 @@ export default {
 };
 </script>
 <style scoped>
-.PointManagement{
-  
+.PointManagement {
 }
 </style>
-

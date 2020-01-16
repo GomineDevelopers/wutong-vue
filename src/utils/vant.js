@@ -1,15 +1,16 @@
 import Vue from "vue";
 import {
-    Button,
-    Toast,
-    Row,
-    Col,
-    DropdownMenu,
-    DropdownItem,
-    RadioGroup,
-    Radio,
-    Field,
-    Checkbox
+  Button,
+  Toast,
+  Row,
+  Col,
+  DropdownMenu,
+  DropdownItem,
+  RadioGroup,
+  Radio,
+  Field,
+  Checkbox,
+  Icon
 } from "vant";
 
 Vue.use(Button);
@@ -21,3 +22,4 @@ Vue.use(RadioGroup);
 Vue.use(Radio);
 Vue.use(Field);
 Vue.use(Checkbox);
+Vue.use(Icon);
