@@ -22,6 +22,8 @@ Vue.use(Router);
 // 病例通 - CasesOfTong
 // 病例通-疾病助手 - SicknessHelper
 
+// 我的患者 - MyPatient
+
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
@@ -82,6 +84,12 @@ export default new Router({
       name: "PatientInfo",
       component: () => import("@/views/Patient/PatientInfo")
     },
+    {
+      path: "/mypatient",
+      name: "MyPatient",
+      component: () => import("@/views/Patient/MyPatient")
+    },
+    
     {
       path: "/cardticketmanagement",
       name: "CardTicketManagement",
