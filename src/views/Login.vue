@@ -10,15 +10,18 @@
         <van-field v-model="tel" type="number" placeholder="请输入手机号" />
       </van-row>
       <van-row class="login_main_input flex flex_align_center">
-        <van-col span="14">
+        <van-col span="16">
           <van-field v-model="code" placeholder="请输入验证码" />
         </van-col>
-        <van-col span="10" class="forget_password_btn theme_color6">
+        <van-col span="8" class="forget_password_btn theme_color6">
           <span></span> 获取验证码
         </van-col>
       </van-row>
-      <van-row class="login_button">
-        <button>登录</button>
+      <van-row
+        :class="['login_button', active ? 'active_button' : 'disable_button']"
+        @click="login"
+      >
+        <button>登&nbsp;录</button>
       </van-row>
     </van-row>
     <van-row class="login_protocol flex flex_justify_content">
@@ -35,11 +38,24 @@ export default {
   data() {
     return {
       tel: "",
-      code: ""
+      code: "",
+      active: false //按钮不可点击
     };
   },
   methods: {
-    login() {}
+    login() {
+      console.log("登录");
+      let regs = /^1[3456789]\d{9}$/;
+      if (!regs.test(this.tel)) {
+        this.$toast.fail("电话号码格式不正确");
+        return false;
+      }
+      if (this.code.length == 0) {
+        this.$toast.fail("验证码不能为空");
+        return false;
+      }
+      this.active = true;
+    }
   }
 };
 </script>
@@ -100,8 +116,7 @@ export default {
 }
 .login_main .forget_password_btn span {
   display: inline-block;
-  margin-right: 0.625rem;
-  width: 0.01rem;
+  margin-right: 0.3rem;
   height: 0.4rem;
   border-left: 1px solid #d8d8d8;
 }
@@ -111,9 +126,15 @@ export default {
   font-size: 0.32rem;
   height: 0.9rem;
   line-height: 0.9rem;
-  background: rgba(239, 239, 244, 1);
   border-radius: 1.125rem;
   margin-top: 1rem;
+  letter-spacing: 0.1rem;
+}
+.disable_button {
+  background: rgba(239, 239, 244, 1);
+}
+.active_button {
+  background: #81d8ce;
 }
 .login_protocol {
   text-align: center;
