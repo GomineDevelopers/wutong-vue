@@ -136,6 +136,10 @@ export default {
 .active_button {
   background: #81d8ce;
 }
+.login_button button {
+  border: none;
+  background: rgba(255, 255, 255, 0);
+}
 .login_protocol {
   text-align: center;
   font-size: 0.26rem;
