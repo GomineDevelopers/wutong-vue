@@ -117,7 +117,6 @@ export default {
 .login_main .forget_password_btn span {
   display: inline-block;
   margin-right: 0.3rem;
-  /* width: 0.01rem; */
   height: 0.4rem;
   border-left: 1px solid #d8d8d8;
 }
