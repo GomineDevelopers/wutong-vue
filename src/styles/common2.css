@@ -98,5 +98,6 @@
   color: #fff;
   margin: 0rem auto;
   border: none;
+  background: rgba(255, 255, 255, 0);
   letter-spacing: 0.1rem;
 }
