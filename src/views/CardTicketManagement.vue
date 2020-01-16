@@ -12,7 +12,7 @@
               <div class="cardTimeRange">{{item.startTime}}&nbsp;-&nbsp;{{item.endTime}}</div>
             </div>
             <div class="cardRight">
-              <img class="QrCodeImg" :src="item.QrCodeUrl" alt />
+              <img class="QrCodeImg" @click="imgDialog(item.QrCodeUrl)" :src="item.QrCodeUrl" alt />
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
               <div class="cardTimeRange">{{item.startTime}}&nbsp;-&nbsp;{{item.endTime}}</div>
             </div>
             <div class="cardRight">
-              <img class="QrCodeImg" :src="item.QrCodeUrl" alt />
+              <img class="QrCodeImg" @click="imgDialog(item.QrCodeUrl)" :src="item.QrCodeUrl" alt />
             </div>
           </div>
         </div>
@@ -42,12 +42,22 @@
               <div class="cardTimeRange">{{item.startTime}}&nbsp;-&nbsp;{{item.endTime}}</div>
             </div>
             <div class="cardRight">
-              <img class="QrCodeImg" :src="item.QrCodeUrl" alt />
+              <img class="QrCodeImg" @click="imgDialog(item.QrCodeUrl)" :src="item.QrCodeUrl" alt />
             </div>
           </div>
         </div>
       </van-tab>
     </van-tabs>
+    <van-popup v-model="popupShow">
+      <div class="textAlignCenter">
+        <div class="QrCodeImgBig_bg">
+          <img class="QrCodeImgBig" :src="CurrentQrCodeUrl" alt />
+        </div>
+      </div>
+      <div class="textAlignCenter">
+        <img class="closePopup" @click="closePopup()" :src="icon_close" alt />
+      </div>
+    </van-popup>
   </div>
 </template>
 <script>
@@ -95,7 +105,10 @@ export default {
         }
       ],
       Card2: [],
-      Card3: []
+      Card3: [],
+      popupShow: false,
+      CurrentQrCodeUrl: "",
+      icon_close: require("@/assets/pic/icon_delete2.png")
     };
   },
   mounted() {
@@ -103,6 +116,13 @@ export default {
     this.cardManage();
   },
   methods: {
+    closePopup() {
+      this.popupShow = false;
+    },
+    imgDialog(QrCodeURL) {
+      this.CurrentQrCodeUrl = QrCodeURL;
+      this.popupShow = true;
+    },
     cardBgSettings(type) {
       let bgUrl;
       if (type == "New") {
@@ -141,6 +161,7 @@ export default {
 };
 </script>
 <style>
+/* ******** 标签 */
 .CardTicketManagement .van-tabs--line .van-tabs__wrap {
   height: 0.88rem;
 }
@@ -159,23 +180,33 @@ export default {
   background-color: rgba(129, 216, 206, 1);
   width: 14% !important;
 }
+
+/* ******** 弹出层 */
+.CardTicketManagement .van-popup {
+  background-color: rgba(0, 0, 0, 0);
+}
 </style>
 <style scoped>
 .CardTicketManagement {
 }
 .CardTicketManagement .cardBg {
   width: 6.86rem;
-  height: 1.96rem;
+  height: 1.76rem;
+  padding: 0.1rem 0;
+  margin: 0.06rem 5%;
 }
 .CardTicketManagement .cardLeft {
   display: inline-block;
-  width: 74%;
+  width: 67%;
   vertical-align: top;
+  padding-left: 6%;
 }
 .CardTicketManagement .cardRight {
   display: inline-block;
   width: 25%;
   vertical-align: top;
+  padding-top: 0.23rem;
+  height: 1rem;
 }
 .CardTicketManagement .cardName {
   height: 0.45rem;
@@ -194,6 +225,7 @@ export default {
   color: rgba(129, 216, 206, 1);
   line-height: 0.55rem;
   letter-spacing: 0.03rem;
+  padding: 0.08rem 0;
 }
 .CardTicketManagement .cardTimeRange {
   height: 0.28rem;
@@ -206,6 +238,25 @@ export default {
 .CardTicketManagement .QrCodeImg {
   width: 1rem;
   height: 1rem;
+}
+.QrCodeImgBig_bg {
+  padding: 0.4rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: #ffffff;
+  -webkit-border-radius: 0.08rem;
+  -ms-border-radius: 0.08rem;
+  -o-border-radius: 0.08rem;
+  -moz-border-radius: 0.08rem;
+  border-radius: 0.08rem;
+}
+.CardTicketManagement .QrCodeImgBig {
+  width: 100%;
+  height: 100%;
+}
+.CardTicketManagement .closePopup {
+  width: 0.6rem;
+  height: 0.6rem;
 }
 </style>
 

@@ -21,7 +21,7 @@ export default {
   components: {},
   data() {
     return {
-      icon_delete: require("@/assets/pic/icon_delete.png"),
+      icon_delete: require("@/assets/pic/icon_delete2.png"),
       email: "43243233@qq.com"
     };
   },

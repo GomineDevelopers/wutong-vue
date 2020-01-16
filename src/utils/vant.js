@@ -12,7 +12,9 @@ import {
     Checkbox,
     Icon,
     Tab,
-    Tabs
+    Tabs,
+    Popup,
+    Search
 } from "vant";
 
 Vue.use(Button);
@@ -26,3 +28,6 @@ Vue.use(Field);
 Vue.use(Checkbox);
 Vue.use(Icon);
 Vue.use(Tab).use(Tabs);
+Vue.use(Popup);
+Vue.use(Search);
+
