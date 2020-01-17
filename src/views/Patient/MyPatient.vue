@@ -9,23 +9,27 @@
       @search="onSearch"
       background="#ffffff"
     ></van-search>
-    <div :style="{height: '0.44rem'}"></div>
-    <div v-for="(item,index) in PatientCard" :key="index + 'p1' ">
+    <div :style="{ height: '0.44rem' }"></div>
+    <div v-for="(item, index) in PatientCard" :key="index + 'p1'">
       <div class="patientCard">
         <div class="patient_avatar">
           <img class="img_avatar" :src="item.avatar" alt />
         </div>
         <div class="patient_info">
           <div class="i_top">
-            <div class="i_name">{{item.name}}</div>
-            <div class="i_age_sex">{{item.age}}岁&nbsp;({{item.sex}})</div>
+            <div class="i_name">{{ item.name }}</div>
+            <div class="i_age_sex">{{ item.age }}岁&nbsp;({{ item.sex }})</div>
           </div>
           <div class="i_bottom">
-            <div class="i_history">病史：{{item.medicalHistory}}</div>
+            <div class="i_history">病史：{{ item.medicalHistory }}</div>
           </div>
         </div>
         <div class="icon_detail">
-          <van-icon size="0.4rem" name="arrow" @click="router_to('/patientinfo')" />
+          <van-icon
+            size="0.4rem"
+            name="arrow"
+            @click="router_to('/patientinfo')"
+          />
         </div>
       </div>
     </div>
@@ -104,7 +108,7 @@ export default {
   }
 };
 </script>
-<style >
+<style>
 /* ****** 输入框 */
 
 .MyPatient .van-cell .van-field__control {
@@ -221,4 +225,3 @@ export default {
   height: 100%;
 }
 </style>
-

@@ -1,20 +1,22 @@
 import Vue from "vue";
 import {
-    Button,
-    Toast,
-    Row,
-    Col,
-    DropdownMenu,
-    DropdownItem,
-    RadioGroup,
-    Radio,
-    Field,
-    Checkbox,
-    Icon,
-    Tab,
-    Tabs,
-    Popup,
-    Search
+  Button,
+  Toast,
+  Row,
+  Col,
+  DropdownMenu,
+  DropdownItem,
+  RadioGroup,
+  Radio,
+  Field,
+  Checkbox,
+  Icon,
+  Tab,
+  Tabs,
+  Popup,
+  Search,
+  Sidebar,
+  SidebarItem
 } from "vant";
 
 Vue.use(Button);
@@ -30,4 +32,5 @@ Vue.use(Icon);
 Vue.use(Tab).use(Tabs);
 Vue.use(Popup);
 Vue.use(Search);
-
+Vue.use(Sidebar);
+Vue.use(SidebarItem);

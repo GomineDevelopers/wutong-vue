@@ -21,6 +21,8 @@ Vue.use(Router);
 // 扫码邀请 - SweepAndInvite
 // 病例通 - CasesOfTong
 // 病例通-疾病助手 - SicknessHelper
+// 病例通-疾病详情 - SicknessDetail
+// 病例通-病例采集 - SicknessConllect
 
 // 我的患者 - MyPatient
 
@@ -89,7 +91,7 @@ export default new Router({
       name: "MyPatient",
       component: () => import("@/views/Patient/MyPatient")
     },
-    
+
     {
       path: "/cardticketmanagement",
       name: "CardTicketManagement",
@@ -124,6 +126,16 @@ export default new Router({
       path: "/sicknesshelper",
       name: "SicknessHelper",
       component: () => import("@/views//casesoftong/SicknessHelper")
+    },
+    {
+      path: "/sicknessdetail",
+      name: "SicknessDetail",
+      component: () => import("@/views//casesoftong/SicknessDetail")
+    },
+    {
+      path: "/sicknesscollect",
+      name: "SicknessCollect",
+      component: () => import("@/views//casesoftong/SicknessCollect")
     }
   ]
 });
