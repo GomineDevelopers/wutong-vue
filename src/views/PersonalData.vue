@@ -1,5 +1,5 @@
 <template>
-  <div class="PatientInfo">
+  <div class="PersonalData">
     <!-- <vue-headful title="个人资料"></vue-headful> -->
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">手机号</div>
@@ -23,7 +23,7 @@
 </template>
 <script>
 export default {
-  name: "PatientInfo",
+  name: "PersonalData",
   components: {},
   data() {
     return {};
@@ -41,26 +41,26 @@ export default {
 </script>
 
 <style >
-.PatientInfo .van-icon {
+.PersonalData .van-icon {
   vertical-align: bottom;
 }
 </style>
 <style scoped>
-.PatientInfo {
+.PersonalData {
 }
 
-.PatientInfo .PerRow {
+.PersonalData .PerRow {
   height: 0.4rem;
   /* width: 100%; */
   border-top: 1px #f6f6f6 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 
-.PatientInfo .title_spaceRight {
+.PersonalData .title_spaceRight {
   margin-right: 0rem;
 }
 
-.PatientInfo .text_info {
+.PersonalData .text_info {
   display: inline-block;
   text-align: right;
   font-size: 0.32rem;

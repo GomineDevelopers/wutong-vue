@@ -1,5 +1,5 @@
 <template>
-  <div class="MyPatient">
+  <div class="SearchPharmacies">
     <!-- <vue-headful title="我的患者"></vue-headful> -->
     <van-search
       right-icon="search"
@@ -33,7 +33,7 @@
 </template>
 <script>
 export default {
-  name: "MyPatient",
+  name: "SearchPharmacies",
   components: {},
   data() {
     return {
@@ -108,42 +108,42 @@ export default {
 <style>
 /* ****** 输入框 */
 
-.MyPatient .van-search {
+.SearchPharmacies .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
 }
-.MyPatient .van-cell .van-field__control {
+.SearchPharmacies .van-cell .van-field__control {
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   height: 0.4rem;
 }
-.MyPatient .van-field__left-icon .van-icon,
-.MyPatient .van-field__right-icon .van-icon {
+.SearchPharmacies .van-field__left-icon .van-icon,
+.SearchPharmacies .van-field__right-icon .van-icon {
   font-size: 0.5rem;
   color: #81d8ce;
   margin-top: 0.05rem;
 }
-.MyPatient .van-field__left-icon {
+.SearchPharmacies .van-field__left-icon {
   display: none;
 }
-.MyPatient .van-cell__value--alone {
+.SearchPharmacies .van-cell__value--alone {
   padding-left: 0rem;
   height: 0.4rem;
 }
-.MyPatient .van-field__body {
+.SearchPharmacies .van-field__body {
   height: 0.4rem;
 }
-.MyPatient .van-search .van-cell {
+.SearchPharmacies .van-search .van-cell {
   padding: 0.16rem 0.48rem;
   background: rgba(255, 255, 255, 1);
   border-radius: 0.44rem;
   border: 0.02rem solid #81d8ce;
 }
-.MyPatient .van-search__content {
+.SearchPharmacies .van-search__content {
   background: rgba(255, 255, 255, 1);
 }
 /* ****** icon */
-.MyPatient .patientCard .van-icon {
+.SearchPharmacies .patientCard .van-icon {
   font-size: 0.5rem;
   margin-top: 0.34rem;
   margin-left: 0.52rem;
@@ -152,27 +152,27 @@ export default {
 }
 </style>
 <style scoped>
-.MyPatient {
+.SearchPharmacies {
 }
-.MyPatient .patientCard {
+.SearchPharmacies .patientCard {
   width: 6.825rem;
   padding: 0.48rem 0.32rem;
   height: 1.02rem;
   border-bottom: 1px #f6f6f6 solid;
 }
-.MyPatient .patient_avatar {
+.SearchPharmacies .patient_avatar {
   display: inline-block;
   vertical-align: top;
   width: 1.02rem;
   height: 100%;
 }
-.MyPatient .img_avatar {
+.SearchPharmacies .img_avatar {
   width: 1.02rem;
   height: 1.02rem;
   height: 100%;
   margin-bottom: 0.05rem;
 }
-.MyPatient .patient_info {
+.SearchPharmacies .patient_info {
   display: inline-block;
   vertical-align: top;
   width: 4.76rem;
@@ -180,13 +180,13 @@ export default {
   padding-left: 0.24rem;
   padding-top: 0.09rem;
 }
-.MyPatient .patient_info .i_top {
+.SearchPharmacies .patient_info .i_top {
   height: 50%;
 }
-.MyPatient .patient_info .i_bottom {
+.SearchPharmacies .patient_info .i_bottom {
   /* height: 50%; */
 }
-.MyPatient .i_name {
+.SearchPharmacies .i_name {
   width: 1.36rem;
   height: 32px;
   font-size: 0.32rem;
@@ -197,7 +197,7 @@ export default {
   display: inline-block;
   vertical-align: top;
 }
-.MyPatient .i_age_sex {
+.SearchPharmacies .i_age_sex {
   height: 0.28rem;
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -207,7 +207,7 @@ export default {
   display: inline-block;
   vertical-align: top;
 }
-.MyPatient .i_history {
+.SearchPharmacies .i_history {
   height: 0.28rem;
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -217,7 +217,7 @@ export default {
   padding-top: 0.07rem;
 }
 
-.MyPatient .icon_detail {
+.SearchPharmacies .icon_detail {
   display: inline-block;
   vertical-align: top;
   width: 0.8rem;

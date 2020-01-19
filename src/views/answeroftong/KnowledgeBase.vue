@@ -1,6 +1,6 @@
 <template>
-  <div class="MyPatient">
-    <!-- <vue-headful title="我的患者"></vue-headful> -->
+  <div class="KnowledgeBase">
+    <vue-headful title="答题通-知识库"></vue-headful>
     <van-search
       right-icon="search"
       v-model="searchContent"
@@ -18,7 +18,6 @@
         <div class="patient_info">
           <div class="i_top">
             <div class="i_name">{{ item.name }}</div>
-            <div class="i_age_sex">{{ item.age }}岁&nbsp;({{ item.sex }})</div>
           </div>
           <div class="i_bottom">
             <div class="i_history">病史：{{ item.medicalHistory }}</div>
@@ -33,7 +32,7 @@
 </template>
 <script>
 export default {
-  name: "MyPatient",
+  name: "KnowledgeBase",
   components: {},
   data() {
     return {
@@ -41,50 +40,20 @@ export default {
       PatientCard: [
         {
           userId: "1",
-          avatar: require("@/assets/pic/avatar1.png"),
+          avatar: require("@/assets/pic/pharmacylist.jpg"),
           name: "白琦晶",
-          age: "21",
-          sex: "女",
           medicalHistory: "心脏病，肝病，肾结石"
         },
         {
           userId: "2",
-          avatar: require("@/assets/pic/avatar2.png"),
+          avatar: require("@/assets/pic/pharmacylist.jpg"),
           name: "连文之",
-          age: "23",
-          sex: "男",
           medicalHistory: "心脏病，肝病，肾结石"
         },
         {
           userId: "3",
-          avatar: require("@/assets/pic/avatar3.png"),
+          avatar: require("@/assets/pic/pharmacylist.jpg"),
           name: "亢康克",
-          age: "21",
-          sex: "男",
-          medicalHistory: "心脏病，肝病，肾结石"
-        },
-        {
-          userId: "4",
-          avatar: require("@/assets/pic/avatar4.png"),
-          name: "令狐蓓",
-          age: "24",
-          sex: "女",
-          medicalHistory: "心脏病，肝病，肾结石"
-        },
-        {
-          userId: "5",
-          avatar: require("@/assets/pic/avatar5.png"),
-          name: "卫英纯",
-          age: "21",
-          sex: "男",
-          medicalHistory: "心脏病，肝病，肾结石"
-        },
-        {
-          userId: "6",
-          avatar: require("@/assets/pic/avatar6.png"),
-          name: "简瑾秀",
-          age: "27",
-          sex: "女",
           medicalHistory: "心脏病，肝病，肾结石"
         }
       ]
@@ -108,42 +77,42 @@ export default {
 <style>
 /* ****** 输入框 */
 
-.MyPatient .van-search {
+.KnowledgeBase .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
 }
-.MyPatient .van-cell .van-field__control {
+.KnowledgeBase .van-cell .van-field__control {
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   height: 0.4rem;
 }
-.MyPatient .van-field__left-icon .van-icon,
-.MyPatient .van-field__right-icon .van-icon {
+.KnowledgeBase .van-field__left-icon .van-icon,
+.KnowledgeBase .van-field__right-icon .van-icon {
   font-size: 0.5rem;
   color: #81d8ce;
   margin-top: 0.05rem;
 }
-.MyPatient .van-field__left-icon {
+.KnowledgeBase .van-field__left-icon {
   display: none;
 }
-.MyPatient .van-cell__value--alone {
+.KnowledgeBase .van-cell__value--alone {
   padding-left: 0rem;
   height: 0.4rem;
 }
-.MyPatient .van-field__body {
+.KnowledgeBase .van-field__body {
   height: 0.4rem;
 }
-.MyPatient .van-search .van-cell {
+.KnowledgeBase .van-search .van-cell {
   padding: 0.16rem 0.48rem;
   background: rgba(255, 255, 255, 1);
   border-radius: 0.44rem;
   border: 0.02rem solid #81d8ce;
 }
-.MyPatient .van-search__content {
+.KnowledgeBase .van-search__content {
   background: rgba(255, 255, 255, 1);
 }
 /* ****** icon */
-.MyPatient .patientCard .van-icon {
+.KnowledgeBase .patientCard .van-icon {
   font-size: 0.5rem;
   margin-top: 0.34rem;
   margin-left: 0.52rem;
@@ -152,27 +121,27 @@ export default {
 }
 </style>
 <style scoped>
-.MyPatient {
+.KnowledgeBase {
 }
-.MyPatient .patientCard {
+.KnowledgeBase .patientCard {
   width: 6.825rem;
   padding: 0.48rem 0.32rem;
   height: 1.02rem;
   border-bottom: 1px #f6f6f6 solid;
 }
-.MyPatient .patient_avatar {
+.KnowledgeBase .patient_avatar {
   display: inline-block;
   vertical-align: top;
   width: 1.02rem;
   height: 100%;
 }
-.MyPatient .img_avatar {
+.KnowledgeBase .img_avatar {
   width: 1.02rem;
   height: 1.02rem;
   height: 100%;
   margin-bottom: 0.05rem;
 }
-.MyPatient .patient_info {
+.KnowledgeBase .patient_info {
   display: inline-block;
   vertical-align: top;
   width: 4.76rem;
@@ -180,13 +149,13 @@ export default {
   padding-left: 0.24rem;
   padding-top: 0.09rem;
 }
-.MyPatient .patient_info .i_top {
+.KnowledgeBase .patient_info .i_top {
   height: 50%;
 }
-.MyPatient .patient_info .i_bottom {
+.KnowledgeBase .patient_info .i_bottom {
   /* height: 50%; */
 }
-.MyPatient .i_name {
+.KnowledgeBase .i_name {
   width: 1.36rem;
   height: 32px;
   font-size: 0.32rem;
@@ -197,7 +166,7 @@ export default {
   display: inline-block;
   vertical-align: top;
 }
-.MyPatient .i_age_sex {
+.KnowledgeBase .i_age_sex {
   height: 0.28rem;
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -207,7 +176,7 @@ export default {
   display: inline-block;
   vertical-align: top;
 }
-.MyPatient .i_history {
+.KnowledgeBase .i_history {
   height: 0.28rem;
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -217,7 +186,7 @@ export default {
   padding-top: 0.07rem;
 }
 
-.MyPatient .icon_detail {
+.KnowledgeBase .icon_detail {
   display: inline-block;
   vertical-align: top;
   width: 0.8rem;

@@ -40,6 +40,8 @@ Vue.use(Router);
 // 答题通 - AnswerOfTong
 // 答题通-问卷调研 - QuestionnaireInquiry
 // 答题通-问卷调研-答题 - QuestionnaireInquiry_Answer
+// 答题通-知识库 - KnowledgeBase
+// 答题通-在线考试 - OnlineExamination
 
 // 我的患者 - MyPatient
 
@@ -224,7 +226,16 @@ export default new Router({
       component: () =>
         import("@/views/answeroftong/QuestionnaireInquiry_Answer")
     },
-
+    {
+      path: "/knowledgebase",
+      name: "KnowledgeBase",
+      component: () => import("@/views/answeroftong/KnowledgeBase")
+    },
+    {
+      path: "/onlineexamination",
+      name: "OnlineExamination",
+      component: () => import("@/views/answeroftong/OnlineExamination")
+    },
     //知会通
     {
       path: "/onlinemetting",
