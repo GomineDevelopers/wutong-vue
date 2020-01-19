@@ -150,3 +150,151 @@
   width: 0.6rem;
   height: 0.6rem;
 }
+
+/* 侧边栏导航样式 */
+/* ****** 内容左侧导航 */
+.left_sidebar .van-sidebar {
+  height: 100%;
+  width: 1.8rem;
+  background: #f3f4f8;
+}
+.left_sidebar .van-sidebar-item {
+  position: relative;
+  font-size: 0.28rem;
+  color: #3a4055;
+  font-weight: 600;
+  background: #f3f4f8;
+  padding: 0.24rem 0rem;
+}
+.left_sidebar .van-sidebar-item__text {
+  margin-left: 0.19rem;
+}
+.left_sidebar .van-sidebar-item::after {
+  content: "";
+  position: absolute;
+  left: -0.01rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.34rem;
+  border-left: 0.06rem solid transparent;
+}
+.left_sidebar .van-sidebar-item--select {
+  color: #81d8ce;
+  border-color: transparent;
+  background: #fff;
+}
+.left_sidebar .van-sidebar-item--select::after {
+  border-color: #81d8ce;
+}
+.right_content.flex_1 {
+  overflow-y: auto;
+}
+
+/* 药店列表 */
+.pharmacy_list {
+  padding-right: 0.32rem;
+  height: 2.8rem;
+  border-bottom: 1px solid #eee;
+}
+.pharmacy_list_body {
+  width: 100%;
+}
+.list_item_top {
+  height: 1.02rem;
+  margin-bottom: 0.24rem;
+}
+.pharmacy_tips {
+  margin-top: 0.18rem;
+}
+.pharmacy_name span,
+.pharmacy_tips span {
+  display: block;
+}
+.pharmacy_name .main_font2 {
+  max-width: 2.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pharmacy_img {
+  width: 1.02rem;
+  height: 1.02rem;
+  margin-right: 0.24rem;
+}
+.pharmacy_time {
+  font-size: 0.28rem;
+  color: #81d8ce;
+  margin-left: 0.24rem;
+}
+.pharmacy_tips span {
+  font-size: 0.18rem;
+  width: 1.18rem;
+  height: 0.32rem;
+  border-radius: 1rem;
+  border: 0.01rem solid;
+  text-align: center;
+  line-height: 0.32rem;
+  margin-right: 0.14rem;
+}
+.pharmacy_tips span.hour {
+  color: #f7af27;
+  border-color: #f7af27;
+}
+.pharmacy_tips span.health_insurance {
+  color: #26c2e1;
+  border-color: #26c2e1;
+}
+.pharmacy_tips span.cooperation {
+  color: #3cd7be;
+  border-color: #3cd7be;
+}
+.pharmacy_tel {
+  margin-bottom: 0.18rem;
+}
+.pharmacy_tel img,
+.pharmacy_address img {
+  width: 0.28rem;
+  height: 0.31rem;
+  margin-right: 0.18rem;
+}
+.pharmacy_tel,
+.pharmacy_address {
+  font-size: 0.28rem;
+  color: #858b9c;
+}
+
+/* 药店名字下面的3个小标签 24h营业 医保定点 合作药店 */
+.pharmacy_tips {
+  margin-top: 0.18rem;
+}
+.pharmacy_img {
+  width: 1.02rem;
+  height: 1.02rem;
+  margin-right: 0.24rem;
+  border-radius: 0.1rem;
+}
+.pharmacy_tips span {
+  font-size: 0.18rem;
+  width: 1.18rem;
+  height: 0.32rem;
+  border-radius: 1rem;
+  border: 0.01rem solid;
+  text-align: center;
+  line-height: 0.32rem;
+  margin-right: 0.14rem;
+}
+.pharmacy_tips span.hour {
+  color: #f7af27;
+  border-color: #f7af27;
+}
+.pharmacy_tips span.health_insurance {
+  color: #26c2e1;
+  border-color: #26c2e1;
+}
+.pharmacy_tips span.cooperation {
+  color: #3cd7be;
+  border-color: #3cd7be;
+}
+.medicine_content {
+  padding-left: 0.32rem;
+}
