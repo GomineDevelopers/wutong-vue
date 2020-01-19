@@ -21,13 +21,17 @@ Vue.use(Router);
 // 扫码邀请 - SweepAndInvite
 // 病例通 - CasesOfTong
 // 病例通-疾病助手 - SicknessHelper
+
+// 病例通-疾病助手-疾病详情 - DetailsOfDisease
+// 病例通-疾病助手-疾病详情-药品详情 - DrugsForDetails
+// 病例通-病例采集-病例上传 - CasesOfUpload
 // 病例通-疾病详情 - SicknessDetail
 // 病例通-病例采集 - SicknessConllect
 // 院外通-列表 - PharmacyDetail
 // 院外通-药房详情 - PharmacyDetail
+// 院外通-药房详情-药品详情 - DrugsForDetails_Out
 
 // 我的患者 - MyPatient
-
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
@@ -127,8 +131,29 @@ export default new Router({
     {
       path: "/sicknesshelper",
       name: "SicknessHelper",
-      component: () => import("@/views/casesoftong/SicknessHelper")
+      component: () => import("@/views//casesoftong/SicknessHelper")
     },
+    {
+      path: "/detailsofdisease",
+      name: "DetailsOfDisease",
+      component: () => import("@/views//casesoftong/DetailsOfDisease")
+    },
+    {
+      path: "/drugsfordetails",
+      name: "DrugsForDetails",
+      component: () => import("@/views//casesoftong/DrugsForDetails")
+    },
+    {
+      path: "/casesofupload",
+      name: "CasesOfUpload",
+      component: () => import("@/views//casesoftong/CasesOfUpload")
+    },
+    {
+      path: "/drugsfordetails_out",
+      name: "DrugsForDetails_Out",
+      component: () => import("@/views//outsideoftong/DrugsForDetails_Out")
+    },
+
     {
       path: "/sicknessdetail",
       name: "SicknessDetail",

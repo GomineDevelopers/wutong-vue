@@ -9,8 +9,8 @@
       @search="onSearch"
       background="#ffffff"
     ></van-search>
-    <div :style="{ height: '0.44rem' }"></div>
-    <div v-for="(item, index) in PatientCard" :key="index + 'p1'">
+    <div :style="{height: '0.40rem'}"></div>
+    <div v-for="(item,index) in PatientCard" :key="index + 'p1' ">
       <div class="patientCard">
         <div class="patient_avatar">
           <img class="img_avatar" :src="item.avatar" alt />
@@ -25,11 +25,7 @@
           </div>
         </div>
         <div class="icon_detail">
-          <van-icon
-            size="0.4rem"
-            name="arrow"
-            @click="router_to('/patientinfo')"
-          />
+          <van-icon size="0.4rem" name="arrow" @click="router_to('/patientinfo',item.id)" />
         </div>
       </div>
     </div>
@@ -101,8 +97,9 @@ export default {
     onSearch(event) {
       console.log(event);
     },
-    router_to(str) {
+    router_to(str, p_id) {
       let vm = this;
+      // 待添加query 对应 pid
       vm.$router.push({ path: str });
     }
   }
@@ -111,6 +108,9 @@ export default {
 <style>
 /* ****** 输入框 */
 
+.MyPatient .van-search {
+  padding: 0.1rem 0.32rem 0rem 0.16rem;
+}
 .MyPatient .van-cell .van-field__control {
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -137,7 +137,7 @@ export default {
   padding: 0.16rem 0.48rem;
   background: rgba(255, 255, 255, 1);
   border-radius: 0.44rem;
-  border: 2px solid #81d8ce;
+  border: 0.02rem solid #81d8ce;
 }
 .van-search__content {
   background: rgba(255, 255, 255, 1);
@@ -146,7 +146,7 @@ export default {
 .MyPatient .patientCard .van-icon {
   font-size: 0.5rem;
   margin-top: 0.34rem;
-  margin-left: 0.3rem;
+  margin-left: 0.52rem;
   vertical-align: top;
   color: #efeff4;
 }
@@ -158,6 +158,7 @@ export default {
   width: 6.825rem;
   padding: 0.48rem 0.32rem;
   height: 1.02rem;
+  border-bottom: 1px #f6f6f6 solid;
 }
 .MyPatient .patient_avatar {
   display: inline-block;

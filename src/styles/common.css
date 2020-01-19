@@ -97,6 +97,9 @@ body {
   vertical-align: top;
 }
 
+.w100{
+  width: 100%;
+}
 
 /* ***** */
 .m_test{
