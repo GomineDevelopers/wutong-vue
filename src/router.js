@@ -23,6 +23,7 @@ Vue.use(Router);
 // 病例通-疾病助手 - SicknessHelper
 // 病例通-疾病详情 - SicknessDetail
 // 病例通-病例采集 - SicknessConllect
+// 院外通-药房详情 -
 
 // 我的患者 - MyPatient
 
@@ -120,22 +121,27 @@ export default new Router({
     {
       path: "/casesoftong",
       name: "CasesOfTong",
-      component: () => import("@/views//casesoftong/CasesOfTong")
+      component: () => import("@/views/casesoftong/CasesOfTong")
     },
     {
       path: "/sicknesshelper",
       name: "SicknessHelper",
-      component: () => import("@/views//casesoftong/SicknessHelper")
+      component: () => import("@/views/casesoftong/SicknessHelper")
     },
     {
       path: "/sicknessdetail",
       name: "SicknessDetail",
-      component: () => import("@/views//casesoftong/SicknessDetail")
+      component: () => import("@/views/casesoftong/SicknessDetail")
     },
     {
       path: "/sicknesscollect",
       name: "SicknessCollect",
-      component: () => import("@/views//casesoftong/SicknessCollect")
+      component: () => import("@/views/casesoftong/SicknessCollect")
+    },
+    {
+      path: "/PharmacyDetail",
+      name: "PharmacyDetail",
+      component: () => import("@/views/hospitaloftong/PharmacyDetail")
     }
   ]
 });
