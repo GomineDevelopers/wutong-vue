@@ -78,39 +78,6 @@ export default {
   }
 };
 </script>
-<style>
-/* ****** 内容左侧导航 */
-.left_sidebar .van-sidebar {
-  height: 100%;
-  width: 1.8rem;
-  background: #f3f4f8;
-}
-.left_sidebar .van-sidebar-item {
-  position: relative;
-  font-size: 0.28rem;
-  color: #3a4055;
-  font-weight: 600;
-}
-.left_sidebar .van-sidebar-item__text {
-  margin-left: 0.19rem;
-}
-.left_sidebar .van-sidebar-item::after {
-  content: "";
-  position: absolute;
-  left: -0.01rem;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 0.34rem;
-  border-left: 0.06rem solid transparent;
-}
-.left_sidebar .van-sidebar-item--select {
-  color: #81d8ce;
-  border-color: transparent;
-}
-.left_sidebar .van-sidebar-item--select::after {
-  border-color: #81d8ce;
-}
-</style>
 <style scoped>
 .van_container_body {
   overflow: hidden;
@@ -127,6 +94,7 @@ export default {
   margin-top: 1.68rem;
   height: calc(100% - 1.68rem);
   overflow: hidden;
+  box-shadow: 0px -0.04rem 0.2rem 0rem rgba(243, 244, 248, 1);
 }
 .left_sidebar {
   height: 100%;

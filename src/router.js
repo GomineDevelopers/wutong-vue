@@ -34,14 +34,14 @@ Vue.use(Router);
 // 院外通-药房详情 - PharmacyDetail
 // 院外通-药房详情-药品详情 - DrugsForDetails_Out
 
-// 院外通-搜索药店 - SearchPharmacies
+// 院外通-搜索药店 - SearchDrugstore
+// 院外通-搜索药品 - SearchDrug
 
 // 答题通 - AnswerOfTong
 // 答题通-问卷调研 - QuestionnaireInquiry
 // 答题通-问卷调研-答题 - QuestionnaireInquiry_Answer
 // 答题通-知识库 - KnowledgeBase
 // 答题通-在线考试 - OnlineExamination
-
 
 // 我的患者 - MyPatient
 export default new Router({
@@ -192,9 +192,19 @@ export default new Router({
       component: () => import("@/views/hospitaloftong/PharmacyDetail")
     },
     {
-      path: "/searchpharmacies",
-      name: "SearchPharmacies",
-      component: () => import("@/views/hospitaloftong/SearchPharmacies")
+      path: "/pharmacylist",
+      name: "PharmacyList",
+      component: () => import("@/views/hospitaloftong/PharmacyList")
+    },
+    {
+      path: "/searchdrugstore",
+      name: "SearchDrugstore",
+      component: () => import("@/views/hospitaloftong/SearchDrugstore")
+    },
+    {
+      path: "/searchdrug",
+      name: "SearchDrug",
+      component: () => import("@/views/hospitaloftong/SearchDrug")
     },
     // ******** 答题通
     {
@@ -228,7 +238,7 @@ export default new Router({
       name: "PharmacyList",
       component: () => import("@/views/hospitaloftong/PharmacyList")
     },
-    
+
 
   ]
 });
