@@ -79,44 +79,6 @@ export default {
 };
 </script>
 <style>
-/* ****** 输入框 */
-.van_container_body .van-cell .van-field__control {
-  font-size: 0.28rem;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  height: 0.4rem;
-}
-.van-field__left-icon .van-icon,
-.van-field__right-icon .van-icon {
-  font-size: 0.5rem;
-  color: #81d8ce;
-  margin-top: 0.05rem;
-}
-.van_container_body .van-search {
-  padding: 0rem 0rem;
-}
-.van_container_body .van-search__content {
-  padding-left: 0rem;
-}
-.van_container_body .van-field__left-icon {
-  display: none;
-}
-.van_container_body .van-cell__value--alone {
-  padding-left: 0rem;
-  height: 0.4rem;
-}
-.van_container_body .van-field__body {
-  height: 0.4rem;
-}
-.van_container_body .van-search .van-cell {
-  padding: 0.16rem 0.48rem;
-  background: rgba(255, 255, 255, 1);
-  border-radius: 0.44rem;
-  border: 0.02rem solid #81d8ce;
-}
-.van-search__content {
-  background: rgba(255, 255, 255, 1);
-}
 /* ****** 内容左侧导航 */
 .left_sidebar .van-sidebar {
   height: 100%;
