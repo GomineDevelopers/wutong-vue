@@ -14,7 +14,12 @@ import {
     Tab,
     Tabs,
     Popup,
-    Search
+    Search,
+    Swipe,
+    SwipeItem,
+    GoodsAction,
+    GoodsActionIcon,
+    GoodsActionButton
 } from "vant";
 
 Vue.use(Button);
@@ -30,4 +35,5 @@ Vue.use(Icon);
 Vue.use(Tab).use(Tabs);
 Vue.use(Popup);
 Vue.use(Search);
-
+Vue.use(Swipe).use(SwipeItem);
+Vue.use(GoodsAction).use(GoodsActionIcon).use(GoodsActionButton);

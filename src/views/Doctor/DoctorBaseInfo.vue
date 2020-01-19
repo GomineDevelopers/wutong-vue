@@ -151,6 +151,7 @@ export default {
   border-top: 1px #f6f6f6 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
+
 .DoctorBaseInfo .PerRow_borderBottom {
   border-bottom: 1px #f6f6f6 solid;
 }
@@ -161,5 +162,6 @@ export default {
   width: 3.6rem;
   height: 0.9rem;
 }
+
 </style>
 
