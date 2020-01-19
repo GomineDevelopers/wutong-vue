@@ -1,6 +1,6 @@
 <template>
   <van-row class="van_container">
-    <vue-headful title="地图"></vue-headful>
+    <!-- <vue-headful title="地图"></vue-headful> -->
     <van-row class="van_container_body height_auto">
       <!-- 搜索 -->
       <van-row class="search_content flex flex_align_center">
