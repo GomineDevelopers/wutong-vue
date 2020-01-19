@@ -232,13 +232,6 @@ export default new Router({
       name: "OnlineExamination",
       component: () => import("@/views/answeroftong/OnlineExamination")
     },
-    {
-
-      path: "/pharmacylist",
-      name: "PharmacyList",
-      component: () => import("@/views/hospitaloftong/PharmacyList")
-    },
-
 
   ]
 });
