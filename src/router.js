@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 Vue.use(Router);
 
+// 测试 - Test
 // 首页 - Home
 // 登录 - Login
 // 404 - 404
@@ -33,6 +34,13 @@ Vue.use(Router);
 // 院外通-药房详情 - PharmacyDetail
 // 院外通-药房详情-药品详情 - DrugsForDetails_Out
 
+// 院外通-搜索药店 - SearchPharmacies
+
+// 答题通 - AnswerOfTong
+// 答题通-问卷调研 - QuestionnaireInquiry
+// 答题通-问卷调研-答题 - QuestionnaireInquiry_Answer
+
+
 // 我的患者 - MyPatient
 export default new Router({
   mode: "history",
@@ -42,6 +50,11 @@ export default new Router({
       path: "/",
       name: "home",
       component: () => import("@/views/Home")
+    },
+    {
+      path: "/test",
+      name: "Test",
+      component: () => import("@/views/Test")
     },
     {
       path: "/login",
@@ -177,6 +190,28 @@ export default new Router({
       component: () => import("@/views/hospitaloftong/PharmacyDetail")
     },
     {
+      path: "/searchpharmacies",
+      name: "SearchPharmacies",
+      component: () => import("@/views/hospitaloftong/SearchPharmacies")
+    },
+    // ******** 答题通
+    {
+      path: "/answeroftong",
+      name: "AnswerOfTong",
+      component: () => import("@/views/answeroftong/AnswerOfTong")
+    },
+    {
+      path: "/questionnaireinquiry",
+      name: "QuestionnaireInquiry",
+      component: () => import("@/views/answeroftong/QuestionnaireInquiry")
+    },
+    {
+      path: "/questionnaireinquiry_answer",
+      name: "QuestionnaireInquiry_Answer",
+      component: () => import("@/views/answeroftong/QuestionnaireInquiry_Answer")
+    },
+    {
+
       path: "/pharmacylist",
       name: "PharmacyList",
       component: () => import("@/views/hospitaloftong/PharmacyList")
