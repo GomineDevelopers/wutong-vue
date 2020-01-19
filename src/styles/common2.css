@@ -71,6 +71,11 @@
   color: #111a34;
   font-weight: 500;
 }
+.main_font3 {
+  font-size: 0.28rem;
+  color: #858b9c;
+  font-weight: 400;
+}
 .public_green_small {
   font-size: 0.26rem;
   color: #81d8ce;
@@ -100,4 +105,9 @@
   border: none;
   background: rgba(255, 255, 255, 0);
   letter-spacing: 0.1rem;
+}
+/* 右侧箭头 > 样式 */
+.arrow_icon {
+  width: 0.6rem;
+  height: 0.6rem;
 }

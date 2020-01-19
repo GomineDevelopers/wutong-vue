@@ -17,11 +17,11 @@
         </div>
         <div class="patient_info">
           <div class="i_top">
-            <div class="i_name">{{item.name}}</div>
-            <div class="i_age_sex">{{item.age}}岁&nbsp;({{item.sex}})</div>
+            <div class="i_name">{{ item.name }}</div>
+            <div class="i_age_sex">{{ item.age }}岁&nbsp;({{ item.sex }})</div>
           </div>
           <div class="i_bottom">
-            <div class="i_history">病史：{{item.medicalHistory}}</div>
+            <div class="i_history">病史：{{ item.medicalHistory }}</div>
           </div>
         </div>
         <div class="icon_detail">
@@ -105,7 +105,7 @@ export default {
   }
 };
 </script>
-<style >
+<style>
 /* ****** 输入框 */
 
 .MyPatient .van-search {
@@ -226,4 +226,3 @@ export default {
   height: 100%;
 }
 </style>
-

@@ -1,25 +1,27 @@
 import Vue from "vue";
 import {
-    Button,
-    Toast,
-    Row,
-    Col,
-    DropdownMenu,
-    DropdownItem,
-    RadioGroup,
-    Radio,
-    Field,
-    Checkbox,
-    Icon,
-    Tab,
-    Tabs,
-    Popup,
-    Search,
-    Swipe,
-    SwipeItem,
-    GoodsAction,
-    GoodsActionIcon,
-    GoodsActionButton
+  Button,
+  Toast,
+  Row,
+  Col,
+  DropdownMenu,
+  DropdownItem,
+  RadioGroup,
+  Radio,
+  Field,
+  Checkbox,
+  Icon,
+  Tab,
+  Tabs,
+  Popup,
+  Search,
+  Swipe,
+  SwipeItem,
+  GoodsAction,
+  GoodsActionIcon,
+  GoodsActionButton,
+  Sidebar,
+  SidebarItem
 } from "vant";
 
 Vue.use(Button);
@@ -37,3 +39,5 @@ Vue.use(Popup);
 Vue.use(Search);
 Vue.use(Swipe).use(SwipeItem);
 Vue.use(GoodsAction).use(GoodsActionIcon).use(GoodsActionButton);
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
