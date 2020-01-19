@@ -42,6 +42,9 @@ Vue.use(Router);
 // 答题通-问卷调研-答题 - QuestionnaireInquiry_Answer
 
 // 我的患者 - MyPatient
+
+// 知会通 - 在线会议 OnlineMetting
+
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
@@ -220,6 +223,13 @@ export default new Router({
       name: "QuestionnaireInquiry_Answer",
       component: () =>
         import("@/views/answeroftong/QuestionnaireInquiry_Answer")
+    },
+
+    //知会通
+    {
+      path: "/onlinemetting",
+      name: "OnlineMetting",
+      component: () => import("@/views/mettingoftong/OnlineMetting")
     }
   ]
 });

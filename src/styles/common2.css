@@ -193,7 +193,7 @@
 /* 药店列表 */
 .pharmacy_list {
   padding-right: 0.32rem;
-  height: 2.8rem;
+  min-height: 2.8rem;
   border-bottom: 1px solid #eee;
 }
 .pharmacy_list_body {
