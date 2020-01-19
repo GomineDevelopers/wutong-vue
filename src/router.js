@@ -23,7 +23,8 @@ Vue.use(Router);
 // 病例通-疾病助手 - SicknessHelper
 // 病例通-疾病详情 - SicknessDetail
 // 病例通-病例采集 - SicknessConllect
-// 院外通-药房详情 -
+// 院外通-列表 - PharmacyDetail
+// 院外通-药房详情 - PharmacyDetail
 
 // 我的患者 - MyPatient
 
@@ -139,7 +140,7 @@ export default new Router({
       component: () => import("@/views/casesoftong/SicknessCollect")
     },
     {
-      path: "/PharmacyDetail",
+      path: "/pharmacydetail",
       name: "PharmacyDetail",
       component: () => import("@/views/hospitaloftong/PharmacyDetail")
     }

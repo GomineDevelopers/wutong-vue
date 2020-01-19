@@ -1,8 +1,7 @@
 <template>
   <van-row class="van_container">
-    <vue-headful title="病例"></vue-headful>
-    <van-row class="van_container_body sickness_conllect_body height_auto">
-    </van-row>
+    <vue-headful title="药房详情"></vue-headful>
+    <van-row class="van_container_body height_auto"> </van-row>
   </van-row>
 </template>
 <script>
