@@ -29,6 +29,9 @@ Vue.use(Router);
 // 病例通-疾病详情 - SicknessDetail
 // 病例通-病例采集 - SicknessConllect
 
+// 院外通-地图 - Map
+// 院外通-列表 - PharmacyList
+// 院外通-药房详情 - PharmacyDetail
 // 院外通-药房详情-药品详情 - DrugsForDetails_Out
 
 // 院外通-搜索药店 - SearchPharmacies
@@ -166,7 +169,6 @@ export default new Router({
       component: () => import("@/views//outsideoftong/DrugsForDetails_Out")
     },
 
-
     {
       path: "/sicknessdetail",
       name: "SicknessDetail",
@@ -178,7 +180,12 @@ export default new Router({
       component: () => import("@/views/casesoftong/SicknessCollect")
     },
     {
-      path: "/PharmacyDetail",
+      path: "/map",
+      name: "Map",
+      component: () => import("@/views/hospitaloftong/Map")
+    },
+    {
+      path: "/pharmacydetail",
       name: "PharmacyDetail",
       component: () => import("@/views/hospitaloftong/PharmacyDetail")
     },
@@ -187,8 +194,6 @@ export default new Router({
       name: "SearchPharmacies",
       component: () => import("@/views/hospitaloftong/SearchPharmacies")
     },
-
-
     // ******** 答题通
     {
       path: "/answeroftong",
@@ -205,9 +210,11 @@ export default new Router({
       name: "QuestionnaireInquiry_Answer",
       component: () => import("@/views/answeroftong/QuestionnaireInquiry_Answer")
     },
-    
+    {
 
-
-    
+      path: "/pharmacylist",
+      name: "PharmacyList",
+      component: () => import("@/views/hospitaloftong/PharmacyList")
+    }
   ]
 });
