@@ -117,11 +117,9 @@ export default {
 
 
 <style>
-@media screen and (max-width: 767px) {
-  .bm-view,
-  .aboutus .contact_information_img .el-image {
-    height: 100vh;
-    width: 100vw;
-  }
+.bm-view,
+.aboutus .contact_information_img .el-image {
+  height: 100vh;
+  width: 100vw;
 }
 </style>

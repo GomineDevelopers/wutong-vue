@@ -117,8 +117,8 @@ export default {
   font-weight: 400;
   height: 0.4rem;
 }
-.van-field__left-icon .van-icon,
-.van-field__right-icon .van-icon {
+.SearchPharmacies .van-field__left-icon .van-icon,
+.SearchPharmacies .van-field__right-icon .van-icon {
   font-size: 0.5rem;
   color: #81d8ce;
   margin-top: 0.05rem;
@@ -139,7 +139,7 @@ export default {
   border-radius: 0.44rem;
   border: 0.02rem solid #81d8ce;
 }
-.van-search__content {
+.SearchPharmacies .van-search__content {
   background: rgba(255, 255, 255, 1);
 }
 /* ****** icon */

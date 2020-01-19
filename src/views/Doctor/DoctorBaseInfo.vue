@@ -36,7 +36,7 @@
     </div>
     <div :style="{height: '0.48rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button round class="common_middle_btn i_btn common_fontsize">提交</van-button>
+      <van-button round class="common_middle_btn i_btn common_fontsize">提&nbsp;&nbsp;交</van-button>
     </div>
     <div :style="{height: '0.48rem'}"></div>
   </div>
