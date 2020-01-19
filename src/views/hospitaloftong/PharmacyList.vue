@@ -3,15 +3,14 @@
     <vue-headful title="地图"></vue-headful>
     <van-row class="van_container_body height_auto">
       <!-- 搜索 -->
-      <van-row class="search_content">
-        <van-search
-          right-icon="search"
-          v-model="searchContent"
-          placeholder="请输入"
-          shape="round"
-          @search="onSearch"
-          background="#ffffff"
-        ></van-search>
+      <van-row class="search_content flex flex_align_center">
+        <van-icon name="location" />
+        <van-field
+          class="list_input flex flex_align_center"
+          v-model="value"
+          placeholder="请输入用户名"
+        />
+        <van-icon name="search" />
       </van-row>
       <van-row class="map_container">
         <van-row class="map_nav flex">
@@ -32,7 +31,8 @@ export default {
   data() {
     return {
       searchContent: "",
-      active: "2"
+      active: "2",
+      value: "东城区万花街722号"
     };
   },
   mounted() {},
@@ -46,6 +46,24 @@ export default {
   }
 };
 </script>
+<style>
+.van_container_body .list_input {
+  height: 100%;
+}
+.van_container_body .list_input .van-field__body {
+  height: 100%;
+}
+.van_container_body .list_input .van-cell__value--alone {
+  height: 100%;
+}
+.van_container_body .van-cell .van-field__control {
+  color: #111a34;
+  height: 100%;
+}
+.van_container_body .list_input.van-cell:not(:last-child)::after {
+  border-bottom: 1px solid #fff;
+}
+</style>
 <style scoped>
 .van_container_body {
   position: relative;
@@ -56,6 +74,17 @@ export default {
   top: 0.05rem;
   left: 0.32rem;
   right: 0.32rem;
+  height: 0.88rem;
+  padding: 0rem 0.15rem;
+}
+.search_content .van-icon-location {
+  font-size: 0.4rem;
+  color: #000000;
+  margin-right: 0.05rem;
+}
+.search_content .van-icon-search {
+  font-size: 0.4rem;
+  color: #666f83;
 }
 .map_container {
   height: calc(100% - 0.85rem);
