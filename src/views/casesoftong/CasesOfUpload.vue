@@ -207,13 +207,13 @@ export default {
   height: 0.5rem;
 }
 .CasesOfUpload .img_camera {
-    width: 0.34rem;
-    height: 0.31rem;
-    background: rgba(197, 202, 213, 1);
-    opacity: 0.57;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 0.1rem;
+  width: 0.34rem;
+  height: 0.31rem;
+  background: rgba(197, 202, 213, 1);
+  opacity: 0.57;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.1rem;
 }
 </style>
 
