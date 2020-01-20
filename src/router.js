@@ -29,6 +29,7 @@ Vue.use(Router);
 // 病例通-疾病详情 - SicknessDetail
 // 病例通-病例采集 - SicknessConllect
 
+// 院外通 - HospitalOfTong
 // 院外通-地图 - Map
 // 院外通-列表 - PharmacyList
 // 院外通-药房详情 - PharmacyDetail
@@ -42,6 +43,10 @@ Vue.use(Router);
 // 答题通-问卷调研-答题 - QuestionnaireInquiry_Answer
 // 答题通-知识库 - KnowledgeBase
 // 答题通-在线考试 - OnlineExamination
+// 答题通-在线考试-限时考试 - TimedExamination
+// 答题通-在线考试-开放考试 - OpenExamination
+// 答题通-在线考试-考后查询 - ResultsQuery 
+// 答题通-学业里程碑 - AcademicMilestone
 
 // 我的患者 - MyPatient
 export default new Router({
@@ -182,6 +187,11 @@ export default new Router({
       component: () => import("@/views/casesoftong/SicknessCollect")
     },
     {
+      path: "/hospitaloftong",
+      name: "HospitalOfTong",
+      component: () => import("@/views/hospitaloftong/HospitalOfTong")
+    },
+    {
       path: "/map",
       name: "Map",
       component: () => import("@/views/hospitaloftong/Map")
@@ -232,6 +242,27 @@ export default new Router({
       name: "OnlineExamination",
       component: () => import("@/views/answeroftong/OnlineExamination")
     },
+    {
+      path: "/timedexamination",
+      name: "TimedExamination",
+      component: () => import("@/views/answeroftong/TimedExamination")
+    },
+    {
+      path: "/openexamination",
+      name: "OpenExamination",
+      component: () => import("@/views/answeroftong/OpenExamination")
+    },
+    {
+      path: "/resultsquery",
+      name: "ResultsQuery",
+      component: () => import("@/views/answeroftong/ResultsQuery")
+    },
+    {
+      path: "/academicmilestone",
+      name: "AcademicMilestone",
+      component: () => import("@/views/answeroftong/AcademicMilestone")
+    },
+
 
   ]
 });

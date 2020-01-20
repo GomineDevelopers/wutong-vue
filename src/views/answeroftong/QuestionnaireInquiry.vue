@@ -169,7 +169,7 @@ export default {
   display: inline-block;
   text-align: right;
   height: 0.32rem;
-  width: 2.2rem;
+  width: 2.6rem;
   vertical-align: top;
 }
 .QuestionnaireInquiry .Q_time {

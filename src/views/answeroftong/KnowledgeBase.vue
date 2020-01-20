@@ -20,7 +20,12 @@
             <div class="i_name">{{ item.name }}</div>
           </div>
           <div class="i_bottom">
-            <div class="i_history">病史：{{ item.medicalHistory }}</div>
+            <van-progress
+              class="i_progress"
+              color="#81D8CE"
+              :percentage="item.percentage"
+              stroke-width="8"
+            />
           </div>
         </div>
         <div class="icon_detail">
@@ -41,20 +46,20 @@ export default {
         {
           userId: "1",
           avatar: require("@/assets/pic/pharmacylist.jpg"),
-          name: "白琦晶",
-          medicalHistory: "心脏病，肝病，肾结石"
+          name: "药品基础知识",
+          percentage: 50
         },
         {
           userId: "2",
-          avatar: require("@/assets/pic/pharmacylist.jpg"),
-          name: "连文之",
-          medicalHistory: "心脏病，肝病，肾结石"
+          avatar: require("@/assets/pic/sicknessdetail1.png"),
+          name: "医药测试",
+          percentage: 60
         },
         {
           userId: "3",
-          avatar: require("@/assets/pic/pharmacylist.jpg"),
-          name: "亢康克",
-          medicalHistory: "心脏病，肝病，肾结石"
+          avatar: require("@/assets/pic/sicknessdetail2.png"),
+          name: "XXX活动测试",
+          percentage: 55
         }
       ]
     };
@@ -147,7 +152,7 @@ export default {
   width: 4.76rem;
   height: 100%;
   padding-left: 0.24rem;
-  padding-top: 0.09rem;
+  padding-top: 0.04rem;
 }
 .KnowledgeBase .patient_info .i_top {
   height: 50%;
@@ -156,15 +161,16 @@ export default {
   /* height: 50%; */
 }
 .KnowledgeBase .i_name {
-  width: 1.36rem;
-  height: 32px;
+  color: rgba(17, 26, 52, 1);
+  display: inline-block;
+  vertical-align: top;
+  height: 0.45rem;
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
   color: rgba(17, 26, 52, 1);
-  line-height: 0.32rem;
-  display: inline-block;
-  vertical-align: top;
+  line-height: 0.45rem;
+  letter-spacing: 0.01rem;
 }
 .KnowledgeBase .i_age_sex {
   height: 0.28rem;
@@ -176,14 +182,14 @@ export default {
   display: inline-block;
   vertical-align: top;
 }
-.KnowledgeBase .i_history {
+.KnowledgeBase .i_progress {
   height: 0.28rem;
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: rgba(133, 139, 156, 1);
   line-height: 0.28rem;
-  padding-top: 0.07rem;
+  margin-top: 0.1rem;
 }
 
 .KnowledgeBase .icon_detail {

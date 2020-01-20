@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>组件/页面/答题通/学业里程碑/坚持7天未激活</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M95,5.77350269 L148.612159,36.7264973 C154.800181,40.2991532 158.612159,46.9016936 158.612159,54.0470054 L158.612159,115.952995 C158.612159,123.098306 154.800181,129.700847 148.612159,133.273503 L95,164.226497 C88.8119785,167.799153 81.1880215,167.799153 75,164.226497 L21.3878407,133.273503 C15.1998191,129.700847 11.3878407,123.098306 11.3878407,115.952995 L11.3878407,54.0470054 C11.3878407,46.9016936 15.1998191,40.2991532 21.3878407,36.7264973 L75,5.77350269 C81.1880215,2.20084679 88.8119785,2.20084679 95,5.77350269 Z" id="path-1"></path>
+        <filter x="-34.5%" y="-27.6%" width="169.0%" height="178.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.233242754   0 0 0 0 0.233242754   0 0 0 0 0.233242754  0 0 0 0.103638549 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="组件/页面/答题通/学业里程碑/坚持7天未激活" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-3备份-2" transform="translate(14.000000, 15.000000)">
+            <g id="矩形">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="蒙版">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+            <path d="M95,20.7735027 L135.621778,44.2264973 C141.8098,47.7991532 145.621778,54.4016936 145.621778,61.5470054 L145.621778,108.452995 C145.621778,115.598306 141.8098,122.200847 135.621778,125.773503 L95,149.226497 C88.8119785,152.799153 81.1880215,152.799153 75,149.226497 L34.3782217,125.773503 C28.1902002,122.200847 24.3782217,115.598306 24.3782217,108.452995 L24.3782217,61.5470054 C24.3782217,54.4016936 28.1902002,47.7991532 34.3782217,44.2264973 L75,20.7735027 C81.1880215,17.2008468 88.8119785,17.2008468 95,20.7735027 Z" id="多边形" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <g id="等级" transform="translate(69.000000, 68.000000)" fill="#D8D8D8" fill-rule="nonzero">
+                <polygon id="7" points="17.64 34.2 34.2 5.7 34.98 0 0.84 0 0 5.7 22.62 5.7 6.3 34.2"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

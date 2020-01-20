@@ -21,7 +21,8 @@ import {
   GoodsActionIcon,
   GoodsActionButton,
   Sidebar,
-  SidebarItem
+  SidebarItem,
+  Progress 
 } from "vant";
 
 Vue.use(Button);
@@ -41,3 +42,4 @@ Vue.use(Swipe).use(SwipeItem);
 Vue.use(GoodsAction).use(GoodsActionIcon).use(GoodsActionButton);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
+Vue.use(Progress);

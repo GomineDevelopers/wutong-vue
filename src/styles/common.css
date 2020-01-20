@@ -78,13 +78,20 @@ body {
   background-color: #81d8ce;
   color: #ffffff;
 }
-
+.common_middle_btn2 {
+  background-color: #ffffff;
+  color: #81d8ce;
+}
 
 
 /* text-align: center */
 .textAlignCenter_w100{
     text-align: center;
     width:100vw;
+}
+.textAlignCenter_w100p{
+    text-align: center;
+    width:100%;
 }
 .textAlignCenter{
     text-align: center;
