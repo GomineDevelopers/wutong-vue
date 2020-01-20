@@ -26,7 +26,6 @@
             <van-swipe
               class="swipe_content height_auto"
               :autoplay="3000"
-              indicator-color="#81D8D0"
               @change="onChange"
             >
               <van-swipe-item
