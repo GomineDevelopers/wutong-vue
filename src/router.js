@@ -46,6 +46,7 @@ Vue.use(Router);
 // 我的患者 - MyPatient
 
 // 知会通 - 在线会议 OnlineMetting
+// 知会通 - 视频库 VideoLibrary
 
 export default new Router({
   mode: "history",
@@ -241,6 +242,11 @@ export default new Router({
       path: "/onlinemetting",
       name: "OnlineMetting",
       component: () => import("@/views/mettingoftong/OnlineMetting")
+    },
+    {
+      path: "/videolibrary",
+      name: "VideoLibrary",
+      component: () => import("@/views/mettingoftong/VideoLibrary")
     }
   ]
 });
