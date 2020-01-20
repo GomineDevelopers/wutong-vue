@@ -22,7 +22,7 @@ import {
   GoodsActionButton,
   Sidebar,
   SidebarItem,
-  Progress 
+  Progress
 } from "vant";
 
 Vue.use(Button);
@@ -39,7 +39,9 @@ Vue.use(Tab).use(Tabs);
 Vue.use(Popup);
 Vue.use(Search);
 Vue.use(Swipe).use(SwipeItem);
-Vue.use(GoodsAction).use(GoodsActionIcon).use(GoodsActionButton);
+Vue.use(GoodsAction)
+  .use(GoodsActionIcon)
+  .use(GoodsActionButton);
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
 Vue.use(Progress);

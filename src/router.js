@@ -49,6 +49,10 @@ Vue.use(Router);
 // 答题通-学业里程碑 - AcademicMilestone
 
 // 我的患者 - MyPatient
+
+// 知会通 - 在线会议 OnlineMetting
+// 知会通 - 视频库 VideoLibrary
+
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
@@ -230,7 +234,8 @@ export default new Router({
     {
       path: "/questionnaireinquiry_answer",
       name: "QuestionnaireInquiry_Answer",
-      component: () => import("@/views/answeroftong/QuestionnaireInquiry_Answer")
+      component: () =>
+        import("@/views/answeroftong/QuestionnaireInquiry_Answer")
     },
     {
       path: "/knowledgebase",
@@ -264,5 +269,16 @@ export default new Router({
     },
 
 
+    //知会通
+    {
+      path: "/onlinemetting",
+      name: "OnlineMetting",
+      component: () => import("@/views/mettingoftong/OnlineMetting")
+    },
+    {
+      path: "/videolibrary",
+      name: "VideoLibrary",
+      component: () => import("@/views/mettingoftong/VideoLibrary")
+    }
   ]
 });

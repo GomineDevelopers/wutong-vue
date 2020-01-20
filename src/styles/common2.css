@@ -115,6 +115,21 @@
   color: #858b9c;
   font-weight: 400;
 }
+.main_font4 {
+  font-size: 0.28rem;
+  color: #41485d;
+  font-weight: 400;
+}
+.main_font5 {
+  font-size: 0.28rem;
+  color: #111a34;
+  font-weight: 500;
+}
+.main_font6 {
+  font-size: 0.28rem;
+  color: #41485d;
+  font-weight: 400;
+}
 .public_green_small {
   font-size: 0.26rem;
   color: #81d8ce;
@@ -193,7 +208,7 @@
 /* 药店列表 */
 .pharmacy_list {
   padding-right: 0.32rem;
-  height: 2.8rem;
+  min-height: 2.8rem;
   border-bottom: 1px solid #eee;
 }
 .pharmacy_list_body {
