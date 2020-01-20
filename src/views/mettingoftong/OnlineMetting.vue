@@ -150,7 +150,7 @@ export default {
   data() {
     return {
       filtrateShow: false,
-      filtrateActive: 1, //筛选选中
+      filtrateActive: null, //筛选选中
       itemActive: null, //自选项选中
       searchContent: "",
       current: 0,
