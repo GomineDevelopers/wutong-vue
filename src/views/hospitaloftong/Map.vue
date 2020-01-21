@@ -14,10 +14,10 @@
         ></van-search>
       </van-row>
       <van-row class="map_container">
-        <van-row class="map_nav flex">
+        <!-- <van-row class="map_nav flex">
           <span :class="active == 1 ? 'active' : ''">地图</span>
           <span :class="active == 2 ? 'active' : ''" @click="goList">列表</span>
-        </van-row>
+        </van-row> -->
         <van-row class="map_assign flex">
           <div class="assign_bg">
             <div class="a_title">广联医药</div>

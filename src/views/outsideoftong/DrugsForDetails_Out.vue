@@ -16,6 +16,24 @@
       </van-swipe>
     </div>
     <div class="title">3盒40 包邮赠医药棉签50支 迪维 维A酸乳膏15g*1支/盒祛痘痘 痤疮膏 粉刺</div>
+    <div class="productCount">
+      <div class="pc_left blockB_floatL">
+        <div class="price1 blockB_floatL">
+          <span class="rmb_mark">￥</span>
+          16.98
+        </div>
+        <div class="price2 blockB_floatL">￥ &nbsp;18.98</div>
+      </div>
+      <div class="pc_right blockB_floatL">
+        <div class="subtract countRadius blockB_floatL">
+          <div @click="countChange('subtract')" class="countFont blockB_floatL">-</div>
+        </div>
+        <div class="p_count blockB_floatL">{{p_count}}</div>
+        <div class="add countRadius blockB_floatL">
+          <div @click="countChange('add')" class="countFont countFont2 blockB_floatL">+</div>
+        </div>
+      </div>
+    </div>
     <div class="product">
       <div class="product_c">
         <div class="product_title">
@@ -82,6 +100,7 @@ export default {
         require("@/assets/pic/drug_2.jpg"),
         require("@/assets/pic/drug_3.jpg")
       ],
+      p_count: 1,
       productContent: [
         {
           subtitle: "品牌",
@@ -119,6 +138,15 @@ export default {
       "<div><p class='moneyShow1'>￥ 18.99</p><p class='moneyShow2'>￥ <span class='through'>21.00</span></p></div>";
   },
   methods: {
+    countChange(type) {
+      if (type == "subtract") {
+        if (this.p_count > 1) {
+          this.p_count--;
+        }
+      } else if (type == "add") {
+        this.p_count++;
+      }
+    },
     onChange(index) {
       this.current = index;
     },
@@ -229,6 +257,85 @@ export default {
   color: rgba(17, 26, 52, 1);
   line-height: 0.45rem;
 }
+.DrugsForDetails_Out .productCount {
+  height: 0.5rem;
+  padding: 0 0.32rem;
+}
+.DrugsForDetails_Out .pc_left {
+  width: 4.9rem;
+  height: 0.5rem;
+}
+.DrugsForDetails_Out .pc_right {
+  height: 0.5rem;
+}
+
+.DrugsForDetails_Out .price1 {
+  height: 0.5rem;
+  font-size: 0.28rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 85, 0, 1);
+  line-height: 0.4rem;
+}
+.DrugsForDetails_Out .rmb_mark {
+  font-size: 0.24rem;
+}
+.DrugsForDetails_Out .price2 {
+  height: 0.28rem;
+  font-size: 0.2rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(197, 202, 213, 1);
+  line-height: 0.28rem;
+  text-decoration: line-through;
+  margin-left: 0.12rem;
+  margin-top: 0.08rem;
+}
+.DrugsForDetails_Out .p_count {
+  height: 0.45rem;
+  height: 0.32rem;
+  font-size: 0.3rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(65, 72, 93, 1);
+  line-height: 0.45rem;
+  margin: 0 0.33rem;
+  width: 0.5rem;
+  text-align: center;
+}
+
+.DrugsForDetails_Out .subtract {
+  width: 0.32rem;
+  height: 0.32rem;
+  border: 0.02rem solid rgba(197, 202, 213, 1);
+  margin-top: 0.05rem;
+}
+.DrugsForDetails_Out .add {
+  width: 0.32rem;
+  height: 0.32rem;
+  background: rgba(129, 216, 206, 1);
+  border: 0.02rem solid rgba(129, 216, 206, 1);
+  margin-top: 0.05rem;
+}
+.DrugsForDetails_Out .countRadius {
+  -webkit-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem;
+}
+.DrugsForDetails_Out .countFont {
+  font-size: 0.38rem;
+  color: rgba(197, 202, 213, 1);
+  vertical-align: top;
+  margin-left: 0.07rem;
+  margin-top: -0.11rem;
+}
+.DrugsForDetails_Out .countFont2 {
+  color: rgba(255, 255, 255, 1);
+  margin-left: 0.02rem;
+}
+
 .DrugsForDetails_Out .product {
   width: 100%;
 }
