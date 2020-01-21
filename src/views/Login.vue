@@ -1,10 +1,10 @@
 <template>
   <van-row class="login_body">
     <van-row class="login_title">
-      <!-- <img src="../assets/pic/logo.svg" /> -->
-      <img src="../assets/pic/logo.png" />
+      <!-- <img src="../assets/pic/logo.png" /> -->
     </van-row>
     <van-row class="login_main">
+      <img src="../assets/pic/login_logo.png" />
       <van-row class="login_title2 theme_color2">登录</van-row>
       <van-row class="login_main_input flex flex_align_center">
         <van-field v-model="tel" type="number" placeholder="请输入手机号" />
@@ -151,5 +151,16 @@ export default {
 }
 .login_protocol a {
   color: #81d8ce;
+}
+.login_main {
+  position: relative;
+}
+.login_main img {
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  top: -0.9rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>

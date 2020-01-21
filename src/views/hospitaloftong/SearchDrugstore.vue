@@ -132,4 +132,7 @@ export default {
 .top_search {
   padding: 0.05rem 0.32rem 0.24rem 0.32rem;
 }
+.medicine_content {
+  padding-left: 0.32rem;
+}
 </style>
