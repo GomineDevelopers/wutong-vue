@@ -34,11 +34,12 @@
         </div>
       </div>
     </div>
+    <div :style="{height: '0.4rem'}"></div>
     <div class="product">
       <div class="product_c">
         <div class="product_title">
           <div class="product_title_l">产品参数</div>
-          <div class="product_title_r">查看全部&nbsp;&nbsp;></div>
+          <!-- <div class="product_title_r">查看全部&nbsp;&nbsp;></div> -->
         </div>
         <div :style="{height: '0.2rem'}"></div>
         <div class="product_content">
@@ -71,18 +72,24 @@
     </div>
     <div class="flex_purchase">
       <van-goods-action>
-        <van-goods-action-button id="moneyShow" type="warning" text @click="onClickButton" />
-        <van-goods-action-button type="danger" text="立即购买" @click="onClickButton" />
+        <van-goods-action-button
+          class="first"
+          id="serviceShow"
+          type="warning"
+          text
+          @click="onClickButton"
+        />
+        <van-goods-action-button id="moneyShow" type="danger" text @click="onClickButton" />
       </van-goods-action>
     </div>
-    <div class="flex_consult">
+    <!-- <div class="flex_consult">
       <div class="consult_bg">
         <div class="consult_c">
           <van-icon class="consult_d" name="smile-comment-o" />
         </div>
         <div class="consult_c consult_space">咨询</div>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 <script>
@@ -100,6 +107,10 @@ export default {
         require("@/assets/pic/drug_2.jpg"),
         require("@/assets/pic/drug_3.jpg")
       ],
+      pic: {
+        service_icon: require("@/assets/pic/service_icon.png"),
+        ShoppingTrolley: require("@/assets/pic/ShoppingTrolley.png")
+      },
       p_count: 1,
       productContent: [
         {
@@ -133,9 +144,26 @@ export default {
     let vm = this;
 
     // ****** 购买栏样式 js 处理
-    let eve = document.getElementById("moneyShow");
-    eve.innerHTML =
-      "<div><p class='moneyShow1'>￥ 18.99</p><p class='moneyShow2'>￥ <span class='through'>21.00</span></p></div>";
+    let eve1 = document.getElementById("serviceShow");
+    eve1.innerHTML =
+      "<div class='moudule'>\
+        <div class='img_serve_p'></div>\
+        <div class='font_serve'>联系客服</div>\
+      </div>";
+
+    let eve2 = document.getElementById("moneyShow");
+    eve2.innerHTML =
+      "<div class='moudule2'>\
+        <div class='m2_left'>\
+          <div class='img_shopping_p'>\
+            <div class='shopping_count'><div class='shopping_count_c'>10</div></div>\
+          </div>\
+        </div>\
+        <div class='m2_middle'>\
+          <p class='moneyShow1'>￥ 18.99</p><p class='moneyShow2'>￥ <span class='through'>21.00</span></p>\
+        </div>\
+        <div class='m2_right'><div class='shu'></div><div class='payfor'>去付款</div></div>\
+      </div>";
   },
   methods: {
     countChange(type) {
@@ -144,7 +172,9 @@ export default {
           this.p_count--;
         }
       } else if (type == "add") {
-        this.p_count++;
+        if (this.p_count < 99) {
+          this.p_count++;
+        }
       }
     },
     onChange(index) {
@@ -170,7 +200,9 @@ export default {
 .DrugsForDetails_Out .van-goods-action {
   bottom: 0.32rem;
   margin: 0 0.4rem;
+  /* border: 0.01rem solid #81d8ce; */
 }
+
 .DrugsForDetails_Out .van-goods-action-button--warning {
   height: 0.98rem;
   background: #ffffff;
@@ -181,27 +213,137 @@ export default {
   background: #81d8ce;
   color: #ffffff;
 }
+.DrugsForDetails_Out .first.van-goods-action-button--warning {
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  /* border-radius: 20px; */
+  /* background: red; */
+}
+.DrugsForDetails_Out .van-goods-action-button--last {
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
 
-.DrugsForDetails_Out .van-goods-action-button--warning .moneyShow1 {
+.DrugsForDetails_Out .van-goods-action-button {
+  border: 0.01rem solid #81d8ce;
+}
+
+.DrugsForDetails_Out .van-goods-action-button--warning .img_serve_p {
+  width: 0.43rem;
+  height: 0.44rem;
+  background-image: url("../../assets/pic/service_icon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.DrugsForDetails_Out .van-goods-action-button--warning .moudule {
+  height: 0.84rem;
+  padding-top: 0.12rem;
+  width: 1.64rem;
+}
+
+.DrugsForDetails_Out .van-goods-action-button--warning .font_serve {
+  height: 0.2rem;
+  font-size: 0.2rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(129, 216, 206, 1);
+  line-height: 0.2rem;
+  margin-top: 0.06rem;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .moudule2 {
+  width: 4.8rem;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .img_shopping_p {
+  width: 0.66rem;
+  height: 0.55rem;
+  background-image: url("../../assets/pic/ShoppingTrolley.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .shopping_count {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: rgba(255, 85, 0, 1);
+  -webkit-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem;
+  margin-left: 0.36rem;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .shopping_count_c {
+  height: 0.2rem;
+  font-size: 0.2rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 0.2rem;
+  padding-top: 0.05rem;
+}
+
+.DrugsForDetails_Out .van-goods-action-button--danger .moudule2 .m2_left {
+  height: 0.76rem;
+  width: 0.9rem;
+  padding-bottom: 0.3rem;
+  padding-top: 0.22rem;
+  display: block;
+  float: left;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .moudule2 .m2_middle {
+  display: block;
+  float: left;
+  width: 1.85rem;
+  height: 0.88rem;
+  padding-top: 0.1rem;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .moneyShow1 {
   height: 0.45rem;
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(129, 216, 207, 1);
+  color: rgba(255, 255, 255, 1);
   line-height: 0.45rem;
   margin: 0 auto;
+  text-align: left;
 }
-.DrugsForDetails_Out .van-goods-action-button--warning .moneyShow2 {
+.DrugsForDetails_Out .van-goods-action-button--danger .moneyShow2 {
   height: 0.33rem;
   font-size: 0.24rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(197, 202, 213, 1);
+  color: rgba(209, 248, 237, 1);
   line-height: 0.33rem;
   margin: 0 auto;
+  text-align: left;
 }
-.DrugsForDetails_Out .van-goods-action-button--warning .moneyShow2 .through {
+.DrugsForDetails_Out .van-goods-action-button--danger .moneyShow2 .through {
   text-decoration: line-through;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .moudule2 .m2_right {
+  display: block;
+  float: left;
+  padding-top: 0.26rem;
+  height: 0.7rem;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .moudule2 .payfor {
+  height: 0.45rem;
+  font-size: 0.32rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 0.45rem;
+  padding-left: 0.4rem;
+}
+.DrugsForDetails_Out .van-goods-action-button--danger .shu {
+  width: 0.02rem;
+  height: 0.2rem;
+  background: rgba(255, 255, 255, 1);
+  display: block;
+  float: left;
+  margin-top: 0.14rem;
 }
 </style>
 <style scoped>
@@ -343,6 +485,11 @@ export default {
   margin: 0 0.32rem;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: 4.73rem;
+  background:rgba(255,255,255,1);
+  box-shadow:0rem 0.04rem 0.20rem 0rem rgba(0,0,0,0.04);
+  border-radius:0.20rem;
+  border: 0.01rem solid rgba(233,232,232,0.5);
+
 }
 .DrugsForDetails_Out .product_title {
   height: 0.45rem;
