@@ -36,7 +36,7 @@ Vue.use(Router);
 // 病例通-疾病助手-疾病详情-药品详情 - DrugsForDetails   （▲UI删掉了）
 
 // 院外通 - HospitalOfTong        (新增) - ok
-// 院外通-地图 - Map              (UI改变) -ing
+// 院外通-地图 - Map              (UI改变) -ing => ok
 // 院外通-列表 - PharmacyList     （▲UI删掉了）
 // 院外通-搜索药店 - SearchDrugstore    （▲UI删掉了）
 // 院外通-搜索药品 - SearchDrug
