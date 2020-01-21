@@ -221,6 +221,13 @@
 .pharmacy_tips {
   margin-top: 0.18rem;
 }
+.navigation_icon {
+  position: absolute;
+  top: 0;
+  right: 0.2rem;
+  width: 0.385rem;
+  height: 0.385rem;
+}
 .pharmacy_name span,
 .pharmacy_tips span {
   display: block;
@@ -243,13 +250,13 @@
 }
 .pharmacy_tips span {
   font-size: 0.18rem;
-  width: 1.18rem;
-  height: 0.32rem;
+  padding: 0.03rem 0.07rem;
   border-radius: 1rem;
   border: 0.01rem solid;
   text-align: center;
   line-height: 0.32rem;
   margin-right: 0.14rem;
+  white-space: nowrap;
 }
 .pharmacy_tips span.hour {
   color: #f7af27;
@@ -262,6 +269,10 @@
 .pharmacy_tips span.cooperation {
   color: #3cd7be;
   border-color: #3cd7be;
+}
+.pharmacy_tips span.coupon {
+  color: #ff6865;
+  border-color: #ff6865;
 }
 .pharmacy_tel {
   margin-bottom: 0.18rem;

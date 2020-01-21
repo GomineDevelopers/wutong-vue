@@ -40,7 +40,7 @@ Vue.use(Router);
 // 院外通-列表 - PharmacyList     （▲UI删掉了）
 // 院外通-搜索药店 - SearchDrugstore    （▲UI删掉了）
 // 院外通-搜索药品 - SearchDrug
-// 院外通-药房详情 - PharmacyDetail                    (UI改变) -ing
+// 院外通-药房详情 - PharmacyDetail                    (UI改变) - OK
 // 院外通-药房详情-药品详情 - DrugsForDetails_Out      (UI改变) -ing
 // 院外通-购物车 - ShoppingTrolley    （新增）-ing
 // 院外通-结算页面（+用药信息-提示） --订单页 -  SettlementPage  （新增）-ing   --订单页

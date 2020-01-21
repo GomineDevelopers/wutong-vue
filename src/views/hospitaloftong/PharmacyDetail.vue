@@ -24,6 +24,10 @@
               <span class="coupon">可用优惠券</span>
             </van-row>
           </van-row>
+          <img
+            class="navigation_icon"
+            src="../../assets/pic/navigation_icon.png"
+          />
         </van-row>
       </van-row>
       <!-- 列表开始 -->
@@ -51,9 +55,15 @@
               >
                 <img :src="item.img" />
               </van-row>
-              <van-row class="flex flex_direction">
-                <span class="drug_name main_font2">{{ item.name }}</span>
-                <span class="drug_content main_font3">{{ item.content }}</span>
+              <van-row class="flex flex_1 flex_direction">
+                <van-row class="drug_name main_font2">{{ item.name }}</van-row>
+                <van-row class="drug_content main_font3">{{
+                  item.content
+                }}</van-row>
+                <van-row class="drug_price flex flex_align_center">
+                  <span class="flex_1">¥&nbsp;{{ item.price }}</span>
+                  <img src="../../assets/pic/add_icon.png" />
+                </van-row>
               </van-row>
             </van-row>
           </van-row>
@@ -75,32 +85,38 @@ export default {
           img: require("../../assets/pic/drug_img.png"),
           name: "金纳多（银杏叶提取物）",
           content:
-            "适用症：脑部、周围血液循环障碍,适用症：脑部、周围血液循环障碍,"
+            "适用症：脑部、周围血液循环障碍,适用症：脑部、周围血液循环障碍,",
+          price: 16.98
         },
         {
           img: require("../../assets/pic/drug_img.png"),
           name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍"
+          content: "适用症：脑部、周围血液循环障碍",
+          price: 16.98
         },
         {
           img: require("../../assets/pic/drug_img.png"),
           name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍"
+          content: "适用症：脑部、周围血液循环障碍",
+          price: 16.98
         },
         {
           img: require("../../assets/pic/drug_img.png"),
           name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍"
+          content: "适用症：脑部、周围血液循环障碍",
+          price: 16.98
         },
         {
           img: require("../../assets/pic/drug_img.png"),
           name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍"
+          content: "适用症：脑部、周围血液循环障碍",
+          price: 16.98
         },
         {
           img: require("../../assets/pic/drug_img.png"),
           name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍"
+          content: "适用症：脑部、周围血液循环障碍",
+          price: 16.98
         }
       ]
     };
@@ -121,42 +137,8 @@ export default {
   margin-top: 0.44rem;
   margin-bottom: 0.4rem;
   padding-left: 0.32rem;
-}
-.pharmacy_tips {
-  margin-top: 0.18rem;
-}
-.pharmacy_img {
-  width: 1.02rem;
-  height: 1.02rem;
-  margin-right: 0.24rem;
-  border-radius: 0.1rem;
-}
-.pharmacy_tips span {
-  font-size: 0.18rem;
-  width: 1.18rem;
-  height: 0.3rem;
-  padding: 0.03rem 0.05rem;
-  border-radius: 1rem;
-  border: 0.01rem solid;
-  text-align: center;
-  line-height: 0.32rem;
-  margin-right: 0.14rem;
-}
-.pharmacy_tips span.hour {
-  color: #f7af27;
-  border-color: #f7af27;
-}
-.pharmacy_tips span.health_insurance {
-  color: #26c2e1;
-  border-color: #26c2e1;
-}
-.pharmacy_tips span.cooperation {
-  color: #3cd7be;
-  border-color: #3cd7be;
-}
-.pharmacy_tips span.coupon {
-  color: #ff6865;
-  border-color: #ff6865;
+  padding-right: 0.2rem;
+  position: relative;
 }
 .medicine_content {
   height: calc(100% - 2.74rem);
@@ -165,7 +147,7 @@ export default {
 }
 .drug_img {
   width: 1.02rem;
-  height: 1.02rem;
+  height: 1.0282rem;
   border-radius: 0.1rem;
   border: 0.01rem solid rgba(239, 239, 239, 1);
   margin-right: 0.24rem;
@@ -181,10 +163,23 @@ export default {
   padding: 0.4rem 0.4rem 0.4rem 0rem;
   border-bottom: 0.01rem solid #eee;
 }
-.drug_name {
-  margin-bottom: 0.18rem;
-}
 .drug_content {
   line-height: 0.4rem;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 0.19rem;
+  margin-bottom: 0.13rem;
+}
+.drug_price {
+  font-size: 0.28rem;
+  color: #ff5500;
+}
+.drug_price img {
+  width: 0.32rem;
 }
 </style>
