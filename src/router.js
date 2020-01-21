@@ -177,9 +177,13 @@ export default new Router({
     {
       path: "/drugsfordetails_out",
       name: "DrugsForDetails_Out",
-      component: () => import("@/views//outsideoftong/DrugsForDetails_Out")
+      component: () => import("@/views//hospitaloftong/DrugsForDetails_Out")
     },
-
+    {
+      path: "/shoppingtrolley",
+      name: "ShoppingTrolley",
+      component: () => import("@/views//hospitaloftong/ShoppingTrolley")
+    },
     {
       path: "/sicknessdetail",
       name: "SicknessDetail",

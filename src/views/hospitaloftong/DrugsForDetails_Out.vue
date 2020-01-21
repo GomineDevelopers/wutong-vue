@@ -216,12 +216,15 @@ export default {
 .DrugsForDetails_Out .first.van-goods-action-button--warning {
   border-top-left-radius: 0.8rem;
   border-bottom-left-radius: 0.8rem;
+  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
+
   /* border-radius: 20px; */
   /* background: red; */
 }
 .DrugsForDetails_Out .van-goods-action-button--last {
   border-top-right-radius: 0.8rem;
   border-bottom-right-radius: 0.8rem;
+  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
 }
 
 .DrugsForDetails_Out .van-goods-action-button {
@@ -485,11 +488,10 @@ export default {
   margin: 0 0.32rem;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: 4.73rem;
-  background:rgba(255,255,255,1);
-  box-shadow:0rem 0.04rem 0.20rem 0rem rgba(0,0,0,0.04);
-  border-radius:0.20rem;
-  border: 0.01rem solid rgba(233,232,232,0.5);
-
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
+  border-radius: 0.2rem;
+  border: 0.01rem solid rgba(233, 232, 232, 0.5);
 }
 .DrugsForDetails_Out .product_title {
   height: 0.45rem;
@@ -550,6 +552,9 @@ export default {
   margin: 0 0.32rem;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: auto;
+  border: 0.01rem solid rgba(233, 232, 232, 0.5);
+  box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
+  border-radius: 0.2rem;
 }
 .DrugsForDetails_Out .p_intro_title_l {
   height: 0.45rem;
