@@ -238,11 +238,6 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.pharmacy_img {
-  width: 1.02rem;
-  height: 1.02rem;
-  margin-right: 0.24rem;
-}
 .pharmacy_time {
   font-size: 0.28rem;
   color: #81d8ce;
@@ -250,7 +245,7 @@
 }
 .pharmacy_tips span {
   font-size: 0.18rem;
-  padding: 0.03rem 0.07rem;
+  padding: 0.03rem 0.09rem;
   border-radius: 1rem;
   border: 0.01rem solid;
   text-align: center;
@@ -301,13 +296,12 @@
 }
 .pharmacy_tips span {
   font-size: 0.18rem;
-  width: 1.18rem;
-  height: 0.32rem;
   border-radius: 1rem;
   border: 0.01rem solid;
   text-align: center;
   line-height: 0.32rem;
   margin-right: 0.14rem;
+  padding: 0.03rem 0.09rem;
 }
 .pharmacy_tips span.hour {
   color: #f7af27;
