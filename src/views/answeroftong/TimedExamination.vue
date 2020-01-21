@@ -115,12 +115,12 @@ export default {
       current_Qid: 1,
       QustionNum: 0,
       // QTime_init: 30 * 60, // 以秒计
-      QTime_init: 310, // 以秒计
-      // QTime_init: 10,
+      // QTime_init: 310, // 以秒计
+      QTime_init: 10,
       QTime: 1, // 以秒计
-      // popupShow: false,
       popupShow: false,
-      popupStatus: "Timeout", // 'Timeout' - 超时情况  'BreakOff ' - 中断/退出等情况
+      // popupShow: true,
+      popupStatus: "BreakOff", // 'Timeout' - 超时情况  'BreakOff ' - 中断/退出等情况
       QTime_Text: "30:00",
       Qusetion_Write: [
         {

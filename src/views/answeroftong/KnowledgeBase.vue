@@ -145,6 +145,9 @@ export default {
   height: 1.02rem;
   height: 100%;
   margin-bottom: 0.05rem;
+  box-shadow: 0 0.03rem 0.06rem 0 rgba(134, 129, 129, 0.1);
+  border-radius: 0.10rem;
+  border: 0.01rem solid rgba(239, 239, 239, 1);
 }
 .KnowledgeBase .patient_info {
   display: inline-block;

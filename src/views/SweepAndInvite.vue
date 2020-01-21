@@ -14,24 +14,14 @@
       </div>
     </div>
     <div :style="{height: '0.88rem'}"></div>
-    <div class="textAlignCenter i_btn_p">
-      <van-button
-        v-if="pageType == 1"
-        @click="changePageType(2)"
-        round
-        class="common_middle_btn i_btn common_fontsize"
-      >
+    <div v-if="pageType == 1" class="textAlignCenter i_btn_p">
+      <van-button @click="changePageType(2)" round class="common_middle_btn i_btn common_fontsize">
         <van-icon name="exchange" />
         <span>&nbsp;&nbsp;&nbsp;</span>邀请同行
       </van-button>
     </div>
-    <div class="textAlignCenter i_btn_p">
-      <van-button
-        v-if="pageType == 2"
-        @click="changePageType(1)"
-        round
-        class="common_middle_btn i_btn common_fontsize"
-      >
+    <div v-if="pageType == 2" class="textAlignCenter i_btn_p">
+      <van-button @click="changePageType(1)" round class="common_middle_btn i_btn common_fontsize">
         <van-icon name="exchange" />
         <span>&nbsp;&nbsp;&nbsp;</span>邀请患者
       </van-button>

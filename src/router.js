@@ -5,50 +5,56 @@ Vue.use(Router);
 
 // 测试 - Test
 // 首页 - Home
-// 登录 - Login
 // 404 - 404
-// 个人中心 - PersonalCenter
+
+// 登录 - Login     （UI改变）-ing
+// 身份 - Identity
+// 基本信息-医生 - DoctorBaseInfo
+// 个人中心-医生 - DoctorPersonCenter
+// 扫码邀请 - SweepAndInvite
 // 个人资料 - PersonalData
 // 个人资料-编辑 - PersonalDataEdit
-// 基本信息-医生 - DoctorBaseInfo
-// 基本信息-患者 - PatientBaseInfo
-// 个人中心-医生 - DoctorPersonCenter
-// 个人中心-患者 - PatientPersonCenter
-// 患者信息 - PatientInfo
-// 卡券管理 - CardTicketManagement
 // 实名认证 - Certification
 // 积分管理 - PointManagement
-// 身份 - Identity
-// 扫码邀请 - SweepAndInvite
+// 卡券管理 - CardTicketManagement
+
+// 我的患者 - MyPatient
+// 患者信息 - PatientInfo
+
+// 基本信息-患者 - PatientBaseInfo
+// 个人中心-患者 - PatientPersonCenter
+// 个人资料-患者 - PersonalData_Patient   (新增) -ing
+// 个人资料-患者-地址修改 - PersonalData_PatientEdit   (新增) -ing
+
 // 病例通 - CasesOfTong
 // 病例通-疾病助手 - SicknessHelper
-
-// 病例通-疾病助手-疾病详情 - DetailsOfDisease
-// 病例通-疾病助手-疾病详情-药品详情 - DrugsForDetails
+// 病例通-疾病助手-疾病详情 - DetailsOfDisease  1.指南-(新增) -ing 2.药品库-(UI改变) -ing 3.典型(新增) -ing
+// 病例通-疾病助手-疾病详情-典型病例 - SicknessDetail
+// 病例通-病例采集 - SicknessCollect 
 // 病例通-病例采集-病例上传 - CasesOfUpload
-// 病例通-疾病详情 - SicknessDetail
-// 病例通-病例采集 - SicknessConllect
 
-// 院外通 - HospitalOfTong
-// 院外通-地图 - Map
-// 院外通-列表 - PharmacyList
-// 院外通-药房详情 - PharmacyDetail
-// 院外通-药房详情-药品详情 - DrugsForDetails_Out
+// 病例通-疾病助手-疾病详情-药品详情 - DrugsForDetails   （▲UI删掉了）
 
-// 院外通-搜索药店 - SearchDrugstore
+// 院外通 - HospitalOfTong        (新增) - ok
+// 院外通-地图 - Map              (UI改变) -ing
+// 院外通-列表 - PharmacyList     （▲UI删掉了）
+// 院外通-搜索药店 - SearchDrugstore    （▲UI删掉了）
 // 院外通-搜索药品 - SearchDrug
+// 院外通-药房详情 - PharmacyDetail                    (UI改变) -ing
+// 院外通-药房详情-药品详情 - DrugsForDetails_Out      (UI改变) -ing
+// 院外通-购物车 - ShoppingTrolley    （新增）-ing
+// 院外通-结算页面（+用药信息-提示） --订单页 -  SettlementPage  （新增）-ing   --订单页 
 
 // 答题通 - AnswerOfTong
-// 答题通-问卷调研 - QuestionnaireInquiry
+// 答题通-问卷调研 - QuestionnaireInquiry    （新增）-ing +   (UI改变) -ing => 过期添加弹窗新增已过期选项与时间区间
 // 答题通-问卷调研-答题 - QuestionnaireInquiry_Answer
 // 答题通-知识库 - KnowledgeBase
-// 答题通-在线考试 - OnlineExamination
+// 答题通-在线考试 - OnlineExamination   (UI改变) -ing  =>限时考试+开放考试  合并 => 过期添加弹窗新增
 // 答题通-在线考试-限时考试 - TimedExamination
 // 答题通-在线考试-开放考试 - OpenExamination
 // 答题通-在线考试-考后查询 - ResultsQuery 
 // 答题通-学业里程碑 - AcademicMilestone
 
-// 我的患者 - MyPatient
 
 // 知会通 - 在线会议 OnlineMetting
 // 知会通 - 视频库 VideoLibrary
@@ -74,11 +80,6 @@ export default new Router({
     },
     { path: "/404", name: "404", component: () => import("@/views/404") },
     { path: "*", redirect: "/404" },
-    {
-      path: "/personalcenter",
-      name: "PersonalCenter",
-      component: () => import("@/views/PersonalCenter")
-    },
     {
       path: "/personaldata",
       name: "PersonalData",
