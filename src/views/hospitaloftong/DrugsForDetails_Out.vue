@@ -201,6 +201,7 @@ export default {
   bottom: 0.32rem;
   margin: 0 0.4rem;
   /* border: 0.01rem solid #81d8ce; */
+  background-color: rgba(0,0,0,0); 
 }
 
 .DrugsForDetails_Out .van-goods-action-button--warning {
