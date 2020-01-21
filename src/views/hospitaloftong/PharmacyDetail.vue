@@ -2,8 +2,8 @@
   <van-row class="van_container">
     <vue-headful title="药房详情"></vue-headful>
     <van-row class="van_container_body height_auto">
-      <van-row class="header_body padding_mudule">
-        <van-row class="top_search">
+      <van-row class="header_body">
+        <van-row class="top_search padding_mudule">
           <van-search
             right-icon="search"
             v-model="searchContent"
@@ -15,12 +15,13 @@
         </van-row>
         <van-row class="header_pharmacy_info flex flex_align_center">
           <img class="pharmacy_img" src="../../assets/pic/pharmacylist.jpg" />
-          <van-row>
+          <van-row class="flex_1">
             <van-row class="main_font2">广联医药</van-row>
             <van-row class="pharmacy_tips flex">
               <span class="hour">24h营业</span>
               <span class="health_insurance">医保定点</span>
               <span class="cooperation">合作药店</span>
+              <span class="coupon">可用优惠券</span>
             </van-row>
           </van-row>
         </van-row>
@@ -119,6 +120,7 @@ export default {
 .header_pharmacy_info {
   margin-top: 0.44rem;
   margin-bottom: 0.4rem;
+  padding-left: 0.32rem;
 }
 .pharmacy_tips {
   margin-top: 0.18rem;
@@ -132,7 +134,8 @@ export default {
 .pharmacy_tips span {
   font-size: 0.18rem;
   width: 1.18rem;
-  height: 0.32rem;
+  height: 0.3rem;
+  padding: 0.03rem 0.05rem;
   border-radius: 1rem;
   border: 0.01rem solid;
   text-align: center;
@@ -150,6 +153,10 @@ export default {
 .pharmacy_tips span.cooperation {
   color: #3cd7be;
   border-color: #3cd7be;
+}
+.pharmacy_tips span.coupon {
+  color: #ff6865;
+  border-color: #ff6865;
 }
 .medicine_content {
   height: calc(100% - 2.74rem);

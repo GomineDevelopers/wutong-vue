@@ -7,7 +7,7 @@ Vue.use(Router);
 // 首页 - Home
 // 404 - 404
 
-// 登录 - Login     （UI改变）-ing
+// 登录 - Login     （UI改变）- OK
 // 身份 - Identity
 // 基本信息-医生 - DoctorBaseInfo
 // 个人中心-医生 - DoctorPersonCenter
@@ -30,7 +30,7 @@ Vue.use(Router);
 // 病例通-疾病助手 - SicknessHelper
 // 病例通-疾病助手-疾病详情 - DetailsOfDisease  1.指南-(新增) -ing 2.药品库-(UI改变) -ing 3.典型(新增) -ing
 // 病例通-疾病助手-疾病详情-典型病例 - SicknessDetail
-// 病例通-病例采集 - SicknessCollect 
+// 病例通-病例采集 - SicknessCollect
 // 病例通-病例采集-病例上传 - CasesOfUpload
 
 // 病例通-疾病助手-疾病详情-药品详情 - DrugsForDetails   （▲UI删掉了）
@@ -43,7 +43,7 @@ Vue.use(Router);
 // 院外通-药房详情 - PharmacyDetail                    (UI改变) -ing
 // 院外通-药房详情-药品详情 - DrugsForDetails_Out      (UI改变) -ing
 // 院外通-购物车 - ShoppingTrolley    （新增）-ing
-// 院外通-结算页面（+用药信息-提示） --订单页 -  SettlementPage  （新增）-ing   --订单页 
+// 院外通-结算页面（+用药信息-提示） --订单页 -  SettlementPage  （新增）-ing   --订单页
 
 // 答题通 - AnswerOfTong
 // 答题通-问卷调研 - QuestionnaireInquiry    （新增）-ing +   (UI改变) -ing => 过期添加弹窗新增已过期选项与时间区间
@@ -52,9 +52,8 @@ Vue.use(Router);
 // 答题通-在线考试 - OnlineExamination   (UI改变) -ing  =>限时考试+开放考试  合并 => 过期添加弹窗新增
 // 答题通-在线考试-限时考试 - TimedExamination
 // 答题通-在线考试-开放考试 - OpenExamination
-// 答题通-在线考试-考后查询 - ResultsQuery 
+// 答题通-在线考试-考后查询 - ResultsQuery
 // 答题通-学业里程碑 - AcademicMilestone
-
 
 // 知会通 - 在线会议 OnlineMetting
 // 知会通 - 视频库 VideoLibrary
@@ -268,7 +267,6 @@ export default new Router({
       name: "AcademicMilestone",
       component: () => import("@/views/answeroftong/AcademicMilestone")
     },
-
 
     //知会通
     {
