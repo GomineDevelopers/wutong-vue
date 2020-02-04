@@ -65,11 +65,11 @@ export default {
   name: "SettlementPage",
   data() {
       return {
-          showMedication: true,
+          showMedication: false,
       }
   },
   methods: {
-      readMedicationInfo() {
+      onSubmit() {
 
       }
   },
