@@ -41,7 +41,7 @@
       <van-cell class="coupon" is-link title="优惠券" title-class="settlement_title" value-class="" value="暂无优惠券可用"/>
     </div>
     <div class="settlement_submit">
-        <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit"/>
+        <van-submit-bar :price="6792" button-text="提交订单" @submit="onSubmit"/>
     </div>
     <!-- 用药信息弹窗 -->
     <van-popup class="medication_info_popup" v-model="showMedication">
