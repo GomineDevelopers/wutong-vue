@@ -89,7 +89,16 @@ export default new Router({
       name: "PersonalDataEdit",
       component: () => import("@/views/PersonalDataEdit")
     },
-
+    {
+      path: "/personaldatapatient",
+      name: "PersonalDataPatient",
+      component: () => import("@/views/PersonalDataPatient")
+    },
+    {
+      path: "/personaldatapatientedit",
+      name: "PersonalDataPatientEdit",
+      component: () => import("@/views/PersonalDataPatientEdit")
+    },
     {
       path: "/doctorbaseinfo",
       name: "DoctorBaseInfo",
@@ -223,6 +232,11 @@ export default new Router({
       path: "/searchdrug",
       name: "SearchDrug",
       component: () => import("@/views/hospitaloftong/SearchDrug")
+    },
+    {
+      path: "/settlementpage",
+      name: "SettlementPage",
+      component: () => import("@/views/hospitaloftong/SettlementPage")
     },
     // ******** 答题通
     {

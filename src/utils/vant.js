@@ -22,7 +22,11 @@ import {
   GoodsActionButton,
   Sidebar,
   SidebarItem,
-  Progress
+  Progress,
+  Area,
+  Cell,
+  Card,
+  SubmitBar
 } from "vant";
 
 Vue.use(Button);
@@ -45,3 +49,7 @@ Vue.use(GoodsAction)
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
 Vue.use(Progress);
+Vue.use(Area);
+Vue.use(Cell);
+Vue.use(Card);
+Vue.use(SubmitBar);
