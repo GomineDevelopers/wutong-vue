@@ -25,8 +25,10 @@ import {
   Progress,
   Area,
   Cell,
+  CellGroup,
   Card,
-  SubmitBar
+  SubmitBar,
+  Uploader,
 } from "vant";
 
 Vue.use(Button);
@@ -53,3 +55,5 @@ Vue.use(Area);
 Vue.use(Cell);
 Vue.use(Card);
 Vue.use(SubmitBar);
+Vue.use(Uploader);
+Vue.use(CellGroup);

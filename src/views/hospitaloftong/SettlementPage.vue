@@ -6,16 +6,22 @@
           <span class="settlement_title">范真伟</span>
           <span class="settlement_number">15794299550</span>
         </template>
-        <div slot="label" class="settlement_addr">青海省果洛藏族自治州班玛县银霄大道306号</div>
+        <div slot="label" class="settlement_addr" >青海省果洛藏族自治州班玛县银霄大道306号</div>
       </van-cell>
     </div>
-    <div class="settlement_cell" @click="showMedication = true">
-      <van-cell center is-link>
+    <div class="settlement_cell">
+      <van-cell center>
         <template slot="title">
           <span class="settlement_title">用药信息</span>
-          <van-icon class="settlement_number" name="question-o" />
+          <van-icon @click="openMedication" class="settlement_number" name="question-o" />
         </template>
-        <div slot="label" class="settlement_addr">依据国家规定，此需求单含处方药需填写用药信息</div>
+        <van-icon
+          class="van-cell__right-icon"
+          slot="right-icon"
+          name="arrow"
+          @click="toMedicationInfo"
+        />
+        <div slot="label" class="settlement_addr" @click="toMedicationInfo">依据国家规定，此需求单含处方药需填写用药信息</div>
       </van-cell>
     </div>
     <div class="settlement_cell">
@@ -69,9 +75,16 @@ export default {
       }
   },
   methods: {
-      onSubmit() {
+    openMedication() {
+      this.showMedication = true;
+      return false;
+    },
+    toMedicationInfo() {
+      this.$router.push("/medicationinfo")
+    },
+    onSubmit() {
 
-      }
+    }
   },
 };
 </script>
@@ -112,6 +125,7 @@ export default {
   background-color: #fff;
   border-bottom: 1px solid #f2efef;
 }
+
 .settlement_cell .van-card__thumb {
   width: 1rem;
   height: 1rem;
