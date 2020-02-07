@@ -43,6 +43,7 @@ Vue.use(Router);
 // 院外通-药房详情 - PharmacyDetail                    (UI改变) - OK
 // 院外通-药房详情-药品详情 - DrugsForDetails_Out      (UI改变) -OK
 // 院外通-购物车 - ShoppingTrolley    （新增）-ing
+// 院外通-用药信息 - MedicationInfo   （新增）-ing
 // 院外通-结算页面（+用药信息-提示） --订单页 -  SettlementPage  （新增）-ing   --订单页
 
 // 答题通 - AnswerOfTong
@@ -97,7 +98,16 @@ export default new Router({
       name: "PersonalDataEdit",
       component: () => import("@/views/PersonalDataEdit")
     },
-
+    {
+      path: "/personaldatapatient",
+      name: "PersonalDataPatient",
+      component: () => import("@/views/PersonalDataPatient")
+    },
+    {
+      path: "/personaldatapatientedit",
+      name: "PersonalDataPatientEdit",
+      component: () => import("@/views/PersonalDataPatientEdit")
+    },
     {
       path: "/doctorbaseinfo",
       name: "DoctorBaseInfo",
@@ -193,6 +203,11 @@ export default new Router({
       component: () => import("@/views//hospitaloftong/ShoppingTrolley")
     },
     {
+      path: "/medicationinfo",
+      name: "MedicationInfo",
+      component: () => import("@/views//hospitaloftong/MedicationInfo")
+    },
+    {
       path: "/sicknessdetail",
       name: "SicknessDetail",
       component: () => import("@/views/casesoftong/SicknessDetail")
@@ -231,6 +246,11 @@ export default new Router({
       path: "/searchdrug",
       name: "SearchDrug",
       component: () => import("@/views/hospitaloftong/SearchDrug")
+    },
+    {
+      path: "/settlementpage",
+      name: "SettlementPage",
+      component: () => import("@/views/hospitaloftong/SettlementPage")
     },
     // ******** 答题通
     {

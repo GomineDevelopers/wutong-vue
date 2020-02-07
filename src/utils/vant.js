@@ -29,7 +29,11 @@ import {
   Calendar,
   Cell,
   CellGroup,
-  ActionSheet
+  ActionSheet,
+  Area,
+  Card,
+  SubmitBar,
+  Uploader,
 } from "vant";
 
 Vue.use(Button);
@@ -59,3 +63,7 @@ Vue.use(Calendar);
 Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(ActionSheet);
+Vue.use(Area);
+Vue.use(Card);
+Vue.use(SubmitBar);
+Vue.use(Uploader);
