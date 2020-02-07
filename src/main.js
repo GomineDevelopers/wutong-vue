@@ -23,6 +23,10 @@ import "@/styles/common2.css";
 import vueHeadful from "vue-headful";
 Vue.component("vue-headful", vueHeadful);
 
+import { Utils } from '@/utils/Utils'
+Vue.prototype.$Utils = Utils
+
+
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 router.beforeEach((to, from, next) => {

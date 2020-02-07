@@ -1,5 +1,5 @@
 <template>
-  <van-row class="height_auto sickness_module">
+  <van-row class="SicknessLibraryList height_auto sickness_module">
     <van-row
       class="sickness_list flex flex_align_center"
       v-for="(item, index) in sicknessList"
@@ -8,21 +8,22 @@
       <van-row class="sickness_left_content flex_1 flex flex_direction">
         <van-row class="sickness_title">
           <span class="main_font2">{{ item.title }}</span>
-          <span v-if="item.status == 1" class="check_status checking"
-            >审核中</span
-          >
-          <span v-if="item.status == 2" class="check_status checkPass"
-            >已通过</span
-          >
-          <span v-if="item.status == 3" class="check_status checNopass"
-            >未通过</span
-          >
+          <span v-if="item.status == 1" class="check_status checking">审核中</span>
+          <span v-if="item.status == 2" class="check_status checkPass">已通过</span>
+          <span v-if="item.status == 3" class="check_status checNopass">未通过</span>
         </van-row>
         <span class="sickness_content main_font3">{{ item.content }}</span>
         <span class="sickness_date">{{ item.date }}</span>
       </van-row>
       <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />
     </van-row>
+    <div class="textAlignCenter_w100">
+      <van-button
+        @click="router_to('/casesofupload')"
+        round
+        class="common_middle_btn common_fontsize i_btn"
+      >添&nbsp;&nbsp;加</van-button>
+    </div>
   </van-row>
 </template>
 <script>
@@ -54,7 +55,12 @@ export default {
     };
   },
   mounted() {},
-  methods: {}
+  methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    }
+  }
 };
 </script>
 <style scoped>
@@ -109,5 +115,10 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.SicknessLibraryList .i_btn {
+  width: 3.6rem;
+  height: 0.9rem;
 }
 </style>

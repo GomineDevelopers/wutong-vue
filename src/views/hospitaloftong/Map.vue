@@ -17,7 +17,7 @@
         <!-- <van-row class="map_nav flex">
           <span :class="active == 1 ? 'active' : ''">地图</span>
           <span :class="active == 2 ? 'active' : ''" @click="goList">列表</span>
-        </van-row> -->
+        </van-row>-->
         <van-row class="map_assign flex">
           <div class="assign_bg">
             <div class="a_title">广联医药</div>
@@ -52,8 +52,20 @@ export default {
       active: "1"
     };
   },
-  mounted() {},
+  mounted() {
+    let vm = this;
+    console.log("~~~");
+    var ob = document.getElementsByClassName("van-field__right-icon");
+    ob[0].onclick = function() {
+      console.log("~~~m");
+      vm.router_to("/map");
+    };
+  },
   methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    },
     onSearch(event) {
       console.log(event);
     },
@@ -132,7 +144,7 @@ export default {
   padding: 0.03rem 0.11rem;
   border-radius: 100px;
   border: 1px solid;
-  margin: 0.11rem 0.14rem 0 0
+  margin: 0.11rem 0.14rem 0 0;
 }
 .a_tab1 {
   color: rgba(247, 175, 39, 1);

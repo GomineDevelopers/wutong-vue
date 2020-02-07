@@ -188,6 +188,7 @@ export default {
     //   false
     // );
   },
+
   watch: {
     popupStatus(newValue, oldValue) {
       console.log(newValue);
@@ -211,31 +212,35 @@ export default {
       this.popupShow = status;
     },
     timer() {
-      if (this.QTime > 0) {
-        this.QTime--;
-      } else if (this.QTime == 0) {
-        this.showPopup(true);
-        this.popupStatus = "Timeout";
+      try {
+        if (this.QTime > 0) {
+          this.QTime--;
+        } else if (this.QTime == 0) {
+          this.showPopup(true);
+          this.popupStatus = "Timeout";
+        }
+        if (this.QTime < 300) {
+          // 小于五分钟计时器变色
+          document.getElementById("QTime_Text").style.color = "#FF4800";
+        }
+        let mintues = 0;
+        let seconds = 0;
+        mintues = Math.floor(this.QTime / 60);
+        seconds = Math.floor(this.QTime % 60);
+        if (mintues >= 10) {
+          mintues = String(mintues);
+        } else if (mintues < 10) {
+          mintues = "0" + String(mintues);
+        }
+        if (seconds >= 10) {
+          seconds = String(seconds);
+        } else if (seconds < 10) {
+          seconds = "0" + String(seconds);
+        }
+        this.QTime_Text = mintues + ":" + seconds;
+      } catch (error) {
+        console.log(error);
       }
-      if (this.QTime < 300) {
-        // 小于五分钟计时器变色
-        document.getElementById("QTime_Text").style.color = "#FF4800";
-      }
-      let mintues = 0;
-      let seconds = 0;
-      mintues = Math.floor(this.QTime / 60);
-      seconds = Math.floor(this.QTime % 60);
-      if (mintues >= 10) {
-        mintues = String(mintues);
-      } else if (mintues < 10) {
-        mintues = "0" + String(mintues);
-      }
-      if (seconds >= 10) {
-        seconds = String(seconds);
-      } else if (seconds < 10) {
-        seconds = "0" + String(seconds);
-      }
-      this.QTime_Text = mintues + ":" + seconds;
     },
     QManage(manageType) {
       if (manageType == "last") {

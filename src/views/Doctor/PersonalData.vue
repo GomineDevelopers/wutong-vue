@@ -1,6 +1,6 @@
 <template>
   <div class="PersonalData">
-    <!-- <vue-headful title="个人资料"></vue-headful> -->
+    <vue-headful title="个人资料"></vue-headful>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">手机号</div>
       <div class="text_info theme_color5">

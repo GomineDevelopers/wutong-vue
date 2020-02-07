@@ -1,9 +1,9 @@
 <template>
   <div class="DoctorBaseInfo">
-    <!-- <vue-headful title="基本信息"></vue-headful> -->
+    <vue-headful title="基本信息"></vue-headful>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">姓名</div>
-      <input class="i_input" type="text" placeholder="请填写您的真实姓名" />
+      <input class="i_input" type="text" v-model="d_name" placeholder="请填写您的真实姓名" />
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">性别</div>
@@ -32,11 +32,15 @@
     </div>
     <div class="PerRow PerRow_borderBottom">
       <div class="common_Stitle_font2 title_spaceRight">邮箱</div>
-      <input class="i_input" type="text" placeholder="用于接受咨询及相关信息" />
+      <input class="i_input" type="text" v-model="d_email" placeholder="用于接受咨询及相关信息" />
     </div>
     <div :style="{height: '0.48rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button round class="common_middle_btn i_btn common_fontsize">提&nbsp;&nbsp;交</van-button>
+      <van-button
+        @click="RegisterInfo"
+        round
+        class="common_middle_btn i_btn common_fontsize"
+      >提&nbsp;&nbsp;交</van-button>
     </div>
     <div :style="{height: '0.48rem'}"></div>
   </div>
@@ -68,13 +72,52 @@ export default {
         { text: "职称1", value: 1 },
         { text: "职称2", value: 2 },
         { text: "职称3", value: 3 }
-      ]
+      ],
+      d_name: "",
+      d_email: ""
     };
   },
   mounted() {
     let vm = this;
   },
-  methods: {}
+  methods: {
+    RegisterInfo() {
+      console.log(this.value1);
+      console.log(this.value2);
+      console.log(this.value3);
+      console.log(this.d_name);
+      console.log(this.d_email);
+      if (this.d_name == "") {
+        this.$toast.fail("请填写您的真实姓名！");
+        return false;
+      }
+      if (this.value1 == 0) {
+        this.$toast.fail("请选择所属医院！");
+        return false;
+      }
+      if (this.value2 == 0) {
+        this.$toast.fail("请选择所属科室");
+        return false;
+      }
+      if (this.value3 == 0) {
+        this.$toast.fail("请选择您的职称");
+        return false;
+      }
+      if (this.d_email == "") {
+        this.$toast.fail("请填写您的邮箱！");
+        return false;
+      }
+      this.$Utils.setCookieCry("D_registered", "true", 1); 
+      this.router_toSpec({
+        path: "/doctorpersoncenter",
+        query: { D_registered: true }
+      });
+    },
+    router_toSpec(obj) {
+      let vm = this;
+      vm.$router.push(obj);
+    }
+  }
 };
 </script>
 

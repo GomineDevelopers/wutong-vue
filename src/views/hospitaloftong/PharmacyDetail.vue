@@ -47,12 +47,18 @@
               v-for="(item, index) in sicknessList"
               :key="index"
             >
-              <van-row class="drug_img flex flex_align_center flex_justify_content">
+              <van-row
+                @click="router_to('/drugsfordetails_out')"
+                class="drug_img flex flex_align_center flex_justify_content"
+              >
                 <img :src="item.img" />
               </van-row>
               <van-row class="flex flex_1 flex_direction">
-                <van-row class="drug_name main_font2">{{ item.name }}</van-row>
-                <van-row class="drug_content main_font3">
+                <van-row
+                  @click="router_to('/drugsfordetails_out')"
+                  class="drug_name main_font2"
+                >{{ item.name }}</van-row>
+                <van-row @click="router_to('/drugsfordetails_out')" class="drug_content main_font3">
                   {{
                   item.content
                   }}
@@ -132,6 +138,18 @@ export default {
     };
   },
   mounted() {
+    let vm = this;
+    console.log("~~~");
+    var ob = document.getElementsByClassName("van-field__right-icon");
+    ob[0].onclick = function() {
+      console.log("~~~pd");
+      vm.router_to("/pharmacydetail");
+    };
+    var ob2 = document.getElementsByClassName("van-button--danger");
+    ob2[0].onclick = function() {
+      console.log("~~~pd=>shop");
+      vm.router_to("/shoppingtrolley");
+    };
     // ****** 购买栏样式 js 处理
     let eve1 = document.getElementById("serviceShow2");
     eve1.innerHTML =
@@ -159,7 +177,11 @@ export default {
       console.log(event);
     },
     onClickButton() {
-      Toast("点击按钮");
+      // Toast("点击按钮");
+    },
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
     }
   }
 };
@@ -170,8 +192,7 @@ export default {
   bottom: 0.32rem;
   margin: 0 0.4rem;
   /* border: 0.01rem solid #81d8ce; */
-  background-color: rgba(0,0,0,0); 
-
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .PharmacyDetail .van-goods-action-button--warning {

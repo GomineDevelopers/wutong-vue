@@ -1,5 +1,6 @@
 <template>
   <van-row class="login_body">
+    <vue-headful title="登录"></vue-headful>
     <van-row class="login_title">
       <!-- <img src="../assets/pic/logo.png" /> -->
     </van-row>
@@ -26,9 +27,7 @@
     </van-row>
     <van-row class="login_protocol flex flex_justify_content">
       <span>登录即表示同意</span>
-      <router-link :to="{ path: '/loginprotocol' }"
-        >《用户注册协议》</router-link
-      >
+      <router-link :to="{ path: '/loginprotocol' }">《用户注册协议》</router-link>
     </van-row>
   </van-row>
 </template>
@@ -39,10 +38,15 @@ export default {
     return {
       tel: "",
       code: "",
-      active: false //按钮不可点击
+      // active: false //按钮不可点击
+      active: true
     };
   },
   methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    },
     login() {
       console.log("登录");
       let regs = /^1[3456789]\d{9}$/;
@@ -55,6 +59,7 @@ export default {
         return false;
       }
       this.active = true;
+      this.router_to("/identity");
     }
   }
 };
@@ -72,8 +77,10 @@ export default {
   padding: 0rem 0.5rem;
 }
 .login_title {
-  height: 3.1rem;
-  line-height: 3.1rem;
+  /* height: 3.1rem; 
+  line-height: 3.1rem;*/
+  height: 25%;
+  line-height: 25%;
   text-align: center;
 }
 .login_title img {
@@ -143,7 +150,8 @@ export default {
 .login_protocol {
   text-align: center;
   font-size: 0.26rem;
-  margin-top: 3.25rem;
+  /* margin-top: 3.25rem; */
+  margin-top: 30%;
 }
 
 .login_protocol span {

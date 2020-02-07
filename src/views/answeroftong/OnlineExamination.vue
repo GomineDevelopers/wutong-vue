@@ -25,12 +25,21 @@
           class="common_Stitle_font2 common_Stitle_font3 title_spaceRight inlineBlock"
         >{{item.name}}</div>
         <div class="text_info theme_color5 inlineBlock">
-          <span class="participate participating" v-if="item.status == '点击参与'">{{item.status}}</span>
+          <span
+            v-if="item.type == '限时考试' && item.status == '点击参与'"
+            class="participate participating"
+            @click="router_toSpec('/timedexamination')"
+          >{{item.status}}</span>
+          <span
+            v-if="item.type == '开放考试'  && item.status == '点击参与'"
+            class="participate participating"
+            @click="router_toSpec('/openexamination')"
+          >{{item.status}}</span>
           <span
             class="participate participated"
             v-if="item.status == '已参与' || item.status == '已过期'"
           >{{item.status}}</span>
-          <van-icon size="0.28rem" name="arrow" @click="router_to('/OnlineExamination_answer')" />
+          <van-icon size="0.28rem" name="arrow" />
         </div>
         <div class="PerRow_Bottom">
           <div v-if="item.type == '限时考试' " class="PerRow_Bottom_t1 PB_Font">{{item.type}}</div>
@@ -102,7 +111,8 @@ export default {
     onSearch(event) {
       console.log(event);
     },
-    router_to(str) {
+    router_toSpec(str) {
+      this.$Utils.setCookieCry("openType", "Answer", 1); 
       let vm = this;
       vm.$router.push({ path: str });
     },
@@ -124,6 +134,7 @@ export default {
 /* ****** 输入框 */
 .OnlineExamination .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
+  width: 7.16rem;
 }
 .OnlineExamination .van-cell .van-field__control {
   font-size: 0.28rem;
@@ -175,10 +186,13 @@ export default {
 .OnlineExamination .PerRow {
   height: 1.17rem;
   /* width: 100%; */
+  width: 6.84rem;
+
   border-top: 0.01rem #f6f6f6 solid;
-  padding: 0.35rem 0.32rem 0.48rem 0.32rem;
+  /* padding: 0.35rem 0.32rem 0.48rem 0.32rem;*/
+  padding: 0.35rem 0 0.48rem 0.32rem;
 }
-.OnlineExamination .PerRow:last-child{
+.OnlineExamination .PerRow:last-child {
   border-bottom: 0.01rem #f6f6f6 solid;
 }
 
@@ -207,7 +221,7 @@ export default {
   display: inline-block;
   text-align: right;
   height: 0.32rem;
-  width: 2.6rem;
+  width: 2.5rem;
   vertical-align: top;
 }
 .OnlineExamination .PerRow_Bottom {

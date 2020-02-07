@@ -1,13 +1,17 @@
 <template>
   <div class="Identity">
-    <!-- <vue-headful title="身份"></vue-headful> -->
+    <vue-headful title="身份"></vue-headful>
     <div :style="{height: '1rem'}"></div>
     <div class="textAlignCenter_w100">
       <img class="avatar" :src="avatar1" alt />
     </div>
     <div :style="{height: '0.56rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button round class="common_middle_btn i_btn common_fontsize">我是患者</van-button>
+      <van-button
+        @click="router_to('/patientpersoncenter')"
+        round
+        class="common_middle_btn i_btn common_fontsize"
+      >我是患者</van-button>
     </div>
     <div :style="{height: '0.8rem'}"></div>
     <div class="textAlignCenter_w100 inlineBlock">
@@ -21,7 +25,11 @@
     </div>
     <div :style="{height: '0.56rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button round class="common_middle_btn i_btn common_fontsize">我是医生</van-button>
+      <van-button
+        @click="router_to('/doctorpersoncenter')"
+        round
+        class="common_middle_btn i_btn common_fontsize"
+      >我是医生</van-button>
     </div>
     <div :style="{height: '1.44rem'}"></div>
   </div>
@@ -38,8 +46,14 @@ export default {
   },
   mounted() {
     let vm = this;
+  
   },
-  methods: {}
+  methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    }
+  }
 };
 </script>
 <style scoped>

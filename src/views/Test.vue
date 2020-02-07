@@ -1,13 +1,14 @@
 <template>
   <div class="Test">
     <vue-headful title="测试"></vue-headful>
+    测试
     <!-- <div class="contact_information_img">
       <com-mymap class="mapSm"></com-mymap>
     </div>-->
-    <div>
+    <!-- <div>
       <com-deletetest :list="list"></com-deletetest>
       <com-deletetest :list="list2"></com-deletetest>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>

@@ -1,6 +1,7 @@
 <template>
   <div class="DetailsOfDisease">
     <!-- <vue-headful title="病例通-疾病助手-病例详情"></vue-headful> -->
+    <vue-headful title="病例详情"></vue-headful>
     <div class="disease_intro">
       <div :style="{height: '0.40rem'}"></div>
       <div class="d_title">{{d_title}}</div>
@@ -25,8 +26,9 @@
                   <span
                     class="participate participating"
                     v-if="item.status == '点击查看'"
+                    @click="router_to('/sicknessdetail')"
                   >{{item.status}}</span>
-                  <van-icon size="0.28rem" name="arrow" />
+                  <van-icon @click="router_to('/sicknessdetail')" size="0.28rem" name="arrow" />
                 </div>
                 <div class="Q_time">{{item.time}}</div>
               </div>

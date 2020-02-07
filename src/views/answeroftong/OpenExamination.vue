@@ -53,7 +53,7 @@
         </div>
       </template>
     </div>
-    <div :style="{height: '1.8rem'}"></div>
+    <div :style="{height: '0.8rem'}"></div>
     <div class="textAlignCenter_w100">
       <van-button
         round
@@ -192,6 +192,8 @@ export default {
   mounted() {
     let vm = this;
     this.QustionNum = this.Qusetion_Write.length;
+
+    this.pageType = this.$Utils.getCookieCry("openType");
 
     // this.QTime = this.QTime_init;
     // this.$nextTick(function() {

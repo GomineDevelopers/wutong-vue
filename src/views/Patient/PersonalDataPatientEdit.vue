@@ -1,6 +1,6 @@
 <template>
-  <div class="PersonalData">
-    <vue-headful title="个人资料"></vue-headful>
+  <div class="PersonalDataPatientEdit">
+    <vue-headful title="个人资料-编辑"></vue-headful>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">所在地区</div>
       <div class="text_info" @click="popupShow = true">
@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import areaList from "../assets//area.js"
+import areaList from "@/assets/area.js"
 export default {
   name: "PersonalDataPatientEdit",
   components: {},
@@ -60,44 +60,44 @@ export default {
 </script>
 <style>
 
-.PersonalData  .van-picker__toolbar {
+.PersonalDataPatientEdit  .van-picker__toolbar {
   height: 60px;
   line-height: 60px;
 }
-.PersonalData .van-picker__cancel,
-.PersonalData .van-picker-column__item{
+.PersonalDataPatientEdit .van-picker__cancel,
+.PersonalDataPatientEdit .van-picker-column__item{
   color: #858B9C;
   font-size: 0.28rem;
 }
-.PersonalData .van-picker__confirm{
+.PersonalDataPatientEdit .van-picker__confirm{
   color: #81D8CE;
   font-size: 0.28rem;
 }
-.PersonalData .van-picker-column__item--selected{
+.PersonalDataPatientEdit .van-picker-column__item--selected{
   color: #81D8CE;
 }
 </style>
 <style scoped>
-.PersonalData .PerRow {
+.PersonalDataPatientEdit .PerRow {
   height: 0.4rem;
   /* width: 100%; */
   border-top: 1px #f6f6f6 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 
-.PersonalData .text_info {
+.PersonalDataPatientEdit .text_info {
   display: inline-block;
   font-size: 0.32rem;
   width: 4.8rem;
   vertical-align: top;
 }
-.PersonalData .addr_label{
+.PersonalDataPatientEdit .addr_label{
   display: block;
 }
-.PersonalData input::-webkit-input-placeholder {
+.PersonalDataPatientEdit input::-webkit-input-placeholder {
   color: #c5cad5;
 }
-.PersonalData .addr_detail{
+.PersonalDataPatientEdit .addr_detail{
   margin-top: 10px;
   width: 100%;
   color: #41485d;
@@ -108,7 +108,7 @@ export default {
   vertical-align: top;
 }
 
-.PersonalData .submit_btn {
+.PersonalDataPatientEdit .submit_btn {
   margin-top: 1.4rem;
   width: 3.6rem;
   height: 0.9rem;

@@ -1,6 +1,6 @@
 <template>
   <div class="CasesOfUpload">
-    <!-- <vue-headful title="病例上传"></vue-headful> -->
+    <vue-headful title="病例上传"></vue-headful>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">标题</div>
       <input class="i_input" type="text" placeholder="请填写标题" />
@@ -35,6 +35,13 @@
           </div>
         </div>
       </template>
+      <div class="m_pic_p m_pic_p2">
+        <template v-for="(item,index) in Imgs ">
+          <div :key="index + 'PIImgs' " class="m_pic">
+            <img class="m_img" :src="item" alt />
+          </div>
+        </template>
+      </div>
     </div>
 
     <div :style="{height: '0.48rem'}"></div>
@@ -76,6 +83,11 @@ export default {
           u_title: "诊断",
           u_info: "请描述现诊断详情"
         }
+      ],
+      Imgs: [
+        require("@/assets/pic/sicknessdetail1.png"),
+        require("@/assets/pic/sicknessdetail2.png"),
+        require("@/assets/pic/img_camera.jpg")
       ]
     };
   },
@@ -170,9 +182,7 @@ export default {
 .CasesOfUpload .PerRow2 {
   height: 3.6rem;
 }
-.CasesOfUpload .PerRow_borderBottom {
-  border-bottom: 1px #f6f6f6 solid;
-}
+
 .CasesOfUpload .title_spaceRight {
   margin-right: 0rem;
 }
@@ -215,6 +225,42 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-top: 0.1rem;
+}
+
+.CasesOfUpload .title_spaceRight {
+  margin-right: 0rem;
+}
+.CasesOfUpload .title_spaceRight2 {
+  /* width: 100%; */
+  display: inline;
+}
+.CasesOfUpload .i_btn {
+  width: 3.6rem;
+  height: 0.9rem;
+}
+
+/* ****图片 */
+.CasesOfUpload .m_pic_p {
+  /* width: 7.5rem; */
+  margin-top: 0.67rem;
+}
+.CasesOfUpload .m_pic_p2 {
+  padding: 0 0.4rem;
+}
+
+.CasesOfUpload .m_pic {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  margin-right: 0.35rem;
+}
+.CasesOfUpload .m_pic:nth-child(3n) {
+  margin-right: 0rem;
+}
+
+.CasesOfUpload .m_img {
+  width: 100%;
+  height: 100%;
 }
 </style>
 

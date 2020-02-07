@@ -1,6 +1,6 @@
 <template>
   <div class="SweepAndInvite">
-    <!-- <vue-headful title="扫码邀请"></vue-headful> -->
+    <vue-headful title="扫码邀请"></vue-headful>
     <div :style="StyleBg">
       <p class="page_title" v-if="pageType == 1">
         <span>邀请同行入组</span>

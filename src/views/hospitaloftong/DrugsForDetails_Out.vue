@@ -1,6 +1,6 @@
 <template>
   <div class="DrugsForDetails_Out">
-    <!-- <vue-headful title="药品详情"></vue-headful> -->
+    <vue-headful title="药品详情"></vue-headful>
     <div class="banner_img">
       <van-swipe @change="onChange">
         <template v-for="(item,index) in picUrlArr ">
@@ -154,7 +154,11 @@ export default {
   },
   mounted() {
     let vm = this;
-
+    var ob2 = document.getElementsByClassName("van-button--danger");
+    ob2[0].onclick = function() {
+      console.log("~~~pd=>shop");
+      vm.router_to("/shoppingtrolley");
+    };
     // ****** 购买栏样式 js 处理
     let eve1 = document.getElementById("serviceShow");
     eve1.innerHTML =
@@ -178,6 +182,10 @@ export default {
       </div>";
   },
   methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    },
     BtnStatusChange() {
       this.ifShopping = true;
     },
@@ -196,10 +204,10 @@ export default {
       this.current = index;
     },
     onClickIcon() {
-      Toast("点击图标");
+      // Toast("点击图标");
     },
     onClickButton() {
-      Toast("点击按钮");
+      // Toast("点击按钮");
     }
   }
 };

@@ -1,5 +1,6 @@
 <template>
   <div class="PersonalDataEdit">
+    <vue-headful title="个人资料-编辑"></vue-headful>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">邮箱</div>
       <div class="text_info theme_color5">

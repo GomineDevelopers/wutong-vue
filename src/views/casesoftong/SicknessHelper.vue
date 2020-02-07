@@ -34,7 +34,11 @@
               <span class="main_font2">{{ item.name }}</span>
               <span class="main_font3">{{ item.content }}</span>
             </van-row>
-            <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />
+            <img
+              @click="router_to('/detailsofdisease')"
+              class="arrow_icon"
+              src="../../assets/pic/arrow_icon.png"
+            />
           </van-row>
         </van-row>
       </van-row>
@@ -74,7 +78,11 @@ export default {
     onSearch(event) {
       console.log(event);
     },
-    onChange() {}
+    onChange() {},
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    }
   }
 };
 </script>

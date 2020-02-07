@@ -1,6 +1,6 @@
 <template>
   <div class="CardTicketManagement">
-    <!-- <vue-headful title="卡券管理"></vue-headful> -->
+    <vue-headful title="卡券管理"></vue-headful>
     <van-tabs v-model="activeName">
       <van-tab title="全部" name="a">
         <div :style="{height: '0.52rem'}"></div>

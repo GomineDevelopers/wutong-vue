@@ -43,10 +43,10 @@
                 <img class="answer_img" :src="AnswerImg[0]" alt @click="router_to('/questionnaireinquiry')" />
               </div>
               <div class="answer_img_p">
-                <img class="answer_img" :src="AnswerImg[1]" alt />
+                <img class="answer_img" :src="AnswerImg[1]" alt  @click="router_to('/knowledgebase')"/>
               </div>
               <div class="answer_img_p">
-                <img class="answer_img" :src="AnswerImg[2]" alt />
+                <img class="answer_img" :src="AnswerImg[2]" alt  @click="router_to('/onlineexamination')"/>
               </div>
             </div>
           </div>

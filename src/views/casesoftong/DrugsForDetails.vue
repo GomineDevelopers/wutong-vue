@@ -1,6 +1,6 @@
 <template>
   <div class="DrugsForDetails">
-    <!-- <vue-headful title="药品详情"></vue-headful> -->
+    <vue-headful title="药品详情"></vue-headful>
     <div class="banner_img">
       <van-swipe @change="onChange">
         <template v-for="(item,index) in picUrlArr ">

@@ -14,13 +14,12 @@
       </van-row>
       <!-- 主体内容 -->
       <van-row class="medicine_content">
-        <van-row
-          class="pharmacy_detail_info"
-          v-for="(item, index) in pharmacyList"
-          :key="index"
-        >
+        <van-row class="pharmacy_detail_info" v-for="(item, index) in pharmacyList" :key="index">
           <van-row class="pharmacy_list_body">
-            <van-row class="list_item_top flex flex_align_center">
+            <van-row
+              @click="router_to('/pharmacydetail')"
+              class="list_item_top flex flex_align_center"
+            >
               <van-row class="flex_1 flex flex_align_center">
                 <img class="pharmacy_img" :src="item.img" />
                 <van-row class="flex flex_direction">
@@ -38,28 +37,26 @@
               <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />
             </van-row>
             <van-row class="pharmacy_tel flex flex_align_center">
-              <img src="../../assets/pic/phone_green.png" />{{ item.tel }}
+              <img src="../../assets/pic/phone_green.png" />
+              {{ item.tel }}
             </van-row>
-            <van-row class="pharmacy_address flex flex_align_center">
-              <img src="../../assets/pic/address_green.png" />{{ item.address }}
+            <van-row @click="router_to('/map')" class="pharmacy_address flex flex_align_center">
+              <img src="../../assets/pic/address_green.png" />
+              {{ item.address }}
             </van-row>
           </van-row>
           <!-- 药品列表开始 -->
-          <van-row class="flex drug_body">
+          <van-row @click="router_to('/pharmacydetail')" class="flex drug_body">
             <van-row
               v-for="(drugItem, index2) in item.drugList"
               :key="index2 + 'drug'"
               class="drug_list flex flex_direction"
             >
-              <van-row
-                class="drug_item_img flex flex_align_center flex_justify_content"
-              >
+              <van-row class="drug_item_img flex flex_align_center flex_justify_content">
                 <img :src="drugItem.img" />
               </van-row>
               <van-row class="drug_item_name">{{ drugItem.drugName }}</van-row>
-              <van-row class="drug_item_price"
-                >¥&nbsp;{{ drugItem.price }}</van-row
-              >
+              <van-row class="drug_item_price">¥&nbsp;{{ drugItem.price }}</van-row>
             </van-row>
           </van-row>
         </van-row>
@@ -176,10 +173,22 @@ export default {
       ]
     };
   },
-  mounted() {},
+  mounted() {
+    let vm = this;
+      console.log("~~~");
+      var ob = document.getElementsByClassName("van-field__right-icon");
+      ob[0].onclick = function() {
+        console.log("~~sd");
+        vm.router_to("/searchdrug");
+      };
+  },
   methods: {
     onSearch(event) {
       console.log(event);
+    },
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
     }
   }
 };
@@ -191,6 +200,9 @@ export default {
 .medicine_content {
   padding-bottom: 0.3rem;
   overflow: hidden;
+
+  /* new */
+  padding: 0 0.32rem;
 }
 .pharmacy_detail_info {
   padding-top: 0.4rem;

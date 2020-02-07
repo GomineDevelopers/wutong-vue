@@ -74,17 +74,11 @@
       </div>
     </template>
     <div :style="{height: '0.5rem'}"></div>
+
     <div class="flex_purchase">
-      <van-goods-action>
-        <van-goods-action-button
-          class="first"
-          id="serviceShow"
-          type="warning"
-          text
-          @click="onClickButton"
-        />
-        <van-goods-action-button id="moneyShow" type="danger" text @click="onClickButton" />
-      </van-goods-action>
+      <van-submit-bar :price="5094" button-text="结算" @submit="onSubmit">
+        <van-checkbox checked-color="#81d8ce" v-model="AllChecked">全选</van-checkbox>
+      </van-submit-bar>
     </div>
   </div>
 </template>
@@ -96,6 +90,7 @@ export default {
   components: {},
   data() {
     return {
+      AllChecked: true,
       pic: {
         selected: require("@/assets/pic/selected.png"),
         unselected: require("@/assets/pic/unselected.png")
@@ -234,22 +229,33 @@ export default {
   },
   mounted() {
     let vm = this;
-
+    var ob2 = document.getElementsByClassName("van-button--danger");
+    ob2[0].onclick = function() {
+      console.log("~~~pd=>shop");
+      vm.router_to("/settlementpage");
+    };
     // ****** 购买栏样式 js 处理
-    let eve1 = document.getElementById("serviceShow");
-    eve1.innerHTML =
-      "<div class='moudule'>\
-        <div class='img_serve_p'></div>\
-        <div class='font_serve'>联系客服</div>\
-      </div>";
+    // let eve1 = document.getElementById("serviceShow");
+    // eve1.innerHTML =
+    //   "<div class='moudule'>\
+    //     <div class='img_serve_p'></div>\
+    //     <div class='font_serve'>联系客服</div>\
+    //   </div>";
 
-    let eve2 = document.getElementById("moneyShow");
-    eve2.innerHTML =
-      "<div class='moudule2'>\
-        <div class='m2_right'><div class='shu'></div><div class='payfor'>结算</div></div>\
-      </div>";
+    // let eve2 = document.getElementById("moneyShow");
+    // eve2.innerHTML =
+    //   "<div class='moudule2'>\
+    //     <div class='m2_right'><div class='shu'></div><div class='payfor'>结算</div></div>\
+    //   </div>";
   },
   methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    },
+    onSubmit() {
+      console.log("结算");
+    },
     onClickButton() {
       Toast("点击按钮");
     },
@@ -348,158 +354,35 @@ export default {
 </script>
 
 <style>
-/* ******* 购买栏 */
-.ShoppingTrolley .van-goods-action {
+/* ******* 新购买栏 */
+
+.ShoppingTrolley .flex_purchase .van-submit-bar {
   bottom: 0.32rem;
-  margin: 0 0.4rem;
-  /* border: 0.01rem solid #81d8ce; */
-  background-color: rgba(0, 0, 0, 0);
+  left: 5%;
+  width: 90%;
+  overflow: hidden;
+  border: 1px solid #81d8ce;
+  border-radius: 50px;
+  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
 }
-
-.ShoppingTrolley .van-goods-action-button--warning {
-  height: 0.98rem;
-  background: #ffffff;
-  color: #81d8ce;
+.ShoppingTrolley .flex_purchase .van-submit-bar__bar {
+  padding: 0;
+  font-size: 0.32rem;
 }
-.ShoppingTrolley .van-goods-action-button--danger {
-  height: 0.98rem;
+.ShoppingTrolley .flex_purchase .van-submit-bar__price {
+  color: #ff4800;
+  font-size: 0.32rem;
+}
+.ShoppingTrolley .flex_purchase .van-submit-bar__button {
+  width: 28%;
+  height: 100%;
+  font-size: 0.32rem;
   background: #81d8ce;
-  color: #ffffff;
+  border-radius: 0;
 }
-.ShoppingTrolley .first.van-goods-action-button--warning {
-  border-top-left-radius: 0.8rem;
-  border-bottom-left-radius: 0.8rem;
-  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
-
-  /* border-radius: 20px; */
-  /* background: red; */
-}
-.ShoppingTrolley .van-goods-action-button--last {
-  border-top-right-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
-  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
-}
-
-.ShoppingTrolley .van-goods-action-button {
-  border: 0.01rem solid #81d8ce;
-}
-
-.ShoppingTrolley .van-goods-action-button--warning .img_serve_p {
-  width: 0.43rem;
-  height: 0.44rem;
-  background-image: url("../../assets/pic/service_icon.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin: 0 auto;
-}
-
-.ShoppingTrolley .van-goods-action-button--warning .moudule {
-  height: 0.84rem;
-  padding-top: 0.12rem;
-  width: 5.06rem;
-}
-
-.ShoppingTrolley .van-goods-action-button--warning .font_serve {
-  height: 0.2rem;
-  font-size: 0.2rem;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: rgba(129, 216, 206, 1);
-  line-height: 0.2rem;
-  margin-top: 0.06rem;
-}
-.ShoppingTrolley .van-goods-action-button--danger .moudule2 {
-  width: 1.8rem;
-}
-.ShoppingTrolley .van-goods-action-button--danger .img_shopping_p {
-  width: 0.66rem;
-  height: 0.55rem;
-  background-image: url("../../assets/pic/ShoppingTrolley.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin: 0 auto;
-}
-.ShoppingTrolley .van-goods-action-button--danger .shopping_count {
-  width: 0.3rem;
-  height: 0.3rem;
-  background: rgba(255, 85, 0, 1);
-  -webkit-border-radius: 0.4rem;
-  -ms-border-radius: 0.4rem;
-  -o-border-radius: 0.4rem;
-  -moz-border-radius: 0.4rem;
-  border-radius: 0.4rem;
-  margin-left: 0.36rem;
-}
-.ShoppingTrolley .van-goods-action-button--danger .shopping_count_c {
-  height: 0.2rem;
-  font-size: 0.2rem;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 1);
-  line-height: 0.2rem;
-  padding-top: 0.05rem;
-}
-
-.ShoppingTrolley .van-goods-action-button--danger .moudule2 .m2_left {
-  height: 0.76rem;
-  width: 0.9rem;
-  padding-bottom: 0.3rem;
-  padding-top: 0.22rem;
-  display: block;
-  float: left;
-}
-.ShoppingTrolley .van-goods-action-button--danger .moudule2 .m2_middle {
-  display: block;
-  float: left;
-  width: 2.25rem;
-  height: 0.88rem;
-  padding-top: 0.1rem;
-}
-.ShoppingTrolley .van-goods-action-button--danger .moneyShow1 {
-  height: 0.45rem;
-  font-size: 0.32rem;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 1);
-  line-height: 0.45rem;
-  margin: 0 auto;
-  text-align: left;
-}
-.ShoppingTrolley .van-goods-action-button--danger .moneyShow2 {
-  height: 0.33rem;
-  font-size: 0.24rem;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: rgba(209, 248, 237, 1);
-  line-height: 0.33rem;
-  margin: 0 auto;
-  text-align: left;
-}
-.ShoppingTrolley .van-goods-action-button--danger .moneyShow2 .through {
-  text-decoration: line-through;
-}
-.ShoppingTrolley .van-goods-action-button--danger .moudule2 .m2_right {
-  display: block;
-  float: left;
-  padding-top: 0.26rem;
-  height: 0.7rem;
-}
-.ShoppingTrolley .van-goods-action-button--danger .moudule2 .payfor {
-  height: 0.45rem;
-  font-size: 0.32rem;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 1);
-  line-height: 0.45rem;
-  padding-left: 0.4rem;
-}
-.ShoppingTrolley .van-goods-action-button--danger .shu {
-  width: 0.02rem;
-  height: 0.2rem;
-  background: rgba(255, 255, 255, 1);
-  display: block;
-  float: left;
-  margin-top: 0.14rem;
+/* **全选 */
+.ShoppingTrolley .flex_purchase .van-checkbox {
+  margin-left: 0.44rem;
 }
 </style>
 

@@ -6,14 +6,15 @@
       <div class="text_info theme_color5">
         <div class="inlineBlock">156****6236</div>
         <span>&nbsp;&nbsp;</span>
-        <van-icon name="arrow" @click="" />
+        <!-- <van-icon name="arrow" @click="router_to('personaldatapatientedit')" /> -->
+        <van-icon name="arrow" />
       </div>
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">收货地址</div>
       <div class="text_info theme_color5">
         <div class="inlineBlock">
-          <span class="receiving_address">贵州省贵阳市观山湖区金利大厦</span> 
+          <span class="receiving_address">贵州省贵阳市观山湖区金利大厦</span>
           <span>&nbsp;&nbsp;</span>
           <van-icon name="arrow" @click="router_to('/PersonalDataPatientEdit')" />
         </div>

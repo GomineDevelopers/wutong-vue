@@ -73,11 +73,16 @@
         </template>
       </div>
     </div>
-    <div :style="{height: '1.4rem'}"></div>
+    <div :style="{height: '0.4rem'}"></div>
 
     <div class="textAlignCenter_w100p">
-      <van-button @click="router_to('/openexamination')" round class="common_middle_btn i_btn common_fontsize">查看详情</van-button>
+      <van-button
+        @click="router_toSpec('/openexamination')"
+        round
+        class="common_middle_btn i_btn common_fontsize"
+      >查看详情</van-button>
     </div>
+    <div :style="{height: '0.48rem'}"></div>
   </div>
 </template>
 <script>
@@ -174,7 +179,8 @@ export default {
     let vm = this;
   },
   methods: {
-    router_to(str) {
+    router_toSpec(str) {
+      this.$Utils.setCookieCry("openType", "Query", 1);
       let vm = this;
       vm.$router.push({ path: str });
     }

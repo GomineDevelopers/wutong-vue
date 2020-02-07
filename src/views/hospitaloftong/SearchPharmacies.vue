@@ -1,6 +1,6 @@
 <template>
   <div class="SearchPharmacies">
-    <!-- <vue-headful title="我的患者"></vue-headful> -->
+    <vue-headful title="搜索药店"></vue-headful>
     <van-search
       right-icon="search"
       v-model="searchContent"

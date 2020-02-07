@@ -8,6 +8,7 @@
       shape="round"
       @search="onSearch"
       background="#ffffff"
+      id="m_search_HOT"
     ></van-search>
     <div class="h_content">
       <div :style="{height: '0.44rem'}"></div>
@@ -42,7 +43,7 @@
       <div :style="{height: '0.00rem'}"></div>
       <template v-for="(item3,index3) in MoreArr ">
         <div class="perImgModule perImgModule2" :key="index3 + 'ht3' ">
-          <div class="pIM">
+          <div class="pIM" @click="router_to(item3.path)">
             <div class="pIM_c">
               <img class="perImg perImg2" :src="item3.pic[0]" alt />
             </div>
@@ -80,11 +81,13 @@ export default {
       MoreArr: [
         {
           pic: [require("@/assets/pic/HospitalOfTong/shopping.png")],
-          name: "购物车"
+          name: "购物车",
+          path: "/shoppingtrolley"
         },
         {
           pic: [require("@/assets/pic/HospitalOfTong/order.png")],
-          name: "我的订单"
+          name: "我的订单",
+          path: "/"
         }
       ],
       SearchArr: [
@@ -123,14 +126,32 @@ export default {
   },
   mounted() {
     let vm = this;
+    // window.onload = function() {
+      console.log("~~~");
+      // var ob = document.getElementById("m_search_HOT");
+      var ob = document.getElementsByClassName("van-field__right-icon");
+      // ob.onclick = function() {
+      ob[0].onclick = function() {
+        // console.log("~~~!");
+        // console.log(ob);
+        // console.log(ob.childNodes);
+        // van-field__right-icon
+        vm.router_to("/searchdrug");
+      };
+      // ob.className = xxoo;
+    // };
   },
   methods: {
     onSearch(event) {
       console.log(event);
     },
-    router_to(str, p_id) {
+    // router_toSpec(str, p_id) {
+    //   let vm = this;
+    //   // 待添加query 对应 pid
+    //   vm.$router.push({ path: str });
+    // },
+    router_to(str) {
       let vm = this;
-      // 待添加query 对应 pid
       vm.$router.push({ path: str });
     }
   }
@@ -238,8 +259,8 @@ export default {
   line-height: 0.5rem;
   letter-spacing: 0.01px;
 }
-.HospitalOfTong .RQ_title2{
-    width: 100%;
+.HospitalOfTong .RQ_title2 {
+  width: 100%;
 }
 .HospitalOfTong .RQ_title_l {
   width: 6.45rem;

@@ -11,21 +11,23 @@
             <span class="theme_color4 font_weight_500">132xxxx4323</span>
           </van-row>
         </van-row>
-        <van-icon name="arrow" size="0.5rem" />
+        <van-icon @click="router_to('/personaldatapatient')" name="arrow" size="0.5rem" />
       </van-row>
       <!-- 列表开始 -->
       <van-row class="doctor_module_list">
         <van-row
+          @click="router_to('/cardticketmanagement')"
           class="doctor_module_list_item flex flex_justify_between flex_align_center"
         >
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon3.png" />
             <span class="main_font">优惠券</span>
           </van-row>
-          <span class="list_message">12</span
-          ><img src="../../assets/pic/arrow_icon.png" />
+          <span class="list_message">12</span>
+          <img src="../../assets/pic/arrow_icon.png" />
         </van-row>
         <van-row
+          @click="router_to('/pointmanagement')"
           class="doctor_module_list_item flex flex_justify_between flex_align_center"
         >
           <van-row class="flex flex_1 flex_align_center">
@@ -34,9 +36,7 @@
           </van-row>
           <img src="../../assets/pic/arrow_icon.png" />
         </van-row>
-        <van-row
-          class="doctor_module_list_item flex flex_justify_between flex_align_center"
-        >
+        <van-row class="doctor_module_list_item flex flex_justify_between flex_align_center">
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon6.png" />
             <span class="main_font">系统设置</span>
@@ -52,6 +52,18 @@ export default {
   name: "PatientPersonCenter",
   data() {
     return {};
+  },
+  mounted() {
+    let ifRegistered = this.$Utils.getCookieCry("P_registered");
+    if (ifRegistered != "true") {
+      this.router_to("/patientbaseInfo");
+    }
+  },
+  methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    }
   }
 };
 </script>

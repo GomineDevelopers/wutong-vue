@@ -1,5 +1,6 @@
 <template>
   <div id="SettlementPage" class="settlement_wrap">
+    <vue-headful title="结算页面"></vue-headful>
     <div class="settlement_cell">
       <van-cell center is-link>
         <template slot="title">
