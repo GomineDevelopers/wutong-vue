@@ -28,7 +28,7 @@ Vue.use(Router);
 
 // 病例通 - CasesOfTong
 // 病例通-疾病助手 - SicknessHelper
-// 病例通-疾病助手-疾病详情 - DetailsOfDisease  1.指南-(新增) -ing 2.药品库-(UI改变) -ing 3.典型(新增) -ing
+// 病例通-疾病助手-疾病详情 - DetailsOfDisease  1.指南-(新增) -OK 2.药品库-(UI改变) -OK 3.典型病例(新增) -OK
 // 病例通-疾病助手-疾病详情-典型病例 - SicknessDetail
 // 病例通-病例采集 - SicknessCollect
 // 病例通-病例采集-病例上传 - CasesOfUpload
@@ -36,20 +36,20 @@ Vue.use(Router);
 // 病例通-疾病助手-疾病详情-药品详情 - DrugsForDetails   （▲UI删掉了）
 
 // 院外通 - HospitalOfTong        (新增) - ok
-// 院外通-地图 - Map              (UI改变) -ing => ok
+// 院外通-地图 - Map              (UI改变) - ok
 // 院外通-列表 - PharmacyList     （▲UI删掉了）
 // 院外通-搜索药店 - SearchDrugstore    （▲UI删掉了）
 // 院外通-搜索药品 - SearchDrug
 // 院外通-药房详情 - PharmacyDetail                    (UI改变) - OK
-// 院外通-药房详情-药品详情 - DrugsForDetails_Out      (UI改变) -ing
+// 院外通-药房详情-药品详情 - DrugsForDetails_Out      (UI改变) -OK
 // 院外通-购物车 - ShoppingTrolley    （新增）-ing
 // 院外通-结算页面（+用药信息-提示） --订单页 -  SettlementPage  （新增）-ing   --订单页
 
 // 答题通 - AnswerOfTong
-// 答题通-问卷调研 - QuestionnaireInquiry    （新增）-ing +   (UI改变) -ing => 过期添加弹窗新增已过期选项与时间区间
+// 答题通-问卷调研 - QuestionnaireInquiry    （新增）- OK +   (UI改变) - OK => 过期添加弹窗新增已过期选项与时间区间
 // 答题通-问卷调研-答题 - QuestionnaireInquiry_Answer
 // 答题通-知识库 - KnowledgeBase
-// 答题通-在线考试 - OnlineExamination   (UI改变) -ing  =>限时考试+开放考试  合并 => 过期添加弹窗新增
+// 答题通-在线考试 - OnlineExamination   (UI改变) -OK  =>限时考试+开放考试  合并 => 过期添加弹窗新增
 // 答题通-在线考试-限时考试 - TimedExamination
 // 答题通-在线考试-开放考试 - OpenExamination
 // 答题通-在线考试-考后查询 - ResultsQuery
@@ -57,6 +57,14 @@ Vue.use(Router);
 
 // 知会通 - 在线会议 OnlineMetting
 // 知会通 - 视频库 VideoLibrary
+
+
+// 随访通-患者评测（健康自测） HealthSelfTest  --OK
+// 随访通-用户画像（健康画像） HealthPortrait
+// 随访通-随访列表 FollowUpList               --OK
+// 随访通-随访记录上传  RecordUpload  --OK (临时版)
+// 随访通-随访列表（随访记录详情/随访通-复诊周期/随访通-复购周期）  RecordList  --OK (临时版)
+
 
 export default new Router({
   mode: "history",
@@ -282,6 +290,33 @@ export default new Router({
       path: "/videolibrary",
       name: "VideoLibrary",
       component: () => import("@/views/mettingoftong/VideoLibrary")
-    }
+    },
+    // 随访通
+
+    {
+      path: "/healthselftest",
+      name: "HealthSelfTest",
+      component: () => import("@/views/followupoftong/HealthSelfTest")
+    },
+    {
+      path: "/healthportrait",
+      name: "HealthPortrait",
+      component: () => import("@/views/followupoftong/HealthPortrait")
+    },
+    {
+      path: "/followuplist",
+      name: "FollowUpList",
+      component: () => import("@/views/followupoftong/FollowUpList")
+    },
+    {
+      path: "/recordupload",
+      name: "RecordUpload",
+      component: () => import("@/views/followupoftong/RecordUpload")
+    },
+    {
+      path: "/recordlist",
+      name: "RecordList",
+      component: () => import("@/views/followupoftong/RecordList")
+    },
   ]
 });

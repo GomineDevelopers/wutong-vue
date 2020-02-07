@@ -4,56 +4,87 @@
     <div :style="{height: '0.4rem'}"></div>
     <div class="ST_title">共3件商品</div>
     <div :style="{height: '0.46rem'}"></div>
-    <div class="content_bg">
-      <div :style="{height: '0.32rem'}"></div>
-      <div class="c_title">
-        广联医药&nbsp;
-        <van-icon size="0.28rem" name="arrow" />
-      </div>
-      <div :style="{height: '0.21rem'}"></div>
-      <template v-for="(item,index) in BaseArr ">
-        <div class="PerRow" :key="index + 'st' ">
-          <div class="st_choose blockB_floatL">
-            <img
-              @click="ChangeSelectedStatus(index,false)"
-              v-if="item.ifSelected"
-              :src="pic.selected"
-              alt
-            />
-            <img
-              @click="ChangeSelectedStatus(index,true)"
-              v-if="!item.ifSelected"
-              :src="pic.unselected"
-              alt
-            />
+    <template v-for="(itemP,indexP) in BaseArrP ">
+      <div :key="indexP + 'stP' ">
+        <div v-if="indexP != 0" :style="{height: '0.5rem'}"></div>
+        <div class="content_bg">
+          <div :style="{height: '0.32rem'}"></div>
+          <div class="c_title">
+            {{itemP.ShopName}}&nbsp;
+            <van-icon size="0.28rem" name="arrow" />
           </div>
-          <div class="st_img_p blockB_floatL">
-            <img class="st_img" :src="item.pic" alt />
-          </div>
-          <div class="st_content blockB_floatL">
-            <div class="st_name">{{item.name}}</div>
-            <div class="st_specification">{{item.specification}}</div>
-            <div class="st_bottom">
-              <div class="st_price">￥&nbsp;{{item.price}}</div>
-              <div class="st_originalPrice">￥&nbsp;{{item.originalPrice}}</div>
-              <div class="st_count">
-                <div class="pc_right blockB_floatL">
-                  <div class="subtract countRadius blockB_floatL">
-                    <div @click="countChange('subtract',index)" class="countFont blockB_floatL">-</div>
-                  </div>
-                  <div class="p_count blockB_floatL">{{item.count}}</div>
-                  <div class="add countRadius blockB_floatL">
-                    <div
-                      @click="countChange('add',index)"
-                      class="countFont countFont2 blockB_floatL"
-                    >+</div>
+          <div :style="{height: '0.21rem'}"></div>
+          <template v-for="(item,index) in BaseArr[indexP] ">
+            <div
+              :class="'PerRow' + ' PerRowCommon' + ' ' + indexP+'_'+index+'PerRowCommon'  "
+              :key="indexP+ '-' + index + 'st' "
+              @touchstart.capture="touchStart($event,indexP,index)"
+              @touchend.capture="touchEnd($event,indexP,index)"
+            >
+              <div class="st_choose blockB_floatL">
+                <img
+                  @click="ChangeSelectedStatus(indexP,index,false)"
+                  v-if="item.ifSelected"
+                  :src="pic.selected"
+                  alt
+                  class="img_choose"
+                />
+                <img
+                  @click="ChangeSelectedStatus(indexP,index,true)"
+                  v-if="!item.ifSelected"
+                  :src="pic.unselected"
+                  alt
+                  class="img_choose"
+                />
+              </div>
+              <div class="blockB_floatL st_pic">
+                <div class="st_img_p">
+                  <img class="st_img" :src="item.pic" alt />
+                </div>
+              </div>
+              <div class="st_content blockB_floatL">
+                <div class="st_name">{{item.name}}</div>
+                <div class="st_specification">{{item.specification}}</div>
+                <div class="st_bottom">
+                  <div class="st_price">￥&nbsp;{{item.price}}</div>
+                  <div class="st_originalPrice">￥&nbsp;{{item.originalPrice}}</div>
+                  <div class="st_count">
+                    <div class="pc_right blockB_floatL">
+                      <div class="subtract countRadius blockB_floatL">
+                        <div
+                          @click="countChange('subtract',indexP,index)"
+                          class="countFont blockB_floatL"
+                        >-</div>
+                      </div>
+                      <div class="p_count blockB_floatL">{{item.count}}</div>
+                      <div class="add countRadius blockB_floatL">
+                        <div
+                          @click="countChange('add',indexP,index)"
+                          class="countFont countFont2 blockB_floatL"
+                        >+</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div class="deleteAssign" @click="deleteItem($event,indexP,index)">删除</div>
             </div>
-          </div>
+          </template>
         </div>
-      </template>
+      </div>
+    </template>
+    <div :style="{height: '0.5rem'}"></div>
+    <div class="flex_purchase">
+      <van-goods-action>
+        <van-goods-action-button
+          class="first"
+          id="serviceShow"
+          type="warning"
+          text
+          @click="onClickButton"
+        />
+        <van-goods-action-button id="moneyShow" type="danger" text @click="onClickButton" />
+      </van-goods-action>
     </div>
   </div>
 </template>
@@ -69,52 +100,237 @@ export default {
         selected: require("@/assets/pic/selected.png"),
         unselected: require("@/assets/pic/unselected.png")
       },
-      BaseArr: [
+      BaseArrP: [
         {
-          Did: 1,
-          name: "金纳多（银杏叶提取物）",
-          pic: require("@/assets/pic/drug.jpg"),
-          specification: "15g*1支/盒",
-          price: 16.98,
-          originalPrice: 18.98,
-          count: 1,
-          ifSelected: true
+          Sid: 1,
+          ShopName: "广联医药"
         },
         {
-          Did: 2,
-          name: "金纳多（银杏叶提取物）2",
-          pic: require("@/assets/pic/drug.jpg"),
-          specification: "15g*1支/盒",
-          price: 16.9888,
-          originalPrice: 18.98888,
-          count: 55,
-          ifSelected: true
+          Sid: 2,
+          ShopName: "老百姓大药房"
         },
         {
-          Did: 3,
-          name: "金纳多（银杏叶提取物）2333",
-          pic: require("@/assets/pic/drug.jpg"),
-          specification: "15g*1支/盒",
-          price: 16.9888,
-          originalPrice: 18.98888,
-          count: 8,
-          ifSelected: true
+          Sid: 3,
+          ShopName: "盛大药房"
         }
+      ],
+      BaseArr: [
+        [
+          {
+            Did: 1,
+            name: "金纳多（银杏叶提取物）",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.98,
+            originalPrice: 18.98,
+            count: 1,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          },
+          {
+            Did: 2,
+            name: "金纳多（银杏叶提取物）2",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.9888,
+            originalPrice: 18.98888,
+            count: 55,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          },
+          {
+            Did: 3,
+            name: "金纳多（银杏叶提取物）2333",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.9888,
+            originalPrice: 18.98888,
+            count: 8,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          }
+        ],
+        [
+          {
+            Did: 1,
+            name: "金纳多（银杏叶提取物）",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.98,
+            originalPrice: 18.98,
+            count: 1,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          },
+          {
+            Did: 2,
+            name: "金纳多（银杏叶提取物）2",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.9888,
+            originalPrice: 18.98888,
+            count: 55,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          },
+          {
+            Did: 3,
+            name: "金纳多（银杏叶提取物）2333",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.9888,
+            originalPrice: 18.98888,
+            count: 8,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          }
+        ],
+        [
+          {
+            Did: 1,
+            name: "金纳多（银杏叶提取物）",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.98,
+            originalPrice: 18.98,
+            count: 1,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          },
+          {
+            Did: 2,
+            name: "金纳多（银杏叶提取物）2",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.9888,
+            originalPrice: 18.98888,
+            count: 55,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          },
+          {
+            Did: 3,
+            name: "金纳多（银杏叶提取物）2333",
+            pic: require("@/assets/pic/drug.jpg"),
+            specification: "15g*1支/盒",
+            price: 16.9888,
+            originalPrice: 18.98888,
+            count: 8,
+            ifSelected: true,
+            startX: 0,
+            endX: 0
+          }
+        ]
       ]
     };
   },
   mounted() {
     let vm = this;
+
+    // ****** 购买栏样式 js 处理
+    let eve1 = document.getElementById("serviceShow");
+    eve1.innerHTML =
+      "<div class='moudule'>\
+        <div class='img_serve_p'></div>\
+        <div class='font_serve'>联系客服</div>\
+      </div>";
+
+    let eve2 = document.getElementById("moneyShow");
+    eve2.innerHTML =
+      "<div class='moudule2'>\
+        <div class='m2_right'><div class='shu'></div><div class='payfor'>结算</div></div>\
+      </div>";
   },
   methods: {
-    ChangeSelectedStatus(index, CurrentStatus) {
-      let Obj = this.BaseArr[index];
-      Obj.ifSelected = CurrentStatus;
-      Vue.set(this.BaseArr, index, Obj);
+    onClickButton() {
+      Toast("点击按钮");
     },
-    countChange(type, index) {
-      let currentCount = this.BaseArr[index].count;
-      let Obj = this.BaseArr[index];
+    // 进行店铺核验
+    checkShopName(indexP) {
+      let length = this.BaseArr[indexP].length;
+      console.log(indexP);
+      if (length == 0) {
+        this.BaseArr.splice(indexP, 1);
+        this.BaseArrP.splice(indexP, 1);
+      }
+    },
+    deleteItem(e, indexP, index) {
+      // 复位
+      this.restSlideAll();
+      // 删除
+      let temp_Arr = this.BaseArr[indexP];
+      temp_Arr.splice(index, 1);
+      Vue.set(this.BaseArr, indexP, temp_Arr);
+      this.checkShopName(indexP);
+    },
+    // 复位滑动状态-指定
+    restSlideAssign(indexP, index) {
+      let AssignClass = indexP + "_" + index + "PerRowCommon";
+      console.log(AssignClass);
+      let AssignItem = document.getElementsByClassName(AssignClass);
+      // 复位
+      AssignItem[0].dataset.type = 0;
+    },
+    // 复位滑动状态-所有
+    restSlideAll() {
+      let listItems = document.getElementsByClassName("PerRowCommon");
+      // 复位
+      for (let i = 0; i < listItems.length; i++) {
+        listItems[i].dataset.type = 0;
+      }
+    },
+    // 滑动开始
+    touchStart(e, indexP, index) {
+      // 记录初始位置
+      let temp_startX = e.touches[0].clientX;
+      // console.log(e);
+      console.log(indexP + "-" + index);
+      // console.log(e.touches[0].clientX);
+      let Obj = this.BaseArr[indexP][index];
+      Obj.startX = temp_startX;
+      Vue.set(this.BaseArr[indexP], index, Obj);
+    },
+    // 滑动结束
+    touchEnd(e, indexP, index) {
+      // // 记录结束位置
+      let temp_endX = e.changedTouches[0].clientX;
+      let AssignClass = indexP + "_" + index + "PerRowCommon";
+      let Assign = document.getElementsByClassName(AssignClass);
+
+      // 左滑
+      if (this.BaseArr[indexP][index].startX - temp_endX > 30) {
+        console.log("左滑"); // 显示删除
+        this.restSlideAll(); // 滑块全部初始化
+        Assign[0].dataset.type = 1;
+      }
+      // 右滑
+      if (this.BaseArr[indexP][index].startX - temp_endX < -30) {
+        console.log("右滑"); // 关掉删除
+        this.restSlideAll(); // 滑块全部初始化
+        Assign[0].dataset.type = 0;
+      }
+      // this.startX = 0;
+      // this.endX = 0;
+      // console.log("~~~");
+      // console.log(e);
+      // console.log(indexP + "-" + index);
+    },
+    ChangeSelectedStatus(indexP, index, CurrentStatus) {
+      let Obj = this.BaseArr[indexP][index];
+      Obj.ifSelected = CurrentStatus;
+      Vue.set(this.BaseArr[indexP], index, Obj);
+    },
+    countChange(type, indexP, index) {
+      let currentCount = this.BaseArr[indexP][index].count;
+      let Obj = this.BaseArr[indexP][index];
       if (type == "subtract") {
         if (currentCount > 1) {
           currentCount--;
@@ -125,14 +341,174 @@ export default {
         }
       }
       Obj.count = currentCount;
-      Vue.set(this.BaseArr, index, Obj);
+      Vue.set(this.BaseArr[indexP], index, Obj);
     }
   }
 };
 </script>
+
+<style>
+/* ******* 购买栏 */
+.ShoppingTrolley .van-goods-action {
+  bottom: 0.32rem;
+  margin: 0 0.4rem;
+  /* border: 0.01rem solid #81d8ce; */
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.ShoppingTrolley .van-goods-action-button--warning {
+  height: 0.98rem;
+  background: #ffffff;
+  color: #81d8ce;
+}
+.ShoppingTrolley .van-goods-action-button--danger {
+  height: 0.98rem;
+  background: #81d8ce;
+  color: #ffffff;
+}
+.ShoppingTrolley .first.van-goods-action-button--warning {
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
+
+  /* border-radius: 20px; */
+  /* background: red; */
+}
+.ShoppingTrolley .van-goods-action-button--last {
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
+}
+
+.ShoppingTrolley .van-goods-action-button {
+  border: 0.01rem solid #81d8ce;
+}
+
+.ShoppingTrolley .van-goods-action-button--warning .img_serve_p {
+  width: 0.43rem;
+  height: 0.44rem;
+  background-image: url("../../assets/pic/service_icon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.ShoppingTrolley .van-goods-action-button--warning .moudule {
+  height: 0.84rem;
+  padding-top: 0.12rem;
+  width: 5.06rem;
+}
+
+.ShoppingTrolley .van-goods-action-button--warning .font_serve {
+  height: 0.2rem;
+  font-size: 0.2rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(129, 216, 206, 1);
+  line-height: 0.2rem;
+  margin-top: 0.06rem;
+}
+.ShoppingTrolley .van-goods-action-button--danger .moudule2 {
+  width: 1.8rem;
+}
+.ShoppingTrolley .van-goods-action-button--danger .img_shopping_p {
+  width: 0.66rem;
+  height: 0.55rem;
+  background-image: url("../../assets/pic/ShoppingTrolley.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+.ShoppingTrolley .van-goods-action-button--danger .shopping_count {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: rgba(255, 85, 0, 1);
+  -webkit-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem;
+  margin-left: 0.36rem;
+}
+.ShoppingTrolley .van-goods-action-button--danger .shopping_count_c {
+  height: 0.2rem;
+  font-size: 0.2rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 0.2rem;
+  padding-top: 0.05rem;
+}
+
+.ShoppingTrolley .van-goods-action-button--danger .moudule2 .m2_left {
+  height: 0.76rem;
+  width: 0.9rem;
+  padding-bottom: 0.3rem;
+  padding-top: 0.22rem;
+  display: block;
+  float: left;
+}
+.ShoppingTrolley .van-goods-action-button--danger .moudule2 .m2_middle {
+  display: block;
+  float: left;
+  width: 2.25rem;
+  height: 0.88rem;
+  padding-top: 0.1rem;
+}
+.ShoppingTrolley .van-goods-action-button--danger .moneyShow1 {
+  height: 0.45rem;
+  font-size: 0.32rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 0.45rem;
+  margin: 0 auto;
+  text-align: left;
+}
+.ShoppingTrolley .van-goods-action-button--danger .moneyShow2 {
+  height: 0.33rem;
+  font-size: 0.24rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(209, 248, 237, 1);
+  line-height: 0.33rem;
+  margin: 0 auto;
+  text-align: left;
+}
+.ShoppingTrolley .van-goods-action-button--danger .moneyShow2 .through {
+  text-decoration: line-through;
+}
+.ShoppingTrolley .van-goods-action-button--danger .moudule2 .m2_right {
+  display: block;
+  float: left;
+  padding-top: 0.26rem;
+  height: 0.7rem;
+}
+.ShoppingTrolley .van-goods-action-button--danger .moudule2 .payfor {
+  height: 0.45rem;
+  font-size: 0.32rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 0.45rem;
+  padding-left: 0.4rem;
+}
+.ShoppingTrolley .van-goods-action-button--danger .shu {
+  width: 0.02rem;
+  height: 0.2rem;
+  background: rgba(255, 255, 255, 1);
+  display: block;
+  float: left;
+  margin-top: 0.14rem;
+}
+</style>
+
 <style scoped>
 .ShoppingTrolley {
   padding: 0 0.32rem;
+  /* padding: 0 0.35rem 0 0.32rem; */
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
 }
 .ShoppingTrolley .ST_title {
   height: 0.45rem;
@@ -148,6 +524,8 @@ export default {
   box-shadow: 0 0.04rem 0.2rem 0 rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
   border: 0.01rem solid rgba(233, 232, 232, 1);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .ShoppingTrolley .c_title {
   height: 0.45rem;
@@ -160,7 +538,7 @@ export default {
 }
 
 .ShoppingTrolley .pc_right {
-  height: 0.5rem;
+  /* height: 0.5rem; */
 }
 
 .ShoppingTrolley .p_count {
@@ -171,7 +549,8 @@ export default {
   font-weight: 400;
   color: rgba(65, 72, 93, 1);
   line-height: 0.45rem;
-  margin: 0 0.33rem;
+  /* margin: 0 0.33rem; */
+  margin: 0 0.105rem;
   width: 0.5rem;
   text-align: center;
 }
@@ -210,27 +589,66 @@ export default {
 
 .ShoppingTrolley .PerRow {
   width: 6.84rem;
-  height: 1.8rem;
+  height: 1.2rem;
+  padding: 0.3rem 0 0.29rem 0;
+  border-top: 0.01rem solid rgba(238, 238, 238, 1);
 }
+
+.ShoppingTrolley .PerRowCommon {
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.ShoppingTrolley .PerRowCommon[data-type="0"] {
+  transform: translate3d(0, 0, 0);
+}
+.ShoppingTrolley .PerRowCommon[data-type="1"] {
+  transform: translate3d(-1.8rem, 0, 0);
+}
+.ShoppingTrolley .PerRowCommon:after {
+  content: " ";
+  position: absolute;
+  left: 0.2rem;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #ccc;
+  color: #ccc;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+
 .ShoppingTrolley .st_choose {
   width: 0.32rem;
-  height: 0.32rem;
-  padding: 0.74rem 0.24rem;
+  height: 0.4rem;
+  padding: 0.4rem 0.24rem;
 }
+.ShoppingTrolley .img_choose {
+  height: 0.32rem;
+  width: 0.32rem;
+  vertical-align: top;
+}
+.ShoppingTrolley .st_pic {
+  height: 100%;
+  margin-right: 0.2rem;
+}
+
 .ShoppingTrolley .st_img_p {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 0.06rem;
   border: 0.01rem solid rgba(223, 223, 223, 1);
-  padding: 0.3rem 0;
+  padding: 0.01rem;
 }
 .ShoppingTrolley .st_img {
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 1.18rem;
+  width: 1.18rem;
 }
 .ShoppingTrolley .st_content {
-  width: 4.85rem;
-  height: 1.8rem;
+  /* height: 1.8rem; */
 }
 .ShoppingTrolley .st_name {
   height: 0.32rem;
@@ -247,10 +665,57 @@ export default {
   font-weight: 400;
   color: rgba(133, 139, 156, 1);
   line-height: 0.24rem;
+  margin-top: 0.18rem;
 }
-.ShoppingTrolley .st_bottom{
-    height: 0.39rem;
+.ShoppingTrolley .st_bottom {
+  height: 0.39rem;
+  margin-top: 0.07rem;
 }
 
+.ShoppingTrolley .st_price {
+  height: 0.28rem;
+  font-size: 0.28rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 85, 0, 1);
+  line-height: 0.28rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.12rem;
+  margin-top: 0.11rem;
+  width: 1.5rem;
+}
+.ShoppingTrolley .st_originalPrice {
+  height: 0.2rem;
+  font-size: 0.2rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(197, 202, 213, 1);
+  line-height: 0.2rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.19rem;
+  text-decoration: line-through;
+  width: 1.3rem;
+}
+.ShoppingTrolley .st_count {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: -0.05rem;
+  margin-left: 0.1rem;
+}
+
+.ShoppingTrolley .deleteAssign {
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.8rem;
+  position: absolute;
+  top: 0;
+  right: -1.8rem;
+  background: rgba(255, 85, 0, 1);
+}
 </style>
 

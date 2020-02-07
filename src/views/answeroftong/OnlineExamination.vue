@@ -10,52 +10,35 @@
       background="#ffffff"
     ></van-search>
     <div :style="{height: '0.24rem'}"></div>
-    <van-tabs v-model="activeName" @click="onClick">
-      <van-tab class="tab_left" title="限时考试" name="a">
-        <template v-for="(item,index) in OnlineExaminationArr ">
-          <div class="PerRow" :key="index + 'qi' ">
-            <div
-              class="common_Stitle_font2 common_Stitle_font3 title_spaceRight inlineBlock"
-            >{{item.name}}</div>
-            <div class="text_info theme_color5 inlineBlock">
-              <span class="participate participating" v-if="item.status == '立即参加'">{{item.status}}</span>
-              <span
-                class="participate participated"
-                v-if="item.status == '已参加' || item.status == '已过期'"
-              >{{item.status}}</span>
-              <van-icon
-                size="0.28rem"
-                name="arrow"
-                @click="router_to('/OnlineExamination_answer')"
-              />
-            </div>
-            <div class="Q_time">{{item.time}}</div>
-          </div>
-        </template>
-      </van-tab>
-      <van-tab class="tab_right" title="开放考试" name="b">
-        <template v-for="(item,index) in OnlineExaminationArr2 ">
-          <div class="PerRow" :key="index + 'qi' ">
-            <div
-              class="common_Stitle_font2 common_Stitle_font3 title_spaceRight inlineBlock"
-            >{{item.name}}</div>
-            <div class="text_info theme_color5 inlineBlock">
-              <span class="participate participating" v-if="item.status == '立即参加'">{{item.status}}</span>
-              <span
-                class="participate participated"
-                v-if="item.status == '已参加' || item.status == '已过期'"
-              >{{item.status}}</span>
-              <van-icon
-                size="0.28rem"
-                name="arrow"
-                @click="router_to('/OnlineExamination_answer')"
-              />
-            </div>
-            <div class="Q_time">{{item.time}}</div>
-          </div>
-        </template>
-      </van-tab>
-    </van-tabs>
+    <template v-for="(item,index) in OnlineExaminationArr ">
+      <div class="PerRow" :key="index + 'qi' ">
+        <van-rate
+          v-model="item.rate"
+          allow-half
+          void-icon="star"
+          size="0.16rem"
+          color="#81D8CE"
+          void-color="#E2E4E8"
+        />
+        <div :style="{height: '0.16rem'}"></div>
+        <div
+          class="common_Stitle_font2 common_Stitle_font3 title_spaceRight inlineBlock"
+        >{{item.name}}</div>
+        <div class="text_info theme_color5 inlineBlock">
+          <span class="participate participating" v-if="item.status == '点击参与'">{{item.status}}</span>
+          <span
+            class="participate participated"
+            v-if="item.status == '已参与' || item.status == '已过期'"
+          >{{item.status}}</span>
+          <van-icon size="0.28rem" name="arrow" @click="router_to('/OnlineExamination_answer')" />
+        </div>
+        <div class="PerRow_Bottom">
+          <div v-if="item.type == '限时考试' " class="PerRow_Bottom_t1 PB_Font">{{item.type}}</div>
+          <div v-if="item.type == '开放考试' " class="PerRow_Bottom_t2 PB_Font">{{item.type}}</div>
+          <div class="Q_time">{{item.time}}</div>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 <script>
@@ -69,47 +52,45 @@ export default {
       OnlineExaminationArr: [
         {
           name: "XXX考试",
-          status: "立即参加",
-          time: "2019-12-02 00:00 ~ 2020-10-01 00:00"
+          rate: 2.5,
+          type: "开放考试",
+          time: "2019-12-02 ~ 2020-10-01",
+          status: "点击参与"
         },
         {
           name: "XXX医药测试",
-          status: "立即参加",
-          time: "2019-12-02 00:00 ~ 2020-10-01 00:00"
+          rate: 3.5,
+          type: "限时考试",
+          time: "2019-12-02 ~ 2020-10-01",
+          status: "点击参与"
         },
-
-        {
-          name: "XXX活动测试",
-          status: "已参加",
-          time: "2019-12-02 00:00 ~ 2020-10-01 00:00"
-        },
-        {
-          name: "XXXXXX考试",
-          status: "已过期",
-          time: "2019-12-02 00:00 ~ 2020-10-01 00:00"
-        }
-      ],
-      OnlineExaminationArr2: [
         {
           name: "XXX考试",
-          status: "立即参加",
-          time: "2019-12-02"
+          rate: 2.5,
+          type: "开放考试",
+          time: "2019-12-02  ~ 2020-10-01 ",
+          status: "点击参与"
         },
         {
           name: "XXX医药测试",
-          status: "立即参加",
-          time: "2019-12-02"
+          rate: 4.5,
+          type: "限时考试",
+          time: "2019-12-02  ~ 2020-10-01 ",
+          status: "点击参与"
         },
-
         {
           name: "XXX活动测试",
-          status: "已参加",
-          time: "2019-12-02"
+          rate: 2.5,
+          type: "开放考试",
+          time: "2019-12-02  ~ 2020-10-01 ",
+          status: "已参与"
         },
         {
           name: "XXXXXX考试",
-          status: "已过期",
-          time: "2019-12-02"
+          rate: 3.5,
+          type: "限时考试",
+          time: "2019-12-02  ~ 2020-10-01 ",
+          status: "已过期"
         }
       ]
     };
@@ -182,35 +163,9 @@ export default {
   margin-top: 0.06rem;
 }
 
-/* ******** 标签 */
-.OnlineExamination .van-tabs--line .van-tabs__wrap {
-  height: 0.88rem;
-}
-.OnlineExamination .van-tab {
-  color: #111a34;
-}
-.OnlineExamination .van-tab__text {
-  font-size: 0.28rem;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-}
-.OnlineExamination .van-tab--active {
-  color: rgba(129, 216, 206, 1);
-}
-.OnlineExamination .van-tabs__line {
-  background-color: rgba(129, 216, 206, 1);
-  width: 14% !important;
-}
-
-/* ***** 标签样式居中 */
-.OnlineExamination .van-tab:nth-child(1) {
-  padding-left: 2rem;
-}
-.OnlineExamination .van-tab:nth-child(2) {
-  padding-right: 2rem;
-}
-.OnlineExamination .van-tabs__line {
-  margin-left: 0.95rem;
+/* ******* rate 评分 */
+.OnlineExamination .van-rate {
+  display: flex;
 }
 </style>
 <style scoped>
@@ -218,10 +173,13 @@ export default {
 }
 
 .OnlineExamination .PerRow {
-  height: 0.83rem;
+  height: 1.17rem;
   /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
-  padding: 0.46rem 0.32rem 0.21rem 0.32rem;
+  border-top: 0.01rem #f6f6f6 solid;
+  padding: 0.35rem 0.32rem 0.48rem 0.32rem;
+}
+.OnlineExamination .PerRow:last-child{
+  border-bottom: 0.01rem #f6f6f6 solid;
 }
 
 .OnlineExamination .title_spaceRight {
@@ -252,7 +210,36 @@ export default {
   width: 2.6rem;
   vertical-align: top;
 }
+.OnlineExamination .PerRow_Bottom {
+}
+.OnlineExamination .PerRow_Bottom_t1 {
+  display: inline-block;
+  vertical-align: top;
+  background: rgba(92, 155, 240, 1);
+}
+.OnlineExamination .PerRow_Bottom_t2 {
+  display: inline-block;
+  vertical-align: top;
+  background: rgba(255, 176, 58, 1);
+}
+.OnlineExamination .PB_Font {
+  height: 0.28rem;
+  font-size: 0.2rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 0.28rem;
+  letter-spacing: 0.01rem;
+  width: 1rem;
+  height: 0.28rem;
+  border-radius: 0.04rem;
+  text-align: center;
+  margin-top: -0.8rem;
+}
+
 .OnlineExamination .Q_time {
+  display: inline-block;
+  vertical-align: top;
   height: 0.28rem;
   font-size: 0.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -261,9 +248,8 @@ export default {
   line-height: 0.28rem;
   letter-spacing: 0.01rem;
   vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  margin-top: -0.8rem;
+  margin-top: -0.78rem;
+  margin-left: 0.2rem;
 }
 </style>
 

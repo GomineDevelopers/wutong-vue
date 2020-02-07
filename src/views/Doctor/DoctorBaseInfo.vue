@@ -84,6 +84,7 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-top: 0.12rem;
+  height: 0.5rem;
 }
 .DoctorBaseInfo .van-dropdown-menu__title {
   /* padding: 0 5.5rem 0 0; */
@@ -162,6 +163,5 @@ export default {
   width: 3.6rem;
   height: 0.9rem;
 }
-
 </style>
 

@@ -205,7 +205,7 @@ export default {
     }
   },
   methods: {
-    popupFunc() {
+    popupFunc(status) {
       // Reanswer
       // 重新答题
       // Submit

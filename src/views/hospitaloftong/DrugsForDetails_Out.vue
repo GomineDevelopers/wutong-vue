@@ -24,7 +24,13 @@
         </div>
         <div class="price2 blockB_floatL">￥ &nbsp;18.98</div>
       </div>
-      <div class="pc_right blockB_floatL">
+      <div v-if="ifShopping == false" class="pc_right blockB_floatL">
+        <div @click="BtnStatusChange()" class="btn_shopping">
+          <P class="shopping_font">加入购物车</P>
+        </div>
+      </div>
+
+      <div v-if="ifShopping == true" class="pc_right blockB_floatL">
         <div class="subtract countRadius blockB_floatL">
           <div @click="countChange('subtract')" class="countFont blockB_floatL">-</div>
         </div>
@@ -61,13 +67,9 @@
       <div class="p_intro_title_l">产品说明</div>
       <div :style="{height: '0.2rem'}"></div>
       <div class="p_intro_font">
-        <p>[用法用量]外用。寻常痤疮:每晚1次，于睡前将药轻轻涂于患处。银屑病、鱼鳞病等皮疹位于遮盖部位的可一日1-3次或遵医嘱。用毕应洗手。</p>
-        <p>[不良反应]外用本品可能会引起皮肤刺激症状，如灼感、红斑及脱屑，可能使皮损更明显，但同时表明药物正在起作用，不是病情的加重。皮肤多半可适应及耐受，刺激现象可逐步消失。若刺激现象持续或加重，可在医师指导下间歇用药，或暂停用药。</p>
-        <p>[禁忌] 1、对维生素A衍生物过敏者禁用。2、孕妇禁用。3、急性或亚急性皮炎、湿疹类皮肤病患者禁用。4、眼部禁用。</p>
-        <p>
-          [注意事项] 1、用药部位避免日光照射。2、 儿童慎用。3、 不应大面积使用。4、 不得用于皮肤破溃处。5、 哺乳期妇女在用药期间应停止哺乳，育龄妇女用药期间严禁受孕。6、 避免接触眼睛和其他黏膜(如口、鼻等)。7、用药部位如有烧灼感、瘙痒、红肿等情况应停药，并将局部药物洗净，必要时向医师咨询。8、用于治疗痤疮，起初数周可暂加剧，仍应继续治疗6周以上才能达到最大疗效。9、本品可能引起严重刺激或脱屑，不宜用于皮肤皱褶处。10、 对本品过敏者禁用，过敏体质者慎用。 11、 本品性状发生改变时禁止使用。 12、 请将本品放在儿童不能接触的地方。13、 儿童必须在成人监护下使用。14、 如正在使用其他药品，使用本品前请咨询医师或药师。
-          请仔细阅读说明书并遵医嘱使用。
-        </p>
+        <template v-for="(item,index) in DrugDetails.infoArr ">
+          <p :key="index + 'DD' ">{{item}}</p>
+        </template>
       </div>
     </div>
     <div class="flex_purchase">
@@ -111,6 +113,7 @@ export default {
         service_icon: require("@/assets/pic/service_icon.png"),
         ShoppingTrolley: require("@/assets/pic/ShoppingTrolley.png")
       },
+      ifShopping: false,
       p_count: 1,
       productContent: [
         {
@@ -137,7 +140,16 @@ export default {
           subtitle: "使用剂量",
           intro: "每晚一次，于睡前将药轻轻涂于患处"
         }
-      ]
+      ],
+      DrugDetails: {
+        infoArr: [
+          "[用法用量]外用。寻常痤疮:每晚1次，于睡前将药轻轻涂于患处。银屑病、鱼鳞病等皮疹位于遮盖部位的可一日1-3次或遵医嘱。用毕应洗手。",
+          "[不良反应]外用本品可能会引起皮肤刺激症状，如灼感、红斑及脱屑，可能使皮损更明显，但同时表明药物正在起作用，不是病情的加重。皮肤多半可适应及耐受，刺激现象可逐步消失。若刺激现象持续或加重，可在医师指导下间歇用药，或暂停用药。",
+          "[禁忌] 1、对维生素A衍生物过敏者禁用。2、孕妇禁用。3、急性或亚急性皮炎、湿疹类皮肤病患者禁用。4、眼部禁用。",
+          "[注意事项] 1、用药部位避免日光照射。2、 儿童慎用。3、 不应大面积使用。4、 不得用于皮肤破溃处。5、 哺乳期妇女在用药期间应停止哺乳，育龄妇女用药期间严禁受孕。6、 避免接触眼睛和其他黏膜(如口、鼻等)。7、用药部位如有烧灼感、瘙痒、红肿等情况应停药，并将局部药物洗净，必要时向医师咨询。8、用于治疗痤疮，起初数周可暂加剧，仍应继续治疗6周以上才能达到最大疗效。9、本品可能引起严重刺激或脱屑，不宜用于皮肤皱褶处。10、 对本品过敏者禁用，过敏体质者慎用。 11、 本品性状发生改变时禁止使用。 12、 请将本品放在儿童不能接触的地方。13、 儿童必须在成人监护下使用。14、 如正在使用其他药品，使用本品前请咨询医师或药师。",
+          "请仔细阅读说明书并遵医嘱使用。"
+        ]
+      }
     };
   },
   mounted() {
@@ -166,6 +178,9 @@ export default {
       </div>";
   },
   methods: {
+    BtnStatusChange() {
+      this.ifShopping = true;
+    },
     countChange(type) {
       if (type == "subtract") {
         if (this.p_count > 1) {
@@ -201,7 +216,7 @@ export default {
   bottom: 0.32rem;
   margin: 0 0.4rem;
   /* border: 0.01rem solid #81d8ce; */
-  background-color: rgba(0,0,0,0); 
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .DrugsForDetails_Out .van-goods-action-button--warning {
@@ -414,7 +429,22 @@ export default {
 .DrugsForDetails_Out .pc_right {
   height: 0.5rem;
 }
-
+.DrugsForDetails_Out .btn_shopping {
+  width: 1.68rem;
+  height: 0.41rem;
+  padding-top: 0.09rem;
+  background: rgba(129, 216, 206, 1);
+  border-radius: 0.3rem;
+}
+.DrugsForDetails_Out .shopping_font {
+  font-size: 0.24rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
 .DrugsForDetails_Out .price1 {
   height: 0.5rem;
   font-size: 0.28rem;
