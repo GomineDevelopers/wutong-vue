@@ -23,10 +23,15 @@
                   class="common_Stitle_font2 title_spaceRight inlineBlock common_Stitle_font4"
                 >{{item.name}}</div>
                 <div class="text_info theme_color5">
-                  <span
+                  <!-- <span
                     class="participate participating"
                     v-if="item.status == '点击查看'"
                     @click="router_to('/sicknessdetail')"
+                  >{{item.status}}</span>-->
+                  <!-- 注意：这里指向对应pdf -->
+                  <span
+                    class="participate participating"
+                    v-if="item.status == '点击查看'"
                   >{{item.status}}</span>
                   <van-icon @click="router_to('/sicknessdetail')" size="0.28rem" name="arrow" />
                 </div>
@@ -151,43 +156,31 @@ export default {
         },
         {
           id: "2",
-          name: "早期糖尿病的12大征兆",
+          name: "糖尿病的危害",
           time: "2019-12-02",
           status: "点击查看"
         },
         {
           id: "3",
-          name: "早期糖尿病的12大征兆",
+          name: "如何预防糖尿病",
           time: "2019-12-02",
           status: "点击查看"
         },
         {
           id: "4",
-          name: "早期糖尿病的12大征兆",
+          name: "您还在为“糖尿病”苦恼吗？",
           time: "2019-12-02",
           status: "点击查看"
         },
         {
           id: "5",
-          name: "早期糖尿病的12大征兆",
+          name: "防止糖尿病六大法宝",
           time: "2019-12-02",
           status: "点击查看"
         },
         {
           id: "6",
-          name: "早期糖尿病的12大征兆",
-          time: "2019-12-02",
-          status: "点击查看"
-        },
-        {
-          id: "7",
-          name: "早期糖尿病的12大征兆",
-          time: "2019-12-02",
-          status: "点击查看"
-        },
-        {
-          id: "8",
-          name: "早期糖尿病的12大征兆",
+          name: "如何看待糖尿病？",
           time: "2019-12-02",
           status: "点击查看"
         }

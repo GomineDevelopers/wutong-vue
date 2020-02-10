@@ -2,6 +2,7 @@
   <van-row class="SicknessLibraryList height_auto sickness_module">
     <van-row
       class="sickness_list flex flex_align_center"
+      @click="router_toSpec('/sicknessdetail',item.id)"
       v-for="(item, index) in sicknessList"
       :key="index + 'lib'"
     >
@@ -33,21 +34,24 @@ export default {
     return {
       sicknessList: [
         {
-          title: "糖尿病",
-          content: "大多数病人都有典型的「三多一少」症状",
+          id: 1,
+          title: "高血压",
+          content: "高血压伴晕厥：嗜铬细胞瘤“作祟”",
           date: "2019-12-02 16:31",
           status: 1
         },
         {
+          id: 2,
           title: "糖尿病",
-          content: "大多数病人都有典型的「三多一少」症状",
+          content: "糖尿病：高血糖为特征的代谢性疾病",
           date: "2019-12-02 16:31",
           status: 2
         },
         {
-          title: "糖尿病",
+          id: 3,
+          title: "心脏病",
           content:
-            "大多数病人都有典型的「三多一少」症状，但是往往很多人总是忽视",
+            "心脏病:比较常见的循环系统疾病",
           date: "2019-12-02 16:31",
           status: 3
         }
@@ -59,6 +63,16 @@ export default {
     router_to(str) {
       let vm = this;
       vm.$router.push({ path: str });
+    },
+    router_toSpec(str, id) {
+      let vm = this;
+      // console.log(id);
+      vm.$router.push({
+        path: str,
+        query: {
+          id: id
+        }
+      });
     }
   }
 };
