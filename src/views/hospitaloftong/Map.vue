@@ -10,7 +10,7 @@
           placeholder="请输入"
           shape="round"
           @search="onSearch"
-          background="#ffffff"
+          background="transparent"
         ></van-search>
       </van-row>
       <van-row class="map_container">
@@ -82,13 +82,15 @@ export default {
 }
 .search_content {
   position: absolute;
-  top: 0.05rem;
+  top: 0.1rem;
   left: 0.32rem;
   right: 0.32rem;
+  z-index: 999;
 }
 .map_container {
-  height: calc(100% - 0.85rem);
-  margin-top: 0.85rem;
+  /* height: calc(100% - 0.85rem); */
+  /* margin-top: 0.85rem; */
+  height: 100%;
   position: relative;
   background: #f0f0f0;
 }

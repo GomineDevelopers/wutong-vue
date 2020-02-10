@@ -37,16 +37,17 @@
 }
 /* 修改input默认placeholder颜色 */
 .van-cell .van-field__control::-webkit-input-placeholder {
-  color: #d1d1d6;
+  color: #858B9C;
 }
 .van-cell .van-field__control:-moz-placeholder {
-  color: #d1d1d6;
+  /* color: #d1d1d6; */
+  color: #858B9C;
 }
 .van-cell .van-field__control::-moz-placeholder {
-  color: #d1d1d6;
+  color: #858B9C;
 }
 .van-cell .van-field__control::-ms-input-placeholder {
-  color: #d1d1d6;
+  color: #858B9C;
 }
 
 /* 外层容器 */
@@ -75,6 +76,7 @@
 }
 .van_container_body .van-search {
   padding: 0rem 0rem;
+  margin-top: 10px;
 }
 .van_container_body .van-search__content {
   padding-left: 0rem;
@@ -91,12 +93,12 @@
 }
 .van_container_body .van-search .van-cell {
   padding: 0.18rem 0.48rem;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(29,36,57,1);
   border-radius: 0.44rem;
-  border: 0.02rem solid #81d8ce;
+  /* border: 0.02rem solid #81d8ce; */
 }
 .van-search__content {
-  background: rgba(255, 255, 255, 1);
+  background:transparent;
 }
 
 /* 字体设置 */
@@ -107,7 +109,7 @@
 }
 .main_font2 {
   font-size: 0.32rem;
-  color: #111a34;
+  color: #fff;
   font-weight: 500;
 }
 .main_font3 {
@@ -171,14 +173,14 @@
 .left_sidebar .van-sidebar {
   height: 100%;
   width: 1.8rem;
-  background: #f3f4f8;
+  background: rgba(29,36,57,1);
 }
 .left_sidebar .van-sidebar-item {
   position: relative;
   font-size: 0.28rem;
-  color: #3a4055;
+  color: #fff;
   font-weight: 600;
-  background: #f3f4f8;
+  background:  rgba(29,36,57,1);
   padding: 0.24rem 0rem;
 }
 .left_sidebar .van-sidebar-item__text {
@@ -196,7 +198,7 @@
 .left_sidebar .van-sidebar-item--select {
   color: #81d8ce;
   border-color: transparent;
-  background: #fff;
+  background: rgba(14,21,40,1);
 }
 .left_sidebar .van-sidebar-item--select::after {
   border-color: #81d8ce;
@@ -281,7 +283,7 @@
 .pharmacy_tel,
 .pharmacy_address {
   font-size: 0.28rem;
-  color: #858b9c;
+  color: #fff;
 }
 
 /* 药店名字下面的3个小标签 24h营业 医保定点 合作药店 */

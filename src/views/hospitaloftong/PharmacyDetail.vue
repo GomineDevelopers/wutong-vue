@@ -10,7 +10,7 @@
             placeholder="请输入"
             shape="round"
             @search="onSearch"
-            background="#ffffff"
+            background="transparent"
           ></van-search>
         </van-row>
         <van-row class="header_pharmacy_info flex flex_align_center">
@@ -197,12 +197,12 @@ export default {
 
 .PharmacyDetail .van-goods-action-button--warning {
   height: 0.98rem;
-  background: #ffffff;
-  color: #81d8ce;
+  background: #56EAA3;
+  color: #0E1528;
 }
 .PharmacyDetail .van-goods-action-button--danger {
   height: 0.98rem;
-  background: #81d8ce;
+  background: rgba(14,21,40,1);
   color: #ffffff;
 }
 .PharmacyDetail .first.van-goods-action-button--warning {
@@ -220,7 +220,7 @@ export default {
 }
 
 .PharmacyDetail .van-goods-action-button {
-  border: 0.01rem solid #81d8ce;
+  border: 0.01rem solid #56EAA3;
 }
 
 .PharmacyDetail .van-goods-action-button--warning .img_serve_p {
@@ -243,7 +243,6 @@ export default {
   font-size: 0.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
   line-height: 0.2rem;
   margin-top: 0.06rem;
 }
@@ -355,7 +354,7 @@ export default {
 .medicine_content {
   height: calc(100% - 2.74rem);
   overflow: hidden;
-  box-shadow: 0px -0.04rem 0.2rem 0rem rgba(243, 244, 248, 1);
+  /* box-shadow: 0px -0.04rem 0.2rem 0rem rgba(243, 244, 248, 1); */
 }
 .drug_img {
   width: 1.02rem;

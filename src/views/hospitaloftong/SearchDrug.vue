@@ -9,7 +9,7 @@
           placeholder="请输入药店或药品名"
           shape="round"
           @search="onSearch"
-          background="#ffffff"
+          background="transparent"
         ></van-search>
       </van-row>
       <!-- 主体内容 -->
@@ -229,7 +229,7 @@ export default {
 }
 .drug_item_name {
   font-size: 0.28rem;
-  color: #41485d;
+  color: #fff;
   margin-bottom: 0.12rem;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;

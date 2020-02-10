@@ -229,12 +229,12 @@ export default {
 
 .DrugsForDetails_Out .van-goods-action-button--warning {
   height: 0.98rem;
-  background: #ffffff;
-  color: #81d8ce;
+  background: #55EBA2;
+  color: #0E1528;
 }
 .DrugsForDetails_Out .van-goods-action-button--danger {
   height: 0.98rem;
-  background: #81d8ce;
+  background: #0E1528;
   color: #ffffff;
 }
 .DrugsForDetails_Out .first.van-goods-action-button--warning {
@@ -252,7 +252,7 @@ export default {
 }
 
 .DrugsForDetails_Out .van-goods-action-button {
-  border: 0.01rem solid #81d8ce;
+  border: 0.01rem solid #55EBA2;
 }
 
 .DrugsForDetails_Out .van-goods-action-button--warning .img_serve_p {
@@ -275,7 +275,7 @@ export default {
   font-size: 0.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
+  color: #0E1528;
   line-height: 0.2rem;
   margin-top: 0.06rem;
 }
@@ -419,11 +419,10 @@ export default {
   height: 0.9rem;
   width: 6.7rem;
   padding: 0.32rem 0.4rem;
-
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.45rem;
 }
 .DrugsForDetails_Out .productCount {
@@ -441,7 +440,7 @@ export default {
   width: 1.68rem;
   height: 0.41rem;
   padding-top: 0.09rem;
-  background: rgba(129, 216, 206, 1);
+  background: #49D691;
   border-radius: 0.3rem;
 }
 .DrugsForDetails_Out .shopping_font {
@@ -481,7 +480,7 @@ export default {
   font-size: 0.3rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   line-height: 0.45rem;
   margin: 0 0.33rem;
   width: 0.5rem;
@@ -527,7 +526,8 @@ export default {
   margin: 0 0.32rem;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: 4.73rem;
-  background: rgba(255, 255, 255, 1);
+  
+  background: rgba(255, 255, 255, .1);
   box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
   border: 0.01rem solid rgba(233, 232, 232, 0.5);
@@ -544,7 +544,7 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.45rem;
   display: inline-block;
   vertical-align: top;
@@ -560,10 +560,10 @@ export default {
   vertical-align: top;
 }
 .DrugsForDetails_Out .pc_row {
-  background: rgba(249, 250, 251, 1);
+  /* background: rgba(249, 250, 251, 1); */
 }
 .DrugsForDetails_Out .pc_row2 {
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
 }
 .DrugsForDetails_Out .pc_row_font {
   width: 6.3rem;
@@ -577,13 +577,13 @@ export default {
   letter-spacing: 0.01rem;
 }
 .DrugsForDetails_Out .pc_subtitle {
-  color: rgba(133, 139, 156, 1);
+  color: #858B9C;
   display: inline-block;
   width: 1.69rem;
   margin-left: 0.19rem;
 }
 .DrugsForDetails_Out .pc_intro {
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   display: inline-block;
 }
 

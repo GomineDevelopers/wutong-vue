@@ -7,7 +7,7 @@
       placeholder="请输入药品名"
       shape="round"
       @search="onSearch"
-      background="#ffffff"
+      background="transparent"
       id="m_search_HOT"
     ></van-search>
     <div class="h_content">
@@ -161,6 +161,7 @@ export default {
 /* ****** 输入框 */
 
 .HospitalOfTong .van-search {
+  margin-top: 10px;
   padding: 0.1rem 0.32rem 0rem 0.16rem;
 }
 .HospitalOfTong .van-cell .van-field__control {
@@ -187,12 +188,11 @@ export default {
 }
 .HospitalOfTong .van-search .van-cell {
   padding: 0.16rem 0.48rem;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(29,36,57,1);
   border-radius: 0.44rem;
-  border: 0.02rem solid #81d8ce;
 }
 .HospitalOfTong .van-search__content {
-  background: rgba(255, 255, 255, 1);
+  background: transparent;
 }
 </style>
 <style scoped>
@@ -236,7 +236,7 @@ export default {
   font-size: 0.28rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(65, 72, 93, 1);
+  color: #858B9C;
   line-height: 0.4rem;
 }
 .HospitalOfTong .pIM_name2 {
@@ -244,7 +244,7 @@ export default {
   font-size: 0.24rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(65, 72, 93, 1);
+  color: #858B9C;
   line-height: 0.33rem;
   margin-top: 0.12rem;
 }
