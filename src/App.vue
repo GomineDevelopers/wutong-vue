@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <img class="bg_img_c" src="./assets/newpic/bg2.png" alt /> -->
     <router-view />
   </div>
 </template>
@@ -35,5 +36,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #41485d;
   height: 100%;
+}
+body {
+  background: #000000 url(./assets/newpic/bg2.png) no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 </style>
