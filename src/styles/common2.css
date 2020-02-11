@@ -77,6 +77,7 @@
 .van_container_body .van-search {
   padding: 0rem 0rem;
   margin-top: 10px;
+  background-color: rgba(0,0,0,0) !important;
 }
 .van_container_body .van-search__content {
   padding-left: 0rem;
@@ -119,17 +120,21 @@
 }
 .main_font4 {
   font-size: 0.28rem;
-  color: #41485d;
+  /* color: #41485d; */
+  color: #858B9C;
+
   font-weight: 400;
 }
 .main_font5 {
   font-size: 0.28rem;
-  color: #111a34;
+  /* color: #111a34; */
+  color: #FFFFFF;
   font-weight: 500;
 }
 .main_font6 {
   font-size: 0.28rem;
-  color: #41485d;
+  /* color: #41485d; */
+  color: #858B9C;
   font-weight: 400;
 }
 .public_green_small {

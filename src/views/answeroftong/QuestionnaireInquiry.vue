@@ -4,7 +4,7 @@
     <van-search
       right-icon="search"
       v-model="searchContent"
-      placeholder="请输入"
+      placeholder="请输入问卷名"
       shape="round"
       @search="onSearch"
       background="#ffffff"
@@ -145,6 +145,7 @@ export default {
 /* ****** 输入框 */
 .QuestionnaireInquiry .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 .QuestionnaireInquiry .van-cell .van-field__control {
   font-size: 0.28rem;
@@ -170,12 +171,15 @@ export default {
 }
 .QuestionnaireInquiry .van-search .van-cell {
   padding: 0.16rem 0.48rem;
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
+  background: #1D2439;
   border-radius: 0.44rem;
-  border: 0.02rem solid #81d8ce;
+  /* border: 0.02rem solid #81d8ce; */
+  border: 0.02rem solid rgba(0, 0, 0, 0);
 }
 .QuestionnaireInquiry .van-search__content {
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
+  background: rgba(0, 0, 0, 0);
 }
 
 /* ******* icon */
@@ -191,7 +195,8 @@ export default {
 .QuestionnaireInquiry .PerRow {
   height: 0.83rem;
   /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
+  /* border-top: 1px #f6f6f6 solid; */
+  border-top: 1px #4A5677 solid;
   padding: 0.46rem 0.32rem 0.21rem 0.32rem;
 }
 
@@ -210,7 +215,8 @@ export default {
   margin-right: 0.24rem;
 }
 .QuestionnaireInquiry .participating {
-  color: rgba(129, 216, 206, 1);
+  /* color: rgba(129, 216, 206, 1); */
+  color: #55EBA2;
 }
 .QuestionnaireInquiry .participated {
   color: rgba(197, 202, 213, 1);
@@ -228,7 +234,8 @@ export default {
   font-size: 0.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(197, 202, 213, 1);
+  /* color: rgba(197, 202, 213, 1); */
+  color: #C5CAD5;
   line-height: 0.28rem;
   letter-spacing: 0.01rem;
   vertical-align: top;

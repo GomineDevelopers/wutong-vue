@@ -1,5 +1,5 @@
 <template>
-  <van-row class="van_container">
+  <van-row class="OnlineMetting van_container">
     <vue-headful title="在线会议"></vue-headful>
     <van-row class="van_container_body height_auto">
       <!-- 筛选模块开始 -->
@@ -11,14 +11,16 @@
               class="flex flex_align_center"
               @click="filtrateActive = 1"
             >
-              综合排序&nbsp;<van-icon name="arrow-down" />
+              综合排序&nbsp;
+              <van-icon name="arrow-down" />
             </span>
             <span
               :class="filtrateActive == 2 ? 'active' : ''"
               class="flex flex_align_center"
               @click="filtrateActive = 2"
             >
-              全部筛选&nbsp;<van-icon name="arrow-down" />
+              全部筛选&nbsp;
+              <van-icon name="arrow-down" />
             </span>
           </van-row>
           <van-row class="filtrate_content">
@@ -27,16 +29,12 @@
                 class="main_font2"
                 :class="itemActive == 1 ? 'item_active' : ''"
                 @click="itemActive = 1"
-              >
-                时间最近
-              </van-row>
+              >时间最近</van-row>
               <van-row
                 class="main_font2"
                 :class="itemActive == 2 ? 'item_active' : ''"
                 @click="itemActive = 2"
-              >
-                地点最近
-              </van-row>
+              >地点最近</van-row>
             </van-row>
             <van-row v-show="filtrateActive == 2">
               <van-row class="filtrate_tips">
@@ -89,20 +87,11 @@
         </van-row>
         <van-row class="metting_content">
           <van-row class="swipe_body">
-            <van-swipe
-              class="swipe_content height_auto"
-              :autoplay="3000"
-              @change="onChange"
-            >
-              <van-swipe-item
-                v-for="(item, index) in swipeImgList"
-                :key="index"
-              >
+            <van-swipe class="swipe_content height_auto" :autoplay="3000" @change="onChange">
+              <van-swipe-item v-for="(item, index) in swipeImgList" :key="index">
                 <img :src="item" />
               </van-swipe-item>
-              <div class="custom-indicator" slot="indicator">
-                {{ current + 1 }}/4
-              </div>
+              <div class="custom-indicator" slot="indicator">{{ current + 1 }}/4</div>
             </van-swipe>
           </van-row>
           <!-- 列表开始 -->
@@ -113,14 +102,16 @@
                 class="flex flex_align_center"
                 @click="(filtrateShow = true), (filtrateActive = 1)"
               >
-                综合排序&nbsp;<van-icon name="arrow-down" />
+                综合排序&nbsp;
+                <van-icon name="arrow-down" />
               </span>
               <span
                 :class="filtrateActive == 2 ? 'active' : ''"
                 class="flex flex_align_center"
                 @click="(filtrateShow = true), (filtrateActive = 2)"
               >
-                全部筛选&nbsp;<van-icon name="arrow-down" />
+                全部筛选&nbsp;
+                <van-icon name="arrow-down" />
               </span>
             </van-row>
             <van-row class="online_metting_list">
@@ -295,6 +286,11 @@ export default {
   }
 };
 </script>
+<style >
+.OnlineMetting .van-popup--top {
+  background-color: #1d2439;
+}
+</style>
 <style scoped>
 .top_search {
   padding: 0.44rem 0.32rem 0.24rem 0.32rem;
@@ -312,13 +308,13 @@ export default {
   margin-bottom: 0.2rem;
 }
 span.active {
-  color: #81d8ce;
+  color: #55EBA2;
 }
 .filtrate_content .sort .main_font2 {
   margin: 0.4rem 0rem 0.56rem 0rem;
 }
 .filtrate_content .main_font2.item_active {
-  color: #81d8ce;
+  color: #55EBA2;
 }
 .filtrate_list .main_font2 {
   margin-bottom: 0.4rem;
@@ -338,8 +334,8 @@ span.active {
   margin-right: 0.2rem;
 }
 .filtrate_list .main_font4 span.active_tip {
-  color: #81d8ce;
-  border: 0.02rem solid #81d8ce;
+  color: #55EBA2;;
+  border: 0.02rem solid #55EBA2;;
 }
 .active_tip {
   position: relative;
@@ -356,7 +352,7 @@ span.active {
   display: inline-block;
   width: 0.4rem;
   height: 0.4rem;
-  background: #81d8ce;
+  background: #55EBA2;;
   border-radius: 50%;
   position: absolute;
   top: -0.19rem;
@@ -391,7 +387,7 @@ span.active {
   border-right: 0.01rem solid #dddddd;
 }
 .filtrate_bottom .van-col:nth-child(2) {
-  color: #81d8ce;
+  color: #55EBA2;;
   font-weight: 500;
 }
 
@@ -404,7 +400,9 @@ span.active {
 }
 .header_nav span {
   font-size: 0.28rem;
-  color: #111a34;
+  /* color: #111a34; */
+  color: #858b9c;
+
   position: relative;
   display: block;
 }
@@ -412,7 +410,7 @@ span.active {
   margin-right: 1.62rem;
 }
 .header_nav span.active {
-  color: #81d8ce;
+  color: #55EBA2;
   font-weight: 500;
 }
 .header_nav span::after {
@@ -425,7 +423,7 @@ span.active {
   background: transparent;
 }
 .header_nav span.active::after {
-  background: #81d8ce;
+  background: #55EBA2;
 }
 .metting_content {
   height: calc(100% - 0.88rem);
