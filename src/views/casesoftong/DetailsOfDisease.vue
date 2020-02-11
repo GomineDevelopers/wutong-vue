@@ -33,7 +33,7 @@
                     class="participate participating"
                     v-if="item.status == '点击查看'"
                   >{{item.status}}</span>
-                  <van-icon @click="router_to('/sicknessdetail')" size="0.28rem" name="arrow" />
+                  <van-icon size="0.28rem" name="arrow" />
                 </div>
                 <div class="Q_time">{{item.time}}</div>
               </div>

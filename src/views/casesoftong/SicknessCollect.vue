@@ -39,6 +39,7 @@ export default {
 .sickness_conllect_body {
   position: relative;
   overflow: hidden;
+  padding-top: 0.2rem;
 }
 .header_nav {
   height: 0.88rem;

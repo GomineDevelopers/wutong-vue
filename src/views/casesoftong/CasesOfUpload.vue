@@ -1,27 +1,28 @@
 <template>
   <div class="CasesOfUpload">
     <vue-headful title="病例上传"></vue-headful>
-    <div class="PerRow">
+    <!-- <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">标题</div>
       <input class="i_input" type="text" placeholder="请填写标题" />
-    </div>
-    <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">性别</div>
-      <van-radio-group class="verticalAlignTop" v-model="radio">
-        <van-radio name="1" icon-size="16px" checked-color="#81D8CE">男</van-radio>
-        <van-radio name="2" icon-size="16px" checked-color="#81D8CE">女</van-radio>
-      </van-radio-group>
-    </div>
-    <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">年龄</div>
-      <input class="i_input" type="text" placeholder="请填写年龄" />
-    </div>
+    </div> -->
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">分类</div>
       <van-dropdown-menu>
         <van-dropdown-item v-model="value1" :options="option1" />
       </van-dropdown-menu>
     </div>
+    <div class="PerRow">
+      <div class="common_Stitle_font2 title_spaceRight">性别</div>
+      <van-radio-group class="verticalAlignTop" v-model="radio">
+        <van-radio name="1" icon-size="16px" checked-color="#55EBA2">男</van-radio>
+        <van-radio name="2" icon-size="16px" checked-color="#55EBA2">女</van-radio>
+      </van-radio-group>
+    </div>
+    <div class="PerRow">
+      <div class="common_Stitle_font2 title_spaceRight">年龄</div>
+      <input class="i_input" type="text" placeholder="请填写年龄" />
+    </div>
+    
 
     <div class="upload_arr">
       <template v-for="(item,index) in upload_arr ">
@@ -105,6 +106,7 @@ export default {
   vertical-align: top;
   margin-top: 0.12rem;
   height: 0.5rem;
+  background: transparent;
 }
 .CasesOfUpload .van-dropdown-menu__title {
   /* padding: 0 5.5rem 0 0; */
@@ -121,9 +123,11 @@ export default {
 .van-hairline-unset--top-bottom::after {
   border-width: 0px 0;
 }
+
 .CasesOfUpload .van-dropdown-item__option {
   font-size: 0.32rem;
   color: #41485d;
+  padding: 0.2rem ;
 }
 
 /* *********** 单选框样式  */
@@ -143,6 +147,7 @@ export default {
 }
 .CasesOfUpload .van-radio__label {
   font-size: 0.32rem;
+  color: #858B9C;
   vertical-align: text-top;
   display: inline-block;
   line-height: 0.32rem;
@@ -160,11 +165,12 @@ export default {
 /* 通用输入框 */
 .CasesOfUpload .i_input {
   font-size: 0.32rem;
-  color: #41485d;
+  color: #fff;
   height: 0.4rem;
   outline: none;
   border: 0;
   vertical-align: top;
+  background: transparent;
 }
 .CasesOfUpload .i_input2 {
   height: 2.4rem;
@@ -175,7 +181,7 @@ export default {
 .CasesOfUpload .PerRow {
   height: 0.4rem;
   /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
+  border-top: 1px #4A5677 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 
@@ -193,6 +199,7 @@ export default {
 .CasesOfUpload .i_btn {
   width: 3.6rem;
   height: 0.9rem;
+  border: none
 }
 
 /* 更改textarea 默认placeholder样式 */
