@@ -33,7 +33,7 @@
   padding: 0rem;
 }
 .van-cell .van-field__control {
-  color: #41485d;
+  color: #fff;
 }
 /* 修改input默认placeholder颜色 */
 .van-cell .van-field__control::-webkit-input-placeholder {

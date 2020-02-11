@@ -27,7 +27,7 @@
     </div>
     <div class="settlement_cell">
       <p class="settlement_title">广联医药</p>
-      <div>
+      <div class="settl_product_list">
         <van-card price="20" thumb="https://img.yzcdn.cn/vant/ipad.jpeg">
           <div slot="title" class="settlement_title product_name">金纳多（银杏叶提取物）</div>
           <div slot="price" class="price_number">
@@ -100,12 +100,15 @@ export default {
   margin-bottom: 0.2rem;
   padding: 0.32rem;
   color: #41485d;
-  border: 1px solid #f2efef;
   border-radius: 10px;
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+  background-color: rgba(255,255,255,0.1)
+}
+.settlement_cell .van-cell{
+  background: transparent;
 }
 .settlement_title {
   margin: 0;
+  color: #fff;
   font-size: 0.32rem;
 }
 .settlement_number {
@@ -121,17 +124,30 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.settlement_cell .settl_product_list{
+  margin-top: 0.21rem;
+  position: relative;
+}
+.settlement_cell .settl_product_list::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.32rem;
+  right: -0.32rem;
+  height: 1px;
+  background: #4A5677
+}
 .settlement_cell .van-card {
   padding: 0.2rem 0;
-  background-color: #fff;
-  border-bottom: 1px solid #f2efef;
+  background-color: transparent;
+  border-bottom: 1px solid #4A5677;
 }
 
 .settlement_cell .van-card__thumb {
   width: 1rem;
   height: 1rem;
   border-radius: 6px;
-  border: 1px solid rgba(223, 223, 223, 1);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .settlement_cell .van-card__content {
   min-height: auto;
@@ -153,13 +169,13 @@ export default {
     left: 5%;
     width: 90%;
     overflow: hidden;
-    border: 1px solid #81D8CE;
+    border: 1px solid #55EBA2;
     border-radius: 50px;
-    box-shadow:0px 2px 40px 0px rgba(129,216,206,0.2);
 }
 .settlement_submit .van-submit-bar__bar{
     padding: 0;
     font-size: 0.32rem;
+    background: #0E1528
 }
 .settlement_submit .van-submit-bar__price{
     color: #FF4800;
@@ -169,8 +185,11 @@ export default {
     width: 36%;
     height: 100%;
     font-size: 0.32rem;
-    background: #81D8CE;
+    background: #55EBA2;
     border-radius: 0;
+}
+.settlement_submit .van-submit-bar__text{
+  color: #fff;
 }
 .medication_info_popup{
     width: 70%;
@@ -196,7 +215,7 @@ export default {
     color: #fff;
     font-size: 0.4rem;
     padding: 0.15rem;
-    background: #81D8CE;
+    background: #55EBA2;
     border-radius: 50%;
     cursor: pointer;
 }

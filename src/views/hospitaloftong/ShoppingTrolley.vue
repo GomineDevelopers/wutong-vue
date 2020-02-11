@@ -13,7 +13,6 @@
             {{itemP.ShopName}}&nbsp;
             <van-icon size="0.28rem" name="arrow" />
           </div>
-          <div :style="{height: '0.21rem'}"></div>
           <template v-for="(item,index) in BaseArr[indexP] ">
             <div
               :class="'PerRow' + ' PerRowCommon' + ' ' + indexP+'_'+index+'PerRowCommon'  "
@@ -77,7 +76,7 @@
 
     <div class="flex_purchase">
       <van-submit-bar :price="5094" button-text="结算" @submit="onSubmit">
-        <van-checkbox checked-color="#81d8ce" v-model="AllChecked">全选</van-checkbox>
+        <van-checkbox checked-color="#55EBA2" v-model="AllChecked">全选</van-checkbox>
       </van-submit-bar>
     </div>
   </div>
@@ -361,9 +360,10 @@ export default {
   left: 5%;
   width: 90%;
   overflow: hidden;
-  border: 1px solid #81d8ce;
+  border: 1px solid #55EBA2;
   border-radius: 50px;
-  box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2);
+  background-color: #0E1528;
+  /* box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2); */
 }
 .ShoppingTrolley .flex_purchase .van-submit-bar__bar {
   padding: 0;
@@ -377,8 +377,12 @@ export default {
   width: 28%;
   height: 100%;
   font-size: 0.32rem;
-  background: #81d8ce;
+  background: #55EBA2;
   border-radius: 0;
+}
+.ShoppingTrolley .van-submit-bar__text,
+.ShoppingTrolley .van-checkbox__label{
+  color: #fff;
 }
 /* **全选 */
 .ShoppingTrolley .flex_purchase .van-checkbox {
@@ -388,7 +392,7 @@ export default {
 
 <style scoped>
 .ShoppingTrolley {
-  padding: 0 0.32rem;
+  padding: 0 0.32rem 1.1rem;
   /* padding: 0 0.35rem 0 0.32rem; */
   /* overflow-x: hidden;
   overflow-y: hidden; */
@@ -398,15 +402,15 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(65, 72, 93, 1);
+  color: #858B9C;
   line-height: 0.45rem;
 }
 .ShoppingTrolley .content_bg {
   width: 6.86rem;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, .1);
   box-shadow: 0 0.04rem 0.2rem 0 rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
-  border: 0.01rem solid rgba(233, 232, 232, 1);
+  /* border: 0.01rem solid rgba(233, 232, 232, 1); */
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -415,9 +419,11 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   line-height: 0.45rem;
   padding-left: 0.21rem;
+  padding-bottom: 0.21rem;
+  border-bottom: 1px solid #4A5677;
 }
 
 .ShoppingTrolley .pc_right {
@@ -447,8 +453,8 @@ export default {
 .ShoppingTrolley .add {
   width: 0.32rem;
   height: 0.32rem;
-  background: rgba(129, 216, 206, 1);
-  border: 0.02rem solid rgba(129, 216, 206, 1);
+  background: #55EBA2;
+  border: 0.02rem solid #55EBA2;
   margin-top: 0.05rem;
 }
 .ShoppingTrolley .countRadius {
@@ -463,18 +469,17 @@ export default {
   color: rgba(197, 202, 213, 1);
   vertical-align: top;
   margin-left: 0.07rem;
-  margin-top: -0.11rem;
+  margin-top: -0.06rem;
 }
 .ShoppingTrolley .countFont2 {
   color: rgba(255, 255, 255, 1);
-  margin-left: 0.02rem;
+  margin-left: 0.05rem;
 }
 
 .ShoppingTrolley .PerRow {
   width: 6.84rem;
   height: 1.2rem;
   padding: 0.3rem 0 0.29rem 0;
-  border-top: 0.01rem solid rgba(238, 238, 238, 1);
 }
 
 .ShoppingTrolley .PerRowCommon {
@@ -495,7 +500,7 @@ export default {
   bottom: 0;
   right: 0;
   height: 1px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #4a5677;
   color: #ccc;
   -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%;
@@ -503,7 +508,9 @@ export default {
   transform: scaleY(0.5);
   z-index: 2;
 }
-
+.ShoppingTrolley .PerRowCommon:last-child::after {
+  border: none;
+}
 .ShoppingTrolley .st_choose {
   width: 0.32rem;
   height: 0.4rem;
@@ -538,7 +545,7 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   line-height: 0.32rem;
 }
 .ShoppingTrolley .st_specification {
@@ -597,7 +604,7 @@ export default {
   line-height: 1.8rem;
   position: absolute;
   top: 0;
-  right: -1.8rem;
+  right: -1.81rem;
   background: rgba(255, 85, 0, 1);
 }
 </style>

@@ -16,7 +16,7 @@
           @click="checkSymptom(item, index)"
         >{{item.text}}</a>
       </div>
-      <van-field type="textarea" placeholder="其他补充" />
+      <van-field class="textarea_box" type="textarea" placeholder="其他补充" />
     </div>
     <div class="medic_upload">
       <div class="medic_label">上传复诊凭证</div>
@@ -79,6 +79,10 @@ export default {
   height: 2rem;
   background: #f8faff;
 }
+.medication_information .textarea_box textarea{
+  color: #fff;
+  min-height: 80px;
+}
 </style>
 <style scoped>
 .medication_information {
@@ -88,29 +92,37 @@ export default {
   height: 1rem;
   line-height: 1rem;
   font-size: 0.32rem;
+  color: #fff;
+  background: transparent;
+}
+.medication_information .van-cell-group{
+  background: transparent;
 }
 .medication_information .medic_checkbox {
+  padding-bottom: 10px;
   border-bottom: 1px solid #eeeeee;
 }
 .medication_information .medic_label {
+  color: #fff;
   font-size: 0.32rem;
   margin-top: 0.34rem;
   margin-bottom: 0.3rem;
 }
 .medication_information .checkbox_list a {
   float: left;
-  color: #41485d;
+  color: #858B9C;
   font-size: 0.28rem;
   margin-right: 0.2rem;
   margin-bottom: 0.2rem;
   padding: 0.12rem 0.3rem;
-  border: 1px solid #c5cad5;
+  border: 1px solid #0E1528;
+  background: #0E1528;
   border-radius: 5px;
   overflow: hidden;
 }
 .medication_information .checkbox_list a.checked {
-  color: #81d8ce;
-  border-color: #81d8ce;
+  color: #55EBA2;
+  border-color: #55EBA2;
   position: relative;
 }
 .medication_information .checkbox_list a.checked::after {
@@ -127,9 +139,14 @@ export default {
   line-height: 0.32rem;
   color: #fff;
   font-size: 0.24rem;
-  background: #81d8ce;
+  background: #55EBA2;
   border-radius: 50%;
 }
+.medication_information .textarea_box{
+  background: transparent;
+  padding-top: 10px;
+}
+
 .medication_information .medic_upload .uploader {
   margin-top: 0.4rem;
 }
@@ -146,7 +163,7 @@ export default {
   color: #fff;
   font-size: 0.32rem;
   letter-spacing: 0.2rem;
-  background: #81d8ce;
+  background: #55EBA2;
   padding-left: 1.4rem;
   padding-right: 1.1rem;
 }
