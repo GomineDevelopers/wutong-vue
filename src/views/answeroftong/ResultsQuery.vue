@@ -73,7 +73,7 @@
         </template>
       </div>
     </div>
-    <div :style="{height: '0.4rem'}"></div>
+    <div :style="{height: '1.65rem'}"></div>
 
     <div class="textAlignCenter_w100p">
       <van-button
@@ -190,6 +190,7 @@ export default {
 <style scoped>
 .ResultsQuery {
   padding: 0 0.32rem;
+  font-size: 0;
 }
 .ResultsQuery .RQ_title {
   margin: 0;
@@ -197,7 +198,8 @@ export default {
   font-size: 0.36rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
   line-height: 0.5rem;
   letter-spacing: 0.01px;
 }
@@ -206,28 +208,31 @@ export default {
   font-size: 1.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
+  color: #55eba2;
   line-height: 1.2rem;
   display: inline-block;
   vertical-align: top;
 }
 .ResultsQuery .grade2 {
-  height: 1.2rem;
+  /* height: 1.2rem; */
   font-size: 0.24rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
+  color: #55eba2;
   line-height: 0.24rem;
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: top;
+  margin-top: 0.8rem;
 }
 .ResultsQuery .content_bg {
   width: 6.86rem;
   height: 4.6rem;
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0.04rem 0.2rem 0 rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
-  border: 0.01rem solid rgba(233, 232, 232, 1);
+  /* border: 0.01rem solid rgba(233, 232, 232, 1); */
+  border: 0.01rem solid rgba(0, 0, 0, 0);
 }
 .ResultsQuery .row1 {
   height: 1.58rem;
@@ -244,7 +249,8 @@ export default {
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
   line-height: 0.4rem;
 }
 .ResultsQuery .row1_title > div {
@@ -255,14 +261,14 @@ export default {
   font-size: 0.4rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(129, 216, 206, 1);
+  color: #55eba2;
   letter-spacing: 0.01rem;
 }
 .ResultsQuery .row1_value > div {
   padding-top: 0.22rem;
 }
 .ResultsQuery .value_color1 {
-  color: rgba(129, 216, 206, 1);
+  color: #55eba2;
 }
 .ResultsQuery .value_color2 {
   color: rgba(126, 191, 244, 1);
@@ -274,7 +280,8 @@ export default {
   color: #ff8300;
 }
 .ResultsQuery .value_color5 {
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #858B9C;
 }
 .ResultsQuery .value_4 {
   display: inline-block;
@@ -296,7 +303,8 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
   line-height: 0.45rem;
   display: inline-block;
   vertical-align: top;
@@ -307,7 +315,7 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
+  color: #55eba2;
   line-height: 0.37rem;
   letter-spacing: 0.01rem;
   display: inline-block;
@@ -315,7 +323,7 @@ export default {
   margin-top: 0.06rem;
 }
 .ResultsQuery .row2_tr_1 {
-  color: rgba(129, 216, 206, 1);
+  color: #55eba2;
   display: inline-block;
 }
 .ResultsQuery .row2_tr_2 {
@@ -332,8 +340,8 @@ export default {
 .ResultsQuery .perQ {
   width: 0.44rem;
   height: 0.44rem;
-  border: 0.02rem solid rgba(129, 216, 206, 1);
-  color: rgba(129, 216, 206, 1);
+  border: 0.02rem solid #55eba2;
+  color: #55eba2;
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
@@ -361,6 +369,7 @@ export default {
 .ResultsQuery .i_btn {
   height: 0.9rem;
   width: 3.6rem;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 </style>
 
