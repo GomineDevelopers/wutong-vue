@@ -54,7 +54,7 @@
                       {{ videoItem.hospital }}
                     </van-row>
                     <van-row class="flex">
-                      <span class="main_font4">{{ videoItem.name }}</span>
+                      <span class="main_font4 marRight">{{ videoItem.name }}</span>
                       <span class="main_font6">{{ videoItem.duty }}</span>
                     </van-row>
                   </van-row>
@@ -175,7 +175,8 @@ export default {
 }
 .header_nav span {
   font-size: 0.28rem;
-  color: #111a34;
+  /* color: #111a34; */
+  color: #858B9C;
   position: relative;
   display: block;
 }
@@ -183,7 +184,7 @@ export default {
   margin-right: 1.62rem;
 }
 .header_nav span.active {
-  color: #81d8ce;
+  color: #55EBA2;
   font-weight: 500;
 }
 .header_nav span::after {
@@ -196,7 +197,7 @@ export default {
   background: transparent;
 }
 .header_nav span.active::after {
-  background: #81d8ce;
+  background: #55EBA2;
 }
 .metting_content {
   height: calc(100% - 0.88rem);
@@ -244,6 +245,9 @@ export default {
 .video_avatar {
   width: 0.68rem;
   height: 0.68rem;
+}
+.marRight{
+  margin-right: 0.24rem;
 }
 .video_info {
   margin-top: 0.2rem;

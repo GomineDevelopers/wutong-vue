@@ -45,7 +45,8 @@ body {
   font-weight: 500;
 }
 .common_Stitle_font2 {
-  color: #111a34;
+  /* color: #111a34; */
+  color: #ffffff;
   font-size: 0.32rem;
   font-weight: bold;
   display: inline-block;

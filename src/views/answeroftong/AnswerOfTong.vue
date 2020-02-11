@@ -40,13 +40,28 @@
           <div class="main_content">
             <div class="answer_imgs">
               <div class="answer_img_p">
-                <img class="answer_img" :src="AnswerImg[0]" alt @click="router_to('/questionnaireinquiry')" />
+                <img
+                  class="answer_img"
+                  :src="AnswerImg[0]"
+                  alt
+                  @click="router_to('/questionnaireinquiry')"
+                />
               </div>
               <div class="answer_img_p">
-                <img class="answer_img" :src="AnswerImg[1]" alt  @click="router_to('/knowledgebase')"/>
+                <img
+                  class="answer_img"
+                  :src="AnswerImg[1]"
+                  alt
+                  @click="router_to('/knowledgebase')"
+                />
               </div>
               <div class="answer_img_p">
-                <img class="answer_img" :src="AnswerImg[2]" alt  @click="router_to('/onlineexamination')"/>
+                <img
+                  class="answer_img"
+                  :src="AnswerImg[2]"
+                  alt
+                  @click="router_to('/onlineexamination')"
+                />
               </div>
             </div>
           </div>
@@ -73,9 +88,12 @@ export default {
         require("@/assets/pic/AnswerIcon3.png")
       ],
       AnswerImg: [
-        require("@/assets/pic/AnswerP1.png"),
-        require("@/assets/pic/AnswerP2.png"),
-        require("@/assets/pic/AnswerP3.png")
+        // require("@/assets/pic/AnswerP1.png"),
+        // require("@/assets/pic/AnswerP2.png"),
+        // require("@/assets/pic/AnswerP3.png")
+        require("@/assets/newpic/ddt.png"),
+        require("@/assets/newpic/dd3.png"),
+        require("@/assets/newpic/ddt2.png")
       ]
     };
   },
