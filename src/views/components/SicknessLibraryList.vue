@@ -89,7 +89,7 @@ export default {
   height: 1.96rem;
   align-items: center;
   padding-right: 0.32rem;
-  border-bottom: 0.01rem solid #eeeeee;
+  border-bottom: 0.01rem solid #4A5677;
 }
 .sickness_title {
   line-height: 0;
@@ -117,15 +117,12 @@ export default {
   border-color: #ffc671;
   color: #ffc671;
 }
-.sickness_content {
-  margin: 0.23rem 0rem 0.1rem 0rem;
-}
 .sickness_left_content {
   width: 1.18rem;
 }
 .sickness_content {
   width: 100%;
-  margin: 0.23rem 0rem 0.1rem 0rem;
+  margin: 0.23rem 0rem 0.2rem 0rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -134,5 +131,6 @@ export default {
 .SicknessLibraryList .i_btn {
   width: 3.6rem;
   height: 0.9rem;
+  border: none;
 }
 </style>

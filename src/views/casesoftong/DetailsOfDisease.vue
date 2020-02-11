@@ -33,7 +33,7 @@
                     class="participate participating"
                     v-if="item.status == '点击查看'"
                   >{{item.status}}</span>
-                  <van-icon @click="router_to('/sicknessdetail')" size="0.28rem" name="arrow" />
+                  <van-icon size="0.28rem" name="arrow" />
                 </div>
                 <div class="Q_time">{{item.time}}</div>
               </div>
@@ -549,8 +549,18 @@ export default {
 .DetailsOfDisease .van-tabs--line .van-tabs__wrap {
   height: 0.88rem;
 }
+.DetailsOfDisease .van-tabs__nav{
+  background: transparent;
+}
+.DetailsOfDisease .van-hairline--top-bottom::after, 
+.DetailsOfDisease .van-hairline-unset--top-bottom::after {
+    border-width: 0;
+}
+.DetailsOfDisease [class*=van-hairline]::after {
+    border-color: #4A5677;
+}
 .DetailsOfDisease .van-tab {
-  color: #111a34;
+  color: #858B9C;
 }
 .DetailsOfDisease .van-tab__text {
   font-size: 0.28rem;
@@ -558,13 +568,24 @@ export default {
   font-weight: 500;
 }
 .DetailsOfDisease .van-tab--active {
-  color: rgba(129, 216, 206, 1);
+  color: #55EBA2;
 }
 .DetailsOfDisease .van-tabs__line {
-  background-color: rgba(129, 216, 206, 1);
+  background-color: #55EBA2;
   width: 14% !important;
 }
-
+.DetailsOfDisease .van-cell{
+  background: transparent;
+  color: #fff;
+}
+.DetailsOfDisease .van-cell:not(:last-child)::after{
+  border-color: #4A5677
+}
+.DetailsOfDisease .van-collapse-item__content{
+  margin: 0.4rem 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.1rem;
+}
 /* ******** 弹出层 */
 .DetailsOfDisease .van-popup {
   background-color: rgba(0, 0, 0, 0);
@@ -607,7 +628,7 @@ export default {
   font-size: 0.4rem;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
-  color: rgba(58, 64, 85, 1);
+  color: #fff;
   line-height: 0.56rem;
   letter-spacing: 2px;
 }
@@ -617,7 +638,7 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(102, 111, 131, 1);
+  color: #fff;
   line-height: 0.4rem;
   letter-spacing: 1px;
 }
@@ -628,7 +649,7 @@ export default {
   height: 0.83rem;
   /* width: 100%; */
   /* width: 6.8rem; */
-  border-top: 1px #f6f6f6 solid;
+  border-bottom: 1px #4A5677 solid;
   padding: 0.46rem 0rem 0.21rem 0.32rem;
 }
 
@@ -647,7 +668,7 @@ export default {
   margin-right: 0.24rem;
 }
 .DetailsOfDisease .participating {
-  color: rgba(129, 216, 206, 1);
+  color: #55EBA2;
 }
 .DetailsOfDisease .participated {
   color: rgba(197, 202, 213, 1);
@@ -671,7 +692,7 @@ export default {
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  margin-top: -0.8rem;
+  margin-top: -0.6rem;
 }
 
 /* ******** card2 */
@@ -689,23 +710,21 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.32rem;
 }
 
 /* 重复 - 产品参数 产品说明 */
 .DetailsOfDisease .product {
   width: 100%;
+  background: transparent;
 }
 .DetailsOfDisease .product_c {
   /* margin: 0 0.32rem; */
   margin: 0 0rem;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: 4.73rem;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
-  border: 0.01rem solid rgba(233, 232, 232, 0.5);
 }
 .DetailsOfDisease .product_title {
   height: 0.45rem;
@@ -719,7 +738,7 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.45rem;
   display: inline-block;
   vertical-align: top;
@@ -729,17 +748,17 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
+  color: #55EBA2;
   line-height: 0.37rem;
   display: inline-block;
   vertical-align: top;
 }
-.DetailsOfDisease .pc_row {
+/* .DetailsOfDisease .pc_row {
   background: rgba(249, 250, 251, 1);
 }
 .DetailsOfDisease .pc_row2 {
   background: rgba(255, 255, 255, 1);
-}
+} */
 .DetailsOfDisease .pc_row_font {
   width: 6.3rem;
   /* height: 0.68rem; */
@@ -750,6 +769,7 @@ export default {
   font-weight: 400;
   line-height: 0.37rem;
   letter-spacing: 0.01rem;
+  border-bottom: 1px solid #4A5677;
 }
 .DetailsOfDisease .pc_subtitle {
   color: rgba(133, 139, 156, 1);
@@ -758,7 +778,7 @@ export default {
   margin-left: 0.19rem;
 }
 .DetailsOfDisease .pc_intro {
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   display: inline-block;
 }
 
@@ -767,23 +787,20 @@ export default {
   margin: 0 0;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: auto;
-  border: 0.01rem solid rgba(233, 232, 232, 0.5);
-  box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
-  border-radius: 0.2rem;
 }
 .DetailsOfDisease .p_intro_title_l {
   height: 0.45rem;
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.45rem;
 }
 .DetailsOfDisease .p_intro_font {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(102, 111, 131, 1);
+  color: #858B9C;
   line-height: 0.37rem;
   text-align: justify;
 }

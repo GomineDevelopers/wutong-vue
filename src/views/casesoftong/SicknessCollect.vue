@@ -39,12 +39,12 @@ export default {
 .sickness_conllect_body {
   position: relative;
   overflow: hidden;
+  padding-top: 0.2rem;
 }
 .header_nav {
   height: 0.88rem;
   line-height: 0.88rem;
   justify-content: center;
-  border: 0.01rem solid #e3e3e3;
   position: absolute;
   top: 0;
   left: 0;
@@ -53,7 +53,7 @@ export default {
 }
 .header_nav span {
   font-size: 0.28rem;
-  color: #111a34;
+  color: #858B9C;
   position: relative;
   display: block;
 }

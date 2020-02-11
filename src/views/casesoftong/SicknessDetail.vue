@@ -208,7 +208,7 @@ export default {
 .sickness_title {
   font-size: 0.36rem;
   font-weight: 500;
-  color: #111a34;
+  color: #fff;
   margin: 0.4rem 0rem 0.2rem 0rem;
 }
 .sickness_department {
@@ -238,11 +238,10 @@ export default {
 
 /* 病史开始 */
 .detail_content {
-  box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.06);
-  border: 0.01rem solid #fff;
   border-radius: 0.1rem;
-  padding: 0rem 0.2rem 0.3rem 0.2rem;
+  padding: 0.1rem 0.2rem 0.3rem 0.2rem;
   margin: 0.4rem 0rem;
+  background: rgba(255, 255, 255, 0.1)
 }
 .detail_content_list {
   margin-top: 0.36rem;
