@@ -17,7 +17,7 @@
           allow-half
           void-icon="star"
           size="0.16rem"
-          color="#81D8CE"
+          color="#55EBA2"
           void-color="#E2E4E8"
         />
         <div :style="{height: '0.16rem'}"></div>
@@ -112,7 +112,7 @@ export default {
       console.log(event);
     },
     router_toSpec(str) {
-      this.$Utils.setCookieCry("openType", "Answer", 1); 
+      this.$Utils.setCookieCry("openType", "Answer", 1);
       let vm = this;
       vm.$router.push({ path: str });
     },
@@ -135,6 +135,7 @@ export default {
 .OnlineExamination .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
   width: 7.16rem;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 .OnlineExamination .van-cell .van-field__control {
   font-size: 0.28rem;
@@ -145,7 +146,7 @@ export default {
 .OnlineExamination .van-field__left-icon .van-icon,
 .OnlineExamination .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  color: #81d8ce;
+  color: #55EBA2;
   margin-top: 0.05rem;
 }
 .OnlineExamination .van-field__left-icon {
@@ -160,12 +161,15 @@ export default {
 }
 .OnlineExamination .van-search .van-cell {
   padding: 0.16rem 0.48rem;
-  background: rgba(255, 255, 255, 1);
   border-radius: 0.44rem;
-  border: 0.02rem solid #81d8ce;
+  /* background: rgba(255, 255, 255, 1); */
+  /* border: 0.02rem solid #55EBA2; */
+  background: #1d2439;
+  border: 0.02rem solid rgba(0, 0, 0, 0);
 }
 .OnlineExamination .van-search__content {
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
+  background: rgba(0, 0, 0, 0);
 }
 
 /* ******* icon */
@@ -188,12 +192,14 @@ export default {
   /* width: 100%; */
   width: 6.84rem;
 
-  border-top: 0.01rem #f6f6f6 solid;
+  /* border-top: 0.01rem #f6f6f6 solid; */
+  border-top: 1px #4a5677 solid;
   /* padding: 0.35rem 0.32rem 0.48rem 0.32rem;*/
   padding: 0.35rem 0 0.48rem 0.32rem;
 }
 .OnlineExamination .PerRow:last-child {
-  border-bottom: 0.01rem #f6f6f6 solid;
+  /* border-bottom: 0.01rem #f6f6f6 solid; */
+  border-bottom: 0.01rem #4a5677 solid;
 }
 
 .OnlineExamination .title_spaceRight {
@@ -211,7 +217,8 @@ export default {
   margin-right: 0.24rem;
 }
 .OnlineExamination .participating {
-  color: rgba(129, 216, 206, 1);
+  /* color: rgba(129, 216, 206, 1); */
+  color: #55EBA2;
 }
 .OnlineExamination .participated {
   color: rgba(197, 202, 213, 1);

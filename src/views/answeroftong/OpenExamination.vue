@@ -31,14 +31,14 @@
                     v-if="indexC%2 == 0"
                     :name="itemC"
                     icon-size="16px"
-                    checked-color="#81D8CE"
+                    checked-color="#49d691"
                   >{{itemC}}</van-radio>
                   <van-radio
                     class="radio2"
                     v-if="indexC%2 != 0"
                     :name="itemC"
                     icon-size="16px"
-                    checked-color="#81D8CE"
+                    checked-color="#49d691"
                   >{{itemC}}</van-radio>
                 </div>
               </template>
@@ -275,10 +275,12 @@ export default {
   padding: 0.24rem 0 0.24rem 0.36rem;
 }
 .OpenExamination .radio1.van-radio {
-  background: rgba(250, 250, 250, 1);
+  /* background: rgba(250, 250, 250, 1); */
+  background: #1d2439;
 }
 .OpenExamination .radio2.van-radio {
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
+  background: rgba(0, 0, 0, 0);
 }
 .OpenExamination .van-radio__label {
   height: 0.4rem;
@@ -290,7 +292,11 @@ export default {
   letter-spacing: 0.01rem;
 }
 .OpenExamination .van-button--default {
-  border: 1px solid #81d8ce;
+  border: 1px solid #49d691;
+}
+/* ******Radio 的border颜色 */
+.OpenExamination .van-radio__icon .van-icon {
+  border: 0.01rem solid #49d691;
 }
 </style>
 <style scoped>
@@ -330,7 +336,8 @@ export default {
   font-size: 0.56rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
   line-height: 0.78rem;
   letter-spacing: 0.01rem;
 }
@@ -338,12 +345,13 @@ export default {
   height: 0.5rem;
   font-size: 0.36rem;
   font-family: PingFangSC-Medium, PingFang SC;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
   font-weight: 500;
   line-height: 0.5rem;
 }
 .OpenExamination .Q_info_font3 {
-  color: rgba(129, 216, 206, 1);
+  color: #49d691;
 }
 .OpenExamination .QI_right {
   display: inline-block;
@@ -375,7 +383,8 @@ export default {
   font-size: 0.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(197, 202, 213, 1);
+  /* color: rgba(197, 202, 213, 1); */
+  color: #858b9c;
   letter-spacing: 0.01rem;
   vertical-align: top;
   width: 100%;
@@ -386,11 +395,12 @@ export default {
   padding-right: 0.4rem;
 }
 .OpenExamination .Q_title {
-  height: 0.45rem;
+  /* height: 0.45rem; */
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
   line-height: 0.45rem;
 }
 
@@ -484,7 +494,7 @@ export default {
   cursor: pointer;
 }
 .OpenExamination .popup_perBtn2 {
-  color: #81d8ce;
+  color: #49d691;
   border-left: 1px solid rgba(221, 221, 221, 1);
 }
 .OpenExamination .p_btn {
@@ -494,7 +504,9 @@ export default {
 .OpenExamination .PR_Q {
   box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
-  border: 0.01rem solid rgba(233, 232, 232, 1);
+  /* border: 0.01rem solid rgba(233, 232, 232, 1); */
+  border: 0.01rem solid rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .OpenExamination .RightAnwser {
   height: 0.4rem;

@@ -18,14 +18,14 @@
                   v-if="indexC%2 == 0"
                   :name="itemC"
                   icon-size="16px"
-                  checked-color="#81D8CE"
+                  checked-color="#49D691"
                 >{{itemC}}</van-radio>
                 <van-radio
                   class="radio2"
                   v-if="indexC%2 != 0"
                   :name="itemC"
                   icon-size="16px"
-                  checked-color="#81D8CE"
+                  checked-color="#49D691"
                 >{{itemC}}</van-radio>
                 <input v-if="itemC == '其他'" class="i_input" type="text" placeholder="请输入" />
               </div>
@@ -35,7 +35,7 @@
       </template>
     </div>
     <div :style="{height: '0.2rem'}"></div>
-    <div class="textAlignCenter_w100">
+    <div class="textAlignCenter_w100 bottomSpace">
       <van-button round class="common_middle_btn i_btn common_fontsize">提&nbsp;&nbsp;交</van-button>
       <div :style="{height: '0.32rem'}"></div>
       <p class="i_btn_reset">重&nbsp;&nbsp;置</p>
@@ -83,10 +83,12 @@ export default {
   padding: 0.24rem 0.36rem;
 }
 .QuestionnaireInquiry_Answer .radio1.van-radio {
-  background: rgba(250, 250, 250, 1);
+  /* background: rgba(250, 250, 250, 1); */
+  background: #1d2439;
 }
 .QuestionnaireInquiry_Answer .radio2.van-radio {
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
+  background: rgba(0, 0, 0, 0);
 }
 .QuestionnaireInquiry_Answer .van-radio__label {
   height: 0.4rem;
@@ -96,6 +98,15 @@ export default {
   color: rgba(102, 111, 131, 1);
   line-height: 0.4rem;
   letter-spacing: 0.01rem;
+}
+
+/* ******按钮 */
+.QuestionnaireInquiry_Answer .van-button--default{
+  border: 0.01rem solid rgba(0, 0, 0, 0);
+}
+/* ******Radio 的border颜色 */
+.QuestionnaireInquiry_Answer .van-radio__icon .van-icon{
+  border: 0.01rem solid #49D691;
 }
 </style>
 <style scoped>
@@ -124,7 +135,8 @@ export default {
   font-size: 0.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(197, 202, 213, 1);
+  /* color: rgba(197, 202, 213, 1); */
+  color: #858b9c;
   line-height: 0.28rem;
   letter-spacing: 0.01rem;
   vertical-align: top;
@@ -137,16 +149,17 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
+
   line-height: 0.45rem;
 }
 
 .QuestionnaireInquiry_Answer .i_input {
-  height: 0.4rem;
+  height: 0.8rem;
   outline: none;
   border: 0;
   vertical-align: top;
-
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
@@ -154,7 +167,9 @@ export default {
   line-height: 0.4rem;
   padding: 0 0.36rem;
   margin-top: 0.2rem;
-  width: 100%;
+  width: 6.05rem;
+  background-color: #1d2439;
+  border-radius: 0.12rem;
 }
 .QuestionnaireInquiry_Answer .i_btn {
   width: 3.6rem;
@@ -172,6 +187,9 @@ export default {
   line-height: 0.4rem;
   /* letter-spacing: 0.1rem; */
   text-decoration: underline;
+}
+.QuestionnaireInquiry_Answer .bottomSpace {
+  font-size: 0;
 }
 </style>
 

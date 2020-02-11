@@ -1,6 +1,6 @@
 <template>
   <div class="AcademicMilestone">
-    <vue-headful title="学业里程碑"></vue-headful>
+    <vue-headful title="我的成就"></vue-headful>
     <div :style="{height: '3.66rem'}"></div>
     <div class="top_img" :style="StyleBg">
       <div class="am_avatar">
@@ -33,7 +33,8 @@
             <img v-if="item.ifActive == true" class="perImg" :src="item.pic[0]" alt />
             <img v-if="item.ifActive != true" class="perImg" :src="item.pic[1]" alt />
           </div>
-          <div class="pIM_name">{{item.name}}</div>
+          <div v-if="item.ifActive == true" class="pIM_name">{{item.name}}</div>
+          <div v-if="item.ifActive != true" class="pIM_name pIM_name2">{{item.name}}</div>
         </div>
       </div>
     </template>
@@ -42,22 +43,24 @@
     <p class="RQ_title">进阶奖章</p>
     <div :style="{height: '0.13rem'}"></div>
     <template v-for="(item2,index2) in UpArr ">
-      <div v-if='index2 <= 3' class="perImgModule" :key="index2 + 'QA2' ">
+      <div v-if="index2 <= 3" class="perImgModule" :key="index2 + 'QA2' ">
         <div class="pIM">
           <div>
             <img v-if="item2.ifActive == true" class="perImg" :src="item2.pic[0]" alt />
             <img v-if="item2.ifActive != true" class="perImg" :src="item2.pic[1]" alt />
           </div>
-          <div class="pIM_name">{{item2.name}}</div>
+          <div v-if="item2.ifActive == true" class="pIM_name">{{item2.name}}</div>
+          <div v-if="item2.ifActive != true" class="pIM_name pIM_name2">{{item2.name}}</div>
         </div>
       </div>
-      <div v-if='index2 > 3' class="perImgModule perImgModule2" :key="index2 + 'QA2' ">
+      <div v-if="index2 > 3" class="perImgModule perImgModule2" :key="index2 + 'QA2' ">
         <div class="pIM">
           <div>
             <img v-if="item2.ifActive == true" class="perImg" :src="item2.pic[0]" alt />
             <img v-if="item2.ifActive != true" class="perImg" :src="item2.pic[1]" alt />
           </div>
-          <div class="pIM_name">{{item2.name}}</div>
+          <div v-if="item2.ifActive == true" class="pIM_name">{{item2.name}}</div>
+          <div v-if="item2.ifActive != true" class="pIM_name pIM_name2">{{item2.name}}</div>
         </div>
       </div>
     </template>
@@ -231,7 +234,8 @@ export default {
   font-size: 0.36rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
   line-height: 0.5rem;
   letter-spacing: 0.01px;
 }
@@ -241,7 +245,7 @@ export default {
   display: inline-block;
 }
 .AcademicMilestone .perImgModule2 {
-    margin-top: 0.31rem;
+  margin-top: 0.31rem;
 }
 
 .AcademicMilestone .perImg {
@@ -257,8 +261,12 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(65, 72, 93, 1);
+  /* color: rgba(65, 72, 93, 1); */
+  color: #ffffff;
   line-height: 0.37rem;
+}
+.AcademicMilestone .pIM_name2 {
+  color: #858b9c;
 }
 </style>
 
