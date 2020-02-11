@@ -41,15 +41,11 @@
       </div>
       <input class="i_input" type="text" placeholder="请填写详细记录" />
     </div>
-    <div :style="{height: '0.48rem'}"></div>
-    <div class="textAlignCenter_w100">
-      <van-button round class="common_middle_btn i_btn common_fontsize i_btn_space">提&nbsp;&nbsp;&nbsp;交</van-button>
-      <van-button
-        round
-        class="common_middle_btn2 i_btn common_fontsize "
-      >重&nbsp;&nbsp;&nbsp;置</van-button>
+    <div :style="{height: '3.76rem'}"></div>
+    <div class="flex flex_justify_content">
+      <van-button round class="common_middle_btn i_btn common_fontsize">提&nbsp;&nbsp;&nbsp;交</van-button>
     </div>
-    <div :style="{height: '0.48rem'}"></div>
+    <div class="flex flex_justify_content reset_button">重置</div>
   </div>
 </template>
 <script>
@@ -87,9 +83,10 @@ export default {
 .RecordUpload .van-dropdown-menu {
   display: inline-block;
   vertical-align: top;
-  margin-top: 0.12rem;
+  margin-top: 0.09rem;
   height: 0.5rem;
   width: 4.35rem;
+  background-color: transparent;
 }
 .RecordUpload .van-dropdown-menu__title {
   /* padding: 0 5.5rem 0 0; */
@@ -100,7 +97,8 @@ export default {
 }
 .RecordUpload .van-ellipsis {
   width: 4.7rem;
-  font-size: 0.32rem;
+  font-size: 0.28rem;
+  color: #858b9c;
 }
 .RecordUpload .van-hairline--top-bottom::after,
 .van-hairline-unset--top-bottom::after {
@@ -135,32 +133,31 @@ export default {
 /* ***********  */
 </style>
 <style scoped>
-.RecordUpload {
-}
 .RecordUpload input::-webkit-input-placeholder {
-  font-size: 0.32rem;
-  color: #c5cad5;
+  font-size: 0.28rem;
+  color: #858b9c;
   height: 0.4rem;
 }
 /* 通用输入框 */
 .RecordUpload .i_input {
   font-size: 0.32rem;
-  color: #41485d;
+  color: #858b9c;
   height: 0.4rem;
   outline: none;
   border: 0;
   vertical-align: top;
   width: 4.35rem;
+  background: rgba(255, 255, 255, 0);
 }
 .RecordUpload .PerRow {
   height: 0.4rem;
   /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
+  border-bottom: 1px #4a5677 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 
 .RecordUpload .PerRow_borderBottom {
-  border-bottom: 1px #f6f6f6 solid;
+  border-bottom: 1px #4a5677 solid;
 }
 .RecordUpload .title_spaceRight {
   margin-right: 0rem;
@@ -176,6 +173,12 @@ export default {
 }
 .RecordUpload .i_btn_space {
   margin-right: 0.68rem;
+}
+.reset_button {
+  font-size: 0.28rem;
+  color: #858b9c;
+  text-decoration: underline;
+  margin-top: 0.32rem;
 }
 </style>
 

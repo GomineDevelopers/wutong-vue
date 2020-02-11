@@ -1,6 +1,6 @@
 <template>
   <div class="Ecircle">
-    <div class="EcircleC" :id="chartData.id"></div>
+    <div class="EcircleC height_auto" :id="chartData.id"></div>
   </div>
 </template>
 <script>
@@ -41,43 +41,50 @@ export default {
         var option = {
           title: {
             // text: "68%",
-            text: String(this.chartData.data.value) + "%",
-            left: "32%",
-            top: "56%",
+            text: this.chartData.data.text,
+            subtext: String(this.chartData.data.value) + "%",
+            x: "center",
+            y: "30%",
             textStyle: {
               fontWeight: "normal",
-              color: "#434344",
-              fontSize: "14"
+              color: "#ccc",
+              fontSize: 11
+            },
+            subtextStyle: {
+              color: "rgba(255,255,255,.45)",
+              fontSize: 15,
+              color: "#fff",
+              fontWeight: "normal"
             }
           },
-          legend: {
-            data: [this.chartData.data.text],
-            icon: "none",
-            left: "5%",
-            // left: "auto",
-            // right:"35%",
-            right: "auto",
-            top: "35%",
-            // align: "auto",
-            // backgroundColor: "red",
-            textStyle: {
-              fontWeight: "normal",
-              color: "#AFAFAF",
-              fontSize: "10",
-            //   backgroundColor: "red",
-            //   width: "0%",
-            //   padding:[0,5]
-            }
-          },
-          color: "#E8E9E9",
+          //   legend: {
+          //     data: [this.chartData.data.text],
+          //     icon: "none",
+          //     left: "5%",
+          //     // left: "auto",
+          //     // right:"35%",
+          //     right: "auto",
+          //     top: "25%",
+          //     // align: "auto",
+          //     // backgroundColor: "red",
+          //     textStyle: {
+          //       fontWeight: "normal",
+          //       color: "#AFAFAF",
+          //       fontSize: "10"
+          //       //   backgroundColor: "red",
+          //       //   width: "0%",
+          //       //   padding:[0,5]
+          //     }
+          //   },
+          color: "#1D2437",
           series: [
             {
               name: "Line 1",
               type: "pie",
               minAngle: 15,
               clockWise: true,
-              radius: ["60%", "80%"], // 大小
-              center: ["50%", "60%"], // 位置
+              radius: ["70%", "90%"], // 大小
+              center: ["50%", "50%"], // 位置
               itemStyle: {
                 normal: {
                   borderWidth: 2, //设置border的宽度有多大
@@ -142,12 +149,11 @@ export default {
 
 <style scoped>
 .Ecircle {
-  height: 1.5rem;
+  height: 100%;
   width: 100%;
   text-align: center;
 }
 .Ecircle .EcircleC {
-  height: 1.5rem;
   width: 100%;
 }
 </style>

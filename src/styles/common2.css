@@ -125,18 +125,15 @@
   font-size: 0.28rem;
   /* color: #41485d; */
   color: #858b9c;
-
   font-weight: 400;
 }
 .main_font5 {
   font-size: 0.28rem;
-  /* color: #111a34; */
   color: #ffffff;
   font-weight: 500;
 }
 .main_font6 {
   font-size: 0.28rem;
-  /* color: #41485d; */
   color: #858b9c;
   font-weight: 400;
 }
@@ -160,14 +157,13 @@
   height: 0.9rem;
   line-height: 0.9rem;
   text-align: center;
-  background: rgba(129, 216, 206, 1);
+  background: #49d691;
   border-radius: 0.45rem;
   font-size: 0.32rem;
   font-weight: 500;
   color: #fff;
   margin: 0rem auto;
   border: none;
-  background: rgba(255, 255, 255, 0);
   letter-spacing: 0.1rem;
 }
 /* 右侧箭头 > 样式 */

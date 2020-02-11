@@ -7,7 +7,7 @@
         <van-row class="flex flex_1 flex_align_center">
           <img src="../../assets/pic/head1.png" />
           <van-row class="doctor_info">
-            <span class="theme_color2 font_weight_500">Max Wallace</span>
+            <span class="font_white font_weight_500">Max Wallace</span>
             <span class="theme_color4 font_weight_500">132xxxx4323</span>
           </van-row>
         </van-row>
@@ -20,28 +20,28 @@
           class="doctor_module_list_item flex flex_justify_between flex_align_center"
         >
           <van-row class="flex flex_1 flex_align_center">
-            <img src="../../assets/pic/doctor_icon3.png" />
-            <span class="main_font">优惠券</span>
+            <img src="../../assets/newpic/doctor_icon3.png" />
+            <span class="main_font font_white">优惠券</span>
           </van-row>
           <span class="list_message">12</span>
-          <img src="../../assets/pic/arrow_icon.png" />
+          <img src="../../assets/newpic/arrow_icon.png" />
         </van-row>
         <van-row
           @click="router_to('/pointmanagement')"
           class="doctor_module_list_item flex flex_justify_between flex_align_center"
         >
           <van-row class="flex flex_1 flex_align_center">
-            <img src="../../assets/pic/doctor_icon4.png" />
-            <span class="main_font">积分管理</span>
+            <img src="../../assets/newpic/doctor_icon4.png" />
+            <span class="main_font font_white">积分管理</span>
           </van-row>
-          <img src="../../assets/pic/arrow_icon.png" />
+          <img src="../../assets/newpic/arrow_icon.png" />
         </van-row>
         <van-row class="doctor_module_list_item flex flex_justify_between flex_align_center">
           <van-row class="flex flex_1 flex_align_center">
-            <img src="../../assets/pic/doctor_icon6.png" />
-            <span class="main_font">系统设置</span>
+            <img src="../../assets/newpic/doctor_icon6.png" />
+            <span class="main_font font_white">系统设置</span>
           </van-row>
-          <img src="../../assets/pic/arrow_icon.png" />
+          <img src="../../assets/newpic/arrow_icon.png" />
         </van-row>
       </van-row>
     </van-row>
@@ -72,7 +72,6 @@ export default {
   height: 2.2rem;
   justify-content: space-between;
   padding-right: 0.41rem;
-  box-shadow: 0px 2px 10px 0px rgba(203, 203, 203, 0.2);
 }
 .top_info img {
   width: 1.392rem;
@@ -112,7 +111,7 @@ export default {
 }
 .list_message {
   font-size: 0.28rem;
-  color: #d1d1d6;
+  color: #8a8f96;
   font-weight: 500;
 }
 </style>

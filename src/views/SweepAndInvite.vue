@@ -36,7 +36,7 @@ export default {
     return {
       pageType: 1, // 1 - doctor  2 - patient
       StyleBg: {
-        backgroundImage: "url(" + require("@/assets/pic/CardBg2.png") + ")",
+        backgroundImage: "url(" + require("@/assets/newpic/bg.png") + ")",
         backgroundRepeat: "no-repeat",
         // backgroundPosition: "center center",
         backgroundSize: "100% 100%",
@@ -49,8 +49,8 @@ export default {
         textAlign: "center"
         // "{backgroundImage:'url(' + item.videopic + ')', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundSize: 'contain'}"
       },
-      QrCode_doctor: require("@/assets/pic/QrCode.png"),
-      QrCode_patient: require("@/assets/pic/QrCode.png")
+      QrCode_doctor: require("@/assets/newpic/sweep_code2.png"),
+      QrCode_patient: require("@/assets/newpic/sweep_code2.png")
     };
   },
   mounted() {
@@ -70,8 +70,7 @@ export default {
 </style>
 <style scoped>
 .SweepAndInvite {
-  width: 90vw;
-  padding: 0 5vw;
+  padding: 0.56rem 0.5rem;
   text-align: center;
 }
 .SweepAndInvite .page_title {
@@ -80,7 +79,7 @@ export default {
   font-size: 0.36rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   line-height: 0.5rem;
   letter-spacing: 1px;
   width: 100%;

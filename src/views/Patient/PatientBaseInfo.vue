@@ -5,7 +5,7 @@
       <div class="common_Stitle_font2 title_spaceRight">手机号</div>
       <input class="i_input" type="text" v-model="p_phone" placeholder="请填写您的手机号" />
     </div>
-    <div class="PerRow">
+    <div class="PerRow flex flex_align_center">
       <div class="common_Stitle_font2 title_spaceRight">验证码</div>
       <input
         class="i_input i_input2"
@@ -52,12 +52,14 @@
         </div>
       </template>
     </div>
-    <div class="m_pic_p m_pic_p2">
-      <template v-for="(item,index) in Imgs ">
-        <div :key="index + 'PIImgs' " class="m_pic">
-          <img class="m_img" :src="item" alt />
-        </div>
-      </template>
+    <div class="photo_show">
+      <div class="m_pic_p m_pic_p2">
+        <template v-for="(item,index) in Imgs ">
+          <div :key="index + 'PIImgs' " class="m_pic">
+            <img class="m_img" :src="item" alt />
+          </div>
+        </template>
+      </div>
     </div>
     <div class="textAlignCenter_w100 UserKnow">
       <div class="per_input">
@@ -66,7 +68,7 @@
       </div>
     </div>
 
-    <!--     
+    <!--
     <div class="PerRow">
       <div class="common_Stitle_font2 common_Stitle_font3 title_spaceRight title_spaceRight2">体重(kg)</div>
       <input class="i_input" type="text" placeholder="请填写体重" />
@@ -105,7 +107,11 @@
     </div>-->
     <!-- <div :style="{height: '1.48rem'}"></div> -->
     <div class="textAlignCenter_w100">
-      <van-button @click="RegisterInfo" round class="common_middle_btn i_btn common_fontsize">提交</van-button>
+      <van-button
+        @click="RegisterInfo"
+        round
+        class="common_middle_btn i_btn common_fontsize"
+      >完&nbsp;成</van-button>
     </div>
     <div :style="{height: '0.48rem'}"></div>
   </div>
@@ -208,7 +214,8 @@ export default {
   display: inline-block;
 }
 .PatientBaseInfo .van-radio__label {
-  font-size: 0.32rem;
+  font-size: 0.28rem;
+  color: #858b9c;
   vertical-align: text-top;
   display: inline-block;
   line-height: 0.32rem;
@@ -237,24 +244,23 @@ export default {
 }
 </style>
 <style scoped>
-.PatientBaseInfo {
-}
 .PatientBaseInfo input::-webkit-input-placeholder {
-  font-size: 0.32rem;
-  color: #c5cad5;
+  color: #858b9c;
   height: 0.4rem;
 }
 /* 通用输入框 */
 .PatientBaseInfo .i_input {
-  font-size: 0.32rem;
-  color: #41485d;
+  font-size: 0.28rem;
+  color: #858b9c;
   height: 0.4rem;
   outline: none;
   border: 0;
   vertical-align: top;
+  background: none;
 }
 .PatientBaseInfo .i_input2 {
   width: 2.7rem;
+  margin-right: 0.3rem;
 }
 
 .PatientBaseInfo .i_input3 {
@@ -266,11 +272,11 @@ export default {
 .PatientBaseInfo .PerRow {
   height: 0.4rem;
   /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
+  border-bottom: 1px #4a5677 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 .PatientBaseInfo .PerRow_borderBottom {
-  border-bottom: 1px #f6f6f6 solid;
+  border-bottom: 1px #4a5677 solid;
 }
 .PatientBaseInfo .title_spaceRight {
   margin-right: 0‬;
@@ -286,19 +292,15 @@ export default {
 .PatientBaseInfo .VeriCode {
   display: inline-block;
   width: 1.8rem;
-  border-left: 1px solid #e4e4e4;
-  padding-left: 0.096rem;
-  font-size: 0.32rem;
-  color: #81d8ce;
-  margin-left: 0.096rem;
-  vertical-align: top;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 0.2rem;
+  font-size: 0.28rem;
+  color: #55eba2;
 }
 
 /* *********** */
 .PatientBaseInfo .PerRow {
   height: 0.4rem;
-  /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 
@@ -364,10 +366,10 @@ export default {
 
 .PatientBaseInfo .m_pic_p {
   /* width: 7.5rem; */
-  margin-top: 0.67rem;
+  /* margin-top: 0.67rem; */
 }
 .PatientBaseInfo .m_pic_p2 {
-  padding: 0 0.4rem;
+  /* padding: 0 0.4rem; */
 }
 
 .PatientBaseInfo .m_pic {
@@ -401,11 +403,14 @@ export default {
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
+  color: #81d8ce;
   line-height: 0.4rem;
   letter-spacing: 0.01rem;
   margin-left: 0.05rem;
   vertical-align: top;
+}
+.photo_show {
+  padding: 0.4rem 0rem 0.2rem 0.32rem;
 }
 </style>
 

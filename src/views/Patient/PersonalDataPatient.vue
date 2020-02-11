@@ -1,18 +1,19 @@
 <template>
   <div class="PersonalData">
     <vue-headful title="个人资料"></vue-headful>
-    <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">手机号码</div>
-      <div class="text_info theme_color5">
-        <div class="inlineBlock">156****6236</div>
-        <span>&nbsp;&nbsp;</span>
-        <!-- <van-icon name="arrow" @click="router_to('personaldatapatientedit')" /> -->
-        <van-icon name="arrow" />
+    <div class="PerRow flex flex_justify_between">
+      <div class="common_Stitle_font2 title_spaceRight">手机号</div>
+      <div class="text_info">
+        <div class="inlineBlock">
+          156****6236
+          <span>&nbsp;&nbsp;</span>
+          <van-icon name="arrow" />
+        </div>
       </div>
     </div>
-    <div class="PerRow">
+    <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">收货地址</div>
-      <div class="text_info theme_color5">
+      <div class="text_info">
         <div class="inlineBlock">
           <span class="receiving_address">贵州省贵阳市观山湖区金利大厦</span>
           <span>&nbsp;&nbsp;</span>
@@ -49,11 +50,13 @@ export default {
 }
 </style>
 <style scoped>
+.PersonalData {
+  padding-left: 0.32rem;
+}
 .PersonalData .PerRow {
   height: 0.4rem;
-  /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
-  padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+  border-bottom: 1px #4a5677 solid;
+  padding: 0.38rem 0.32rem 0.37rem 0rem;
 }
 
 .PersonalData .title_spaceRight {
@@ -65,6 +68,7 @@ export default {
   text-align: right;
   font-size: 0.32rem;
   width: 4.8rem;
+  color: #858b9c;
   vertical-align: top;
 }
 .PersonalData .receiving_address {
@@ -73,6 +77,10 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.PersonalData .van-icon-arrow {
+  color: #fff;
+  font-size: 0.32rem;
 }
 </style>
 

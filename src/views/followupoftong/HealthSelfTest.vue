@@ -189,7 +189,7 @@ export default {
 
 .HealthSelfTest .per_uestionnaire .questtion {
   font-size: 0.32rem;
-  color: rgba(100, 101, 105, 1);
+  color: #fff;
   letter-spacing: 0.01rem;
   margin-top: 0.32rem;
   height: 0.32rem;
@@ -210,7 +210,7 @@ export default {
   height: 0.28rem;
   font-size: 0.28rem;
   font-weight: 400;
-  color: rgba(100, 101, 105, 1);
+  color: #fff;
   line-height: 0.28rem;
   letter-spacing: 0.01rem;
   margin-left: 0.1rem;

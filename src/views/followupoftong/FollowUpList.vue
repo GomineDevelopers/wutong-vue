@@ -1,7 +1,6 @@
 <template>
   <div class="FollowUpList">
-    <vue-headful title="健康自测"></vue-headful>
-    <!-- <div :style="{height: '0.4rem'}"></div> -->
+    <vue-headful title="随访列表"></vue-headful>
     <table class="m_table" border="1">
       <tr class="tr_title">
         <td
@@ -42,8 +41,9 @@
         </tr>
       </template>
     </table>
+    <div :style="{height: '2rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button @click="routerto_b" round class="common_middle_btn common_fontsize i_btn">上传随访记录</van-button>
+      <van-button @click="routerto_b" round class="common_middle_btn common_fontsize i_btn">上传新随访记录</van-button>
     </div>
     <div :style="{height: '0.56rem'}"></div>
   </div>
@@ -94,46 +94,40 @@ export default {
 };
 </script>
 <style scoped>
-.FollowUpList {
-}
-
 .FollowUpList .m_table {
   /* margin-top: -0.8rem; */
   text-align: left;
   border-collapse: collapse;
+  border: none;
 }
-
+.FollowUpList .m_table tr {
+  border: 0.01rem solid #4a5677;
+}
+.FollowUpList .tr_title {
+  height: 1.08rem;
+}
 .FollowUpList .tr_title td {
-  background: #f0f0f0;
-  /* background: #a7e0da; */
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: none;
   font-weight: bold;
-  font-size: 0.24rem;
-  color: rgba(17, 26, 52, 1);
+  font-size: 0.28rem;
+  color: #858b9c;
   width: auto;
   margin: auto;
   height: 0.5rem;
   padding: 0.05rem 0.1rem;
   text-align: center;
 }
-
+.FollowUpList .tr_row {
+  height: 1.2rem;
+}
 .FollowUpList .tr_row td {
-  border: 1px solid rgba(0, 0, 0, 0);
-  font-size: 0.22rem;
-  color: #b4b4b4;
+  border: none;
+  font-size: 0.28rem;
+  color: #858b9c;
   width: auto;
   margin: auto;
-  /* height: auto; */
-  height: 1.8rem;
   width: 1.2rem;
   padding: 0.05rem 0.1rem;
-}
-.FollowUpList .m_table .tr_row:nth-child(2n) {
-  background-color: #ffffff;
-}
-
-.FollowUpList .m_table .tr_row:nth-child(2n + 1) {
-  background-color: #f1f2f1;
 }
 
 .FollowUpList .tr_title td:nth-child(1) {
@@ -146,15 +140,17 @@ export default {
   width: 1rem;
 }
 .FollowUpList .tr_title td:nth-child(4) {
-  width: 1.4rem;
+  width: 1.6rem;
 }
 .FollowUpList .tr_title td:nth-child(5) {
-  width: 2.4rem;
+  width: 2.2rem;
   text-align: left;
 }
 .FollowUpList .tr_row td:nth-child(1) {
   text-align: center;
   width: 1rem;
+  font-size: 0.32rem;
+  color: #fff;
 }
 .FollowUpList .tr_row td:nth-child(2) {
   text-align: center;
@@ -188,6 +184,10 @@ export default {
   padding-top: 0.04rem;
   color: #b4b4b4;
   margin-left: 0.1rem;
+}
+.FollowUpList .arrow_p .van-icon {
+  font-size: 0.2rem;
+  vertical-align: middle;
 }
 .FollowUpList .arrow_p2 {
   padding-top: 0.02rem;

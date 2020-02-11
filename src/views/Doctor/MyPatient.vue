@@ -21,7 +21,7 @@
             <div class="i_age_sex">{{ item.age }}岁&nbsp;({{ item.sex }})</div>
           </div>
           <div class="i_bottom">
-            <div class="i_history">病史：{{ item.medicalHistory }}</div>
+            <div class="i_history">{{ item.medicalHistory }}</div>
           </div>
         </div>
         <div class="icon_detail">
@@ -45,7 +45,7 @@ export default {
           name: "白琦晶",
           age: "21",
           sex: "女",
-          medicalHistory: "心脏病，肝病，肾结石"
+          medicalHistory: "高血压伴晕厥入院后予氨氯地平、缬沙坦二甲双胍等"
         },
         {
           userId: "2",
@@ -53,7 +53,7 @@ export default {
           name: "连文之",
           age: "23",
           sex: "男",
-          medicalHistory: "心脏病，肝病，肾结石"
+          medicalHistory: "高血压伴晕厥入院后予氨氯地平、缬沙坦二甲双胍等"
         },
         {
           userId: "3",
@@ -61,7 +61,7 @@ export default {
           name: "亢康克",
           age: "21",
           sex: "男",
-          medicalHistory: "心脏病，肝病，肾结石"
+          medicalHistory: "高血压伴晕厥入院后予氨氯地平、缬沙坦二甲双胍等"
         },
         {
           userId: "4",
@@ -69,7 +69,7 @@ export default {
           name: "令狐蓓",
           age: "24",
           sex: "女",
-          medicalHistory: "心脏病，肝病，肾结石"
+          medicalHistory: "高血压伴晕厥入院后予氨氯地平、缬沙坦二甲双胍等"
         },
         {
           userId: "5",
@@ -77,7 +77,7 @@ export default {
           name: "卫英纯",
           age: "21",
           sex: "男",
-          medicalHistory: "心脏病，肝病，肾结石"
+          medicalHistory: "高血压伴晕厥入院后予氨氯地平、缬沙坦二甲双胍等"
         },
         {
           userId: "6",
@@ -85,7 +85,7 @@ export default {
           name: "简瑾秀",
           age: "27",
           sex: "女",
-          medicalHistory: "心脏病，肝病，肾结石"
+          medicalHistory: "高血压伴晕厥入院后予氨氯地平、缬沙坦二甲双胍等"
         }
       ]
     };
@@ -107,9 +107,9 @@ export default {
 </script>
 <style>
 /* ****** 输入框 */
-
 .MyPatient .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
+  background: none !important;
 }
 .MyPatient .van-cell .van-field__control {
   font-size: 0.28rem;
@@ -135,12 +135,9 @@ export default {
 }
 .MyPatient .van-search .van-cell {
   padding: 0.16rem 0.48rem;
-  background: rgba(255, 255, 255, 1);
   border-radius: 0.44rem;
-  border: 0.02rem solid #81d8ce;
-}
-.MyPatient .van-search__content {
-  background: rgba(255, 255, 255, 1);
+  border: none;
+  background: rgba(29, 36, 57, 1);
 }
 /* ****** icon */
 .MyPatient .patientCard .van-icon {
@@ -152,13 +149,11 @@ export default {
 }
 </style>
 <style scoped>
-.MyPatient {
-}
 .MyPatient .patientCard {
   width: 6.825rem;
   padding: 0.48rem 0.32rem;
   height: 1.02rem;
-  border-bottom: 1px #f6f6f6 solid;
+  border-bottom: 1px #4a5677 solid;
 }
 .MyPatient .patient_avatar {
   display: inline-block;
@@ -181,18 +176,16 @@ export default {
   padding-top: 0.09rem;
 }
 .MyPatient .patient_info .i_top {
-  height: 50%;
+  height: 49%;
 }
-.MyPatient .patient_info .i_bottom {
-  /* height: 50%; */
-}
+
 .MyPatient .i_name {
   width: 1.36rem;
   height: 32px;
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.32rem;
   display: inline-block;
   vertical-align: top;
@@ -202,7 +195,7 @@ export default {
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.28rem;
   display: inline-block;
   vertical-align: top;
@@ -212,8 +205,8 @@ export default {
   font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(133, 139, 156, 1);
-  line-height: 0.28rem;
+  color: #858b9c;
+  line-height: 0.4rem;
   padding-top: 0.07rem;
 }
 

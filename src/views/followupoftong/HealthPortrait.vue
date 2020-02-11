@@ -2,14 +2,10 @@
   <div class="HealthPortrait">
     <vue-headful title="健康画像"></vue-headful>
     <van-row class="top_info flex flex_align_center">
-      <van-row class="flex flex_1 flex_align_center">
+      <van-row class="flex flex_1 flex_align_center flex_direction">
         <img src="../../assets/pic/head2.png" />
-        <van-row class="doctor_info">
-          <span class="theme_color2 font_weight_500">Max Wallace</span>
-          <span class="theme_color4 font_weight_500">132xxxx4323</span>
-        </van-row>
+        <span class="user_name">Max Wallace</span>
       </van-row>
-      <van-icon name="arrow" size="0.5rem" />
     </van-row>
 
     <div class="HP_Content">
@@ -26,9 +22,6 @@
         <div class="E2_child">
           <div class="E2_top">
             <div class="E2_tFont">血糖血脂</div>
-            <div class="E2_tIcon">
-              <van-icon name="info-o" color="#bebebe" size="0.28rem" />
-            </div>
           </div>
           <div class="E2_bottom">
             <div class="EChartsP2">
@@ -40,9 +33,6 @@
         <div class="E2_child">
           <div class="E2_top">
             <div class="E2_tFont">健康评分</div>
-            <div class="E2_tIcon">
-              <van-icon name="info-o" color="#bebebe" size="0.28rem" />
-            </div>
           </div>
           <div class="E2_bottom">
             <div class="EChartsP2">
@@ -85,15 +75,15 @@ export default {
       RadarData: {
         id: "RadarEcharts",
         dataMax: [
-          { name: "疾病控制情况", max: 6500 },
-          { name: "血糖管理", max: 16000 },
-          { name: "血压", max: 30000 },
-          { name: "生活习惯", max: 38000 },
-          { name: "血脂", max: 52000 }
+          { name: "血糖", max: 1000 },
+          { name: "疾病控制情况", max: 1000 },
+          { name: "血脂", max: 1000 },
+          { name: "生活习惯", max: 1000 },
+          { name: "血压", max: 1000 }
         ],
         data: [
           {
-            value: [4300, 10000, 28000, 35000, 50000],
+            value: [430, 430, 250, 900, 760],
             name: "预算分配（Allocated Budget）"
           }
           // {
@@ -143,25 +133,25 @@ export default {
         id: "E3a",
         data: {
           text: "糖尿病",
-          value: 35
+          value: 78
         },
-        color: "#5CA1F8"
+        color: "#5FDAFF"
       },
       E3bData: {
         id: "E3b",
         data: {
           text: "  中风", //  需要名字补齐-lengend不好调
-          value: 22
+          value: 60
         },
-        color: "#8DD091"
+        color: "#99FEFA"
       },
       E3cData: {
         id: "E3c",
         data: {
           text: "高血压",
-          value: 40
+          value: 72
         },
-        color: "#F7DA7B"
+        color: "#009EFF"
       }
     };
   },
@@ -180,7 +170,7 @@ export default {
         let seriesData = [];
 
         var option = {
-          backgroundColor: "#F2F2F3",
+          //   backgroundColor: "rgba(14, 21, 40, 0.3)",
           // title: {
           //   text: "基础雷达图"
           // },
@@ -193,6 +183,20 @@ export default {
           // },
           radar: {
             // shape: 'circle',
+            name: {
+              formatter: "{value}",
+              textStyle: {
+                color: "#fff"
+              }
+            },
+            splitLine: {
+              lineStyle: {
+                color: "rgba(233, 233, 233, 0.7)"
+              }
+            },
+            splitArea: {
+              show: false
+            },
             indicator: this.RadarData.dataMax,
             center: ["50%", "55%"]
           },
@@ -205,17 +209,17 @@ export default {
               data: this.RadarData.data,
               areaStyle: {
                 normal: {
-                  color: "#81d8ce"
+                  color: "rgba(85, 235, 162, 0.6)"
                 }
               },
               itemStyle: {
                 borderWidth: 3,
-                borderColor: "rgba(88, 188, 188, 1)",
-                shadowColor: "rgba(88, 188, 188, 0.5)",
+                borderColor: "#fff",
+                shadowColor: "#55EBA2",
                 shadowBlur: 10
               },
               lineStyle: {
-                color: "#81d8ce"
+                color: "#55EBA2"
               }
             }
           ]
@@ -236,11 +240,13 @@ export default {
           title: {
             text: this.E2aData.value,
             left: "-3.8%",
-            top: "10%"
+            top: "10%",
+            textStyle: {
+              color: "#fff",
+              fontSize: "20"
+            }
           },
-          textStyle: {
-            color: "#dedede"
-          },
+
           grid: {
             top: "50%",
             left: "0%",
@@ -258,11 +264,11 @@ export default {
               colorStops: [
                 {
                   offset: 0,
-                  color: "#00E5FF" // 0% 处的颜色
+                  color: "#99FEFA" // 0% 处的颜色
                 },
                 {
                   offset: 1,
-                  color: "#0053DC" // 100% 处的颜色
+                  color: "#00DBCC" // 100% 处的颜色
                 }
               ]
             }
@@ -286,20 +292,13 @@ export default {
             type: "category",
             axisLabel: {
               //横坐标类目文字
-              show: false,
-              textStyle: {
-                fontSize: "10" //设置横坐标轴文字颜大小
-              }
+              show: false
             },
             axisTick: {
-              alignWithLabel: true, //设置坐标轴刻度与坐标对齐
               show: false //设置坐标轴刻度不显示
             },
             axisLine: {
-              show: false,
-              lineStyle: {
-                color: "#ccc" //设置横坐标轴线颜色
-              }
+              show: false
             }
           },
           yAxis: {
@@ -310,20 +309,13 @@ export default {
             },
             // 刻度线的设置
             splitLine: {
-              show: false,
-              lineStyle: {
-                color: "#939393",
-                opacity: 0.2
-              }
+              show: false
             },
             axisTick: {
               show: false //设置坐标轴刻度不显示
             },
             axisLine: {
-              show: false,
-              lineStyle: {
-                color: "#202f59" //设置横坐标轴线颜色
-              }
+              show: false
             }
           },
           series: [
@@ -352,14 +344,14 @@ export default {
             // text: String(80) + "%",
             text: String(78),
             left: "-3.8%",
-            top: "10%"
-            // textStyle: {
-            //   fontWeight: "normal",
-            //   color: "#dedede",
-            //   fontSize: "16"
-            // }red
+            top: "10%",
+            textStyle: {
+              fontWeight: "normal",
+              color: "#fff",
+              fontSize: "20"
+            }
           },
-          color: "#E8E9E9",
+          color: "#1D2437",
           series: [
             {
               name: "Line 1",
@@ -367,7 +359,7 @@ export default {
               minAngle: 15,
               clockWise: true,
               // radius: ["50%", "73%"],
-              radius: ["40%", "55%"], // 大小
+              //   radius: ["40%", "55%"], // 大小
               center: ["70%", "55%"], // 位置
               itemStyle: {
                 normal: {
@@ -393,11 +385,11 @@ export default {
                         colorStops: [
                           {
                             offset: 0,
-                            color: "#00E5FF" // 0% 处的颜色
+                            color: "#03D7FF" // 0% 处的颜色
                           },
                           {
                             offset: 1,
-                            color: "#0053DC" // 100% 处的颜色
+                            color: "#1DB4FF" // 100% 处的颜色
                           }
                         ]
                       },
@@ -438,8 +430,6 @@ export default {
 }
 </style>
 <style scoped>
-.HealthPortrait {
-}
 .HealthPortrait .HP_Content {
   padding: 0 0.32rem;
 }
@@ -447,13 +437,17 @@ export default {
 .HealthPortrait .top_info {
   height: 2.2rem;
   justify-content: space-between;
-  padding-right: 0.41rem;
-  box-shadow: 0px 2px 10px 0px rgba(203, 203, 203, 0.2);
+  padding-top: 0.56rem;
 }
 .HealthPortrait .top_info img {
   width: 1.392rem;
   height: 1.392rem;
   margin: 0rem 0.32rem 0rem 0.5rem;
+}
+.HealthPortrait .top_info .user_name {
+  font-size: 0.4rem;
+  color: #fff;
+  margin-top: 0.4rem;
 }
 
 .HealthPortrait .doctor_info span:nth-child(1) {
@@ -471,7 +465,7 @@ export default {
   font-size: 0.28rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 600;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.4rem;
   letter-spacing: 0.01px;
 }
@@ -493,7 +487,6 @@ export default {
   height: 1.6rem;
   width: 42%;
   padding: 0.2rem 3%;
-  border: 0.01rem solid #f8f8f8;
   display: inline-block;
   vertical-align: top;
 }
@@ -508,10 +501,8 @@ export default {
   line-height: 0.32rem;
 }
 .HealthPortrait .E2_tFont {
-  font-size: 0.28rem;
-  color: #bebebe;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
+  font-size: 0.24rem;
+  color: #858b9c;
   display: inline-block;
   vertical-align: top;
 }
@@ -538,7 +529,6 @@ export default {
 .HealthPortrait .E3_child {
   height: 1.8rem;
   width: 100%;
-  border-top: 0.01rem solid #f8f8f8;
   font-size: 0;
 }
 .HealthPortrait .E3_echart {

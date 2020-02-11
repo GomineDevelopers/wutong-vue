@@ -2,9 +2,7 @@
   <div class="van_container">
     <vue-headful title="积分管理"></vue-headful>
     <van-row class="van_container_body height_auto padding_mudule">
-      <van-row
-        class="total_info_top flex flex_justify_between flex_align_center"
-      >
+      <van-row class="total_info_top flex flex_justify_between flex_align_center">
         <img src="../assets/pic/jf_bgm.png" />
         <van-row class="total_info_item flex flex_1 flex_direction">
           <span>今日累计</span>
@@ -86,16 +84,16 @@ export default {
 }
 .integral_content .main_font2 {
   padding-bottom: 0.12rem;
-  border-bottom: 0.01rem solid #eeeeee;
+  border-bottom: 0.01rem solid #4a5677;
 }
 .integral_list {
   height: 1.18rem;
-  border-bottom: 0.01rem solid #eeeeee;
-  padding: 0rem 0.4rem;
+  border-bottom: 0.01rem solid #4a5677;
+  padding: 0rem 0.2rem 0rem 0.4em;
 }
 
 .integral_list span:nth-child(1) {
-  color: #41485d;
+  color: #fff;
   font-size: 0.28rem;
 }
 .integral_list span:nth-child(2) {

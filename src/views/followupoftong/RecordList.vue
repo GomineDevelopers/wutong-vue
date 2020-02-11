@@ -1,20 +1,22 @@
 <template>
   <div class="RecordList">
     <vue-headful title="随访列表"></vue-headful>
-    <div :style="{height: '0.4rem'}"></div>
-    <p class="RQ_title">张三</p>
-    <p class="R_time">入组时间：2020-01-21</p>
-    <div :style="{height: '0.4rem'}"></div>
-    <table class="m_table" border="1">
-      <tr class="tr_title">
-        <td v-for="(item,index) in ListData.title " :key="index + 'a' " colspan="1">{{item}}</td>
-      </tr>
-      <template v-for="(item,index) in ListData.data ">
-        <tr class="tr_row" :key="index + 'ld' ">
-          <td v-for="(item,index) in item" :key="index + 'td' " colspan="1">{{item}}</td>
+    <div class="record_list_body padding_mudule">
+      <p class="RQ_title">张三</p>
+      <p class="R_time">入组时间：2020-01-21</p>
+      <div :style="{height: '0.4rem'}"></div>
+      <table class="m_table" border="1">
+        <tr class="tr_title">
+          <td v-for="(item,index) in ListData.title " :key="index + 'a' " colspan="1">{{item}}</td>
         </tr>
-      </template>
-    </table>
+        <template v-for="(item,index) in ListData.data ">
+          <tr class="tr_row" :key="index + 'ld' ">
+            <td v-for="(item,index) in item" :key="index + 'td' " colspan="1">{{item}}</td>
+          </tr>
+        </template>
+      </table>
+    </div>
+    <div :style="{height: '0.7rem'}"></div>
     <div class="textAlignCenter_w100">
       <van-button
         @click="BtnFunc(1)"
@@ -70,7 +72,9 @@
             </van-cell>
             <div :style="{height: '0.18rem'}"></div>
           </div>
+
           <div :style="{height: '0.33rem'}"></div>
+
           <div class="popup_btns">
             <div>
               <div class="popup_perBtn popup_perBtn2" @click="popupFunc('Submit')">
@@ -123,7 +127,7 @@ export default {
       Q_Status: "复诊时间",
       Q_Status_Id: 1,
       ListData: {
-        title: ["随访周次", "随访结果", "血糖信息", "剂量信息", "伴随降糖药"],
+        title: ["周次", "结果", "血糖", "剂量", "伴随降糖药"],
         data: [
           [
             "第一周",
@@ -225,7 +229,10 @@ export default {
 </style>
 <style scoped>
 .RecordList {
-  /* padding: 0 0.32rem; */
+  overflow-x: hidden;
+}
+.record_list_body {
+  padding-top: 0.36rem;
 }
 .RecordList .RQ_title {
   margin: 0;
@@ -233,37 +240,36 @@ export default {
   font-size: 0.36rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.5rem;
   letter-spacing: 0.01px;
-  display: inline-block;
   vertical-align: top;
   width: 1.5rem;
-  margin-left: 0.32rem;
 }
 .RecordList .R_time {
-  font-size: 0.28rem;
+  font-size: 0.2rem;
   margin: 0;
-  display: inline-block;
   vertical-align: top;
-  color: #b4b4b4;
+  color: #858b9c;
   letter-spacing: 0.01rem;
-  margin-top: 0.08rem;
-  margin-left: 0.2rem;
+  margin-top: 0.12rem;
 }
 .RecordList .m_table {
-  margin-top: -0.8rem;
   text-align: left;
   border-collapse: collapse;
+  border-radius: 0.25rem;
+  border: none;
+  overflow: hidden;
 }
-
+.RecordList .tr_title {
+  height: 0.99rem;
+}
 .RecordList .tr_title td {
-  background: #f0f0f0;
-  /* background: #a7e0da; */
-  border: 1px solid rgba(0, 0, 0, 0);
+  background: #1d2439;
+  border: none;
   font-weight: bold;
   font-size: 0.24rem;
-  color: rgba(17, 26, 52, 1);
+  color: #dfdfdf;
   width: auto;
   margin: auto;
   height: 0.5rem;
@@ -272,22 +278,21 @@ export default {
 }
 
 .RecordList .tr_row td {
-  border: 1px solid rgba(0, 0, 0, 0);
-  font-size: 0.22rem;
-  color: #b4b4b4;
+  border: none;
+  font-size: 0.18rem;
+  color: #dfdfdf;
   width: auto;
   margin: auto;
-  /* height: auto; */
-  height: 1.8rem;
+  height: 0.9rem;
   width: 1.2rem;
   padding: 0.05rem 0.1rem;
 }
 .RecordList .m_table .tr_row:nth-child(2n) {
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .RecordList .m_table .tr_row:nth-child(2n + 1) {
-  background-color: #f1f2f1;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .RecordList .tr_title td:nth-child(1) {

@@ -162,11 +162,17 @@ export default {
 </script>
 <style>
 /* ******** 标签 */
+.CardTicketManagement .van-tabs__wrap .van-tabs__nav {
+  background: #0e1528;
+}
 .CardTicketManagement .van-tabs--line .van-tabs__wrap {
   height: 0.88rem;
 }
+.CardTicketManagement .van-hairline--top-bottom::after {
+  border: none;
+}
 .CardTicketManagement .van-tab {
-  color: #111a34;
+  color: #858b9c;
 }
 .CardTicketManagement .van-tab__text {
   font-size: 0.28rem;
@@ -174,10 +180,10 @@ export default {
   font-weight: 500;
 }
 .CardTicketManagement .van-tab--active {
-  color: rgba(129, 216, 206, 1);
+  color: #55eba2;
 }
 .CardTicketManagement .van-tabs__line {
-  background-color: rgba(129, 216, 206, 1);
+  background-color: #55eba2;
   width: 14% !important;
 }
 

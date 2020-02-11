@@ -1,35 +1,25 @@
 <template>
   <div class="PatientInfo">
     <vue-headful title="患者信息"></vue-headful>
-    <div class="PerRow">
+    <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">姓名</div>
-      <div class="text_info theme_color5">
-        <div class="inlineBlock">卫英纯</div>
-      </div>
+      <div class="main_font6">卫英纯</div>
     </div>
-    <div class="PerRow">
+    <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">手机号</div>
-      <div class="text_info theme_color5">
-        <div class="inlineBlock">15678226236</div>
-      </div>
+      <div class="main_font6">15678226236</div>
     </div>
-    <div class="PerRow">
+    <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">性别</div>
-      <div class="text_info theme_color5">
-        <div class="inlineBlock">男</div>
-      </div>
+      <div class="main_font6">男</div>
     </div>
-    <div class="PerRow">
+    <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">年龄</div>
-      <div class="text_info theme_color5">
-        <div class="inlineBlock">27</div>
-      </div>
+      <div class="main_font6">27</div>
     </div>
-    <div class="PerRow">
+    <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">注册时间</div>
-      <div class="text_info theme_color5">
-        <div class="inlineBlock">2020-01-23</div>
-      </div>
+      <div class="main_font6">2020-01-23</div>
     </div>
     <!-- <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">收货地址</div>
@@ -43,14 +33,12 @@
       </div>
     </div>-->
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">诊断</div>
-      <div class="m_content">
-        <div class="m_content_font">
-          高血压伴晕厥入院后予氨氯地平、缬沙坦、二甲双胍等
-          常规降压、降糖治疗。患者于入院当天夜间再次出现晕
-          厥，伴意识丧失，呼之不应，心电监护图示心率170次/
-          分，室性心动过速。
-        </div>
+      <div class="main_font2 title_spaceRight">诊断</div>
+      <div class="diagnosis_content main_font6">
+        高血压伴晕厥入院后予氨氯地平、缬沙坦、二甲双胍等
+        常规降压、降糖治疗。患者于入院当天夜间再次出现晕
+        厥，伴意识丧失，呼之不应，心电监护图示心率170次/
+        分，室性心动过速。
       </div>
       <div class="m_pic_p">
         <template v-for="(item,index) in Imgs ">
@@ -120,17 +108,14 @@ export default {
 <style >
 </style>
 <style scoped>
-.PatientInfo {
-}
-
 .PatientInfo .PerRow {
   height: 0.4rem;
   /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
+  border-top: 1px #4a5677 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 .PatientInfo .PerRow_borderBottom {
-  border-bottom: 1px #f6f6f6 solid;
+  border-bottom: 1px #4a5677 solid;
 }
 .PatientInfo .title_spaceRight {
   margin-right: 0;
@@ -160,8 +145,7 @@ export default {
   margin-top: -0.5rem;
 }
 .PatientInfo .m_pic_p {
-  /* width: 7.5rem; */
-  margin-top: 0.67rem;
+  margin-top: 0.4rem;
 }
 .PatientInfo .m_pic {
   width: 2rem;
@@ -183,6 +167,10 @@ export default {
   vertical-align: top;
   margin-top: 0.06rem;
   margin-left: 0.2rem;
+}
+.diagnosis_content {
+  margin-top: 0.3rem;
+  line-height: 0.4rem;
 }
 </style>
 
