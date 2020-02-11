@@ -7,7 +7,7 @@
         <van-row class="flex flex_1 flex_align_center">
           <img src="../../assets/pic/head2.png" />
           <van-row class="doctor_info">
-            <span class="theme_color2 font_weight_500">Max Wallace</span>
+            <span class="font_white font_weight_500">Max Wallace</span>
             <span class="theme_color4 font_weight_500">132xxxx4323</span>
           </van-row>
         </van-row>
@@ -21,7 +21,7 @@
         >
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon1.png" />
-            <span class="main_font">扫码邀请</span>
+            <span class="main_font font_white">扫码邀请</span>
           </van-row>
           <img src="../../assets/pic/arrow_icon.png" />
         </van-row>
@@ -31,7 +31,7 @@
         >
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon2.png" />
-            <span class="main_font">我的认证</span>
+            <span class="main_font font_white">我的认证</span>
           </van-row>
           <span class="auth_span public_green_small">立即认证</span>
           <img src="../../assets/pic/arrow_icon.png" />
@@ -42,7 +42,7 @@
         >
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon3.png" />
-            <span class="main_font">优惠券</span>
+            <span class="main_font font_white">优惠券</span>
           </van-row>
           <span class="list_message">12</span>
           <img src="../../assets/pic/arrow_icon.png" />
@@ -53,7 +53,7 @@
         >
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon4.png" />
-            <span class="main_font">积分管理</span>
+            <span class="main_font font_white">积分管理</span>
           </van-row>
           <img src="../../assets/pic/arrow_icon.png" />
         </van-row>
@@ -63,7 +63,7 @@
         >
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon5.png" />
-            <span class="main_font">我的患者</span>
+            <span class="main_font font_white">我的患者</span>
           </van-row>
           <span class="list_message">153</span>
           <img src="../../assets/pic/arrow_icon.png" />
@@ -71,7 +71,7 @@
         <van-row class="doctor_module_list_item flex flex_justify_between flex_align_center">
           <van-row class="flex flex_1 flex_align_center">
             <img src="../../assets/pic/doctor_icon6.png" />
-            <span class="main_font">系统设置</span>
+            <span class="main_font font_white">系统设置</span>
           </van-row>
           <img src="../../assets/pic/arrow_icon.png" />
         </van-row>

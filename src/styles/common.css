@@ -48,7 +48,7 @@ body {
   /* color: #111a34; */
   color: #ffffff;
   font-size: 0.32rem;
-  font-weight: bold;
+  font-weight: 500;
   display: inline-block;
   width: 1.68rem;
   vertical-align: top;
@@ -57,17 +57,15 @@ body {
   width: 4.2rem;
 }
 .common_Stitle_font4 {
-  width: 4.30rem;
+  width: 4.3rem;
 }
 .common_Stitle_font5 {
   width: 2.2rem;
-
 }
 
-
 /* 通用约定字体大小 */
-.common_fontsize{
-    font-size: 0.32rem;
+.common_fontsize {
+  font-size: 0.32rem;
 }
 /* 通用小灰字体 */
 .common_Sgray_font {
@@ -84,44 +82,45 @@ body {
 /* 通用绿色按钮 */
 .common_middle_btn {
   /* background-color: #81d8ce; */
-  background-color: #49D691;
+  background-color: #49d691;
   color: #ffffff;
+  border: none;
 }
 .common_middle_btn2 {
   /* background-color: #ffffff; */
-  background-color: rgba(255,255,255,0);
-  color: #49D691;
+  background-color: rgba(255, 255, 255, 0);
+  color: #49d691;
 }
 
 /* text-align: center */
-.textAlignCenter_w100{
-    text-align: center;
-    width:100vw;
+.textAlignCenter_w100 {
+  text-align: center;
+  width: 100vw;
 }
-.textAlignCenter_w100p{
-    text-align: center;
-    width:100%;
+.textAlignCenter_w100p {
+  text-align: center;
+  width: 100%;
 }
-.textAlignCenter{
-    text-align: center;
+.textAlignCenter {
+  text-align: center;
 }
-.inlineBlock{
-    display:inline-block ;
+.inlineBlock {
+  display: inline-block;
 }
-.blockB_floatL{
+.blockB_floatL {
   display: block;
   float: left;
 }
 
-.verticalAlignTop{
+.verticalAlignTop {
   vertical-align: top;
 }
 
-.w100{
+.w100 {
   width: 100%;
 }
 
 /* ***** */
-.m_test{
+.m_test {
   font-size: 6.7rem;
 }

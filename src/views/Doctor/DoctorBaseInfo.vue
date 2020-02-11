@@ -107,7 +107,7 @@ export default {
         this.$toast.fail("请填写您的邮箱！");
         return false;
       }
-      this.$Utils.setCookieCry("D_registered", "true", 1); 
+      this.$Utils.setCookieCry("D_registered", "true", 1);
       this.router_toSpec({
         path: "/doctorpersoncenter",
         query: { D_registered: true }
@@ -122,30 +122,34 @@ export default {
 </script>
 
 <style >
+.DoctorBaseInfo .i_input {
+  background: rgba(255, 255, 255, 0);
+}
 /* *********** 下拉框样式 */
 .DoctorBaseInfo .van-dropdown-menu {
   display: inline-block;
   vertical-align: top;
   margin-top: 0.12rem;
   height: 0.5rem;
+  background-color: transparent;
 }
 .DoctorBaseInfo .van-dropdown-menu__title {
   /* padding: 0 5.5rem 0 0; */
   padding: 0;
-  color: #c5cad5;
+  color: #858b9c;
   font-size: 0.32rem;
   line-height: 0.32rem;
 }
 .DoctorBaseInfo .van-ellipsis {
   width: 4.7rem;
-  font-size: 0.32rem;
+  font-size: 0.28rem;
 }
 .DoctorBaseInfo .van-hairline--top-bottom::after,
 .van-hairline-unset--top-bottom::after {
   border-width: 0px 0;
 }
 .DoctorBaseInfo .van-dropdown-item__option {
-  font-size: 0.32rem;
+  font-size: 0.28rem;
   color: #41485d;
 }
 
@@ -165,25 +169,24 @@ export default {
   display: inline-block;
 }
 .DoctorBaseInfo .van-radio__label {
-  font-size: 0.32rem;
+  font-size: 0.28rem;
   vertical-align: text-top;
   display: inline-block;
   line-height: 0.32rem;
+  color: #858b9c;
 }
 /* ***********  */
 </style>
 <style scoped>
-.DoctorBaseInfo {
-}
 .DoctorBaseInfo input::-webkit-input-placeholder {
-  font-size: 0.32rem;
-  color: #c5cad5;
+  font-size: 0.28rem;
+  color: #858b9c;
   height: 0.4rem;
 }
 /* 通用输入框 */
 .DoctorBaseInfo .i_input {
-  font-size: 0.32rem;
-  color: #41485d;
+  font-size: 0.28rem;
+  color: #858b9c;
   height: 0.4rem;
   outline: none;
   border: 0;
@@ -192,15 +195,16 @@ export default {
 .DoctorBaseInfo .PerRow {
   height: 0.4rem;
   /* width: 100%; */
-  border-top: 1px #f6f6f6 solid;
+  border-top: 1px #4a5677 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
 }
 
 .DoctorBaseInfo .PerRow_borderBottom {
-  border-bottom: 1px #f6f6f6 solid;
+  border-bottom: 1px #4a5677 solid;
 }
 .DoctorBaseInfo .title_spaceRight {
   margin-right: 0rem;
+  letter-spacing: 0.01rem;
 }
 .DoctorBaseInfo .i_btn {
   width: 3.6rem;

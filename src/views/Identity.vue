@@ -2,33 +2,27 @@
   <div class="Identity">
     <vue-headful title="身份"></vue-headful>
     <div :style="{height: '1rem'}"></div>
-    <div class="textAlignCenter_w100">
-      <img class="avatar" :src="avatar1" alt />
-    </div>
-    <div :style="{height: '0.56rem'}"></div>
-    <div class="textAlignCenter_w100">
+    <img class="avatar" :src="avatar1" alt />
+    <div>
       <van-button
         @click="router_to('/patientpersoncenter')"
         round
         class="common_middle_btn i_btn common_fontsize"
       >我是患者</van-button>
     </div>
-    <div :style="{height: '0.8rem'}"></div>
-    <div class="textAlignCenter_w100 inlineBlock">
-      <div class="inlineBlock theme_backgroundcolor5 i_line"></div>
-      <div class="inlineBlock theme_color5 i_or">&nbsp;或者&nbsp;</div>
-      <div class="inlineBlock theme_backgroundcolor5 i_line"></div>
+    <div :style="{height: '1.8rem'}"></div>
+    <div class="flex flex_align_center flex_justify_content">
+      <div class="theme_backgroundcolor5 i_line"></div>
+      <div class="theme_color5 i_or">&nbsp;或者&nbsp;</div>
+      <div class="theme_backgroundcolor5 i_line"></div>
     </div>
-    <div :style="{height: '0.8rem'}"></div>
-    <div class="textAlignCenter_w100">
-      <img class="avatar" :src="avatar2" alt />
-    </div>
-    <div :style="{height: '0.56rem'}"></div>
-    <div class="textAlignCenter_w100">
+    <div :style="{height: '1.8rem'}"></div>
+    <img class="avatar" :src="avatar2" alt />
+    <div>
       <van-button
         @click="router_to('/doctorpersoncenter')"
         round
-        class="common_middle_btn i_btn common_fontsize"
+        class="common_middle_btn i_btn"
       >我是医生</van-button>
     </div>
     <div :style="{height: '1.44rem'}"></div>
@@ -46,7 +40,6 @@ export default {
   },
   mounted() {
     let vm = this;
-  
   },
   methods: {
     router_to(str) {
@@ -59,6 +52,8 @@ export default {
 <style scoped>
 .Identity {
   text-align: center;
+  height: 100%;
+  overflow: hidden;
 }
 .Identity .avatar {
   height: 2rem;
@@ -67,13 +62,15 @@ export default {
 .Identity .i_btn {
   height: 0.9rem;
   width: 3.6rem;
+  font-size: 0.32rem;
+  letter-spacing: 0.1rem;
 }
 .Identity .i_or {
   font-size: 0.26rem;
 }
 .Identity .i_line {
-  height: 1px;
-  width: 1rem;
+  height: 0.01rem;
+  width: 2rem;
   vertical-align: middle;
 }
 </style>

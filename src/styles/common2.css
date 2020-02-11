@@ -37,17 +37,17 @@
 }
 /* 修改input默认placeholder颜色 */
 .van-cell .van-field__control::-webkit-input-placeholder {
-  color: #858B9C;
+  color: #858b9c;
 }
 .van-cell .van-field__control:-moz-placeholder {
   /* color: #d1d1d6; */
-  color: #858B9C;
+  color: #858b9c;
 }
 .van-cell .van-field__control::-moz-placeholder {
-  color: #858B9C;
+  color: #858b9c;
 }
 .van-cell .van-field__control::-ms-input-placeholder {
-  color: #858B9C;
+  color: #858b9c;
 }
 
 /* 外层容器 */
@@ -59,6 +59,9 @@
 }
 .font_weight_500 {
   font-weight: 500;
+}
+.font_white {
+  color: #fff;
 }
 
 /* ****** 输入搜索框 */
@@ -72,13 +75,13 @@
 .van-field__right-icon .van-icon {
   font-size: 0.5rem;
   /* color: #81d8ce; */
-  color: #55EBA2;
+  color: #55eba2;
   margin-top: 0.05rem;
 }
 .van_container_body .van-search {
   padding: 0rem 0rem;
   margin-top: 10px;
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 .van_container_body .van-search__content {
   padding-left: 0rem;
@@ -95,18 +98,17 @@
 }
 .van_container_body .van-search .van-cell {
   padding: 0.18rem 0.48rem;
-  background: rgba(29,36,57,1);
+  background: rgba(29, 36, 57, 1);
   border-radius: 0.44rem;
   /* border: 0.02rem solid #81d8ce; */
 }
 .van-search__content {
-  background:transparent;
+  background: transparent;
 }
 
 /* 字体设置 */
 .main_font {
   font-size: 0.3rem;
-  color: #41485d;
   font-weight: 500;
 }
 .main_font2 {
@@ -122,20 +124,20 @@
 .main_font4 {
   font-size: 0.28rem;
   /* color: #41485d; */
-  color: #858B9C;
+  color: #858b9c;
 
   font-weight: 400;
 }
 .main_font5 {
   font-size: 0.28rem;
   /* color: #111a34; */
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 500;
 }
 .main_font6 {
   font-size: 0.28rem;
   /* color: #41485d; */
-  color: #858B9C;
+  color: #858b9c;
   font-weight: 400;
 }
 .public_green_small {
@@ -179,14 +181,14 @@
 .left_sidebar .van-sidebar {
   height: 100%;
   width: 1.8rem;
-  background: rgba(29,36,57,1);
+  background: rgba(29, 36, 57, 1);
 }
 .left_sidebar .van-sidebar-item {
   position: relative;
   font-size: 0.28rem;
   color: #fff;
   font-weight: 600;
-  background:  rgba(29,36,57,1);
+  background: rgba(29, 36, 57, 1);
   padding: 0.24rem 0rem;
 }
 .left_sidebar .van-sidebar-item__text {
@@ -204,7 +206,7 @@
 .left_sidebar .van-sidebar-item--select {
   color: #81d8ce;
   border-color: transparent;
-  background: rgba(14,21,40,1);
+  background: rgba(14, 21, 40, 1);
 }
 .left_sidebar .van-sidebar-item--select::after {
   border-color: #81d8ce;
