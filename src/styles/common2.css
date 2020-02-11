@@ -71,7 +71,8 @@
 .van-field__left-icon .van-icon,
 .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  color: #81d8ce;
+  /* color: #81d8ce; */
+  color: #55EBA2;
   margin-top: 0.05rem;
 }
 .van_container_body .van-search {

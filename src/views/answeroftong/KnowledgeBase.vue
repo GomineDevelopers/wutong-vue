@@ -4,7 +4,7 @@
     <van-search
       right-icon="search"
       v-model="searchContent"
-      placeholder="请输入"
+      placeholder="请输入相关信息进行检索"
       shape="round"
       @search="onSearch"
       background="#ffffff"
@@ -22,7 +22,7 @@
           <div class="i_bottom">
             <van-progress
               class="i_progress"
-              color="#81D8CE"
+              color="#55EBA2"
               :percentage="item.percentage"
               stroke-width="8"
             />
@@ -84,6 +84,7 @@ export default {
 
 .KnowledgeBase .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 .KnowledgeBase .van-cell .van-field__control {
   font-size: 0.28rem;
@@ -94,7 +95,7 @@ export default {
 .KnowledgeBase .van-field__left-icon .van-icon,
 .KnowledgeBase .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  color: #81d8ce;
+  color: #55EBA2;
   margin-top: 0.05rem;
 }
 .KnowledgeBase .van-field__left-icon {
@@ -109,12 +110,15 @@ export default {
 }
 .KnowledgeBase .van-search .van-cell {
   padding: 0.16rem 0.48rem;
-  background: rgba(255, 255, 255, 1);
   border-radius: 0.44rem;
-  border: 0.02rem solid #81d8ce;
+  /* background: rgba(255, 255, 255, 1); */
+  /* border: 0.02rem solid #81d8ce; */
+  background: #1d2439;
+  border: 0.02rem solid rgba(0, 0, 0, 0);
 }
 .KnowledgeBase .van-search__content {
-  background: rgba(255, 255, 255, 1);
+  /* background: rgba(255, 255, 255, 1); */
+  background: rgba(0, 0, 0, 0);
 }
 /* ****** icon */
 .KnowledgeBase .patientCard .van-icon {
@@ -132,7 +136,8 @@ export default {
   width: 6.825rem;
   padding: 0.48rem 0.32rem;
   height: 1.02rem;
-  border-bottom: 1px #f6f6f6 solid;
+  /* border-bottom: 1px #f6f6f6 solid; */
+  border-bottom: 1px #4a5677 solid;
 }
 .KnowledgeBase .patient_avatar {
   display: inline-block;
@@ -146,7 +151,7 @@ export default {
   height: 100%;
   margin-bottom: 0.05rem;
   box-shadow: 0 0.03rem 0.06rem 0 rgba(134, 129, 129, 0.1);
-  border-radius: 0.10rem;
+  border-radius: 0.1rem;
   border: 0.01rem solid rgba(239, 239, 239, 1);
 }
 .KnowledgeBase .patient_info {
@@ -164,16 +169,16 @@ export default {
   /* height: 50%; */
 }
 .KnowledgeBase .i_name {
-  color: rgba(17, 26, 52, 1);
   display: inline-block;
   vertical-align: top;
   height: 0.45rem;
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
   line-height: 0.45rem;
   letter-spacing: 0.01rem;
+  /* color: rgba(17, 26, 52, 1); */
+  color: #ffffff;
 }
 .KnowledgeBase .i_age_sex {
   height: 0.28rem;

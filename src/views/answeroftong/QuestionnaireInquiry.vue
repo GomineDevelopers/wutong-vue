@@ -156,7 +156,7 @@ export default {
 .QuestionnaireInquiry .van-field__left-icon .van-icon,
 .QuestionnaireInquiry .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  color: #81d8ce;
+  color: #55EBA2;
   margin-top: 0.05rem;
 }
 .QuestionnaireInquiry .van-field__left-icon {
@@ -171,10 +171,10 @@ export default {
 }
 .QuestionnaireInquiry .van-search .van-cell {
   padding: 0.16rem 0.48rem;
-  /* background: rgba(255, 255, 255, 1); */
-  background: #1D2439;
   border-radius: 0.44rem;
+  /* background: rgba(255, 255, 255, 1); */
   /* border: 0.02rem solid #81d8ce; */
+  background: #1d2439;
   border: 0.02rem solid rgba(0, 0, 0, 0);
 }
 .QuestionnaireInquiry .van-search__content {
@@ -196,7 +196,7 @@ export default {
   height: 0.83rem;
   /* width: 100%; */
   /* border-top: 1px #f6f6f6 solid; */
-  border-top: 1px #4A5677 solid;
+  border-top: 1px #4a5677 solid;
   padding: 0.46rem 0.32rem 0.21rem 0.32rem;
 }
 
@@ -216,7 +216,7 @@ export default {
 }
 .QuestionnaireInquiry .participating {
   /* color: rgba(129, 216, 206, 1); */
-  color: #55EBA2;
+  color: #55eba2;
 }
 .QuestionnaireInquiry .participated {
   color: rgba(197, 202, 213, 1);
@@ -235,7 +235,7 @@ export default {
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   /* color: rgba(197, 202, 213, 1); */
-  color: #C5CAD5;
+  color: #c5cad5;
   line-height: 0.28rem;
   letter-spacing: 0.01rem;
   vertical-align: top;

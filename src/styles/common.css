@@ -83,14 +83,15 @@ body {
 }
 /* 通用绿色按钮 */
 .common_middle_btn {
-  background-color: #81d8ce;
+  /* background-color: #81d8ce; */
+  background-color: #49D691;
   color: #ffffff;
 }
 .common_middle_btn2 {
-  background-color: #ffffff;
-  color: #81d8ce;
+  /* background-color: #ffffff; */
+  background-color: rgba(255,255,255,0);
+  color: #49D691;
 }
-
 
 /* text-align: center */
 .textAlignCenter_w100{
