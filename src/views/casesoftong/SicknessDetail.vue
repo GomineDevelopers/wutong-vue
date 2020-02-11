@@ -208,7 +208,7 @@ export default {
 .sickness_title {
   font-size: 0.36rem;
   font-weight: 500;
-  color: #111a34;
+  color: #fff;
   margin: 0.4rem 0rem 0.2rem 0rem;
 }
 .sickness_department {

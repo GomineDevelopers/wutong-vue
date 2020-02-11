@@ -273,7 +273,7 @@ export default {
   margin-top: 1.68rem;
   height: calc(100% - 1.68rem);
   overflow: hidden;
-  box-shadow: 0px -0.04rem 0.2rem 0rem rgba(243, 244, 248, 1);
+  /* box-shadow: 0px -0.04rem 0.2rem 0rem rgba(243, 244, 248, 1); */
 }
 .left_sidebar {
   height: 100%;
