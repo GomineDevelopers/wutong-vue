@@ -126,7 +126,9 @@ export default {
   font-size: 0.3rem;
   margin-top: 0rem;
 }
-
+.RecordUpload .van-cell .van-field__control {
+  color: #858b9c;
+}
 /* *********** 下拉框样式 */
 .RecordUpload .van-dropdown-menu {
   display: inline-block;

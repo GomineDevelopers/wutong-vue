@@ -193,6 +193,9 @@ export default {
   font-size: 0.3rem;
   margin-top: 0rem;
 }
+.DoctorBaseInfo .van-cell .van-field__control {
+  color: #858b9c;
+}
 /* ***********  */
 
 .DoctorBaseInfo .i_input {
