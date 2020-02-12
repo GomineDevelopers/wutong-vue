@@ -197,6 +197,7 @@ export default {
     background: transparent;
 }
 .medication_info_popup .settlement_title{
+    color: #111A34;
     text-align: center;
 }
 .medication_info_popup .medication_text{
