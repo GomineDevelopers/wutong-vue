@@ -33,59 +33,39 @@
             <div class="popup_warning">{{Q_Status}}</div>
             <div class="popup_stitle">请设置患者{{Q_Status}}及通知日期</div>
           </div>
-          <div :style="{height: '0.26rem'}"></div>
           <div class="popup_info">
-            <van-cell
-              v-if="Q_Status_Id == 1"
-              title="就诊日期："
-              :value="Text_c1"
-              @click="ifShow_c1 = true"
-            >
-              <van-icon slot="right-icon" name="calender-o" style="line-height: inherit;" />
-            </van-cell>
-
-            <div v-if="Q_Status_Id == 1" :style="{height: '0.18rem'}"></div>
-            <van-cell
-              v-if="Q_Status_Id == 1"
-              title="选择周期："
-              :value="Text_c2"
-              @click="ifShow_c2 = true"
-            >
-              <van-icon slot="right-icon" name="arrow-down" style="line-height: inherit;" />
-            </van-cell>
-            <van-cell
-              v-if="Q_Status_Id == 2"
-              title="购买日期："
-              :value="Text_c3"
-              @click="ifShow_c3 = true"
-            >
-              <van-icon slot="right-icon" name="calender-o" style="line-height: inherit;" />
-            </van-cell>
-            <div v-if="Q_Status_Id == 2" :style="{height: '0.18rem'}"></div>
-            <van-cell
-              v-if="Q_Status_Id == 2"
-              title="选择周期："
-              :value="Text_c4"
-              @click="ifShow_c4 = true"
-            >
-              <van-icon slot="right-icon" name="arrow-down" style="line-height: inherit;" />
-            </van-cell>
-            <div :style="{height: '0.18rem'}"></div>
+            <van-row class="choose_date" v-if="Q_Status_Id == 1">
+              <van-cell title="选择日期：" :value="Text_c1" @click="ifShow_c1 = true">
+                <van-icon slot="right-icon" name="calender-o" style="line-height: inherit;" />
+              </van-cell>
+            </van-row>
+            <van-row class="choose_date" v-if="Q_Status_Id == 1">
+              <van-cell title="选择周期：" :value="Text_c2" @click="ifShow_c2 = true">
+                <van-icon slot="right-icon" name="arrow-down" style="line-height: inherit;" />
+              </van-cell>
+            </van-row>
+            <van-row class="choose_date" v-if="Q_Status_Id == 2">
+              <van-cell title="购买日期：" :value="Text_c3" @click="ifShow_c3 = true">
+                <van-icon slot="right-icon" name="calender-o" style="line-height: inherit;" />
+              </van-cell>
+            </van-row>
+            <van-row class="choose_date" v-if="Q_Status_Id == 2">
+              <van-cell title="选择周期：" :value="Text_c4" @click="ifShow_c4 = true">
+                <van-icon slot="right-icon" name="arrow-down" style="line-height: inherit;" />
+              </van-cell>
+            </van-row>
           </div>
-
-          <div :style="{height: '0.33rem'}"></div>
-
           <div class="popup_btns">
             <div>
-              <div class="popup_perBtn popup_perBtn2" @click="popupFunc('Submit')">
-                <div class="p_btn">确定</div>
-              </div>
               <div
                 v-show="pageType ==  'Record'"
                 class="popup_perBtn popup_perBtn2"
                 @click="popupFunc('GoBack')"
               >
                 <div class="p_btn">返回</div>
+              </div>
+              <div class="popup_perBtn popup_perBtn2" @click="popupFunc('Submit')">
+                <div class="p_btn">确定</div>
               </div>
             </div>
           </div>
@@ -342,22 +322,22 @@ export default {
 }
 
 /* 弹出框内容 */
-
+.RecordList .van-popup {
+  border-radius: 0.1rem;
+}
 .RecordList .popup_bg {
-  /* width: 4.76rem;
-  height: 2.56rem;
-  padding: 0.33rem 0.32rem 0.26rem 0.32rem; */
   width: 5.4rem;
   height: auto;
   background: rgba(255, 255, 255, 1);
-  -webkit-border-radius: 0.04rem;
-  -ms-border-radius: 0.04rem;
-  -o-border-radius: 0.04rem;
-  -moz-border-radius: 0.04rem;
-  border-radius: 0.04rem;
   text-align: center;
   overflow-y: hidden;
-  height: 4.5rem;
+  height: 5.57rem;
+}
+.RecordList .popup_bg .choose_date {
+  height: 1.2rem;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
 }
 .RecordList .popup_warning {
   height: 0.5rem;
@@ -370,17 +350,16 @@ export default {
   margin-top: 0.33rem;
 }
 .RecordList .popup_stitle {
-  height: 0.5rem;
-  font-size: 0.24rem;
+  font-size: 0.28rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 400;
-  color: #bebebe;
-  line-height: 0.24rem;
+  color: #41485d;
   letter-spacing: 0.01rem;
-  margin-top: 0.33rem;
+  margin-top: 0.26rem;
+  margin-bottom: 0.3rem;
 }
 .RecordList .popup_info {
-  height: 0.76rem;
+  height: 2.4rem;
   font-size: 0.28rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
@@ -413,8 +392,12 @@ export default {
   cursor: pointer;
 }
 .RecordList .popup_perBtn2 {
-  color: #81d8ce;
+  color: #858b9c;
   border-left: 1px solid rgba(221, 221, 221, 1);
+}
+
+.RecordList .popup_perBtn2:nth-child(2) {
+  color: #81d8ce;
 }
 .RecordList .p_btn {
   margin-top: 0.28rem;
