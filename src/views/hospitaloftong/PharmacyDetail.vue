@@ -372,7 +372,7 @@ export default {
 }
 .sickness_list {
   padding: 0.4rem 0.4rem 0.4rem 0rem;
-  border-bottom: 0.01rem solid #eee;
+  border-bottom: 0.01rem solid #4A5677;
 }
 .drug_content {
   line-height: 0.4rem;

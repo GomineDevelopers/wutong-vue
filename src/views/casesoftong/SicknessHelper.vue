@@ -283,7 +283,9 @@ export default {
   padding: 0.31rem 0.32rem 0rem 0.32rem;
 }
 .sickness_list {
-  margin-bottom: 0.62rem;
+  padding-bottom: 0.32rem;
+  margin-bottom: 0.32rem;
+  border-bottom: 1px solid #4A5677;
 }
 .sickness_list .flex {
   width: 4rem;

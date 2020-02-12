@@ -74,7 +74,7 @@
 .van-field__left-icon .van-icon,
 .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  /* color: #81d8ce; */
+  /* color: #55EBA2; */
   color: #55eba2;
   margin-top: 0.05rem;
 }
@@ -100,7 +100,7 @@
   padding: 0.18rem 0.48rem;
   background: rgba(29, 36, 57, 1);
   border-radius: 0.44rem;
-  /* border: 0.02rem solid #81d8ce; */
+  /* border: 0.02rem solid #55EBA2; */
 }
 .van-search__content {
   background: transparent;
@@ -139,7 +139,7 @@
 }
 .public_green_small {
   font-size: 0.26rem;
-  color: #81d8ce;
+  color: #55EBA2;
   font-weight: 400;
 }
 .padding_mudule {
@@ -200,12 +200,12 @@
   border-left: 0.06rem solid transparent;
 }
 .left_sidebar .van-sidebar-item--select {
-  color: #81d8ce;
+  color: #55EBA2;
   border-color: transparent;
   background: rgba(14, 21, 40, 1);
 }
 .left_sidebar .van-sidebar-item--select::after {
-  border-color: #81d8ce;
+  border-color: #55EBA2;
 }
 .right_content.flex_1 {
   overflow-y: auto;
@@ -246,7 +246,7 @@
 }
 .pharmacy_time {
   font-size: 0.28rem;
-  color: #81d8ce;
+  color: #55EBA2;
   margin-left: 0.24rem;
 }
 .pharmacy_tips span {

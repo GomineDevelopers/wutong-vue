@@ -214,6 +214,9 @@ export default {
 </script>
 
 <style>
+.DrugsForDetails_Out{
+  padding-bottom: 2rem;
+}
 /* ******* 轮播图 */
 .DrugsForDetails_Out .van-swipe {
   width: 7.5rem;
@@ -496,8 +499,8 @@ export default {
 .DrugsForDetails_Out .add {
   width: 0.32rem;
   height: 0.32rem;
-  background: rgba(129, 216, 206, 1);
-  border: 0.02rem solid rgba(129, 216, 206, 1);
+  background: #55EBA2;
+  border: 0.02rem solid #55EBA2;
   margin-top: 0.05rem;
 }
 .DrugsForDetails_Out .countRadius {
@@ -530,7 +533,6 @@ export default {
   background: rgba(255, 255, 255, .1);
   box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
-  border: 0.01rem solid rgba(233, 232, 232, 0.5);
 }
 .DrugsForDetails_Out .product_title {
   height: 0.45rem;
@@ -554,7 +556,7 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(129, 216, 206, 1);
+  color: #55EBA2;
   line-height: 0.37rem;
   display: inline-block;
   vertical-align: top;
@@ -575,6 +577,7 @@ export default {
   font-weight: 400;
   line-height: 0.37rem;
   letter-spacing: 0.01rem;
+  border-bottom: 1px solid #4A5677;
 }
 .DrugsForDetails_Out .pc_subtitle {
   color: #858B9C;
@@ -591,8 +594,7 @@ export default {
   margin: 0 0.32rem;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: auto;
-  border: 0.01rem solid rgba(233, 232, 232, 0.5);
-  box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 0.2rem;
 }
 .DrugsForDetails_Out .p_intro_title_l {
@@ -600,7 +602,7 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.45rem;
 }
 .DrugsForDetails_Out .p_intro_font {
