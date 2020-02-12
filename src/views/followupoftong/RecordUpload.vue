@@ -9,7 +9,7 @@
         <van-dropdown-item v-model="value1" :options="option1" />
       </van-dropdown-menu>-->
       <van-cell-group @click="ifShow_c1=true">
-        <van-field placeholder="请选择患者" v-model="value1" right-icon="arrow-down" />
+        <van-field placeholder="请选择患者" v-model="value1" right-icon="arrow-down" readonly clickable />
       </van-cell-group>
     </div>
     <div class="PerRow">
@@ -20,7 +20,13 @@
         <van-dropdown-item v-model="value2" :options="option2" />
       </van-dropdown-menu>-->
       <van-cell-group @click="ifShow_c2=true">
-        <van-field placeholder="请选择当前随访周次" v-model="value2" right-icon="arrow-down" />
+        <van-field
+          placeholder="请选择当前随访周次"
+          v-model="value2"
+          right-icon="arrow-down"
+          readonly
+          clickable
+        />
       </van-cell-group>
     </div>
     <div class="PerRow PerRow_borderBottom">

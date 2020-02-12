@@ -18,7 +18,13 @@
         <van-dropdown-item v-model="value1" :options="option1" />
       </van-dropdown-menu>-->
       <van-cell-group @click="ifShow_c1=true">
-        <van-field placeholder="请选择所属医院" v-model="value1" right-icon="arrow-down" />
+        <van-field
+          placeholder="请选择所属医院"
+          v-model="value1"
+          right-icon="arrow-down"
+          readonly
+          clickable
+        />
       </van-cell-group>
     </div>
     <div class="PerRow">
@@ -27,7 +33,13 @@
         <van-dropdown-item v-model="value2" :options="option2" />
       </van-dropdown-menu>-->
       <van-cell-group @click="ifShow_c2=true">
-        <van-field placeholder="请选择所属科室" v-model="value2" right-icon="arrow-down" />
+        <van-field
+          placeholder="请选择所属科室"
+          v-model="value2"
+          right-icon="arrow-down"
+          readonly
+          clickable
+        />
       </van-cell-group>
     </div>
     <div class="PerRow">
@@ -36,7 +48,13 @@
         <van-dropdown-item v-model="value3" :options="option3" />
       </van-dropdown-menu>-->
       <van-cell-group @click="ifShow_c3=true">
-        <van-field placeholder="请选择您的职称" v-model="value3" right-icon="arrow-down" />
+        <van-field
+          placeholder="请选择您的职称"
+          v-model="value3"
+          right-icon="arrow-down"
+          readonly
+          clickable
+        />
       </van-cell-group>
     </div>
     <div class="PerRow PerRow_borderBottom">
