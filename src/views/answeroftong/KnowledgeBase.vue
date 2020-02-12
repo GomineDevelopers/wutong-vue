@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="icon_detail">
-          <van-icon size="0.4rem" name="arrow" @click="router_to('/patientinfo',item.id)" />
+          <van-icon size="0.4rem" name="arrow" />
         </div>
       </div>
     </div>

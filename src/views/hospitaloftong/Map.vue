@@ -19,7 +19,7 @@
           <span :class="active == 2 ? 'active' : ''" @click="goList">列表</span>
         </van-row>-->
         <van-row class="map_assign flex">
-          <div class="assign_bg">
+          <div class="assign_bg" @click="router_to('/pharmacydetail')">
             <div class="a_title">广联医药</div>
             <div class="a_tabs">
               <div class="a_tab a_tab1">24h营业</div>
