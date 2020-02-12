@@ -206,7 +206,7 @@ export default {
 }
 .pharmacy_detail_info {
   padding-top: 0.4rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #4A5677;
 }
 .drug_body {
   width: calc(100% - 0.2rem);
