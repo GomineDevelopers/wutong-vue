@@ -84,7 +84,7 @@ export default {
         data: [
           {
             value: [430, 430, 250, 900, 760],
-            name: "预算分配（Allocated Budget）"
+            name: "健康趋势"
           }
           // {
           //   value: [5000, 14000, 28000, 31000, 42000, 21000],
@@ -175,12 +175,6 @@ export default {
           //   text: "基础雷达图"
           // },
           tooltip: {},
-          // legend: {
-          //   data: [
-          //     "预算分配（Allocated Budget）",
-          //     "实际开销（Actual Spending）"
-          //   ]
-          // },
           radar: {
             // shape: 'circle',
             name: {
