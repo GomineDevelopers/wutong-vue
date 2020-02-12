@@ -74,7 +74,8 @@ export default {
     return {
       hospitalName: '',
       showHospitalPicker: false,
-      url_camera: require("@/assets/pic/camera.jpg"),
+      // url_camera: require("@/assets/pic/camera.jpg"),
+      url_camera: require("@/assets/pic/camera.png"),
       radio: "1",
       value1: 0,
       columns: ["上海医院",  "北京医院", "贵阳医院"],
