@@ -5,17 +5,23 @@
       <div class="common_Stitle_font2 common_Stitle_font5 title_spaceRight">
         <span class="MustFillIn">*&nbsp;&nbsp;</span>患者姓名
       </div>
-      <van-dropdown-menu>
+      <!-- <van-dropdown-menu >
         <van-dropdown-item v-model="value1" :options="option1" />
-      </van-dropdown-menu>
+      </van-dropdown-menu>-->
+      <van-cell-group @click="ifShow_c1=true">
+        <van-field placeholder="请选择患者" v-model="value1" right-icon="arrow-down" />
+      </van-cell-group>
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 common_Stitle_font5 title_spaceRight">
         <span class="MustFillIn">*&nbsp;&nbsp;</span>随访周次
       </div>
-      <van-dropdown-menu>
+      <!-- <van-dropdown-menu>
         <van-dropdown-item v-model="value2" :options="option2" />
-      </van-dropdown-menu>
+      </van-dropdown-menu>-->
+      <van-cell-group @click="ifShow_c2=true">
+        <van-field placeholder="请选择当前随访周次" v-model="value2" right-icon="arrow-down" />
+      </van-cell-group>
     </div>
     <div class="PerRow PerRow_borderBottom">
       <div class="common_Stitle_font2 common_Stitle_font5 title_spaceRight">
@@ -46,6 +52,10 @@
       <van-button round class="common_middle_btn i_btn common_fontsize">提&nbsp;&nbsp;&nbsp;交</van-button>
     </div>
     <div class="flex flex_justify_content reset_button">重置</div>
+
+    <!-- 弹出框 -->
+    <van-action-sheet v-model="ifShow_c1" :actions="actions_name" @select="onConfirm($event,1)" />
+    <van-action-sheet v-model="ifShow_c2" :actions="actions_week" @select="onConfirm($event,2)" />
   </div>
 </template>
 <script>
@@ -55,30 +65,62 @@ export default {
   data() {
     return {
       radio: "1",
-      value1: 0,
+      value1: "",
       option1: [
         { text: "请选择患者", value: 0 },
         { text: "张三", value: 1 },
         { text: "李四", value: 2 },
         { text: "王二", value: 3 }
       ],
-      value2: 0,
+      value2: "",
       option2: [
         { text: "请选择当前随访周次", value: 0 },
         { text: "第一周", value: 1 },
         { text: "第二周", value: 2 },
         { text: "第三周", value: 3 }
-      ]
+      ],
+      ifShow_c1: false,
+      ifShow_c2: false,
+      actions_name: [{ name: "张三" }, { name: "李四" }, { name: "王二" }],
+      actions_week: [{ name: "第一周" }, { name: "第二周" }, { name: "第三周" }]
     };
   },
   mounted() {
     let vm = this;
   },
-  methods: {}
+  methods: {
+    onConfirm(eventText, id) {
+      console.log(eventText);
+      if (id == 1) {
+        this.ifShow_c1 = false;
+        this.value1 = eventText.name;
+      }
+      if (id == 2) {
+        this.ifShow_c2 = false;
+        this.value2 = eventText.name;
+      }
+    }
+  }
 };
 </script>
 
 <style >
+/* *********新下拉输入框 */
+.RecordUpload .van-cell-group {
+  width: 4.4rem;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgba(0, 0, 0, 0);
+}
+.RecordUpload .van-cell {
+  background-color: rgba(0, 0, 0, 0);
+}
+.RecordUpload .van-field__right-icon .van-icon {
+  color: #9fa5b2;
+  font-size: 0.3rem;
+  margin-top: 0rem;
+}
+
 /* *********** 下拉框样式 */
 .RecordUpload .van-dropdown-menu {
   display: inline-block;
