@@ -33,27 +33,63 @@
             <div class="popup_warning">{{Q_Status}}</div>
             <div class="popup_stitle">请设置患者{{Q_Status}}及通知日期</div>
           </div>
-          <div class="popup_info">
-            <van-row class="choose_date" v-if="Q_Status_Id == 1">
-              <van-cell title="选择日期：" :value="Text_c1" @click="ifShow_c1 = true">
-                <van-icon slot="right-icon" name="calender-o" style="line-height: inherit;" />
-              </van-cell>
-            </van-row>
-            <van-row class="choose_date" v-if="Q_Status_Id == 1">
-              <van-cell title="选择周期：" :value="Text_c2" @click="ifShow_c2 = true">
-                <van-icon slot="right-icon" name="arrow-down" style="line-height: inherit;" />
-              </van-cell>
-            </van-row>
-            <van-row class="choose_date" v-if="Q_Status_Id == 2">
-              <van-cell title="购买日期：" :value="Text_c3" @click="ifShow_c3 = true">
-                <van-icon slot="right-icon" name="calender-o" style="line-height: inherit;" />
-              </van-cell>
-            </van-row>
-            <van-row class="choose_date" v-if="Q_Status_Id == 2">
-              <van-cell title="选择周期：" :value="Text_c4" @click="ifShow_c4 = true">
-                <van-icon slot="right-icon" name="arrow-down" style="line-height: inherit;" />
-              </van-cell>
-            </van-row>
+          <!-- 复诊 -->
+          <div class="popup_info" v-if="Q_Status_Id == 1">
+            <div class="choose_date flex flex_align_center flex_justify_between">
+              <div class="show_date flex_1">
+                <span>选择日期</span>
+                <span>{{Text_c1}}</span>
+              </div>
+              <div>
+                <img
+                  class="arrow_icon"
+                  src="../../assets/newpic/arrow_icon.png"
+                  @click="ifShow_c1=true"
+                />
+              </div>
+            </div>
+            <div class="choose_date flex flex_align_center flex_justify_between">
+              <div class="show_date flex_1">
+                <span>选择周期</span>
+                <span>{{Text_c2}}</span>
+              </div>
+              <div>
+                <img
+                  class="arrow_icon"
+                  src="../../assets/newpic/arrow_icon.png"
+                  @click="ifShow_c2=true"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 复购 -->
+          <div class="popup_info" v-if="Q_Status_Id == 2">
+            <div class="choose_date flex flex_align_center flex_justify_between">
+              <div class="show_date flex_1">
+                <span>选择日期</span>
+                <span>{{Text_c3}}</span>
+              </div>
+              <div>
+                <img
+                  class="arrow_icon"
+                  src="../../assets/newpic/arrow_icon.png"
+                  @click="ifShow_c3=true"
+                />
+              </div>
+            </div>
+            <div class="choose_date flex flex_align_center flex_justify_between">
+              <div class="show_date flex_1">
+                <span>选择周期</span>
+                <span>{{Text_c4}}</span>
+              </div>
+              <div>
+                <img
+                  class="arrow_icon"
+                  src="../../assets/newpic/arrow_icon.png"
+                  @click="ifShow_c4=true"
+                />
+              </div>
+            </div>
           </div>
           <div class="popup_btns">
             <div>
@@ -338,6 +374,22 @@ export default {
   display: -webkit-flex;
   display: flex;
   align-items: center;
+}
+.RecordList .popup_bg .choose_date:nth-child(1) {
+  border-bottom: 0.01rem solid #c5cad5;
+}
+.RecordList .popup_info .show_date {
+  text-align: left;
+}
+.RecordList .popup_info .show_date span:nth-child(1) {
+  font-size: 0.32rem;
+  color: #111a34;
+  font-weight: 500;
+  margin-right: 0.3rem;
+}
+.RecordList .popup_info .show_date span:nth-child(2) {
+  font-size: 0.28rem;
+  color: #858b9c;
 }
 .RecordList .popup_warning {
   height: 0.5rem;
