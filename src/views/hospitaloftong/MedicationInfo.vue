@@ -83,6 +83,16 @@ export default {
   color: #fff;
   min-height: 80px;
 }
+.medication_information .van-cell:not(:last-child)::after,
+.medication_information .van-hairline--top-bottom::after, 
+.medication_information .van-hairline-unset--top-bottom::after{
+  border-color: #4A5677;
+  border-top: none;
+}
+.medication_information .van-field__control:disabled{
+  color:#858B9C;
+  -webkit-text-fill-color: #858B9C; 
+}
 </style>
 <style scoped>
 .medication_information {

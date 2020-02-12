@@ -151,10 +151,11 @@ export default {
   height: 100%;
 }
 .van_container_body .van-cell .van-field__control {
-  color: #111a34;
+  color: #fff;
   height: 100%;
 }
 .van_container_body .list_input.van-cell:not(:last-child)::after {
+  left: 0;
   border-bottom: 1px solid #fff;
 }
 </style>
@@ -182,6 +183,10 @@ export default {
   height: 0.88rem;
   padding: 0rem 0.15rem;
 }
+.search_content .van-cell{
+  color: #fff;
+  background: transparent;
+}
 .search_content .van-icon-location {
   font-size: 0.4rem;
   color: #000000;
@@ -189,7 +194,7 @@ export default {
 }
 .search_content .van-icon-search {
   font-size: 0.4rem;
-  color: #666f83;
+  color: #55EBA2;
 }
 .map_container {
   height: calc(100% - 0.85rem);
