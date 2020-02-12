@@ -1,6 +1,6 @@
 <template>
   <div class="OpenExamination">
-    <vue-headful title="限时考试"></vue-headful>
+    <vue-headful title="开放考试"></vue-headful>
     <div class="PerRow">
       <div class="common_Stitle_font2 common_Stitle_font3 inlineBlock">XXX考试</div>
       <div class="Q_time">总分：100分</div>
@@ -127,8 +127,8 @@ export default {
   components: {},
   data() {
     return {
-      // pageType: "Answer", // 'Answer' - 答题  'Query' - 查询(可以显示答案)
-      pageType: "Query",
+      pageType: "Answer", // 'Answer' - 答题  'Query' - 查询(可以显示答案)
+      // pageType: "Query",
       current_Qid: 1,
       QustionNum: 0,
       // QTime_init: 30 * 60, // 以秒计

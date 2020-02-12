@@ -272,7 +272,7 @@ export default {
 .CasesOfUpload .img_camera {
   width: 0.34rem;
   height: 0.31rem;
-  background: rgba(197, 202, 213, 1);
+  /* background: rgba(197, 202, 213, 1); */
   opacity: 0.57;
   display: inline-block;
   vertical-align: top;

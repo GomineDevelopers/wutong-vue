@@ -52,8 +52,8 @@ export default {
 <style scoped>
 .Identity {
   text-align: center;
+  /* overflow: hidden; */
   height: 100%;
-  overflow: hidden;
 }
 .Identity .avatar {
   height: 2rem;
