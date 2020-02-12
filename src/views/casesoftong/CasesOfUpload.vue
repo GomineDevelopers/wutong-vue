@@ -5,12 +5,18 @@
       <div class="common_Stitle_font2 title_spaceRight">标题</div>
       <input class="i_input" type="text" placeholder="请填写标题" />
     </div> -->
-    <div class="PerRow">
+    <!-- <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">分类</div>
-      <van-dropdown-menu>
-        <van-dropdown-item v-model="value1" :options="option1" />
-      </van-dropdown-menu>
-    </div>
+    </div> -->
+    <van-field
+      class="PerRow"
+      readonly
+      clickable
+      label="分类"
+      :value="hospitalName"
+      placeholder="请选择所属医院"
+      @click="showHospitalPicker = true"
+    />
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">性别</div>
       <van-radio-group class="verticalAlignTop" v-model="radio">
@@ -50,6 +56,14 @@
       <van-button round class="common_middle_btn i_btn common_fontsize">提交</van-button>
     </div>
     <div :style="{height: '0.48rem'}"></div>
+    <van-popup v-model="showHospitalPicker" position="bottom">
+      <van-picker
+        show-toolbar
+        :columns="columns"
+        @cancel="showHospitalPicker = false"
+        @confirm="onConfirm"
+      />
+    </van-popup>
   </div>
 </template>
 <script>
@@ -58,15 +72,18 @@ export default {
   components: {},
   data() {
     return {
+      hospitalName: '',
+      showHospitalPicker: false,
       url_camera: require("@/assets/pic/camera.jpg"),
       radio: "1",
       value1: 0,
-      option1: [
-        { text: "请选择所属医院", value: 0 },
-        { text: "上海医院", value: 1 },
-        { text: "北京医院", value: 2 },
-        { text: "贵阳医院", value: 3 }
-      ],
+      columns: ["上海医院",  "北京医院", "贵阳医院"],
+      // [
+      //   { text: "请选择所属医院", value: 0 },
+      //   { text: "上海医院", value: 1 },
+      //   { text: "北京医院", value: 2 },
+      //   { text: "贵阳医院", value: 3 }
+      // ],
       upload_arr: [
         {
           u_title: "病史",
@@ -95,7 +112,13 @@ export default {
   mounted() {
     let vm = this;
   },
-  methods: {}
+  methods: {
+
+    onConfirm(value) {
+      this.hospitalName = value;
+      this.showHospitalPicker = false;
+    }
+  }
 };
 </script>
 
@@ -118,6 +141,17 @@ export default {
 .CasesOfUpload .van-ellipsis {
   width: 4.7rem;
   font-size: 0.32rem;
+}
+.CasesOfUpload .van-popup .van-ellipsis {
+  width: 100%;
+}
+.CasesOfUpload .PerRow.van-cell{
+  color: #fff;
+  font-size: 0.32rem;
+  height: auto !important;
+}
+.CasesOfUpload .van-cell:not(:last-child)::after{
+  border: none;
 }
 .CasesOfUpload .van-hairline--top-bottom::after,
 .van-hairline-unset--top-bottom::after {
@@ -152,6 +186,16 @@ export default {
   display: inline-block;
   line-height: 0.32rem;
 }
+.CasesOfUpload .van-picker__cancel, 
+.CasesOfUpload .van-picker__confirm{
+  font-size: 0.3rem;
+}
+.CasesOfUpload .van-picker__cancel{
+  color: #858B9C
+}
+.CasesOfUpload .van-picker__confirm{
+  color: #55EBA2
+}
 /* ***********  */
 </style>
 <style scoped>
@@ -183,6 +227,7 @@ export default {
   /* width: 100%; */
   border-top: 1px #4A5677 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+  background: transparent;
 }
 
 .CasesOfUpload .PerRow2 {
@@ -269,5 +314,6 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 </style>
 

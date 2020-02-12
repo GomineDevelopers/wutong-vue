@@ -34,6 +34,7 @@ import {
   Card,
   SubmitBar,
   Uploader,
+  Picker,
 } from "vant";
 
 Vue.use(Button);
@@ -67,3 +68,4 @@ Vue.use(Area);
 Vue.use(Card);
 Vue.use(SubmitBar);
 Vue.use(Uploader);
+Vue.use(Picker);

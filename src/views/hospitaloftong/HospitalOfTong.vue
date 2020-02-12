@@ -255,7 +255,7 @@ export default {
   font-size: 0.36rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(17, 26, 52, 1);
+  color: #fff;
   line-height: 0.5rem;
   letter-spacing: 0.01px;
 }
