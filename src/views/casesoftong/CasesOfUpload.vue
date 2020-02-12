@@ -58,7 +58,7 @@ export default {
   components: {},
   data() {
     return {
-      url_camera: require("@/assets/pic/camera.jpg"),
+      url_camera: require("@/assets/pic/camera.png"),
       radio: "1",
       value1: 0,
       option1: [
@@ -227,7 +227,7 @@ export default {
 .CasesOfUpload .img_camera {
   width: 0.34rem;
   height: 0.31rem;
-  background: rgba(197, 202, 213, 1);
+  /* background: rgba(197, 202, 213, 1); */
   opacity: 0.57;
   display: inline-block;
   vertical-align: top;

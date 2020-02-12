@@ -128,7 +128,7 @@ export default {
       radio_liver: "1",
       radio_renal: "1",
 
-      url_camera: require("@/assets/pic/camera.jpg"),
+      url_camera: require("@/assets/pic/camera.png"),
       upload_arr: [
         {
           u_title: "诊断",
@@ -345,7 +345,7 @@ export default {
 .PatientBaseInfo .img_camera {
   width: 0.34rem;
   height: 0.31rem;
-  background: rgba(197, 202, 213, 1);
+  /* background: rgba(197, 202, 213, 1); */
   opacity: 0.57;
   display: inline-block;
   vertical-align: top;
