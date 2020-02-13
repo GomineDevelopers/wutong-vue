@@ -49,18 +49,37 @@
                   <div class="st_originalPrice">￥&nbsp;{{item.originalPrice}}</div>
                   <div class="st_count">
                     <div class="pc_right blockB_floatL">
-                      <div class="subtract countRadius blockB_floatL">
+                      <!-- <div class="subtract countRadius blockB_floatL">
                         <div
                           @click="countChange('subtract',indexP,index)"
                           class="countFont blockB_floatL"
                         >-</div>
+                      </div>-->
+                      <div class="subtract_icon_p">
+                        <img
+                          class="subtract_icon"
+                          src="../../assets/pic/subtract_icon.png"
+                          alt
+                          @click="countChange('subtract',indexP,index)"
+                        />
                       </div>
-                      <div class="p_count blockB_floatL">{{item.count}}</div>
-                      <div class="add countRadius blockB_floatL">
+
+                      <div class="p_count blockB_floatL">
+                        <div>{{item.count}}</div>
+                      </div>
+                      <!-- <div class="add countRadius blockB_floatL">
                         <div
                           @click="countChange('add',indexP,index)"
                           class="countFont countFont2 blockB_floatL"
-                        >+</div>
+                        >+</div>                         
+                      </div>-->
+                      <div class="add_icon_p">
+                        <img
+                          class="add_icon"
+                          src="../../assets/pic/add_icon.png"
+                          alt
+                          @click="countChange('add',indexP,index)"
+                        />
                       </div>
                     </div>
                   </div>
@@ -124,7 +143,7 @@ export default {
           },
           {
             Did: 2,
-            name: "安立泽 沙格列汀片2",
+            name: "安立泽 沙格列汀片b",
             pic: require("@/assets/pic/drug.jpg"),
             specification: "5mg*7片/盒",
             price: 62.0,
@@ -136,7 +155,7 @@ export default {
           },
           {
             Did: 3,
-            name: "安立泽 沙格列汀片2333",
+            name: "安立泽 沙格列汀片c",
             pic: require("@/assets/pic/drug.jpg"),
             specification: "5mg*7片/盒",
             price: 62.0,
@@ -162,7 +181,7 @@ export default {
           },
           {
             Did: 2,
-            name: "安立泽 沙格列汀片2",
+            name: "安立泽 沙格列汀片b",
             pic: require("@/assets/pic/drug.jpg"),
             specification: "5mg*7片/盒",
             price: 62.0,
@@ -174,7 +193,7 @@ export default {
           },
           {
             Did: 3,
-            name: "安立泽 沙格列汀片2333",
+            name: "安立泽 沙格列汀片c",
             pic: require("@/assets/pic/drug.jpg"),
             specification: "5mg*7片/盒",
             price: 62.0,
@@ -200,7 +219,7 @@ export default {
           },
           {
             Did: 2,
-            name: "安立泽 沙格列汀片2",
+            name: "安立泽 沙格列汀片b",
             pic: require("@/assets/pic/drug.jpg"),
             specification: "5mg*7片/盒",
             price: 62.0,
@@ -212,7 +231,7 @@ export default {
           },
           {
             Did: 3,
-            name: "安立泽 沙格列汀片2333",
+            name: "安立泽 沙格列汀片c",
             pic: require("@/assets/pic/drug.jpg"),
             specification: "5mg*7片/盒",
             price: 62.0,
@@ -428,10 +447,10 @@ export default {
 
 .ShoppingTrolley .pc_right {
   /* height: 0.5rem; */
+  font-size: 0;
 }
 
 .ShoppingTrolley .p_count {
-  height: 0.45rem;
   height: 0.32rem;
   font-size: 0.3rem;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -442,6 +461,29 @@ export default {
   margin: 0 0.105rem;
   width: 0.5rem;
   text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 0.32rem;
+  margin-left: 0.4rem;
+}
+
+.ShoppingTrolley .subtract_icon_p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: -1rem;
+}
+.ShoppingTrolley .add_icon_p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0.7rem;
+}
+.ShoppingTrolley .subtract_icon {
+  width: 0.32rem;
+  height: 0.32rem;
+}
+.ShoppingTrolley .add_icon {
+  width: 0.32rem;
+  height: 0.32rem;
 }
 
 .ShoppingTrolley .subtract {
@@ -457,6 +499,7 @@ export default {
   border: 0.02rem solid #55eba2;
   margin-top: 0.05rem;
 }
+
 .ShoppingTrolley .countRadius {
   -webkit-border-radius: 0.4rem;
   -ms-border-radius: 0.4rem;
@@ -465,16 +508,23 @@ export default {
   border-radius: 0.4rem;
 }
 .ShoppingTrolley .countFont {
-  font-size: 0.38rem;
+  /* font-size: 0.38rem;
   color: rgba(197, 202, 213, 1);
   vertical-align: top;
   margin-left: 0.07rem;
-  margin-top: -0.12rem;
+  margin-top: -0.12rem; */
+  font-size: 40%;
+  color: rgba(197, 202, 213, 1);
+  vertical-align: top;
+  margin-left: 20%;
+  margin-top: -40%;
 }
 .ShoppingTrolley .countFont2 {
   color: rgba(255, 255, 255, 1);
-  margin-left: 0.03rem;
-  margin-top: -0.10rem;
+  /* margin-left: 0.03rem;
+  margin-top: -0.1rem; */
+  margin-left: 10%;
+  margin-top: -32%;
 }
 
 .ShoppingTrolley .PerRow {
