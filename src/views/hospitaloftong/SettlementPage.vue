@@ -29,20 +29,20 @@
       <p class="settlement_title">广联医药</p>
       <div class="settl_product_list">
         <van-card price="20" thumb="https://img.yzcdn.cn/vant/ipad.jpeg">
-          <div slot="title" class="settlement_title product_name">金纳多（银杏叶提取物）</div>
+          <div slot="title" class="settlement_title product_name">安立泽 沙格列汀片</div>
           <div slot="price" class="price_number">
             <span>￥16.98</span>
             <span>&nbsp;&nbsp;x&nbsp;2</span>
           </div>
-          <span slot="num" class="price_number">￥33.96</span>
+          <span slot="num" class="price_number">￥62.00</span>
         </van-card>
         <van-card price="20" thumb="https://img.yzcdn.cn/vant/ipad.jpeg">
-          <div slot="title" class="settlement_title product_name">金纳多（银杏叶提取物）</div>
+          <div slot="title" class="settlement_title product_name">安立泽 沙格列汀片</div>
           <div slot="price" class="price_number">
             <span>￥16.98</span>
             <span>&nbsp;&nbsp;x&nbsp;2</span>
           </div>
-          <span slot="num" class="price_number">￥33.96</span>
+          <span slot="num" class="price_number">￥62.00</span>
         </van-card>
       </div>
       <van-cell class="coupon" is-link title="优惠券" title-class="settlement_title" value-class="" value="暂无优惠券可用"/>

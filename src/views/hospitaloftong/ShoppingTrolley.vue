@@ -112,11 +112,11 @@ export default {
         [
           {
             Did: 1,
-            name: "金纳多（银杏叶提取物）",
+            name: "安立泽 沙格列汀片",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.98,
-            originalPrice: 18.98,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 1,
             ifSelected: true,
             startX: 0,
@@ -124,11 +124,11 @@ export default {
           },
           {
             Did: 2,
-            name: "金纳多（银杏叶提取物）2",
+            name: "安立泽 沙格列汀片2",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 55,
             ifSelected: true,
             startX: 0,
@@ -136,11 +136,11 @@ export default {
           },
           {
             Did: 3,
-            name: "金纳多（银杏叶提取物）2333",
+            name: "安立泽 沙格列汀片2333",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 8,
             ifSelected: true,
             startX: 0,
@@ -150,11 +150,11 @@ export default {
         [
           {
             Did: 1,
-            name: "金纳多（银杏叶提取物）",
+            name: "安立泽 沙格列汀片",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.98,
-            originalPrice: 18.98,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 1,
             ifSelected: true,
             startX: 0,
@@ -162,11 +162,11 @@ export default {
           },
           {
             Did: 2,
-            name: "金纳多（银杏叶提取物）2",
+            name: "安立泽 沙格列汀片2",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 55,
             ifSelected: true,
             startX: 0,
@@ -174,11 +174,11 @@ export default {
           },
           {
             Did: 3,
-            name: "金纳多（银杏叶提取物）2333",
+            name: "安立泽 沙格列汀片2333",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 8,
             ifSelected: true,
             startX: 0,
@@ -188,11 +188,11 @@ export default {
         [
           {
             Did: 1,
-            name: "金纳多（银杏叶提取物）",
+            name: "安立泽 沙格列汀片",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.98,
-            originalPrice: 18.98,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 1,
             ifSelected: true,
             startX: 0,
@@ -200,11 +200,11 @@ export default {
           },
           {
             Did: 2,
-            name: "金纳多（银杏叶提取物）2",
+            name: "安立泽 沙格列汀片2",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 55,
             ifSelected: true,
             startX: 0,
@@ -212,11 +212,11 @@ export default {
           },
           {
             Did: 3,
-            name: "金纳多（银杏叶提取物）2333",
+            name: "安立泽 沙格列汀片2333",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 8,
             ifSelected: true,
             startX: 0,
@@ -360,9 +360,9 @@ export default {
   left: 5%;
   width: 90%;
   overflow: hidden;
-  border: 1px solid #55EBA2;
+  border: 1px solid #55eba2;
   border-radius: 50px;
-  background-color: #0E1528;
+  background-color: #0e1528;
   /* box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2); */
 }
 .ShoppingTrolley .flex_purchase .van-submit-bar__bar {
@@ -377,11 +377,11 @@ export default {
   width: 28%;
   height: 100%;
   font-size: 0.32rem;
-  background: #55EBA2;
+  background: #55eba2;
   border-radius: 0;
 }
 .ShoppingTrolley .van-submit-bar__text,
-.ShoppingTrolley .van-checkbox__label{
+.ShoppingTrolley .van-checkbox__label {
   color: #fff;
 }
 /* **全选 */
@@ -402,12 +402,12 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #858B9C;
+  color: #858b9c;
   line-height: 0.45rem;
 }
 .ShoppingTrolley .content_bg {
   width: 6.86rem;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0.04rem 0.2rem 0 rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
   /* border: 0.01rem solid rgba(233, 232, 232, 1); */
@@ -423,7 +423,7 @@ export default {
   line-height: 0.45rem;
   padding-left: 0.21rem;
   padding-bottom: 0.21rem;
-  border-bottom: 1px solid #4A5677;
+  border-bottom: 1px solid #4a5677;
 }
 
 .ShoppingTrolley .pc_right {
@@ -453,8 +453,8 @@ export default {
 .ShoppingTrolley .add {
   width: 0.32rem;
   height: 0.32rem;
-  background: #55EBA2;
-  border: 0.02rem solid #55EBA2;
+  background: #55eba2;
+  border: 0.02rem solid #55eba2;
   margin-top: 0.05rem;
 }
 .ShoppingTrolley .countRadius {
@@ -469,11 +469,12 @@ export default {
   color: rgba(197, 202, 213, 1);
   vertical-align: top;
   margin-left: 0.07rem;
-  margin-top: -0.06rem;
+  margin-top: -0.12rem;
 }
 .ShoppingTrolley .countFont2 {
   color: rgba(255, 255, 255, 1);
-  margin-left: 0.05rem;
+  margin-left: 0.03rem;
+  margin-top: -0.10rem;
 }
 
 .ShoppingTrolley .PerRow {

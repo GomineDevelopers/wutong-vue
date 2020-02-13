@@ -18,31 +18,31 @@
           <van-row class="pharmacy_list_body">
             <van-row
               @click="router_to('/pharmacydetail')"
-              class="list_item_top flex flex_align_center"
+              class="list_item_top flex flex_align_center list_item_top2"
             >
               <van-row class="flex_1 flex flex_align_center">
-                <img class="pharmacy_img" :src="item.img" />
+                <!-- <img class="pharmacy_img" :src="item.img" /> -->
                 <van-row class="flex flex_direction">
                   <van-row class="pharmacy_name flex">
                     <span class="main_font2">{{ item.pharmacyName }}</span>
                     <span class="pharmacy_time">{{ item.time }}</span>
                   </van-row>
-                  <van-row class="pharmacy_tips flex">
+                  <!-- <van-row class="pharmacy_tips flex">
                     <span class="hour">24h营业</span>
                     <span class="health_insurance">医保定点</span>
                     <span class="cooperation">合作药店</span>
-                  </van-row>
+                  </van-row>-->
                 </van-row>
               </van-row>
               <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />
             </van-row>
-            <van-row class="pharmacy_tel flex flex_align_center">
-              <img src="../../assets/pic/phone_green.png" />
-              {{ item.tel }}
-            </van-row>
             <van-row @click="router_to('/map')" class="pharmacy_address flex flex_align_center">
               <img src="../../assets/pic/address_green.png" />
               {{ item.address }}
+            </van-row>
+            <van-row class="pharmacy_tel flex flex_align_center">
+              <img src="../../assets/pic/phone_green.png" />
+              {{ item.tel }}
             </van-row>
           </van-row>
           <!-- 药品列表开始 -->
@@ -84,23 +84,23 @@ export default {
           drugList: [
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片 安立泽 沙格列汀片",
+              price: "62.00"
             },
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片",
+              price: "62.00"
             },
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片",
+              price: "62.00"
             },
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片",
+              price: "62.00"
             }
           ]
         },
@@ -116,13 +116,13 @@ export default {
           drugList: [
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片",
+              price: "62.00"
             },
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片",
+              price: "62.00"
             }
           ]
         },
@@ -138,18 +138,18 @@ export default {
           drugList: [
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片安立泽 沙格列汀片",
+              price: "62.00"
             },
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片",
+              price: "62.00"
             },
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片",
+              price: "62.00"
             }
           ]
         },
@@ -165,8 +165,8 @@ export default {
           drugList: [
             {
               img: require("../../assets/pic/drug.jpg"),
-              drugName: "金纳多（银杏叶提取物）金纳多（银杏叶提取物）",
-              price: "18.98"
+              drugName: "安立泽 沙格列汀片安立泽 沙格列汀片",
+              price: "62.00"
             }
           ]
         }
@@ -175,12 +175,12 @@ export default {
   },
   mounted() {
     let vm = this;
-      console.log("~~~");
-      var ob = document.getElementsByClassName("van-field__right-icon");
-      ob[0].onclick = function() {
-        console.log("~~sd");
-        vm.router_to("/searchdrug");
-      };
+    console.log("~~~");
+    var ob = document.getElementsByClassName("van-field__right-icon");
+    ob[0].onclick = function() {
+      console.log("~~sd");
+      vm.router_to("/searchdrug");
+    };
   },
   methods: {
     onSearch(event) {
@@ -206,7 +206,7 @@ export default {
 }
 .pharmacy_detail_info {
   padding-top: 0.4rem;
-  border-bottom: 1px solid #4A5677;
+  border-bottom: 1px solid #4a5677;
 }
 .drug_body {
   width: calc(100% - 0.2rem);
