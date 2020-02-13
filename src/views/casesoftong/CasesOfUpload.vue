@@ -139,6 +139,9 @@ export default {
   font-size: 0.32rem;
   line-height: 0.32rem;
 }
+.CasesOfUpload .van-radio__icon .van-icon{
+  border-color: #55EBA2
+}
 .CasesOfUpload .van-ellipsis {
   width: 4.7rem;
   font-size: 0.32rem;

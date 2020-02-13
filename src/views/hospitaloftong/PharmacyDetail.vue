@@ -373,6 +373,7 @@ export default {
   height: 0.85rem;
 }
 .right_content {
+  padding-bottom: 1.6rem;
   padding-left: 0.2rem;
 }
 .sickness_list {

@@ -436,7 +436,7 @@ export default {
   font-size: 0.3rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   line-height: 0.45rem;
   /* margin: 0 0.33rem; */
   margin: 0 0.105rem;
