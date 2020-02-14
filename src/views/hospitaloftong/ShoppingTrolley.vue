@@ -49,18 +49,37 @@
                   <div class="st_originalPrice">￥&nbsp;{{item.originalPrice}}</div>
                   <div class="st_count">
                     <div class="pc_right blockB_floatL">
-                      <div class="subtract countRadius blockB_floatL">
+                      <!-- <div class="subtract countRadius blockB_floatL">
                         <div
                           @click="countChange('subtract',indexP,index)"
                           class="countFont blockB_floatL"
                         >-</div>
+                      </div>-->
+                      <div class="subtract_icon_p">
+                        <img
+                          class="subtract_icon"
+                          src="../../assets/pic/subtract_icon.png"
+                          alt
+                          @click="countChange('subtract',indexP,index)"
+                        />
                       </div>
-                      <div class="p_count blockB_floatL">{{item.count}}</div>
-                      <div class="add countRadius blockB_floatL">
+
+                      <div class="p_count blockB_floatL">
+                        <div>{{item.count}}</div>
+                      </div>
+                      <!-- <div class="add countRadius blockB_floatL">
                         <div
                           @click="countChange('add',indexP,index)"
                           class="countFont countFont2 blockB_floatL"
-                        >+</div>
+                        >+</div>                         
+                      </div>-->
+                      <div class="add_icon_p">
+                        <img
+                          class="add_icon"
+                          src="../../assets/pic/add_icon.png"
+                          alt
+                          @click="countChange('add',indexP,index)"
+                        />
                       </div>
                     </div>
                   </div>
@@ -112,11 +131,11 @@ export default {
         [
           {
             Did: 1,
-            name: "金纳多（银杏叶提取物）",
+            name: "安立泽 沙格列汀片",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.98,
-            originalPrice: 18.98,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 1,
             ifSelected: true,
             startX: 0,
@@ -124,11 +143,11 @@ export default {
           },
           {
             Did: 2,
-            name: "金纳多（银杏叶提取物）2",
+            name: "安立泽 沙格列汀片b",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 55,
             ifSelected: true,
             startX: 0,
@@ -136,11 +155,11 @@ export default {
           },
           {
             Did: 3,
-            name: "金纳多（银杏叶提取物）2333",
+            name: "安立泽 沙格列汀片c",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 8,
             ifSelected: true,
             startX: 0,
@@ -150,11 +169,11 @@ export default {
         [
           {
             Did: 1,
-            name: "金纳多（银杏叶提取物）",
+            name: "安立泽 沙格列汀片",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.98,
-            originalPrice: 18.98,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 1,
             ifSelected: true,
             startX: 0,
@@ -162,11 +181,11 @@ export default {
           },
           {
             Did: 2,
-            name: "金纳多（银杏叶提取物）2",
+            name: "安立泽 沙格列汀片b",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 55,
             ifSelected: true,
             startX: 0,
@@ -174,11 +193,11 @@ export default {
           },
           {
             Did: 3,
-            name: "金纳多（银杏叶提取物）2333",
+            name: "安立泽 沙格列汀片c",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 8,
             ifSelected: true,
             startX: 0,
@@ -188,11 +207,11 @@ export default {
         [
           {
             Did: 1,
-            name: "金纳多（银杏叶提取物）",
+            name: "安立泽 沙格列汀片",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.98,
-            originalPrice: 18.98,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 1,
             ifSelected: true,
             startX: 0,
@@ -200,11 +219,11 @@ export default {
           },
           {
             Did: 2,
-            name: "金纳多（银杏叶提取物）2",
+            name: "安立泽 沙格列汀片b",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 55,
             ifSelected: true,
             startX: 0,
@@ -212,11 +231,11 @@ export default {
           },
           {
             Did: 3,
-            name: "金纳多（银杏叶提取物）2333",
+            name: "安立泽 沙格列汀片c",
             pic: require("@/assets/pic/drug.jpg"),
-            specification: "15g*1支/盒",
-            price: 16.9888,
-            originalPrice: 18.98888,
+            specification: "5mg*7片/盒",
+            price: 62.0,
+            originalPrice: 70.8,
             count: 8,
             ifSelected: true,
             startX: 0,
@@ -360,9 +379,9 @@ export default {
   left: 5%;
   width: 90%;
   overflow: hidden;
-  border: 1px solid #55EBA2;
+  border: 1px solid #55eba2;
   border-radius: 50px;
-  background-color: #0E1528;
+  background-color: #0e1528;
   /* box-shadow: 0 0.02rem 0.4rem 0 rgba(129, 216, 206, 0.2); */
 }
 .ShoppingTrolley .flex_purchase .van-submit-bar__bar {
@@ -377,11 +396,11 @@ export default {
   width: 28%;
   height: 100%;
   font-size: 0.32rem;
-  background: #55EBA2;
+  background: #55eba2;
   border-radius: 0;
 }
 .ShoppingTrolley .van-submit-bar__text,
-.ShoppingTrolley .van-checkbox__label{
+.ShoppingTrolley .van-checkbox__label {
   color: #fff;
 }
 /* **全选 */
@@ -402,12 +421,12 @@ export default {
   font-size: 0.32rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #858B9C;
+  color: #858b9c;
   line-height: 0.45rem;
 }
 .ShoppingTrolley .content_bg {
   width: 6.86rem;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0.04rem 0.2rem 0 rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
   /* border: 0.01rem solid rgba(233, 232, 232, 1); */
@@ -423,25 +442,48 @@ export default {
   line-height: 0.45rem;
   padding-left: 0.21rem;
   padding-bottom: 0.21rem;
-  border-bottom: 1px solid #4A5677;
+  border-bottom: 1px solid #4a5677;
 }
 
 .ShoppingTrolley .pc_right {
   /* height: 0.5rem; */
+  font-size: 0;
 }
 
 .ShoppingTrolley .p_count {
-  height: 0.45rem;
   height: 0.32rem;
   font-size: 0.3rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: rgba(65, 72, 93, 1);
+  color: #fff;
   line-height: 0.45rem;
   /* margin: 0 0.33rem; */
   margin: 0 0.105rem;
   width: 0.5rem;
   text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 0.32rem;
+  margin-left: 0.4rem;
+}
+
+.ShoppingTrolley .subtract_icon_p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: -1rem;
+}
+.ShoppingTrolley .add_icon_p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0.7rem;
+}
+.ShoppingTrolley .subtract_icon {
+  width: 0.32rem;
+  height: 0.32rem;
+}
+.ShoppingTrolley .add_icon {
+  width: 0.32rem;
+  height: 0.32rem;
 }
 
 .ShoppingTrolley .subtract {
@@ -453,10 +495,11 @@ export default {
 .ShoppingTrolley .add {
   width: 0.32rem;
   height: 0.32rem;
-  background: #55EBA2;
-  border: 0.02rem solid #55EBA2;
+  background: #55eba2;
+  border: 0.02rem solid #55eba2;
   margin-top: 0.05rem;
 }
+
 .ShoppingTrolley .countRadius {
   -webkit-border-radius: 0.4rem;
   -ms-border-radius: 0.4rem;
@@ -465,15 +508,23 @@ export default {
   border-radius: 0.4rem;
 }
 .ShoppingTrolley .countFont {
-  font-size: 0.38rem;
+  /* font-size: 0.38rem;
   color: rgba(197, 202, 213, 1);
   vertical-align: top;
   margin-left: 0.07rem;
-  margin-top: -0.06rem;
+  margin-top: -0.12rem; */
+  font-size: 40%;
+  color: rgba(197, 202, 213, 1);
+  vertical-align: top;
+  margin-left: 20%;
+  margin-top: -40%;
 }
 .ShoppingTrolley .countFont2 {
   color: rgba(255, 255, 255, 1);
-  margin-left: 0.05rem;
+  /* margin-left: 0.03rem;
+  margin-top: -0.1rem; */
+  margin-left: 10%;
+  margin-top: -32%;
 }
 
 .ShoppingTrolley .PerRow {

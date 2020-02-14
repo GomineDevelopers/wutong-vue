@@ -449,22 +449,7 @@ export default {
           ]
         }
       ],
-      // Card2: [
-      //   {
-      //     id: "1",
-      //     img: require("@/assets/pic/drug.jpg"),
-      //     name: "金纳多",
-      //     intro: "银杏叶提取物",
-      //     intro2: "脑部、周围血液循环障碍"
-      //   },
-      //   {
-      //     id: "2",
-      //     img: require("@/assets/pic/drug.jpg"),
-      //     name: "金纳多",
-      //     intro: "银杏叶提取物",
-      //     intro2: "脑部、周围血液循环障碍"
-      //   }
-      // ],
+
       Card3: [
         {
           id: "1",

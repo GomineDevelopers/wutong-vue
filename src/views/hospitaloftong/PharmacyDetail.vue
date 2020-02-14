@@ -14,14 +14,18 @@
           ></van-search>
         </van-row>
         <van-row class="header_pharmacy_info flex flex_align_center">
-          <img class="pharmacy_img" src="../../assets/pic/pharmacylist.jpg" />
+          <!-- <img class="pharmacy_img" src="../../assets/pic/pharmacylist.jpg" /> -->
           <van-row class="flex_1">
             <van-row class="main_font2">广联医药</van-row>
-            <van-row class="pharmacy_tips flex">
+            <!-- <van-row class="pharmacy_tips flex">
               <span class="hour">24h营业</span>
               <span class="health_insurance">医保定点</span>
               <span class="cooperation">合作药店</span>
               <span class="coupon">可用优惠券</span>
+            </van-row>-->
+            <van-row @click="router_to('/map')" class="pharmacy_address flex flex_align_center">
+              <img src="../../assets/pic/address_green.png" />
+              {{ address }}
             </van-row>
           </van-row>
           <img class="navigation_icon" src="../../assets/pic/navigation_icon.png" />
@@ -96,43 +100,44 @@ export default {
     return {
       searchContent: "",
       activeKey: "3",
+      address: "上海市徐汇区汾阳路83号",
       sicknessList: [
         {
-          img: require("../../assets/pic/drug_img.png"),
-          name: "金纳多（银杏叶提取物）",
+          img: require("../../assets/pic/drug_img.jpg"),
+          name: "安立泽 沙格列汀片",
           content:
-            "适用症：脑部、周围血液循环障碍,适用症：脑部、周围血液循环障碍,",
-          price: 16.98
+            "适用症：2型糖尿病。可作为单药治疗，在饮食和运动基础上改善血糖控制",
+          price: 62.00
         },
         {
-          img: require("../../assets/pic/drug_img.png"),
-          name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍",
-          price: 16.98
+          img: require("../../assets/pic/drug_img.jpg"),
+          name: "安立泽 沙格列汀片",
+          content: "适用症：适用症：2型糖尿病。可作为单药治疗，在饮食和运动基础上改善血糖控制",
+          price: 62.00
         },
         {
-          img: require("../../assets/pic/drug_img.png"),
-          name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍",
-          price: 16.98
+          img: require("../../assets/pic/drug_img.jpg"),
+          name: "安立泽 沙格列汀片",
+          content: "适用症：适用症：2型糖尿病。可作为单药治疗，在饮食和运动基础上改善血糖控制",
+          price: 62.00
         },
         {
-          img: require("../../assets/pic/drug_img.png"),
-          name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍",
-          price: 16.98
+          img: require("../../assets/pic/drug_img.jpg"),
+          name: "安立泽 沙格列汀片",
+          content: "适用症：适用症：2型糖尿病。可作为单药治疗，在饮食和运动基础上改善血糖控制",
+          price: 62.00
         },
         {
-          img: require("../../assets/pic/drug_img.png"),
-          name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍",
-          price: 16.98
+          img: require("../../assets/pic/drug_img.jpg"),
+          name: "安立泽 沙格列汀片",
+          content: "适用症：适用症：2型糖尿病。可作为单药治疗，在饮食和运动基础上改善血糖控制",
+          price: 62.00
         },
         {
-          img: require("../../assets/pic/drug_img.png"),
-          name: "金纳多（银杏叶提取物）",
-          content: "适用症：脑部、周围血液循环障碍",
-          price: 16.98
+          img: require("../../assets/pic/drug_img.jpg"),
+          name: "安立泽 沙格列汀片",
+          content: "适用症：适用症：2型糖尿病。可作为单药治疗，在饮食和运动基础上改善血糖控制",
+          price: 62.00
         }
       ]
     };
@@ -197,12 +202,12 @@ export default {
 
 .PharmacyDetail .van-goods-action-button--warning {
   height: 0.98rem;
-  background: #56EAA3;
-  color: #0E1528;
+  background: #56eaa3;
+  color: #0e1528;
 }
 .PharmacyDetail .van-goods-action-button--danger {
   height: 0.98rem;
-  background: rgba(14,21,40,1);
+  background: rgba(14, 21, 40, 1);
   color: #ffffff;
 }
 .PharmacyDetail .first.van-goods-action-button--warning {
@@ -220,7 +225,7 @@ export default {
 }
 
 .PharmacyDetail .van-goods-action-button {
-  border: 0.01rem solid #56EAA3;
+  border: 0.01rem solid #56eaa3;
 }
 
 .PharmacyDetail .van-goods-action-button--warning .img_serve_p {
@@ -368,11 +373,12 @@ export default {
   height: 0.85rem;
 }
 .right_content {
+  padding-bottom: 1.6rem;
   padding-left: 0.2rem;
 }
 .sickness_list {
   padding: 0.4rem 0.4rem 0.4rem 0rem;
-  border-bottom: 0.01rem solid #4A5677;
+  border-bottom: 0.01rem solid #4a5677;
 }
 .drug_content {
   line-height: 0.4rem;

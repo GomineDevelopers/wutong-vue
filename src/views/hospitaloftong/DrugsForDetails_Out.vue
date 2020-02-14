@@ -31,12 +31,26 @@
       </div>
 
       <div v-if="ifShopping == true" class="pc_right blockB_floatL">
-        <div class="subtract countRadius blockB_floatL">
+        <!-- <div class="subtract countRadius blockB_floatL">
           <div @click="countChange('subtract')" class="countFont blockB_floatL">-</div>
         </div>
         <div class="p_count blockB_floatL">{{p_count}}</div>
         <div class="add countRadius blockB_floatL">
           <div @click="countChange('add')" class="countFont countFont2 blockB_floatL">+</div>
+        </div>-->
+        <div class="subtract_icon_p">
+          <img
+            class="subtract_icon"
+            src="../../assets/pic/subtract_icon.png"
+            alt
+            @click="countChange('subtract')"
+          />
+        </div>
+        <div class="p_count blockB_floatL">
+          <div>{{p_count}}</div>
+        </div>
+        <div class="add_icon_p">
+          <img class="add_icon" src="../../assets/pic/add_icon.png" alt @click="countChange('add')" />
         </div>
       </div>
     </div>
@@ -214,7 +228,7 @@ export default {
 </script>
 
 <style>
-.DrugsForDetails_Out{
+.DrugsForDetails_Out {
   padding-bottom: 2rem;
 }
 /* ******* 轮播图 */
@@ -232,12 +246,12 @@ export default {
 
 .DrugsForDetails_Out .van-goods-action-button--warning {
   height: 0.98rem;
-  background: #55EBA2;
-  color: #0E1528;
+  background: #55eba2;
+  color: #0e1528;
 }
 .DrugsForDetails_Out .van-goods-action-button--danger {
   height: 0.98rem;
-  background: #0E1528;
+  background: #0e1528;
   color: #ffffff;
 }
 .DrugsForDetails_Out .first.van-goods-action-button--warning {
@@ -255,7 +269,7 @@ export default {
 }
 
 .DrugsForDetails_Out .van-goods-action-button {
-  border: 0.01rem solid #55EBA2;
+  border: 0.01rem solid #55eba2;
 }
 
 .DrugsForDetails_Out .van-goods-action-button--warning .img_serve_p {
@@ -278,7 +292,7 @@ export default {
   font-size: 0.2rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #0E1528;
+  color: #0e1528;
   line-height: 0.2rem;
   margin-top: 0.06rem;
 }
@@ -437,13 +451,15 @@ export default {
   height: 0.5rem;
 }
 .DrugsForDetails_Out .pc_right {
-  height: 0.5rem;
+  /* height: 0.5rem; */
+  font-size: 0;
+  padding-top: 0.04rem;
 }
 .DrugsForDetails_Out .btn_shopping {
   width: 1.68rem;
   height: 0.41rem;
   padding-top: 0.09rem;
-  background: #49D691;
+  background: #49d691;
   border-radius: 0.3rem;
 }
 .DrugsForDetails_Out .shopping_font {
@@ -478,16 +494,38 @@ export default {
   margin-top: 0.08rem;
 }
 .DrugsForDetails_Out .p_count {
-  height: 0.45rem;
   height: 0.32rem;
   font-size: 0.3rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #fff;
   line-height: 0.45rem;
-  margin: 0 0.33rem;
+  /* margin: 0 0.33rem; */
   width: 0.5rem;
   text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 0.32rem;
+  margin: 0 0.1rem 0 0.58rem;
+}
+
+.DrugsForDetails_Out .subtract_icon_p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: -1rem;
+}
+.DrugsForDetails_Out .add_icon_p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0.7rem;
+}
+.DrugsForDetails_Out .subtract_icon {
+  width: 0.32rem;
+  height: 0.32rem;
+}
+.DrugsForDetails_Out .add_icon {
+  width: 0.32rem;
+  height: 0.32rem;
 }
 
 .DrugsForDetails_Out .subtract {
@@ -499,8 +537,8 @@ export default {
 .DrugsForDetails_Out .add {
   width: 0.32rem;
   height: 0.32rem;
-  background: #55EBA2;
-  border: 0.02rem solid #55EBA2;
+  background: #55eba2;
+  border: 0.02rem solid #55eba2;
   margin-top: 0.05rem;
 }
 .DrugsForDetails_Out .countRadius {
@@ -510,7 +548,7 @@ export default {
   -moz-border-radius: 0.4rem;
   border-radius: 0.4rem;
 }
-.DrugsForDetails_Out .countFont {
+/* .DrugsForDetails_Out .countFont {
   font-size: 0.38rem;
   color: rgba(197, 202, 213, 1);
   vertical-align: top;
@@ -520,8 +558,26 @@ export default {
 .DrugsForDetails_Out .countFont2 {
   color: rgba(255, 255, 255, 1);
   margin-left: 0.02rem;
+} */
+.DrugsForDetails_Out .countFont {
+  /* font-size: 0.38rem;
+  color: rgba(197, 202, 213, 1);
+  vertical-align: top;
+  margin-left: 0.07rem;
+  margin-top: -0.12rem; */
+  font-size: 40%;
+  color: rgba(197, 202, 213, 1);
+  vertical-align: top;
+  margin-left: 20%;
+  margin-top: -40%;
 }
-
+.DrugsForDetails_Out .countFont2 {
+  color: rgba(255, 255, 255, 1);
+  /* margin-left: 0.03rem;
+  margin-top: -0.1rem; */
+  margin-left: 10%;
+  margin-top: -32%;
+}
 .DrugsForDetails_Out .product {
   width: 100%;
 }
@@ -529,8 +585,8 @@ export default {
   margin: 0 0.32rem;
   padding: 0.32rem 0.28rem 0.33rem 0.28rem;
   height: 4.73rem;
-  
-  background: rgba(255, 255, 255, .1);
+
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0rem 0.04rem 0.2rem 0rem rgba(0, 0, 0, 0.04);
   border-radius: 0.2rem;
 }
@@ -556,7 +612,7 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #55EBA2;
+  color: #55eba2;
   line-height: 0.37rem;
   display: inline-block;
   vertical-align: top;
@@ -577,10 +633,10 @@ export default {
   font-weight: 400;
   line-height: 0.37rem;
   letter-spacing: 0.01rem;
-  border-bottom: 1px solid #4A5677;
+  border-bottom: 1px solid #4a5677;
 }
 .DrugsForDetails_Out .pc_subtitle {
-  color: #858B9C;
+  color: #858b9c;
   display: inline-block;
   width: 1.69rem;
   margin-left: 0.19rem;
