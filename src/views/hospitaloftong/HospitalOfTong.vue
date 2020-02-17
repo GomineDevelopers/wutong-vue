@@ -1,15 +1,35 @@
 <template>
   <div class="HospitalOfTong">
     <vue-headful title="院外通"></vue-headful>
-    <van-search
-      right-icon="search"
-      v-model="searchContent"
-      placeholder="请输入药品名"
-      shape="round"
-      @search="onSearch"
-      background="transparent"
-      id="m_search_HOT"
-    ></van-search>
+    <div class="hot_top">
+      <div class="inlineBlock verticalAlignTop address" @click="showArea = true">
+        <div class="inlineBlock verticalAlignTop t_img1 Font_t1">
+          <van-icon name="location-o" />
+        </div>
+        <div class="inlineBlock verticalAlignTop S_font Font_t2">{{currentArea}}</div>
+        <div class="inlineBlock verticalAlignTop t_img2 Font_t3">
+          <van-icon name="arrow-down" />
+        </div>
+      </div>
+      <van-search
+        right-icon="search"
+        v-model="searchContent"
+        placeholder="请输入药品名"
+        shape="round"
+        @search="onSearch"
+        background="transparent"
+        id="m_search_HOT"
+        class="inlineBlock verticalAlignTop"
+      ></van-search>
+    </div>
+    <van-popup v-model="showArea" position="bottom">
+      <van-area
+        :area-list="AreaList"
+        value="110101"
+        @cancel="showArea = false"
+        @confirm="onConfirm"
+      />
+    </van-popup>
     <div class="h_content">
       <div :style="{height: '0.44rem'}"></div>
       <template v-for="(item,index) in BaseArr ">
@@ -23,7 +43,28 @@
         </div>
       </template>
       <div :style="{height: '1.8rem'}"></div>
-      <div class="RQ_title">
+      <div class="RQ_title">优惠券</div>
+      <template v-for="(item4,index4) in DiscountCouponArr ">
+        <div class="DiscountCoupon FontSize0" :key="index4 + 'dc' ">
+          <div class="dc_top S_font">
+            <div class="inlineBlock verticalAlignTop dc_tl S_font2">
+              <span class="S_font3">￥</span>
+              {{item4.money}}
+            </div>
+            <div class="inlineBlock verticalAlignTop dc_tr">
+              <div class="dc_tr_t S_font4">{{item4.name}}</div>
+              <div class="dc_tr_b S_font5">{{item4.info}}</div>
+            </div>
+          </div>
+          <div class="dc_bottom S_font">
+            <div class="inlineBlock verticalAlignTop dc_bl S_font6">有效期至&nbsp;{{item4.validity}}</div>
+            <div class="inlineBlock verticalAlignTop dc_br">
+              <van-button round class="common_middle_btn common_fontsize i_btn">{{item4.use}}</van-button>
+            </div>
+          </div>
+        </div>
+      </template>
+      <!-- <div class="RQ_title">
         <div class="RQ_title_l">历史记录</div>
         <div class="RQ_title_r">
           <img class="img_delete" :src="pic.delete" alt />
@@ -50,16 +91,23 @@
             <div class="pIM_name pIM_name2">{{item3.name}}</div>
           </div>
         </div>
-      </template>
+      </template>-->
     </div>
   </div>
 </template>
 <script>
+import { province_list, city_list } from "@/utils/area.js";
 export default {
   name: "HospitalOfTong",
   components: {},
   data() {
     return {
+      showArea: false,
+      currentArea: "北京市",
+      AreaList: {
+        province_list: province_list,
+        city_list: city_list
+      },
       searchContent: "",
       pic: {
         delete: require("@/assets/pic/HospitalOfTong/delete.png")
@@ -88,6 +136,24 @@ export default {
           pic: [require("@/assets/pic/HospitalOfTong/order.png")],
           name: "我的订单",
           path: "/"
+        }
+      ],
+      DiscountCouponArr: [
+        {
+          id: 1,
+          money: 20,
+          name: "安达唐药品专用优惠券",
+          info: "满100使用",
+          validity: "2020.03.02",
+          use: "立即领取"
+        },
+        {
+          id: 2,
+          money: 50,
+          name: "金纳多药品专用优惠券",
+          info: "满200使用",
+          validity: "2020.03.02",
+          use: "立即使用"
         }
       ],
       SearchArr: [
@@ -127,21 +193,28 @@ export default {
   mounted() {
     let vm = this;
     // window.onload = function() {
-      console.log("~~~");
-      // var ob = document.getElementById("m_search_HOT");
-      var ob = document.getElementsByClassName("van-field__right-icon");
-      // ob.onclick = function() {
-      ob[0].onclick = function() {
-        // console.log("~~~!");
-        // console.log(ob);
-        // console.log(ob.childNodes);
-        // van-field__right-icon
-        vm.router_to("/searchdrug");
-      };
-      // ob.className = xxoo;
+    console.log("~~~");
+    // var ob = document.getElementById("m_search_HOT");
+    var ob = document.getElementsByClassName("van-field__right-icon");
+    // ob.onclick = function() {
+    ob[0].onclick = function() {
+      // console.log("~~~!");
+      // console.log(ob);
+      // console.log(ob.childNodes);
+      // van-field__right-icon
+      vm.router_to("/searchdrug");
+    };
+    // ob.className = xxoo;
     // };
   },
   methods: {
+    onConfirm(value) {
+      // console.log("onConfirm");
+      // console.log(value);
+      this.currentArea = value[1].name;
+      this.showArea = false;
+    },
+
     onSearch(event) {
       console.log(event);
     },
@@ -162,7 +235,8 @@ export default {
 
 .HospitalOfTong .van-search {
   margin-top: 10px;
-  padding: 0.1rem 0.32rem 0rem 0.16rem;
+  padding: 0.1rem 0rem 0rem 0.16rem;
+  width: 4.8rem;
 }
 .HospitalOfTong .van-cell .van-field__control {
   font-size: 0.28rem;
@@ -188,7 +262,7 @@ export default {
 }
 .HospitalOfTong .van-search .van-cell {
   padding: 0.16rem 0.48rem;
-  background: rgba(29,36,57,1);
+  background: rgba(29, 36, 57, 1);
   border-radius: 0.44rem;
 }
 .HospitalOfTong .van-search__content {
@@ -197,6 +271,27 @@ export default {
 </style>
 <style scoped>
 .HospitalOfTong {
+}
+.HospitalOfTong .address {
+  width: 2.4rem;
+}
+.HospitalOfTong .address .Font_t1 {
+  font-size: 0.32rem;
+  color: #43da9c;
+  margin-top: 0.50rem;
+  margin-left: 0.32rem;
+}
+.HospitalOfTong .address .Font_t2 {
+  font-size: 0.32rem;
+  color: #ffffff;
+  margin-top: 0.53rem;
+  margin-left: 0.2rem;
+}
+.HospitalOfTong .address .Font_t3 {
+  font-size: 0.32rem;
+  color: #cccccc;
+  margin-left: 0.1rem;
+  margin-top: 0.50rem;
 }
 .HospitalOfTong .h_content {
   padding: 0 0.32rem;
@@ -236,7 +331,7 @@ export default {
   font-size: 0.28rem;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: #858B9C;
+  color: #858b9c;
   line-height: 0.4rem;
 }
 .HospitalOfTong .pIM_name2 {
@@ -244,7 +339,7 @@ export default {
   font-size: 0.24rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #858B9C;
+  color: #858b9c;
   line-height: 0.33rem;
   margin-top: 0.12rem;
 }
@@ -296,5 +391,66 @@ export default {
   color: rgba(255, 255, 255, 1);
   line-height: 0.28rem;
   letter-spacing: 0.01rem;
+}
+/* ************ 新修改 */
+.HospitalOfTong .DiscountCoupon {
+  background: rgba(0, 0, 0, 0) url(../../assets/newpic2/DiscountCoupon.png)
+    no-repeat;
+  width: 6.06rem;
+  padding-left: 0.8rem;
+  height: 2.4rem;
+  background-size: 100% 100%;
+  margin-top: 0.4rem;
+}
+.HospitalOfTong .dc_top {
+  width: 90%;
+  height: 1.08rem;
+  padding-top: 0.3rem;
+  border-bottom: 0.01rem solid #3f4451;
+}
+.HospitalOfTong .dc_tl {
+  width: 22%;
+}
+.HospitalOfTong .dc_tr {
+  width: 67%;
+}
+.HospitalOfTong .dc_bottom {
+  width: 100%;
+}
+.HospitalOfTong .dc_bl {
+  width: 60%;
+}
+.HospitalOfTong .dc_br {
+  width: 39%;
+}
+.HospitalOfTong .S_font2 {
+  color: #43da9c;
+  font-size: 0.4rem;
+  margin-top: 0.32rem;
+}
+.HospitalOfTong .S_font3 {
+  font-size: 0.24rem;
+}
+.HospitalOfTong .S_font4 {
+  color: #ffffff;
+  font-size: 0.32rem;
+}
+.HospitalOfTong .S_font5 {
+  color: #ffffff;
+  font-size: 0.24rem;
+  margin-top: 0.22rem;
+}
+.HospitalOfTong .S_font6 {
+  font-size: 0.22rem;
+  margin-top: 0.35rem;
+}
+
+.HospitalOfTong .i_btn {
+  width: 1.8rem;
+  height: 0.55rem;
+  border: none;
+  line-height: 0.55rem;
+  margin-top: 0.2rem;
+  font-size: 0.28rem;
 }
 </style>

@@ -203,7 +203,9 @@ export default {
   height: 0.4rem;
   /* width: 100%; */
   border-bottom: 1px #4a5677 solid;
-  padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+  /* padding: 0.38rem 0.4rem 0.37rem 0.4rem; */
+  padding: 0.38rem 0.0rem 0.37rem 0.4rem;
+
 }
 
 .RecordUpload .PerRow_borderBottom {

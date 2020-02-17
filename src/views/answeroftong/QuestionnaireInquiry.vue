@@ -12,6 +12,22 @@
     <div :style="{height: '0.24rem'}"></div>
     <template v-for="(item,index) in QuestionnaireInquiryArr ">
       <div class="PerRow" :key="index + 'qi' ">
+        <div class="FontSize0 score_p">
+          <div class="inlineBlock verticalAlignTop examination_score">
+            问卷分值：
+            <span class="score_c">{{item.rate}}</span>
+          </div>
+          <div class="inlineBlock verticalAlignTop">
+            <van-rate
+              v-model="item.rate"
+              allow-half
+              void-icon="star"
+              size="0.24rem"
+              color="#55EBA2"
+              void-color="#E2E4E8"
+            />
+          </div>
+        </div>
         <div
           class="common_Stitle_font2 common_Stitle_font3 title_spaceRight inlineBlock"
         >{{item.name}}</div>
@@ -69,41 +85,49 @@ export default {
         {
           name: "关于XXX的问卷调研",
           status: "点击参与",
+          rate: 4.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         },
         {
           name: "关于XXX的问卷调研",
           status: "点击参与",
+          rate: 3.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         },
         {
           name: "关于XXX的问卷调研",
           status: "点击参与",
+          rate: 2.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         },
         {
           name: "关于XXX的问卷调研",
           status: "点击参与",
+          rate: 3.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         },
         {
           name: "关于XXX的问卷调研",
           status: "点击参与",
+          rate: 3.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         },
         {
           name: "关于XXX的问卷调研",
           status: "已参与",
+          rate: 3.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         },
         {
           name: "关于XXX的问卷调研",
           status: "已参与",
+          rate: 4.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         },
         {
           name: "关于XXX的问卷调研",
           status: "已过期",
+          rate: 2.5,
           time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
         }
       ]
@@ -125,7 +149,8 @@ export default {
         this.router_to("/questionnaireinquiry_answer");
       } else if (status == "已参与") {
         this.Q_Status = "已参与";
-        this.popupShow = true;
+        // this.popupShow = true;
+        this.router_to("/resultsquery");
       } else if (status == "已过期") {
         this.Q_Status = "已过期";
         this.popupShow = true;
@@ -156,7 +181,7 @@ export default {
 .QuestionnaireInquiry .van-field__left-icon .van-icon,
 .QuestionnaireInquiry .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  color: #55EBA2;
+  color: #55eba2;
   margin-top: 0.05rem;
 }
 .QuestionnaireInquiry .van-field__left-icon {
@@ -187,17 +212,35 @@ export default {
   vertical-align: top;
   margin-top: 0.06rem;
 }
+/* ******* rate 评分 */
+.QuestionnaireInquiry .van-rate {
+  display: flex;
+  margin-top: 0.03rem;
+  margin-left: 0.1rem;
+}
 </style>
 <style scoped>
 .QuestionnaireInquiry {
 }
-
+.QuestionnaireInquiry .score_p {
+  margin-bottom: 0.08rem;
+}
+.QuestionnaireInquiry .examination_score {
+  font-size: 0.28rem;
+  color: #ffffff;
+}
+.QuestionnaireInquiry .score_c {
+  font-size: 0.24rem;
+  color: #55eba2;
+}
 .QuestionnaireInquiry .PerRow {
-  height: 0.83rem;
+  height: 1.32rem;
   /* width: 100%; */
   /* border-top: 1px #f6f6f6 solid; */
   border-top: 1px #4a5677 solid;
-  padding: 0.46rem 0.32rem 0.21rem 0.32rem;
+  /* padding: 0.46rem 0.32rem 0.21rem 0.32rem; */
+  padding: 0.46rem 0.0rem 0.21rem 0.32rem;
+
 }
 
 .QuestionnaireInquiry .title_spaceRight {

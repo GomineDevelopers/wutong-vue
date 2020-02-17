@@ -86,8 +86,10 @@
         </template>
       </div>
     </div>
+    <div :style="{height: '0.8rem'}"></div>
+
     <div class="flex_purchase">
-      <van-goods-action>
+      <!-- <van-goods-action>
         <van-goods-action-button
           class="first"
           id="serviceShow"
@@ -96,7 +98,11 @@
           @click="onClickButton"
         />
         <van-goods-action-button id="moneyShow" type="danger" text @click="onClickButton" />
-      </van-goods-action>
+      </van-goods-action>-->
+      <div class="textAlignCenter_w100">
+        <van-button @click="router_to('/dpcommunication')" round class="common_middle_btn common_fontsize i_btn">咨询医生</van-button>
+      </div>
+      <div class="textAlignCenter_w100 flex_bottom_bg">此药品为处方药，需咨询医生开具处方购买</div>
     </div>
     <!-- <div class="flex_consult">
       <div class="consult_bg">
@@ -168,32 +174,33 @@ export default {
   },
   mounted() {
     let vm = this;
-    var ob2 = document.getElementsByClassName("van-button--danger");
-    ob2[0].onclick = function() {
-      console.log("~~~pd=>shop");
-      vm.router_to("/shoppingtrolley");
-    };
-    // ****** 购买栏样式 js 处理
-    let eve1 = document.getElementById("serviceShow");
-    eve1.innerHTML =
-      "<div class='moudule'>\
-        <div class='img_serve_p'></div>\
-        <div class='font_serve'>联系客服</div>\
-      </div>";
+    // var ob2 = document.getElementsByClassName("van-button--danger");
+    // ob2[0].onclick = function() {
+    //   console.log("~~~pd=>shop");
+    //   vm.router_to("/shoppingtrolley");
+    // };
 
-    let eve2 = document.getElementById("moneyShow");
-    eve2.innerHTML =
-      "<div class='moudule2'>\
-        <div class='m2_left'>\
-          <div class='img_shopping_p'>\
-            <div class='shopping_count'><div class='shopping_count_c'>10</div></div>\
-          </div>\
-        </div>\
-        <div class='m2_middle'>\
-          <p class='moneyShow1'>￥ 18.99</p><p class='moneyShow2'>￥ <span class='through'>21.00</span></p>\
-        </div>\
-        <div class='m2_right'><div class='shu'></div><div class='payfor'>去付款</div></div>\
-      </div>";
+    // ****** 购买栏样式 js 处理
+    // let eve1 = document.getElementById("serviceShow");
+    // eve1.innerHTML =
+    //   "<div class='moudule'>\
+    //     <div class='img_serve_p'></div>\
+    //     <div class='font_serve'>联系客服</div>\
+    //   </div>";
+
+    // let eve2 = document.getElementById("moneyShow");
+    // eve2.innerHTML =
+    //   "<div class='moudule2'>\
+    //     <div class='m2_left'>\
+    //       <div class='img_shopping_p'>\
+    //         <div class='shopping_count'><div class='shopping_count_c'>10</div></div>\
+    //       </div>\
+    //     </div>\
+    //     <div class='m2_middle'>\
+    //       <p class='moneyShow1'>￥ 18.99</p><p class='moneyShow2'>￥ <span class='through'>21.00</span></p>\
+    //     </div>\
+    //     <div class='m2_right'><div class='shu'></div><div class='payfor'>去付款</div></div>\
+    //   </div>";
   },
   methods: {
     router_to(str) {
@@ -697,6 +704,25 @@ export default {
 }
 .DrugsForDetails_Out .consult_space {
   margin-left: 0.11rem;
+}
+
+.DrugsForDetails_Out .i_btn {
+  width: 3.6rem;
+  height: 0.9rem;
+  border: none;
+  margin-bottom: 0.4rem;
+}
+.DrugsForDetails_Out .flex_purchase {
+  position: fixed;
+  bottom: 0rem;
+}
+.DrugsForDetails_Out .flex_bottom_bg {
+  height: 0.5rem;
+  font-size: 0.24rem;
+  line-height: 0.5rem;
+  color: #ffffff;
+  background-color: #2a6b59;
+  bottom: 0;
 }
 </style>
 

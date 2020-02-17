@@ -30,11 +30,11 @@
                 :class="itemActive == 1 ? 'item_active' : ''"
                 @click="itemActive = 1"
               >时间最近</van-row>
-              <van-row
+              <!-- <van-row
                 class="main_font2"
                 :class="itemActive == 2 ? 'item_active' : ''"
                 @click="itemActive = 2"
-              >地点最近</van-row>
+              >地点最近</van-row>-->
             </van-row>
             <van-row v-show="filtrateActive == 2">
               <van-row class="filtrate_tips">
@@ -83,15 +83,15 @@
       <van-row class="metting_body">
         <van-row class="header_nav flex">
           <span class="active">在线会议</span>
-          <span @click="goVideo">视频库</span>
+          <span @click="goVideo">视频资料库</span>
         </van-row>
         <van-row class="metting_content">
           <van-row class="swipe_body">
             <van-swipe class="swipe_content height_auto" :autoplay="3000" @change="onChange">
               <van-swipe-item v-for="(item, index) in swipeImgList" :key="index">
-                <img :src="item" />
+                <img @click="goUrl(item.url)" :src="item.img" />
               </van-swipe-item>
-              <div class="custom-indicator" slot="indicator">{{ current + 1 }}/4</div>
+              <div class="custom-indicator" slot="indicator">{{ current + 1 }}/{{pic_length}}</div>
             </van-swipe>
           </van-row>
           <!-- 列表开始 -->
@@ -120,10 +120,17 @@
                 v-for="(mettingItem, index2) in mettingList"
                 :key="index2 + 'me'"
               >
-                <van-row class="flex_1 flex flex_align_center">
+                <!-- <van-row class="flex_1 flex flex_align_center">
                   <span class="main_font2">{{ mettingItem.name }}</span>
                   <span class="main_font4">{{ mettingItem.content }}</span>
-                  <span class="main_font4">{{ mettingItem.city }}</span>
+                  <span class="main_font4">{{ mettingItem.status }}</span>
+                  <span class="main_font4">{{ mettingItem.date }}</span>
+                </van-row>
+                <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />-->
+                <van-row class="flex_1 flex flex_align_center" @click="goUrl(mettingItem.url)">
+                  <span class="main_font2">{{ mettingItem.name }}</span>
+                  <span class="main_font4">{{ mettingItem.content }}</span>
+                  <span class="main_font4">{{ mettingItem.status }}</span>
                   <span class="main_font4">{{ mettingItem.date }}</span>
                 </van-row>
                 <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />
@@ -156,17 +163,17 @@ export default {
             { id: 4, value: "新药测试" }
           ]
         },
-        {
-          title: "地点",
-          checked: null,
-          tips: [
-            { id: 1, value: "北京" },
-            { id: 2, value: "上海" },
-            { id: 3, value: "深圳" },
-            { id: 4, value: "重庆" },
-            { id: 5, value: "成都" }
-          ]
-        },
+        // {
+        //   title: "地点",
+        //   checked: null,
+        //   tips: [
+        //     { id: 1, value: "北京" },
+        //     { id: 2, value: "上海" },
+        //     { id: 3, value: "深圳" },
+        //     { id: 4, value: "重庆" },
+        //     { id: 5, value: "成都" }
+        //   ]
+        // },
         {
           title: "分类",
           checked: null,
@@ -177,65 +184,105 @@ export default {
         }
       ],
       swipeImgList: [
-        require("../../assets/pic/metting2.jpg"),
-        require("../../assets/pic/metting3.jpeg"),
-        require("../../assets/pic/metting.jpg"),
-        require("../../assets/pic/metting4.jpeg")
+        {
+          url: "http://medhuman.meetingchina.org/msite/main/cn",
+          img: require("../../assets/pic/metting.jpg")
+        },
+        {
+          url: "https://www.medmeeting.org/8699?lang=cn",
+          img: require("../../assets/pic/metting2.jpg")
+        },
+        {
+          url: "http://csp.cma.org.cn/NewsDetail.aspx?id=3783&Hidden=0",
+          img: require("../../assets/pic/metting3.jpg")
+        }
+        // require("../../assets/pic/metting4.png")
       ],
+      pic_length: 1,
       mettingList: [
         {
-          name: "XXXX会议",
-          content: "产品发布",
-          city: "上海",
-          date: "2020-02-12"
+          id: 1,
+          url: "https://attd.kenes.com/2019",
+          name: "ATTD 2019",
+          content: "第12届国际糖尿病现金技术与治疗会议",
+          status: "已结束",
+          date: "2019.02.20~23"
         },
         {
-          name: "XXXX会议",
-          content: "新品分享",
-          city: "上海",
-          date: "2020-02-05"
+          id: 2,
+          url: "https://www.endocrine.org",
+          name: "ENDO 2019",
+          content: "第101届美国内分泌学会年会",
+          status: "已结束",
+          date: "2019.03.23~26"
         },
         {
-          name: "XXXX会议",
-          content: "推广活动",
-          city: "上海",
-          date: "2020-02-03"
+          id: 3,
+          url: "https://am.aace.com/2019/AACE",
+          name: "AACE",
+          content: "第28届美国临床内分泌学家协会年会",
+          status: "已结束",
+          date: "2019.04.24~28"
         },
         {
-          name: "XXXX会议",
-          content: "新药测试",
-          city: "上海",
-          date: "2020-02-07"
+          id: 4,
+          url: "https://eco2019.org/",
+          name: "ECO",
+          content: "2019年第26届欧洲肥胖大会",
+          status: "已结束",
+          date: "2019.04.28~05.01"
         },
         {
-          name: "XXXX会议",
-          content: "产品发布",
-          city: "上海",
-          date: "2020-02-01"
+          id: 5,
+          url: "https://www.codhy.com/ap/2018/Default.aspx",
+          name: "CODHy AP 2019",
+          content: "第7届亚太地区糖尿病、肥胖与高血压争议与共识会议",
+          status: "已结束",
+          date: "2019.05.10~11"
         },
         {
-          name: "XXXX会议",
-          content: "产品发布",
-          city: "上海",
-          date: "2020-02-10"
+          id: 6,
+          url:
+            "https://www.esmo.org/Conferences/ELCC-2019-European-Lung-Cancer-Congress",
+          name: "ECE",
+          content: "第21届欧洲内分泌学大会",
+          status: "已结束",
+          date: "2019.05.18~21"
         },
         {
-          name: "XXXX会议",
-          content: "推广活动",
-          city: "上海",
-          date: "2020-02-05"
+          id: 7,
+          url: "https://professional.diabetes.org/scientific-sessions",
+          name: "ADA 2019",
+          content: "第79届美国糖尿病协会科学年会",
+          status: "已结束",
+          date: "2019.06.07~11"
         },
         {
-          name: "XXXX会议",
-          content: "推广活动",
-          city: "上海",
-          date: "2020-02-05"
+          id: 8,
+          url: "https://www.easd.org/annual-meeting/easd-2019.html",
+          name: "EASD",
+          content: "第55届欧洲糖尿病研究协会年会",
+          status: "已结束",
+          date: "2019.09.16~20"
+        },
+        {
+          id: 9,
+          url: "https://www.idf.org/our-activities/congress.html",
+          name: "IDF 2019",
+          content: "2019年国际糖尿病联盟大会",
+          status: "已结束",
+          date: "2019.12.02~06"
         }
       ]
     };
   },
-  mounted() {},
+  mounted() {
+    this.pic_length = this.swipeImgList.length;
+  },
   methods: {
+    goUrl(url) {
+      window.location.href = url;
+    },
     // 清空筛选
     clearCheck() {
       this.filtrateList = [
@@ -249,17 +296,17 @@ export default {
             { id: 4, value: "新药测试" }
           ]
         },
-        {
-          title: "地点",
-          checked: null,
-          tips: [
-            { id: 1, value: "北京" },
-            { id: 2, value: "上海" },
-            { id: 3, value: "深圳" },
-            { id: 4, value: "重庆" },
-            { id: 5, value: "成都" }
-          ]
-        },
+        // {
+        //   title: "地点",
+        //   checked: null,
+        //   tips: [
+        //     { id: 1, value: "北京" },
+        //     { id: 2, value: "上海" },
+        //     { id: 3, value: "深圳" },
+        //     { id: 4, value: "重庆" },
+        //     { id: 5, value: "成都" }
+        //   ]
+        // },
         {
           title: "分类",
           checked: null,
@@ -308,13 +355,13 @@ export default {
   margin-bottom: 0.2rem;
 }
 span.active {
-  color: #55EBA2;
+  color: #55eba2;
 }
 .filtrate_content .sort .main_font2 {
   margin: 0.4rem 0rem 0.56rem 0rem;
 }
 .filtrate_content .main_font2.item_active {
-  color: #55EBA2;
+  color: #55eba2;
 }
 .filtrate_list .main_font2 {
   margin-bottom: 0.4rem;
@@ -334,8 +381,8 @@ span.active {
   margin-right: 0.2rem;
 }
 .filtrate_list .main_font4 span.active_tip {
-  color: #55EBA2;;
-  border: 0.02rem solid #55EBA2;;
+  color: #55eba2;
+  border: 0.02rem solid #55eba2;
 }
 .active_tip {
   position: relative;
@@ -352,7 +399,7 @@ span.active {
   display: inline-block;
   width: 0.4rem;
   height: 0.4rem;
-  background: #55EBA2;;
+  background: #55eba2;
   border-radius: 50%;
   position: absolute;
   top: -0.19rem;
@@ -387,7 +434,7 @@ span.active {
   border-right: 0.01rem solid #dddddd;
 }
 .filtrate_bottom .van-col:nth-child(2) {
-  color: #55EBA2;;
+  color: #55eba2;
   font-weight: 500;
 }
 
@@ -410,7 +457,7 @@ span.active {
   margin-right: 1.62rem;
 }
 .header_nav span.active {
-  color: #55EBA2;
+  color: #55eba2;
   font-weight: 500;
 }
 .header_nav span::after {
@@ -423,7 +470,7 @@ span.active {
   background: transparent;
 }
 .header_nav span.active::after {
-  background: #55EBA2;
+  background: #55eba2;
 }
 .metting_content {
   height: calc(100% - 0.88rem);
@@ -473,7 +520,7 @@ span.active {
   border-bottom: 0.01rem solid #eee;
 }
 .online_metting_item span:nth-child(1) {
-  width: 1.55rem;
+  width: 2.05rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -483,14 +530,14 @@ span.active {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin-left: 0.36rem;
-  margin-right: 0.58rem;
+  margin-left: 0.16rem;
+  margin-right: 0.16rem;
 }
 .online_metting_item span:nth-child(4) {
   width: 1.73rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin-left: 0.4rem;
+  margin-left: 0.16rem;
 }
 </style>

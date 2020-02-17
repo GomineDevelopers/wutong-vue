@@ -162,7 +162,7 @@ export default {
 }
 .AnswerOfTong .tb1 {
   height: 0.28rem;
-  font-size: 0.2rem;
+  font-size: 0.28rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);

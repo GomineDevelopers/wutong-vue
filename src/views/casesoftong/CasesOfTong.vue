@@ -3,7 +3,7 @@
     <vue-headful title="病例通"></vue-headful>
     <van-row class="van_container_body height_auto flex flex_direction">
       <img @click="router_to('/sicknesshelper')" src="../../assets/newpic/blt.png" />
-      <img src="../../assets/newpic/blt3.png" />
+      <img  @click="router_to('/newdrugstopromote')" src="../../assets/newpic/blt3.png" />
       <img @click="router_to('/sicknesscollect')" src="../../assets/newpic/blt2.png" />
     </van-row>
   </van-row>

@@ -307,7 +307,9 @@ export default {
   height: 0.83rem;
   /* width: 100%; */
   border-top: 1px #f6f6f6 solid;
-  padding: 0.46rem 0.32rem 0.21rem 0.32rem;
+  /* padding: 0.46rem 0.32rem 0.21rem 0.32rem; */
+  padding: 0.46rem 0.0rem 0.21rem 0.32rem;
+
 }
 .TimedExamination .PerRow_Question {
   padding: 0rem 0.32rem 0rem 0.32rem;

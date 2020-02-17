@@ -1,20 +1,22 @@
 <template>
   <div class="CasesOfUpload">
-    <vue-headful title="病例上传"></vue-headful>
+    <!-- <vue-headful title="病例上传"></vue-headful> -->
+    <vue-headful title="病例采集"></vue-headful>
+
     <!-- <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">标题</div>
       <input class="i_input" type="text" placeholder="请填写标题" />
-    </div> -->
+    </div>-->
     <!-- <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">分类</div>
-    </div> -->
+    </div>-->
     <van-field
       class="PerRow"
       readonly
       clickable
       label="分类"
       :value="hospitalName"
-      placeholder="请选择所属医院"
+      placeholder="请选择分类"
       @click="showHospitalPicker = true"
     />
     <div class="PerRow">
@@ -28,7 +30,6 @@
       <div class="common_Stitle_font2 title_spaceRight">年龄</div>
       <input class="i_input" type="text" placeholder="请填写年龄" />
     </div>
-    
 
     <div class="upload_arr">
       <template v-for="(item,index) in upload_arr ">
@@ -37,23 +38,31 @@
           <!-- <input class="i_input i_input2" type="text" :placeholder="item.u_info" /> -->
           <br />
           <textarea class="i_input i_input2" :placeholder="item.u_info" rows="3" cols="20"></textarea>
-          <div class="camera">
+          <!-- <div class="camera">
             <img class="img_camera" :src="url_camera" alt />
-          </div>
+          </div>-->
         </div>
       </template>
-      <div class="m_pic_p m_pic_p2">
+
+      <!-- <div class="m_pic_p m_pic_p2">
+        <div class="other_data">其他资料</div>
         <template v-for="(item,index) in Imgs ">
           <div :key="index + 'PIImgs' " class="m_pic">
             <img class="m_img" :src="item" alt />
           </div>
         </template>
+      </div>-->
+      <div class="medic_upload">
+        <div class="other_data">其他资料</div>
+        <div>
+          <van-uploader v-model="fileList" multiple />
+        </div>
       </div>
     </div>
 
     <div :style="{height: '0.48rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button round class="common_middle_btn i_btn common_fontsize">提交</van-button>
+      <van-button round class="common_middle_btn common_fontsize i_btn">提交</van-button>
     </div>
     <div :style="{height: '0.48rem'}"></div>
     <van-popup v-model="showHospitalPicker" position="bottom">
@@ -72,13 +81,13 @@ export default {
   components: {},
   data() {
     return {
-      hospitalName: '',
+      hospitalName: "",
       showHospitalPicker: false,
       // url_camera: require("@/assets/pic/camera.jpg"),
       url_camera: require("@/assets/pic/camera.png"),
       radio: "1",
       value1: 0,
-      columns: ["上海医院",  "北京医院", "贵阳医院"],
+      columns: ["儿科", "妇产科", "内分泌科", "消化内科", "神经内科"],
       // [
       //   { text: "请选择所属医院", value: 0 },
       //   { text: "上海医院", value: 1 },
@@ -101,20 +110,24 @@ export default {
         {
           u_title: "诊断",
           u_info: "请描述现诊断详情"
+        },
+        {
+          u_title: "治疗方案",
+          u_info: "请描述现治疗方案详情"
         }
       ],
       Imgs: [
         require("@/assets/pic/sicknessdetail1.png"),
         require("@/assets/pic/sicknessdetail2.png"),
         require("@/assets/pic/img_camera.jpg")
-      ]
+      ],
+      fileList: []
     };
   },
   mounted() {
     let vm = this;
   },
   methods: {
-
     onConfirm(value) {
       this.hospitalName = value;
       this.showHospitalPicker = false;
@@ -139,8 +152,8 @@ export default {
   font-size: 0.32rem;
   line-height: 0.32rem;
 }
-.CasesOfUpload .van-radio__icon .van-icon{
-  border-color: #55EBA2
+.CasesOfUpload .van-radio__icon .van-icon {
+  border-color: #55eba2;
 }
 .CasesOfUpload .van-ellipsis {
   width: 4.7rem;
@@ -149,12 +162,12 @@ export default {
 .CasesOfUpload .van-popup .van-ellipsis {
   width: 100%;
 }
-.CasesOfUpload .PerRow.van-cell{
+.CasesOfUpload .PerRow.van-cell {
   color: #fff;
   font-size: 0.32rem;
   height: auto !important;
 }
-.CasesOfUpload .van-cell:not(:last-child)::after{
+.CasesOfUpload .van-cell:not(:last-child)::after {
   border: none;
 }
 .CasesOfUpload .van-hairline--top-bottom::after,
@@ -165,7 +178,7 @@ export default {
 .CasesOfUpload .van-dropdown-item__option {
   font-size: 0.32rem;
   color: #41485d;
-  padding: 0.2rem ;
+  padding: 0.2rem;
 }
 
 /* *********** 单选框样式  */
@@ -185,22 +198,29 @@ export default {
 }
 .CasesOfUpload .van-radio__label {
   font-size: 0.32rem;
-  color: #858B9C;
+  color: #858b9c;
   vertical-align: text-top;
   display: inline-block;
   line-height: 0.32rem;
 }
-.CasesOfUpload .van-picker__cancel, 
-.CasesOfUpload .van-picker__confirm{
+/* ***** picker 时间 */
+.CasesOfUpload .van-picker__cancel,
+.CasesOfUpload .van-picker__confirm {
   font-size: 0.3rem;
 }
-.CasesOfUpload .van-picker__cancel{
-  color: #858B9C
+.CasesOfUpload .van-picker__cancel {
+  color: #858b9c;
 }
-.CasesOfUpload .van-picker__confirm{
-  color: #55EBA2
+.CasesOfUpload .van-picker__confirm {
+  color: #55eba2;
 }
-/* ***********  */
+/* *********** 上传 */
+.CasesOfUpload .medic_upload .van-uploader__upload,
+.CasesOfUpload .medic_upload .van-uploader__preview-image {
+  width: 2rem;
+  height: 2rem;
+  background: #f8faff;
+}
 </style>
 <style scoped>
 .CasesOfUpload {
@@ -229,8 +249,10 @@ export default {
 .CasesOfUpload .PerRow {
   height: 0.4rem;
   /* width: 100%; */
-  border-top: 1px #4A5677 solid;
-  padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+  border-bottom: 0.01rem #4a5677 solid;
+  /* padding: 0.38rem 0.4rem 0.37rem 0.4rem; */
+  padding: 0.38rem 0.0rem 0.37rem 0.4rem;
+
   background: transparent;
 }
 
@@ -248,7 +270,7 @@ export default {
 .CasesOfUpload .i_btn {
   width: 3.6rem;
   height: 0.9rem;
-  border: none
+  border: none;
 }
 
 /* 更改textarea 默认placeholder样式 */
@@ -319,5 +341,16 @@ export default {
   height: 100%;
 }
 
+.CasesOfUpload .medic_upload {
+  padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+}
+
+.CasesOfUpload .other_data {
+  color: #ffffff;
+  font-size: 0.32rem;
+  font-weight: 500;
+  vertical-align: top;
+  margin-bottom: 0.48rem;
+}
 </style>
 

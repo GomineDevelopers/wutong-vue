@@ -55,7 +55,9 @@ export default {
   height: 0.4rem;
   /* width: 100%; */
   border-bottom: 1px #4a5677 solid;
-  padding: 0.38rem 0.32rem 0.37rem 0rem;
+  /* padding: 0.38rem 0.32rem 0.37rem 0rem; */
+  padding: 0.38rem 0rem 0.37rem 0rem;
+
 }
 
 .PersonalData .title_spaceRight {
@@ -69,6 +71,7 @@ export default {
   width: 4.8rem;
   color: #858b9c;
   vertical-align: top;
+  margin-right: 0.32rem;
 }
 .PersonalData .van-icon-arrow {
   color: #fff;

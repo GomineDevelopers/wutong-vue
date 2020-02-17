@@ -1,5 +1,5 @@
 <template>
-  <div class="PersonalData">
+  <div class="PersonalDataPatient">
     <vue-headful title="个人资料"></vue-headful>
     <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">手机号</div>
@@ -45,25 +45,27 @@ export default {
 </script>
 
 <style >
-.PersonalData .van-icon {
+.PersonalDataPatient .van-icon {
   vertical-align: bottom;
 }
 </style>
 <style scoped>
-.PersonalData {
+.PersonalDataPatient {
   padding-left: 0.32rem;
 }
-.PersonalData .PerRow {
+.PersonalDataPatient .PerRow {
   height: 0.4rem;
   border-bottom: 1px #4a5677 solid;
-  padding: 0.38rem 0.32rem 0.37rem 0rem;
+  /* padding: 0.38rem 0.32rem 0.37rem 0rem; */
+  padding: 0.38rem 0rem 0.37rem 0rem;
+  margin-right: 0.32rem;
 }
 
-.PersonalData .title_spaceRight {
+.PersonalDataPatient .title_spaceRight {
   margin-right: 0rem;
 }
 
-.PersonalData .text_info {
+.PersonalDataPatient .text_info {
   display: inline-block;
   text-align: right;
   font-size: 0.32rem;
@@ -71,14 +73,14 @@ export default {
   color: #858b9c;
   vertical-align: top;
 }
-.PersonalData .receiving_address {
+.PersonalDataPatient .receiving_address {
   display: inline-block;
   width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.PersonalData .van-icon-arrow {
+.PersonalDataPatient .van-icon-arrow {
   color: #fff;
   font-size: 0.32rem;
 }

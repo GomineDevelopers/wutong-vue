@@ -41,7 +41,8 @@
           </div>
         </div>
       </div>
-      <div class="E3">
+
+      <!-- <div class="E3">
         <div :style="{height: '0.26rem'}"></div>
         <p class="RQ_title">发病率</p>
         <div :style="{height: '0.18rem'}"></div>
@@ -56,18 +57,42 @@
             <E-circle :chartData="E3cData"></E-circle>
           </div>
         </div>
+      </div>-->
+
+      <div class="E3">
+        <div :style="{height: '0.26rem'}"></div>
+        <p class="RQ_title">血常规-血红蛋白浓度(HGB)</p>
+        <div :style="{height: '0.38rem'}"></div>
+        <van-tabs type="card">
+          <van-tab title="周">
+            <div class="E3_child">
+              <div class="E3_echart_b">
+                <E-line :chartData="E3dData"></E-line>
+              </div>
+            </div>
+          </van-tab>
+          <van-tab title="月">
+            <div class="E3_child">
+              <div class="E3_echart_b">
+                <E-line :chartData="E3eData"></E-line>
+              </div>
+            </div>
+          </van-tab>
+        </van-tabs>
       </div>
+
+      <div :style="{height: '0.4rem'}"></div>
     </div>
   </div>
 </template>
 <script>
 import echarts from "echarts";
-import Ecircle from "./Ecom/Ecircle";
+import Eline from "./Ecom/Eline";
 
 export default {
   name: "HealthPortrait",
   components: {
-    "E-circle": Ecircle
+    "E-line": Eline
   },
 
   data() {
@@ -152,6 +177,104 @@ export default {
           value: 72
         },
         color: "#009EFF"
+      },
+      // ////
+      E3dData: {
+        id: "E3d",
+        color: ["#55eba2", "#FFC000", "#6FAC46"],
+        // data: [
+        //   [
+        //     "product",
+        //     "贵阳",
+        //     "遵义",
+        //     "毕节",
+        //     "黔南",
+        //     "铜仁",
+        //     "六盘水",
+        //     "黔东南",
+        //     "安顺",
+        //     "黔西南"
+        //   ],
+        //   ["移动", 1.7, 1.8, 1.1, 0.9, 0.9, 0.8, 1.2, 0.8, 0.9],
+        //   ["联通", 0.4, 0.3, 0.2, 0.1, 0.1, 0.8, 0.1, 0.2, 0.1],
+        //   ["电信", 2.9, 1.9, 1.5, 1.4, 1.2, 0.8, 0.8, 0.7, 0.6]
+        // ]
+        data: [
+          ["product", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          ["浓度", 1.7, 1.8, 1.1, 0.9, 0.9, 0.8, 1.2, 0.8, 0.9]
+        ]
+      },
+      E3eData: {
+        id: "E3e",
+        color: ["#55eba2", "#FFC000", "#6FAC46"],
+        data: [
+          [
+            "product",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"
+          ],
+          [
+            "浓度",
+            1.7,
+            1.8,
+            1.1,
+            0.9,
+            0.9,
+            0.8,
+            1.2,
+            0.8,
+            0.9,
+            1.7,
+            1.8,
+            1.1,
+            0.9,
+            0.9,
+            0.8,
+            1.2,
+            0.8,
+            0.9,
+            1.7,
+            1.8,
+            1.1,
+            0.9,
+            0.9,
+            0.8,
+            1.2,
+            0.8,
+            0.9,
+            0.8,
+            0.5,
+            0.7
+          ]
+        ]
       }
     };
   },
@@ -422,6 +545,29 @@ export default {
   margin-top: 0.03rem;
   margin-left: 1.3rem;
 }
+/* ********* 标签 */
+.HealthPortrait .van-tabs__nav--card {
+  border: 1px solid #55eba2;
+  border-radius: 1rem;
+  margin: 0 auto;
+  width: 2rem;
+}
+.HealthPortrait .van-tabs__nav--card .van-tab.van-tab--active {
+  color: #fff;
+  background-color: #55eba2;
+}
+.HealthPortrait .van-tabs__nav--card .van-tab {
+  color: #55eba2;
+  line-height: 28px;
+  border-right: 1px solid #55eba2;
+  /* border-radius: 1rem; */
+}
+.HealthPortrait .van-tabs__nav--card .van-tab:nth-child(1) {
+  border-radius: 1rem 0 0 1rem;
+}
+.HealthPortrait .van-tabs__nav--card .van-tab:nth-child(2) {
+  border-radius: 0 1rem 1rem 0;
+}
 </style>
 <style scoped>
 .HealthPortrait .HP_Content {
@@ -531,6 +677,10 @@ export default {
   display: inline-block;
   vertical-align: top;
   /* background-color: red; */
+}
+.HealthPortrait .E3_echart_b {
+  width: 100%;
+  height: 3.6rem;
 }
 </style>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="PatientBaseInfo">
     <vue-headful title="基本信息"></vue-headful>
-    <div class="PerRow">
+    <!-- <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">手机号</div>
       <input class="i_input" type="text" v-model="p_phone" placeholder="请填写您的手机号" />
     </div>
@@ -14,7 +14,7 @@
         placeholder="填写手机验证码"
       />
       <div class="VeriCode">获取验证码</div>
-    </div>
+    </div>-->
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">姓名</div>
       <input class="i_input" type="text" v-model="p_name" placeholder="请填写您的真实姓名" />
@@ -34,7 +34,7 @@
       <div class="common_Stitle_font2 title_spaceRight">加入随访</div>
       <input class="i_input" type="text" v-model="p_follow" placeholder="陈平安" />
     </div>
-    <div class="upload_arr">
+    <!-- <div class="upload_arr">
       <template v-for="(item,index) in upload_arr ">
         <div class="PerRow PerRow2" :key="index + 'ua' ">
           <div class="common_Stitle_font2 title_spaceRight title_spaceRight2">{{item.u_title}}</div>
@@ -60,11 +60,11 @@
           </div>
         </template>
       </div>
-    </div>
+    </div>-->
     <div class="textAlignCenter_w100 UserKnow">
       <div class="per_input">
         <input type="checkbox" :name="1" :value="ifKnow" class="m_checkbox" />
-        <span class="text">用户须知</span>
+        <span class="text">知情同意书</span>
       </div>
     </div>
 
@@ -154,14 +154,14 @@ export default {
   },
   methods: {
     RegisterInfo() {
-      if (this.p_phone == "") {
-        this.$toast.fail("请填写您的手机号码！");
-        return false;
-      }
-      if (this.p_verificationCode == "") {
-        this.$toast.fail("请填写手机验证码！");
-        return false;
-      }
+      // if (this.p_phone == "") {
+      //   this.$toast.fail("请填写您的手机号码！");
+      //   return false;
+      // }
+      // if (this.p_verificationCode == "") {
+      //   this.$toast.fail("请填写手机验证码！");
+      //   return false;
+      // }
       if (this.p_name == "") {
         this.$toast.fail("请填写您的真实姓名！");
         return false;
@@ -174,18 +174,18 @@ export default {
         this.$toast.fail("请填写随访！");
         return false;
       }
-      if (this.p_diagnose == "") {
-        this.$toast.fail("请描述诊断详情！");
-        return false;
-      }
+      // if (this.p_diagnose == "") {
+      //   this.$toast.fail("请描述诊断详情！");
+      //   return false;
+      // }
       if (document.querySelector('input[type="checkbox"]').checked == false) {
-        this.$toast.fail("请查看并勾选用户须知");
+        this.$toast.fail("请查看并勾选知情同意书");
         return false;
       }
 
       this.$Utils.setCookieCry("P_registered", "true", 1);
       this.router_toSpec({
-        path: "/doctorpersoncenter",
+        path: "/patientpersoncenter",
         query: { P_registered: true }
       });
     },
@@ -273,7 +273,9 @@ export default {
   height: 0.4rem;
   /* width: 100%; */
   border-bottom: 1px #4a5677 solid;
-  padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+  /* padding: 0.38rem 0.4rem 0.37rem 0.4rem; */
+  padding: 0.38rem 0.0rem 0.37rem 0.4rem;
+
 }
 .PatientBaseInfo .PerRow_borderBottom {
   border-bottom: 1px #4a5677 solid;
@@ -299,10 +301,10 @@ export default {
 }
 
 /* *********** */
-.PatientBaseInfo .PerRow {
+/* .PatientBaseInfo .PerRow {
   height: 0.4rem;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
-}
+} */
 
 .PatientBaseInfo .PerRow2 {
   height: 2.6rem;

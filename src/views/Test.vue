@@ -1,6 +1,6 @@
 <template>
   <div class="Test">
-    <vue-headful title="测试"></vue-headful>
+    <vue-headful title="测试页面"></vue-headful>
     <!-- 测试 -->
     <!-- <div class="contact_information_img">
       <com-mymap class="mapSm"></com-mymap>
@@ -13,9 +13,7 @@
       <h3>主要路由：</h3>
       <p @click="router_to('/login')">登录</p>
       <p @click="router_to('/identity')">身份</p>
-
       <br />
-
       <p @click="router_to('/casesoftong')">病例通</p>
       <br />
 
@@ -56,6 +54,8 @@
       <p @click="router_to('/cardticketmanagement')">卡券管理</p>
       <p @click="router_to('/myPatient')">我的患者</p>
       <p @click="router_to('/patientInfo')">患者信息</p>
+      <p @click="router_to('/editpatientinfo')">（医生编辑患者信息页面）- 编辑患者信息</p>
+      <p @click="router_to('/patientrecords')">（医生查看） - 患者档案</p>
       <div>&</div>
       <p @click="router_to('/patientbaseInfo')">基本信息-患者</p>
       <p @click="router_to('/patientpersoncenter')">
@@ -69,6 +69,11 @@
       <p @click="router_to('/casesoftong')">病例通</p>
       <p @click="router_to('/sicknesshelper')">病例通-疾病助手</p>
       <p @click="router_to('/detailsofdisease')">病例通-疾病助手-疾病详情</p>
+      <br />
+      <p @click="router_to('/newdrugstopromote')">病例通-新药助手-新药推广 (新增)</p>
+      <p @click="router_to('/dpcommunication')">医患沟通 (新增)</p>
+
+      <br />
       <p @click="router_to('/sicknesscollect')">病例通-病例采集</p>
       <p @click="router_to('/sicknessdetail')">
         病例通-疾病助手-疾病详情-典型病例
@@ -82,9 +87,9 @@
       <p @click="router_to('/map')">院外通-地图</p>
       <p @click="router_to('/pharmacydetail')">院外通-药房详情</p>
       <p @click="router_to('/drugsfordetails_out')">院外通-药房详情-药品详情</p>
-      <p @click="router_to('/shoppingtrolley')">院外通-购物车</p>
-      <p @click="router_to('/settlementpage')">院外通-结算页面（+用药信息-提示）</p>
-      <p @click="router_to('/medicationinfo')">院外通-用药信息</p>
+      <!-- <p @click="router_to('/shoppingtrolley')">院外通-购物车</p> -->
+      <!-- <p @click="router_to('/settlementpage')">院外通-结算页面（+用药信息-提示）</p> -->
+      <!-- <p @click="router_to('/medicationinfo')">院外通-用药信息</p> -->
       <br />
       <p @click="router_to('/answeroftong')">答题通</p>
       <p @click="router_to('/questionnaireinquiry')">答题通-问卷调研</p>

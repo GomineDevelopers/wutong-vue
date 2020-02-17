@@ -4,22 +4,31 @@
     <van-search
       right-icon="search"
       v-model="searchContent"
-      placeholder="请输入"
+      placeholder="请输入相关信息进行检索"
       shape="round"
       @search="onSearch"
       background="#ffffff"
     ></van-search>
     <div :style="{height: '0.24rem'}"></div>
     <template v-for="(item,index) in OnlineExaminationArr ">
-      <div class="PerRow" :key="index + 'qi' ">
-        <van-rate
-          v-model="item.rate"
-          allow-half
-          void-icon="star"
-          size="0.16rem"
-          color="#55EBA2"
-          void-color="#E2E4E8"
-        />
+      <div class="PerRow" :key="index + 'oe' ">
+        <div class="FontSize0">
+          <div class="inlineBlock verticalAlignTop examination_score">
+            考试分值：
+            <span class="score_c">{{item.rate}}</span>
+          </div>
+          <div class="inlineBlock verticalAlignTop">
+            <van-rate
+              v-model="item.rate"
+              allow-half
+              void-icon="star"
+              size="0.24rem"
+              color="#55EBA2"
+              void-color="#E2E4E8"
+            />
+          </div>
+        </div>
+
         <div :style="{height: '0.16rem'}"></div>
         <div
           class="common_Stitle_font2 common_Stitle_font3 title_spaceRight inlineBlock"
@@ -60,42 +69,42 @@ export default {
       activeName: "a",
       OnlineExaminationArr: [
         {
-          name: "XXX考试",
+          name: "1型糖尿病基础知识考试",
           rate: 2.5,
           type: "开放考试",
           time: "2019-12-02 ~ 2020-10-01",
           status: "点击参与"
         },
         {
-          name: "XXX医药测试",
+          name: "2型糖尿病基础知识考试",
           rate: 3.5,
           type: "限时考试",
           time: "2019-12-02 ~ 2020-10-01",
           status: "点击参与"
         },
         {
-          name: "XXX考试",
+          name: "安达唐药物知识考试",
           rate: 2.5,
           type: "开放考试",
           time: "2019-12-02  ~ 2020-10-01 ",
           status: "点击参与"
         },
         {
-          name: "XXX医药测试",
+          name: "安达唐病例分析考试",
           rate: 4.5,
           type: "限时考试",
           time: "2019-12-02  ~ 2020-10-01 ",
           status: "点击参与"
         },
         {
-          name: "XXX活动测试",
+          name: "1型糖尿病基础知识考试",
           rate: 2.5,
           type: "开放考试",
           time: "2019-12-02  ~ 2020-10-01 ",
           status: "已参与"
         },
         {
-          name: "XXXXXX考试",
+          name: "安达唐药物知识考试",
           rate: 3.5,
           type: "限时考试",
           time: "2019-12-02  ~ 2020-10-01 ",
@@ -146,7 +155,7 @@ export default {
 .OnlineExamination .van-field__left-icon .van-icon,
 .OnlineExamination .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  color: #55EBA2;
+  color: #55eba2;
   margin-top: 0.05rem;
 }
 .OnlineExamination .van-field__left-icon {
@@ -181,12 +190,22 @@ export default {
 /* ******* rate 评分 */
 .OnlineExamination .van-rate {
   display: flex;
+  margin-top: 0.03rem;
+  margin-left: 0.1rem;
 }
 </style>
 <style scoped>
 .OnlineExamination {
 }
 
+.OnlineExamination .examination_score {
+  font-size: 0.28rem;
+  color: #ffffff;
+}
+.OnlineExamination .score_c {
+  font-size: 0.24rem;
+  color: #55eba2;
+}
 .OnlineExamination .PerRow {
   height: 1.17rem;
   /* width: 100%; */
@@ -218,7 +237,7 @@ export default {
 }
 .OnlineExamination .participating {
   /* color: rgba(129, 216, 206, 1); */
-  color: #55EBA2;
+  color: #55eba2;
 }
 .OnlineExamination .participated {
   color: rgba(197, 202, 213, 1);
@@ -232,6 +251,7 @@ export default {
   vertical-align: top;
 }
 .OnlineExamination .PerRow_Bottom {
+  margin-top: 0.1rem;
 }
 .OnlineExamination .PerRow_Bottom_t1 {
   display: inline-block;

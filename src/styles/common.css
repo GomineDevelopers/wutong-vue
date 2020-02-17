@@ -121,7 +121,9 @@ body {
 .w100 {
   width: 100%;
 }
-
+.FontSize0{
+  font-size: 0;
+}
 /* ***** */
 .m_test {
   font-size: 6.7rem;

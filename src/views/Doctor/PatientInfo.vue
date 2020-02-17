@@ -113,6 +113,8 @@ export default {
   /* width: 100%; */
   border-top: 1px #4a5677 solid;
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+  /* padding: 0.38rem 0.4rem 0.37rem 0.4rem; */
+
 }
 .PatientInfo .PerRow_borderBottom {
   border-bottom: 1px #4a5677 solid;

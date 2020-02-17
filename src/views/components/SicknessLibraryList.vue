@@ -18,13 +18,13 @@
       </van-row>
       <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />
     </van-row>
-    <div class="textAlignCenter_w100">
+    <!-- <div class="textAlignCenter_w100">
       <van-button
         @click="router_to('/casesofupload')"
         round
         class="common_middle_btn common_fontsize i_btn"
       >添&nbsp;&nbsp;加</van-button>
-    </div>
+    </div> -->
   </van-row>
 </template>
 <script>

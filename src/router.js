@@ -6,14 +6,13 @@ Vue.use(Router);
 // 测试 - Test
 // 首页 - Home(/)
 // 404 - 404
+// 资源预览 - ResourcesToPreview (test)
 
 // ● 表示：已做基础路由跳转。
 // ▲ 表示：已对现有视图做路由跳转，由于无视图则未做跳转的。
 // ○ 表示：无视图。
 // △ 表示：跳转疑问。
 // ※ 表示：不管的（如UI已删掉情况）。
-
- 
 
 //● 登录 - Login     （UI改变）- OK
 //● 身份 - Identity
@@ -29,13 +28,13 @@ Vue.use(Router);
 //● 我的患者 - MyPatient
 //● 患者信息 - PatientInfo  （UI改变）(前端先修改)- ing => OK
 
-
+// （医生编辑患者信息页面）- 编辑患者信息 - EditPatientInfo   (新增) -OK
+// （医生查看） - 患者档案 -  PatientRecords   (新增) -OK
 
 //● 基本信息-患者 - PatientBaseInfo   （UI改变）- ing => OK
 //● 个人中心-患者 - PatientPersonCenter
 //● 个人资料-患者 - PersonalDataPatient   (新增) -OK(lh)
 //● 个人资料-患者-地址修改 - PersonalDataPatientEdit   (新增) -OK(lh)
-
 
 //▲ 病例通 - CasesOfTong
 
@@ -44,11 +43,12 @@ Vue.use(Router);
 //△ 病例通-疾病助手-疾病详情-典型病例 - SicknessDetail
 //※ 病例通-疾病助手-疾病详情-药品详情 - DrugsForDetails   （▲UI删掉了）
 
-//○ 病例通-新药助手 - 还没有
+// 医患沟通 - DPCommunication  (新增) -OK
+
+//○ 病例通-新药助手 -跳转》 NewDrugsToPromote - 新药推广 (新增)
 
 //△ 病例通-病例采集 - SicknessCollect
 //△ 病例通-病例采集-病例上传 - CasesOfUpload
-
 
 
 //○ 院外通-联系客服 - 还没有
@@ -116,6 +116,11 @@ export default new Router({
     },
     { path: "/404", name: "NotFound404", component: () => import("@/views/NotFound404") },
     { path: "*", redirect: "/404" },
+    {
+      path: "/resourcestopreview",
+      name: "ResourcesToPreview",
+      component: () => import("@/views/components/ResourcesToPreview")
+    },
 
     // 医生的页面
     {
@@ -132,6 +137,16 @@ export default new Router({
       path: "/patientinfo",
       name: "PatientInfo",
       component: () => import("@/views/Doctor/PatientInfo")
+    },
+    {
+      path: "/editpatientinfo",
+      name: "EditPatientInfo",
+      component: () => import("@/views/Doctor/EditPatientInfo")
+    },
+    {
+      path: "/patientrecords",
+      name: "PatientRecords",
+      component: () => import("@/views/Doctor/PatientRecords")
     },
     {
       path: "/mypatient",
@@ -214,6 +229,12 @@ export default new Router({
       component: () => import("@/views//casesoftong/DrugsForDetails")
     },
     {
+      path: "/dpcommunication",
+      name: "DPCommunication",
+      component: () => import("@/views//casesoftong/DPCommunication")
+    },
+    
+    {
       path: "/casesofupload",
       name: "CasesOfUpload",
       component: () => import("@/views//casesoftong/CasesOfUpload")
@@ -237,6 +258,11 @@ export default new Router({
       path: "/sicknessdetail",
       name: "SicknessDetail",
       component: () => import("@/views/casesoftong/SicknessDetail")
+    },
+    {
+      path: "/newdrugstopromote",
+      name: "NewDrugsToPromote",
+      component: () => import("@/views/casesoftong/NewDrugsToPromote")
     },
     {
       path: "/sicknesscollect",

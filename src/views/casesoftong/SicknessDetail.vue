@@ -39,7 +39,8 @@ export default {
         {
           id: 1,
           intro: {
-            title: "高血压伴晕厥：嗜铬细胞瘤“作祟”",
+            // title: "高血压伴晕厥：嗜铬细胞瘤“作祟”",
+            title: "经典病例",
             department: "内分泌科",
             name: "张豆豆",
             duty: "副主任医师",
@@ -78,7 +79,8 @@ export default {
         {
           id: 2,
           intro: {
-            title: "糖尿病：高血糖为特征的代谢性疾病",
+            // title: "糖尿病：高血糖为特征的代谢性疾病",
+            title: "经典病例",
             department: "内分泌科",
             name: "李玉",
             duty: "主任医师",
@@ -117,7 +119,8 @@ export default {
         {
           id: 3,
           intro: {
-            title: "心脏病:比较常见的循环系统疾病",
+            // title: "心脏病:比较常见的循环系统疾病",
+            title: "经典病例",
             department: "内分泌科",
             name: "吴安",
             duty: "主任医师",

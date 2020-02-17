@@ -73,32 +73,32 @@ export default {
       Card1: [
         {
           cardType: "New",
-          name: "xxx活动优惠券",
-          money: "100元",
+          name: "广联药店优惠券",
+          money: "10元",
           QrCodeUrl: require("@/assets/pic/QrCode.png"),
           startTime: "2019.12.02",
-          endTime: "2020.02.02"
+          endTime: "2020.03.02"
         },
         {
           cardType: "New",
-          name: "xxx活动优惠券",
-          money: "200元",
+          name: "老百姓大药房优惠券",
+          money: "20元",
           QrCodeUrl: require("@/assets/pic/QrCode.png"),
           startTime: "2019.12.02",
-          endTime: "2020.02.02"
+          endTime: "2020.03.02"
         },
         {
           cardType: "ToExpire",
-          name: "xxx活动优惠券",
-          money: "500元",
+          name: "地区药房优惠券",
+          money: "15元",
           QrCodeUrl: require("@/assets/pic/QrCode.png"),
           startTime: "2019.12.02",
-          endTime: "2020.02.02"
+          endTime: "2020.03.02"
         },
         {
           cardType: "Expired",
-          name: "xxx活动优惠券",
-          money: "888元",
+          name: "广联药店优惠券",
+          money: "8.8元",
           QrCodeUrl: require("@/assets/pic/QrCode.png"),
           startTime: "2019.12.02",
           endTime: "2020.02.02"

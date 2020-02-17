@@ -58,7 +58,8 @@ export default {
   height: 0.4rem;
   border-bottom: 1px #4a5677 solid;
   height: 1.2rem;
-  padding-right: 0.32rem;
+  /* padding-right: 0.32rem; */
+  margin-right: 0.32rem;
 }
 .PersonalDataEdit .i_input {
   font-size: 0.28rem;
@@ -69,7 +70,9 @@ export default {
   vertical-align: top;
 }
 .PersonalDataEdit .i_input2 {
-  width: auto;
+  /* width: auto; */
+  width: 5rem;
+
 }
 .PersonalDataEdit .title_spaceRight {
   margin-right: 0rem;

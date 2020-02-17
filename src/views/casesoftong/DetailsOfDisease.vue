@@ -6,13 +6,17 @@
       <div :style="{height: '0.40rem'}"></div>
       <div class="d_title">{{d_title}}</div>
       <div :style="{height: '0.40rem'}"></div>
-      <div class="d_intro">
+
+      <!-- <div class="d_intro">
         <div v-for="(item,index) in d_intro" :key="index + 'd1' ">
           <div>{{item}}</div>
         </div>
+      </div>-->
+      <div class="ad_pic">
+        <img class="img_ad" :src="pic.ad" alt />
       </div>
     </div>
-    <div :style="{height: '0.40rem'}"></div>
+    <!-- <div :style="{height: '0.40rem'}"></div> -->
     <div class="disease_tabs">
       <van-tabs v-model="activeName">
         <van-tab title="指南" name="a">
@@ -23,15 +27,11 @@
                   class="common_Stitle_font2 title_spaceRight inlineBlock common_Stitle_font4"
                 >{{item.name}}</div>
                 <div class="text_info theme_color5">
-                  <!-- <span
-                    class="participate participating"
-                    v-if="item.status == '点击查看'"
-                    @click="router_to('/sicknessdetail')"
-                  >{{item.status}}</span>-->
                   <!-- 注意：这里指向对应pdf -->
                   <span
                     class="participate participating"
                     v-if="item.status == '点击查看'"
+                    @click="router_toSpec(item.url)"
                   >{{item.status}}</span>
                   <van-icon size="0.28rem" name="arrow" />
                 </div>
@@ -139,51 +139,67 @@ export default {
   data() {
     return {
       d_title: "糖尿病",
-      d_intro: [
-        "‧ 各种原因导致的体内糖调节和利用障碍。 ",
-        "‧ 很常见。 ",
-        "‧ 引发并发症可能危及生命。"
-      ],
+      // d_intro: [
+      //   "‧ 各种原因导致的体内糖调节和利用障碍。 ",
+      //   "‧ 很常见。 ",
+      //   "‧ 引发并发症可能危及生命。"
+      // ],
+      pic: {
+        ad: require("@/assets/newpic2/ad_pic.png")
+      },
       activeName: "a",
       DrugMid: "1",
       CaseMid: "1",
       Card1: [
         {
           id: "1",
-          name: "早期糖尿病的12大征兆",
+          name: "1型糖尿病临床路径",
           time: "2019-12-02",
-          status: "点击查看"
-        },
-        {
-          id: "2",
-          name: "糖尿病的危害",
-          time: "2019-12-02",
-          status: "点击查看"
-        },
-        {
-          id: "3",
-          name: "如何预防糖尿病",
-          time: "2019-12-02",
-          status: "点击查看"
-        },
-        {
-          id: "4",
-          name: "您还在为“糖尿病”苦恼吗？",
-          time: "2019-12-02",
-          status: "点击查看"
-        },
-        {
-          id: "5",
-          name: "防止糖尿病六大法宝",
-          time: "2019-12-02",
-          status: "点击查看"
-        },
-        {
-          id: "6",
-          name: "如何看待糖尿病？",
-          time: "2019-12-02",
-          status: "点击查看"
+          status: "点击查看",
+          url: "http://demo.companycheck.cn/doc/tnb.doc"
         }
+        // {
+        //   id: "1",
+        //   name: "早期糖尿病的12大征兆",
+        //   time: "2019-12-02",
+        //   status: "点击查看",
+        //   url:"http://demo.companycheck.cn/doc/test.doc"
+        // },
+        // {
+        //   id: "2",
+        //   name: "糖尿病的危害",
+        //   time: "2019-12-02",
+        //   status: "点击查看",
+        //   url:"http://demo.companycheck.cn/doc/test.doc"
+        // },
+        // {
+        //   id: "3",
+        //   name: "如何预防糖尿病",
+        //   time: "2019-12-02",
+        //   status: "点击查看",
+        //   url:"http://demo.companycheck.cn/doc/test.doc"
+        // },
+        // {
+        //   id: "4",
+        //   name: "您还在为“糖尿病”苦恼吗？",
+        //   time: "2019-12-02",
+        //   status: "点击查看",
+        //   url:"http://demo.companycheck.cn/doc/test.doc"
+        // },
+        // {
+        //   id: "5",
+        //   name: "防止糖尿病六大法宝",
+        //   time: "2019-12-02",
+        //   status: "点击查看",
+        //   url:"http://demo.companycheck.cn/doc/test.doc"
+        // },
+        // {
+        //   id: "6",
+        //   name: "如何看待糖尿病？",
+        //   time: "2019-12-02",
+        //   status: "点击查看",
+        //   url:"http://demo.companycheck.cn/doc/test.doc"
+        // }
       ],
       Card2: [
         {
@@ -192,27 +208,27 @@ export default {
           productContent: [
             {
               subtitle: "品牌",
-              intro: "迪维"
+              intro: "金纳多"
             },
             {
               subtitle: "产品名",
-              intro: "维A酸乳膏"
+              intro: "金纳多（银杏叶提取物）"
             },
             {
               subtitle: "规格",
-              intro: "15g*1支/盒"
+              intro: "40mg*20片/盒"
             },
             {
               subtitle: "用法",
-              intro: "皮肤外用"
+              intro: "口服"
             },
             {
               subtitle: "剂型",
-              intro: "乳膏"
+              intro: "片剂"
             },
             {
               subtitle: "使用剂量",
-              intro: "每晚一次，于睡前将药轻轻涂于患处"
+              intro: "每天天2~3次，每次两片"
             }
           ],
           infoArr: [
@@ -225,7 +241,7 @@ export default {
         },
         {
           id: "2",
-          name: "维A酸乳膏）",
+          name: "维A酸乳膏",
           productContent: [
             {
               subtitle: "品牌",
@@ -271,7 +287,7 @@ export default {
             },
             {
               subtitle: "产品名",
-              intro: "维A酸乳膏"
+              intro: "麦角骨化醇"
             },
             {
               subtitle: "规格",
@@ -309,7 +325,7 @@ export default {
             },
             {
               subtitle: "产品名",
-              intro: "维A酸乳膏"
+              intro: "维生素D3"
             },
             {
               subtitle: "规格",
@@ -347,7 +363,7 @@ export default {
             },
             {
               subtitle: "产品名",
-              intro: "维A酸乳膏"
+              intro: "维生素E"
             },
             {
               subtitle: "规格",
@@ -384,7 +400,7 @@ export default {
             },
             {
               subtitle: "产品名",
-              intro: "维A酸乳膏"
+              intro: "硝酸异山梨酯"
             },
             {
               subtitle: "规格",
@@ -421,7 +437,7 @@ export default {
             },
             {
               subtitle: "产品名",
-              intro: "维A酸乳膏"
+              intro: "环磷酰胺"
             },
             {
               subtitle: "规格",
@@ -518,10 +534,12 @@ export default {
     let vm = this;
   },
   methods: {
-    router_to(str, p_id) {
+    router_toSpec(url) {
       let vm = this;
       // 待添加query 对应 pid
-      vm.$router.push({ path: str });
+      // vm.$router.push({ path: str });
+      window.location.href =
+        "http://view.officeapps.live.com/op/view.aspx?src=" + url;
     }
   }
 };
@@ -534,18 +552,18 @@ export default {
 .DetailsOfDisease .van-tabs--line .van-tabs__wrap {
   height: 0.88rem;
 }
-.DetailsOfDisease .van-tabs__nav{
+.DetailsOfDisease .van-tabs__nav {
   background: transparent;
 }
-.DetailsOfDisease .van-hairline--top-bottom::after, 
+.DetailsOfDisease .van-hairline--top-bottom::after,
 .DetailsOfDisease .van-hairline-unset--top-bottom::after {
-    border-width: 0;
+  border-width: 0;
 }
-.DetailsOfDisease [class*=van-hairline]::after {
-    border-color: #4A5677;
+.DetailsOfDisease [class*="van-hairline"]::after {
+  border-color: #4a5677;
 }
 .DetailsOfDisease .van-tab {
-  color: #858B9C;
+  color: #858b9c;
 }
 .DetailsOfDisease .van-tab__text {
   font-size: 0.28rem;
@@ -553,20 +571,20 @@ export default {
   font-weight: 500;
 }
 .DetailsOfDisease .van-tab--active {
-  color: #55EBA2;
+  color: #55eba2;
 }
 .DetailsOfDisease .van-tabs__line {
-  background-color: #55EBA2;
+  background-color: #55eba2;
   width: 14% !important;
 }
-.DetailsOfDisease .van-cell{
+.DetailsOfDisease .van-cell {
   background: transparent;
   color: #fff;
 }
-.DetailsOfDisease .van-cell:not(:last-child)::after{
-  border-color: #4A5677
+.DetailsOfDisease .van-cell:not(:last-child)::after {
+  border-color: #4a5677;
 }
-.DetailsOfDisease .van-collapse-item__content{
+.DetailsOfDisease .van-collapse-item__content {
   margin: 0.4rem 0;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0.1rem;
@@ -617,7 +635,7 @@ export default {
   line-height: 0.56rem;
   letter-spacing: 2px;
 }
-.DetailsOfDisease .d_intro {
+/* .DetailsOfDisease .d_intro {
   height: 1.2rem;
   height: 1.2rem;
   font-size: 0.26rem;
@@ -626,6 +644,10 @@ export default {
   color: #fff;
   line-height: 0.4rem;
   letter-spacing: 1px;
+} */
+.DetailsOfDisease .img_ad {
+  width: 6.7rem;
+  height: 1.4rem;
 }
 
 /* ******** card1 */
@@ -634,7 +656,7 @@ export default {
   height: 0.83rem;
   /* width: 100%; */
   /* width: 6.8rem; */
-  border-bottom: 1px #4A5677 solid;
+  border-bottom: 1px #4a5677 solid;
   padding: 0.46rem 0rem 0.21rem 0.32rem;
 }
 
@@ -653,7 +675,7 @@ export default {
   margin-right: 0.24rem;
 }
 .DetailsOfDisease .participating {
-  color: #55EBA2;
+  color: #55eba2;
 }
 .DetailsOfDisease .participated {
   color: rgba(197, 202, 213, 1);
@@ -733,7 +755,7 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #55EBA2;
+  color: #55eba2;
   line-height: 0.37rem;
   display: inline-block;
   vertical-align: top;
@@ -754,7 +776,7 @@ export default {
   font-weight: 400;
   line-height: 0.37rem;
   letter-spacing: 0.01rem;
-  border-bottom: 1px solid #4A5677;
+  border-bottom: 1px solid #4a5677;
 }
 .DetailsOfDisease .pc_subtitle {
   color: rgba(133, 139, 156, 1);
@@ -785,7 +807,7 @@ export default {
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #858B9C;
+  color: #858b9c;
   line-height: 0.37rem;
   text-align: justify;
 }
