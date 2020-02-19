@@ -83,6 +83,8 @@ Vue.use(Router);
 //● 知会通 - 在线会议 OnlineMetting
 //● 知会通 - 视频库 VideoLibrary
 
+
+// 随访通 - FollowUpOfTong （新增）
 //● 随访通-患者评测（健康自测） HealthSelfTest  --OK
 //● 随访通-随访记录上传  RecordUpload  --OK (临时版)
 //△ 随访通-用户画像（健康画像） HealthPortrait
@@ -233,7 +235,7 @@ export default new Router({
       name: "DPCommunication",
       component: () => import("@/views//casesoftong/DPCommunication")
     },
-    
+
     {
       path: "/casesofupload",
       name: "CasesOfUpload",
@@ -365,6 +367,11 @@ export default new Router({
     },
     // 随访通
 
+    {
+      path: "/followupoftong",
+      name: "FollowUpOfTong",
+      component: () => import("@/views/followupoftong/FollowUpOfTong")
+    },
     {
       path: "/healthselftest",
       name: "HealthSelfTest",

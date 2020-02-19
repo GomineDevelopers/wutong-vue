@@ -55,7 +55,11 @@
     </div>
     <div :style="{height: '3.76rem'}"></div>
     <div class="flex flex_justify_content">
-      <van-button round class="common_middle_btn i_btn common_fontsize">提&nbsp;&nbsp;&nbsp;交</van-button>
+      <van-button
+        @click="router_to('/followuplist')"
+        round
+        class="common_middle_btn i_btn common_fontsize"
+      >提&nbsp;&nbsp;&nbsp;交</van-button>
     </div>
     <div class="flex flex_justify_content reset_button">重置</div>
 
@@ -95,6 +99,10 @@ export default {
     let vm = this;
   },
   methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    },
     onConfirm(eventText, id) {
       console.log(eventText);
       if (id == 1) {
@@ -204,8 +212,7 @@ export default {
   /* width: 100%; */
   border-bottom: 1px #4a5677 solid;
   /* padding: 0.38rem 0.4rem 0.37rem 0.4rem; */
-  padding: 0.38rem 0.0rem 0.37rem 0.4rem;
-
+  padding: 0.38rem 0rem 0.37rem 0.4rem;
 }
 
 .RecordUpload .PerRow_borderBottom {

@@ -21,19 +21,25 @@
       <br />
 
       <p @click="router_to('/answeroftong')">答题通</p>
-      <p @click="router_to('/resultsquery')">答题通-在线考试-考后查询</p>
-      <p @click="router_to('/academicmilestone')">答题通-学业里程碑</p>
+      <!-- <p @click="router_to('/resultsquery')">答题通-在线考试-考后查询</p> -->
+      <!-- <p @click="router_to('/academicmilestone')">答题通-学业里程碑</p> -->
       <br />
 
       <p @click="router_to('/onlinemetting')">知会通-在线会议</p>
       <p @click="router_to('/videolibrary')">知会通-视频库</p>
       <br />
 
+      <p @click="router_to('/followupoftong')">随访通 (新增)</p>
+      <!-- 未知 -->
       <p @click="router_to('/healthselftest')">随访通-患者评测（健康自测）</p>
-      <p @click="router_to('/recordupload')">随访通-随访记录上传</p>
-      <p @click="router_to('/healthportrait')">随访通-用户画像（健康画像）</p>
-      <p @click="router_to('/followuplist')">随访通-随访列表</p>
-      <p @click="router_to('/recordlist')">随访通-随访列表（随访记录详情/随访通-复诊周期/随访通-复购周期）</p>
+      <!-- 患者资料 -->
+      <!-- <p @click="router_to('/editpatientinfo')">（医生编辑患者信息页面）- 编辑患者信息 (新增)</p> -->
+      <!-- <p @click="router_to('/patientrecords')">（医生查看） - 患者档案 (新增)</p> -->
+      <!-- <p @click="router_to('/healthportrait')">随访通-用户画像（健康画像）</p> -->
+      <!-- 随访计划 -->
+      <!-- <p @click="router_to('/recordupload')">随访通-随访记录上传</p> -->
+      <!-- <p @click="router_to('/followuplist')">随访通-随访列表</p> -->
+      <!-- <p @click="router_to('/recordlist')">随访通-随访列表（随访记录详情/随访通-复诊周期/随访通-复购周期）</p> -->
 
       <br />
       <div>----------------------------------------------------------</div>
@@ -44,7 +50,7 @@
       <p @click="router_to('/doctorbaseinfo')">基本信息-医生</p>
       <p @click="router_to('/doctorpersoncenter')">
         个人中心-医生
-        <span class="specFont">(▲需要提前注册-无cookie会跳转到“基本信息-医生”)</span>
+        <span class="specFont">(▲需要提前到“基本信息-医生”注册)</span>
       </p>
       <p @click="router_to('/sweepandinvite')">扫码邀请</p>
       <p @click="router_to('/personaldata')">个人资料（医生）</p>
@@ -60,7 +66,7 @@
       <p @click="router_to('/patientbaseInfo')">基本信息-患者</p>
       <p @click="router_to('/patientpersoncenter')">
         个人中心-患者
-        <span class="specFont">(▲需要提前注册-无cookie会跳转到“基本信息-患”)</span>
+        <span class="specFont">(▲需要提前到“基本信息-患者”注册)</span>
       </p>
       <p @click="router_to('/personaldatapatient')">个人资料-患者</p>
       <p @click="router_to('/personaldatapatientEdit')">个人资料-患者-地址修改</p>
@@ -105,15 +111,17 @@
       <p @click="router_to('/onlinemetting')">知会通-在线会议</p>
       <p @click="router_to('/videolibrary')">知会通-视频库</p>
       <br />
-
+      <br />
+      <p @click="router_to('/followupoftong')">随访通 (新增)</p>
       <p @click="router_to('/healthselftest')">随访通-患者评测（健康自测）</p>
-      <p @click="router_to('/recordupload')">随访通-随访记录上传</p>
+      <p @click="router_to('/editpatientinfo')">（医生编辑患者信息页面）- 编辑患者信息 (新增)</p>
+      <p @click="router_to('/patientrecords')">（医生查看） - 患者档案 (新增)</p>
       <p @click="router_to('/healthportrait')">随访通-用户画像（健康画像）</p>
+      <p @click="router_to('/recordupload')">随访通-随访记录上传</p>
       <p @click="router_to('/followuplist')">随访通-随访列表</p>
       <p @click="router_to('/recordlist')">随访通-随访列表（随访记录详情/随访通-复诊周期/随访通-复购周期）</p>
       <br />
-      <p @click="router_to('/editpatientinfo')">（医生编辑患者信息页面）- 编辑患者信息</p>
-      <p @click="router_to('/patientrecords')">（医生查看） - 患者档案</p>
+
       <br />
       <br />
       <br />
