@@ -16,7 +16,7 @@
         </div>
       </van-row>
     </van-row>
-    <div class="PerRow PerRow2">
+    <div class="PerRow PerRow2 perRow_title">
       <div class="common_Stitle_font2 title_spaceRight">患者信息</div>
     </div>
     <div class="PerRow">
@@ -39,6 +39,14 @@
       <div class="common_Stitle_font2 title_spaceRight">入院时间</div>
       <input class="i_input" type="text" placeholder="2018年10月5日" />
     </div>
+    <div class="textAlignCenter_w100p">
+      <van-button
+        @click="router_to('/healthportrait')"
+        round
+        class="common_middle_btn common_fontsize i_btn"
+      >用户画像</van-button>
+    </div>
+    <div :style="{height: '0.48rem'}"></div>
   </div>
 </template>
 <script>
@@ -51,7 +59,12 @@ export default {
   mounted() {
     let vm = this;
   },
-  methods: {}
+  methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    }
+  }
 };
 </script>
 <style scoped>
@@ -93,10 +106,15 @@ export default {
   padding: 0.38rem 0.4rem 0.37rem 0.4rem;
   background: transparent;
 }
+
 .PatientRecords .PerRow2 {
-  border-top: 1px rgba(0, 0, 0, 0) solid;
+  border-top: 0.01rem rgba(0, 0, 0, 0) solid;
 }
 
+.PatientRecords .perRow_title {
+  border-top: 0rem rgba(0, 0, 0, 0) solid;
+  border-bottom: 0rem #4a5677 solid;
+}
 .PatientRecords .title_spaceRight {
   margin-right: 0rem;
 }

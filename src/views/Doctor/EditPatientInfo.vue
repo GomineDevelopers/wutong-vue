@@ -50,7 +50,7 @@
     </div>
     <div :style="{height: '0.48rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button round class="common_middle_btn common_fontsize i_btn">提交</van-button>
+      <van-button @click="router_to('/patientrecords')" round class="common_middle_btn common_fontsize i_btn">提交</van-button>
     </div>
     <div :style="{height: '0.48rem'}"></div>
   </div>
@@ -67,7 +67,12 @@ export default {
   mounted() {
     let vm = this;
   },
-  methods: {}
+  methods: {
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    }
+  }
 };
 </script>
 <style >
@@ -102,7 +107,7 @@ export default {
   /* width: 100%; */
   border-bottom: 0.01rem #4a5677 solid;
   /* padding: 0.38rem 0.4rem 0.37rem 0.4rem; */
-  padding: 0.38rem 0.0rem 0.37rem 0.4rem;
+  padding: 0.38rem 0rem 0.37rem 0.4rem;
 
   background: transparent;
 }

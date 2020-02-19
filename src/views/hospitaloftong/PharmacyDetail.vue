@@ -51,12 +51,12 @@
               v-for="(item, index) in sicknessList"
               :key="index"
             >
-              <van-row
+              <!-- <van-row
                 @click="router_to('/drugsfordetails_out')"
                 class="drug_img flex flex_align_center flex_justify_content"
               >
                 <img :src="item.img" />
-              </van-row>
+              </van-row> -->
               <van-row class="flex flex_1 flex_direction">
                 <van-row
                   @click="router_to('/drugsfordetails_out')"
@@ -67,17 +67,17 @@
                   item.content
                   }}
                 </van-row>
-                <van-row class="drug_price flex flex_align_center">
+                <!-- <van-row class="drug_price flex flex_align_center">
                   <span class="flex_1">¥&nbsp;{{ item.price }}</span>
                   <img src="../../assets/pic/add_icon.png" />
-                </van-row>
+                </van-row> -->
               </van-row>
             </van-row>
           </van-row>
         </van-row>
       </van-row>
 
-      <div class="flex_purchase">
+      <!-- <div class="flex_purchase">
         <van-goods-action>
           <van-goods-action-button
             class="first"
@@ -88,7 +88,7 @@
           />
           <van-goods-action-button id="moneyShow2" type="danger" text @click="onClickButton" />
         </van-goods-action>
-      </div>
+      </div> -->
     </van-row>
   </van-row>
 </template>
@@ -144,38 +144,38 @@ export default {
   },
   mounted() {
     let vm = this;
-    console.log("~~~");
-    var ob = document.getElementsByClassName("van-field__right-icon");
-    ob[0].onclick = function() {
-      console.log("~~~pd");
-      vm.router_to("/pharmacydetail");
-    };
-    var ob2 = document.getElementsByClassName("van-button--danger");
-    ob2[0].onclick = function() {
-      console.log("~~~pd=>shop");
-      vm.router_to("/shoppingtrolley");
-    };
-    // ****** 购买栏样式 js 处理
-    let eve1 = document.getElementById("serviceShow2");
-    eve1.innerHTML =
-      "<div class='moudule'>\
-        <div class='img_serve_p'></div>\
-        <div class='font_serve'>联系客服</div>\
-      </div>";
+    // console.log("~~~");
+    // var ob = document.getElementsByClassName("van-field__right-icon");
+    // ob[0].onclick = function() {
+    //   console.log("~~~pd");
+    //   vm.router_to("/pharmacydetail");
+    // };
+    // var ob2 = document.getElementsByClassName("van-button--danger");
+    // ob2[0].onclick = function() {
+    //   console.log("~~~pd=>shop");
+    //   vm.router_to("/shoppingtrolley");
+    // };
+    // // ****** 购买栏样式 js 处理
+    // let eve1 = document.getElementById("serviceShow2");
+    // eve1.innerHTML =
+    //   "<div class='moudule'>\
+    //     <div class='img_serve_p'></div>\
+    //     <div class='font_serve'>联系客服</div>\
+    //   </div>";
 
-    let eve2 = document.getElementById("moneyShow2");
-    eve2.innerHTML =
-      "<div class='moudule2'>\
-        <div class='m2_left'>\
-          <div class='img_shopping_p'>\
-            <div class='shopping_count'><div class='shopping_count_c'>10</div></div>\
-          </div>\
-        </div>\
-        <div class='m2_middle'>\
-          <p class='moneyShow1'>￥ 18.99</p><p class='moneyShow2'>￥ <span class='through'>21.00</span></p>\
-        </div>\
-        <div class='m2_right'><div class='shu'></div><div class='payfor'>去付款</div></div>\
-      </div>";
+    // let eve2 = document.getElementById("moneyShow2");
+    // eve2.innerHTML =
+    //   "<div class='moudule2'>\
+    //     <div class='m2_left'>\
+    //       <div class='img_shopping_p'>\
+    //         <div class='shopping_count'><div class='shopping_count_c'>10</div></div>\
+    //       </div>\
+    //     </div>\
+    //     <div class='m2_middle'>\
+    //       <p class='moneyShow1'>￥ 18.99</p><p class='moneyShow2'>￥ <span class='through'>21.00</span></p>\
+    //     </div>\
+    //     <div class='m2_right'><div class='shu'></div><div class='payfor'>去付款</div></div>\
+    //   </div>";
   },
   methods: {
     onSearch(event) {

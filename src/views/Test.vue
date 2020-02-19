@@ -54,8 +54,8 @@
       <p @click="router_to('/cardticketmanagement')">卡券管理</p>
       <p @click="router_to('/myPatient')">我的患者</p>
       <p @click="router_to('/patientInfo')">患者信息</p>
-      <p @click="router_to('/editpatientinfo')">（医生编辑患者信息页面）- 编辑患者信息</p>
-      <p @click="router_to('/patientrecords')">（医生查看） - 患者档案</p>
+      <!-- <p @click="router_to('/editpatientinfo')">（医生编辑患者信息页面）- 编辑患者信息</p> -->
+      <!-- <p @click="router_to('/patientrecords')">（医生查看） - 患者档案</p> -->
       <div>&</div>
       <p @click="router_to('/patientbaseInfo')">基本信息-患者</p>
       <p @click="router_to('/patientpersoncenter')">
@@ -111,6 +111,9 @@
       <p @click="router_to('/healthportrait')">随访通-用户画像（健康画像）</p>
       <p @click="router_to('/followuplist')">随访通-随访列表</p>
       <p @click="router_to('/recordlist')">随访通-随访列表（随访记录详情/随访通-复诊周期/随访通-复购周期）</p>
+      <br />
+      <p @click="router_to('/editpatientinfo')">（医生编辑患者信息页面）- 编辑患者信息</p>
+      <p @click="router_to('/patientrecords')">（医生查看） - 患者档案</p>
       <br />
       <br />
       <br />

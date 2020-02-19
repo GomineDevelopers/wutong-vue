@@ -11,7 +11,7 @@
     ></van-search>
     <div :style="{height: '0.40rem'}"></div>
     <div v-for="(item,index) in PatientCard" :key="index + 'p1' ">
-      <div class="patientCard">
+      <div class="patientCard" @click="router_to('/patientinfo',item.id)">
         <div class="patient_avatar">
           <img class="img_avatar" :src="item.avatar" alt />
         </div>

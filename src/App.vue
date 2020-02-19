@@ -18,6 +18,20 @@ export default {
       isRouterAlive: true
     };
   },
+  watch: {
+    $route: function(to, from) {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  },
+  mounted() {
+    // var divscll = document.getElementById("app");
+    // divscll.scrollTop = 0;
+    // this.$nextTick(function() {
+    //   var div = document.getElementById("scrolldIV");
+    //   div.scrollTop = 0;
+    // });
+  },
   methods: {
     //为子页面刷新提供机制
     reload() {

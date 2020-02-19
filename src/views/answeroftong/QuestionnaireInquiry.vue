@@ -11,7 +11,7 @@
     ></van-search>
     <div :style="{height: '0.24rem'}"></div>
     <template v-for="(item,index) in QuestionnaireInquiryArr ">
-      <div class="PerRow" :key="index + 'qi' ">
+      <div @click="QuestionnaireClick(item.status)" class="PerRow" :key="index + 'qi' ">
         <div class="FontSize0 score_p">
           <div class="inlineBlock verticalAlignTop examination_score">
             问卷分值：
@@ -31,7 +31,7 @@
         <div
           class="common_Stitle_font2 common_Stitle_font3 title_spaceRight inlineBlock"
         >{{item.name}}</div>
-        <div @click="QuestionnaireClick(item.status)" class="text_info theme_color5 inlineBlock">
+        <div class="text_info theme_color5 inlineBlock">
           <span class="participate participating" v-if="item.status == '点击参与'">{{item.status}}</span>
           <span class="participate participated" v-if="item.status == '已参与'">{{item.status}}</span>
           <span class="participate participated" v-if="item.status == '已过期'">{{item.status}}</span>
@@ -150,10 +150,12 @@ export default {
       } else if (status == "已参与") {
         this.Q_Status = "已参与";
         // this.popupShow = true;
-        this.router_to("/resultsquery");
+        // this.router_to("/resultsquery");
+        this.$toast.fail("已参与!");
       } else if (status == "已过期") {
-        this.Q_Status = "已过期";
-        this.popupShow = true;
+        // this.Q_Status = "已过期";
+        // this.popupShow = true;
+        this.$toast.fail("已过期！");
       }
     },
     onSearch(event) {
@@ -239,8 +241,7 @@ export default {
   /* border-top: 1px #f6f6f6 solid; */
   border-top: 1px #4a5677 solid;
   /* padding: 0.46rem 0.32rem 0.21rem 0.32rem; */
-  padding: 0.46rem 0.0rem 0.21rem 0.32rem;
-
+  padding: 0.46rem 0rem 0.21rem 0.32rem;
 }
 
 .QuestionnaireInquiry .title_spaceRight {

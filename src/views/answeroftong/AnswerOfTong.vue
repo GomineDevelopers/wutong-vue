@@ -8,27 +8,42 @@
           <div class="top_content_c">
             <div class="tcc_top">32</div>
             <div class="tcc_bottom">
-              <div class="tb1">问卷调研</div>
+              <div @click="router_to('/questionnaireiquiry')" class="tb1">问卷调研</div>
               <div class="tb2">
-                <img class="answer_icon" :src="AnswerIcon[0]" alt />
+                <img
+                  @click="router_to('/questionnaireinquiry')"
+                  class="answer_icon"
+                  :src="AnswerIcon[0]"
+                  alt
+                />
               </div>
             </div>
           </div>
           <div class="top_content_c">
             <div class="tcc_top">4</div>
             <div class="tcc_bottom">
-              <div class="tb1">学业碑里程</div>
+              <div @click="router_to('/academicmilestone')" class="tb1">学业碑里程</div>
               <div class="tb2">
-                <img class="answer_icon" :src="AnswerIcon[1]" alt />
+                <img
+                  @click="router_to('/academicmilestone')"
+                  class="answer_icon"
+                  :src="AnswerIcon[1]"
+                  alt
+                />
               </div>
             </div>
           </div>
           <div class="top_content_c">
             <div class="tcc_top">452</div>
             <div class="tcc_bottom">
-              <div class="tb1">考试排名</div>
+              <div @click="router_to('/resultsquery')" class="tb1">考试排名</div>
               <div class="tb2">
-                <img class="answer_icon" :src="AnswerIcon[2]" alt />
+                <img
+                  @click="router_to('/resultsquery')"
+                  class="answer_icon"
+                  :src="AnswerIcon[2]"
+                  alt
+                />
               </div>
             </div>
           </div>

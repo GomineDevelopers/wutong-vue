@@ -8,10 +8,10 @@
     >
       <van-row class="sickness_left_content flex_1 flex flex_direction">
         <van-row class="sickness_title">
-          <span class="main_font2">{{ item.title }}</span>
-          <span v-if="item.status == 1" class="check_status checking">审核中</span>
+          <span class="main_font2 check_status2">{{ item.title }}</span>
+          <!-- <span v-if="item.status == 1" class="check_status checking">审核中</span>
           <span v-if="item.status == 2" class="check_status checkPass">已通过</span>
-          <span v-if="item.status == 3" class="check_status checNopass">未通过</span>
+          <span v-if="item.status == 3" class="check_status checNopass">未通过</span> -->
         </van-row>
         <span class="sickness_content main_font3">{{ item.content }}</span>
         <span class="sickness_date">{{ item.date }}</span>
@@ -104,6 +104,10 @@ export default {
   border: 0.02rem solid;
   display: inline-block;
   margin-left: 0.4rem;
+}
+.sickness_title .check_status2 {
+  height: 0.38rem;
+  line-height: 0.38rem;
 }
 .sickness_title .checking {
   border-color: #6abdfc;

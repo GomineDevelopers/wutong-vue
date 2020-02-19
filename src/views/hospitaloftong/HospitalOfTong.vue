@@ -59,7 +59,17 @@
           <div class="dc_bottom S_font">
             <div class="inlineBlock verticalAlignTop dc_bl S_font6">有效期至&nbsp;{{item4.validity}}</div>
             <div class="inlineBlock verticalAlignTop dc_br">
-              <van-button round class="common_middle_btn common_fontsize i_btn">{{item4.use}}</van-button>
+              <van-button
+                @click="getUse(index4)"
+                v-if="item4.use =='立即领取'"
+                round
+                class="common_middle_btn common_fontsize i_btn"
+              >{{item4.use}}</van-button>
+              <van-button
+                v-if="item4.use =='已领取'"
+                round
+                class="common_middle_btn common_fontsize i_btn i_btn2"
+              >{{item4.use}}</van-button>
             </div>
           </div>
         </div>
@@ -96,6 +106,7 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
 import { province_list, city_list } from "@/utils/area.js";
 export default {
   name: "HospitalOfTong",
@@ -153,7 +164,7 @@ export default {
           name: "金纳多药品专用优惠券",
           info: "满200使用",
           validity: "2020.03.02",
-          use: "立即使用"
+          use: "立即领取"
         }
       ],
       SearchArr: [
@@ -226,6 +237,12 @@ export default {
     router_to(str) {
       let vm = this;
       vm.$router.push({ path: str });
+    },
+    getUse(index) {
+      this.$toast.fail("领取成功！");
+      let obj = this.DiscountCouponArr[index];
+      obj.use = "已领取";
+      Vue.set(this.DiscountCouponArr, index, obj);
     }
   }
 };
@@ -278,7 +295,7 @@ export default {
 .HospitalOfTong .address .Font_t1 {
   font-size: 0.32rem;
   color: #43da9c;
-  margin-top: 0.50rem;
+  margin-top: 0.5rem;
   margin-left: 0.32rem;
 }
 .HospitalOfTong .address .Font_t2 {
@@ -291,7 +308,7 @@ export default {
   font-size: 0.32rem;
   color: #cccccc;
   margin-left: 0.1rem;
-  margin-top: 0.50rem;
+  margin-top: 0.5rem;
 }
 .HospitalOfTong .h_content {
   padding: 0 0.32rem;
@@ -452,5 +469,8 @@ export default {
   line-height: 0.55rem;
   margin-top: 0.2rem;
   font-size: 0.28rem;
+}
+.HospitalOfTong .i_btn2 {
+  background-color: rgba(255, 255, 255, 0.2) ;
 }
 </style>

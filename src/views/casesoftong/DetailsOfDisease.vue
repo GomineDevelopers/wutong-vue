@@ -22,7 +22,7 @@
         <van-tab title="指南" name="a">
           <div class="card1">
             <template v-for="(item,index) in Card1 ">
-              <div class="PerRow" :key="index + 'Card1' ">
+              <div @click="router_toSpec(item.url)" class="PerRow" :key="index + 'Card1' ">
                 <div
                   class="common_Stitle_font2 title_spaceRight inlineBlock common_Stitle_font4"
                 >{{item.name}}</div>
@@ -31,7 +31,6 @@
                   <span
                     class="participate participating"
                     v-if="item.status == '点击查看'"
-                    @click="router_toSpec(item.url)"
                   >{{item.status}}</span>
                   <van-icon size="0.28rem" name="arrow" />
                 </div>

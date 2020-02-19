@@ -13,11 +13,11 @@
     </div>
     <div class="PerRow flex flex_justify_between">
       <div class="common_Stitle_font2 title_spaceRight">邮箱</div>
-      <div class="text_info">
+      <div @click="router_to('/PersonalDataEdit')" class="text_info">
         <div class="inlineBlock">
           43243233@qq.com
           <span>&nbsp;&nbsp;</span>
-          <van-icon name="arrow" @click="router_to('/PersonalDataEdit')" />
+          <van-icon name="arrow" />
         </div>
       </div>
     </div>
@@ -57,7 +57,6 @@ export default {
   border-bottom: 1px #4a5677 solid;
   /* padding: 0.38rem 0.32rem 0.37rem 0rem; */
   padding: 0.38rem 0rem 0.37rem 0rem;
-
 }
 
 .PersonalData .title_spaceRight {

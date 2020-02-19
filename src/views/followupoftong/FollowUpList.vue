@@ -17,7 +17,7 @@
         </td>
       </tr>
       <template v-for="(item,index) in ListData.data ">
-        <tr class="tr_row" :key="index + 'ld' ">
+        <tr @click="ContentFunc(index)" class="tr_row" :key="index + 'ld' ">
           <td
             v-show=" INDEXC != 4 "
             v-for="(IChild,INDEXC) in item"
@@ -35,7 +35,7 @@
           >
             <div class="font_p">{{IChild}}</div>
             <div class="arrow_p arrow_p2">
-              <van-icon @click="ContentFunc(index)" name="arrow" />
+              <van-icon name="arrow" />
             </div>
           </td>
         </tr>

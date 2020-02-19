@@ -11,7 +11,7 @@
     ></van-search>
     <div :style="{height: '0.24rem'}"></div>
     <template v-for="(item,index) in OnlineExaminationArr ">
-      <div class="PerRow" :key="index + 'oe' ">
+      <div @click="OT_click(item.type,item.status)" class="PerRow" :key="index + 'oe' ">
         <div class="FontSize0">
           <div class="inlineBlock verticalAlignTop examination_score">
             考试分值：
@@ -37,12 +37,10 @@
           <span
             v-if="item.type == '限时考试' && item.status == '点击参与'"
             class="participate participating"
-            @click="router_toSpec('/timedexamination')"
           >{{item.status}}</span>
           <span
             v-if="item.type == '开放考试'  && item.status == '点击参与'"
             class="participate participating"
-            @click="router_toSpec('/openexamination')"
           >{{item.status}}</span>
           <span
             class="participate participated"
@@ -117,8 +115,26 @@ export default {
     let vm = this;
   },
   methods: {
+    OT_click(type, status) {
+      if (type == "限时考试" && status == "点击参与") {
+        this.router_toSpec("/timedexamination");
+      }
+      if (type == "开放考试" && status == "点击参与") {
+        this.router_toSpec("/openexamination");
+      }
+      if (type == "开放考试" && status == "已参与") {
+        this.router_to("/resultsquery");
+      }
+      if (status == "已过期") {
+        this.$toast.fail("已过期！");
+      }
+    },
     onSearch(event) {
       console.log(event);
+    },
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
     },
     router_toSpec(str) {
       this.$Utils.setCookieCry("openType", "Answer", 1);

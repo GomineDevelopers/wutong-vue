@@ -14,14 +14,14 @@
               综合排序&nbsp;
               <van-icon name="arrow-down" />
             </span>
-            <span
+            <!-- <span
               :class="filtrateActive == 2 ? 'active' : ''"
               class="flex flex_align_center"
               @click="filtrateActive = 2"
             >
               全部筛选&nbsp;
               <van-icon name="arrow-down" />
-            </span>
+            </span>-->
           </van-row>
           <van-row class="filtrate_content">
             <van-row class="padding_mudule sort" v-show="filtrateActive == 1">
@@ -105,20 +105,21 @@
                 综合排序&nbsp;
                 <van-icon name="arrow-down" />
               </span>
-              <span
+              <!-- <span
                 :class="filtrateActive == 2 ? 'active' : ''"
                 class="flex flex_align_center"
                 @click="(filtrateShow = true), (filtrateActive = 2)"
               >
                 全部筛选&nbsp;
                 <van-icon name="arrow-down" />
-              </span>
+              </span>-->
             </van-row>
             <van-row class="online_metting_list">
               <van-row
                 class="online_metting_item flex flex_align_center"
                 v-for="(mettingItem, index2) in mettingList"
                 :key="index2 + 'me'"
+                @click="goUrl(mettingItem.url)"
               >
                 <!-- <van-row class="flex_1 flex flex_align_center">
                   <span class="main_font2">{{ mettingItem.name }}</span>
@@ -127,7 +128,7 @@
                   <span class="main_font4">{{ mettingItem.date }}</span>
                 </van-row>
                 <img class="arrow_icon" src="../../assets/pic/arrow_icon.png" />-->
-                <van-row class="flex_1 flex flex_align_center" @click="goUrl(mettingItem.url)">
+                <van-row class="flex_1 flex flex_align_center">
                   <span class="main_font2">{{ mettingItem.name }}</span>
                   <span class="main_font4">{{ mettingItem.content }}</span>
                   <span class="main_font4">{{ mettingItem.status }}</span>
