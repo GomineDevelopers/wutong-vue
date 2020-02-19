@@ -103,7 +103,9 @@ export default {
   height: 0.4rem;
   /* width: 100%; */
   border-bottom: 0.01rem #4a5677 solid;
-  padding: 0.38rem 0.4rem 0.37rem 0.4rem;
+  /* padding: 0.38rem 0.4rem 0.37rem 0.4rem; */
+  padding: 0.38rem 0rem 0.37rem 0.4rem;
+
   background: transparent;
 }
 
