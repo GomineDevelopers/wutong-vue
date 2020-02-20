@@ -12,9 +12,9 @@
     <div :style="{height: '0.40rem'}"></div>
     <div v-for="(item,index) in PatientCard" :key="index + 'p1' ">
       <div class="patientCard">
-        <div class="patient_avatar">
+        <!-- <div class="patient_avatar">
           <img class="img_avatar" :src="item.avatar" alt />
-        </div>
+        </div>-->
         <div class="patient_info">
           <div class="i_top">
             <div class="i_name">{{ item.name }}</div>
@@ -46,19 +46,19 @@ export default {
         {
           userId: "1",
           avatar: require("@/assets/pic/pharmacylist.jpg"),
-          name: "药品基础知识",
+          name: "糖尿病基础第一部分",
           percentage: 50
         },
         {
           userId: "2",
           avatar: require("@/assets/pic/sicknessdetail1.png"),
-          name: "医药测试",
+          name: "合规培训第一部分",
           percentage: 60
         },
         {
           userId: "3",
           avatar: require("@/assets/pic/sicknessdetail2.png"),
-          name: "XXX活动测试",
+          name: "安达唐产品知识",
           percentage: 55
         }
       ]
@@ -95,7 +95,7 @@ export default {
 .KnowledgeBase .van-field__left-icon .van-icon,
 .KnowledgeBase .van-field__right-icon .van-icon {
   font-size: 0.5rem;
-  color: #55EBA2;
+  color: #55eba2;
   margin-top: 0.05rem;
 }
 .KnowledgeBase .van-field__left-icon {
@@ -134,7 +134,7 @@ export default {
 }
 .KnowledgeBase .patientCard {
   width: 6.825rem;
-  padding: 0.48rem 0.32rem;
+  padding: 0.3rem 0rem 0.3rem 0.32rem;
   height: 1.02rem;
   /* border-bottom: 1px #f6f6f6 solid; */
   border-bottom: 1px #4a5677 solid;
@@ -157,7 +157,7 @@ export default {
 .KnowledgeBase .patient_info {
   display: inline-block;
   vertical-align: top;
-  width: 4.76rem;
+  width: 5.46rem;
   height: 100%;
   padding-left: 0.24rem;
   padding-top: 0.04rem;

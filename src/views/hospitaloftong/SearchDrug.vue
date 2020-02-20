@@ -66,7 +66,7 @@
               {{ item.tel }}
             </van-row>
           </van-row>
-          <van-row
+          <!-- <van-row
             class="pharmacy_list_body3 inlineBlock verticalAlignTop FontSize0 textAlignCenter"
             @click="ifShow_c1=true"
           >
@@ -74,7 +74,7 @@
               <img class="phone_img" src="../../assets/newpic2/phone.png" />
             </div>
             <div class="phone_font">电话咨询</div>
-          </van-row>
+          </van-row> -->
 
           <!-- 药品列表开始 -->
           <van-row @click="router_to('/pharmacydetail')" class="flex drug_body">

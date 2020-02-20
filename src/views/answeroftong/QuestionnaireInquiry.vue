@@ -11,7 +11,7 @@
     ></van-search>
     <div :style="{height: '0.24rem'}"></div>
     <template v-for="(item,index) in QuestionnaireInquiryArr ">
-      <div @click="QuestionnaireClick(item.status)" class="PerRow" :key="index + 'qi' ">
+      <div @click="QuestionnaireClick(item.time,item.status)" class="PerRow" :key="index + 'qi' ">
         <div class="FontSize0 score_p">
           <div class="inlineBlock verticalAlignTop examination_score">
             问卷分值：
@@ -34,7 +34,9 @@
         <div class="text_info theme_color5 inlineBlock">
           <span class="participate participating" v-if="item.status == '点击参与'">{{item.status}}</span>
           <span class="participate participated" v-if="item.status == '已参与'">{{item.status}}</span>
-          <span class="participate participated" v-if="item.status == '已过期'">{{item.status}}</span>
+          <span class="participate participated" v-if="item.status == '已结束'">{{item.status}}</span>
+          <span class="participate participated" v-if="item.status == '未参与'">{{item.status}}</span>
+
           <van-icon size="0.28rem" name="arrow" />
         </div>
         <div class="Q_time">{{item.time}}</div>
@@ -79,56 +81,38 @@ export default {
     return {
       searchContent: "",
       pageType: "Quest",
-      Q_Status: "已过期",
+      Q_Status: "已结束",
       popupShow: false,
       QuestionnaireInquiryArr: [
         {
-          name: "关于XXX的问卷调研",
+          name: "2型糖尿病人服药依从性问卷",
           status: "点击参与",
           rate: 4.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
+          time: "距离结束还有12小时30分钟"
         },
         {
-          name: "关于XXX的问卷调研",
+          name: "糖尿病人饮食管理问卷",
           status: "点击参与",
           rate: 3.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
+          time: "距离结束还有3天12小时30分钟"
         },
         {
-          name: "关于XXX的问卷调研",
-          status: "点击参与",
+          name: "安达唐知晓率问卷",
+          status: "已参与",
           rate: 2.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
+          time: "已结束"
         },
         {
-          name: "关于XXX的问卷调研",
-          status: "点击参与",
-          rate: 3.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
-        },
-        {
-          name: "关于XXX的问卷调研",
-          status: "点击参与",
-          rate: 3.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
-        },
-        {
-          name: "关于XXX的问卷调研",
+          name: "胰岛素使用问卷",
           status: "已参与",
           rate: 3.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
+          time: "已结束"
         },
         {
-          name: "关于XXX的问卷调研",
-          status: "已参与",
-          rate: 4.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
-        },
-        {
-          name: "关于XXX的问卷调研",
-          status: "已过期",
-          rate: 2.5,
-          time: "2019-12-02 00:00 ～ 2020-10-01 00:00"
+          name: "血糖监测问卷",
+          status: "未参与",
+          rate: 3.5,
+          time: "已结束"
         }
       ]
     };
@@ -143,8 +127,8 @@ export default {
         this.router_to("/questionnaireinquiry_answer");
       }
     },
-    QuestionnaireClick(status) {
-      if (status == "点击参与") {
+    QuestionnaireClick(time, status) {
+      if (status == "点击参与" && time != "已结束") {
         console.log("跳转");
         this.router_to("/questionnaireinquiry_answer");
       } else if (status == "已参与") {
@@ -152,10 +136,10 @@ export default {
         // this.popupShow = true;
         // this.router_to("/resultsquery");
         this.$toast.fail("已参与!");
-      } else if (status == "已过期") {
-        // this.Q_Status = "已过期";
+      } else if (status == "未参与" && time == "已结束") {
+        // this.Q_Status = "已结束";
         // this.popupShow = true;
-        this.$toast.fail("已过期！");
+        this.$toast.fail("已结束！");
       }
     },
     onSearch(event) {
