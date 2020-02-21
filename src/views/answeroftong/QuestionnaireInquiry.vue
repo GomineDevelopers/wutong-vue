@@ -4,7 +4,7 @@
     <van-search
       right-icon="search"
       v-model="searchContent"
-      placeholder="请输入问卷名"
+      placeholder="搜索"
       shape="round"
       @search="onSearch"
       background="#ffffff"
@@ -269,7 +269,7 @@ export default {
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  margin-top: -0.8rem;
+  margin-top: -0.7rem;
 }
 
 .QuestionnaireInquiry .popup_bg {
