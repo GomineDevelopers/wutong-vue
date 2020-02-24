@@ -340,12 +340,13 @@ export default {
 .ResultsQuery .perQ {
   width: 0.44rem;
   height: 0.44rem;
+  /* line-height: 0.26rem; */
+  line-height: 0.44rem;
   border: 0.02rem solid #55eba2;
   color: #55eba2;
   font-size: 0.26rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  line-height: 0.26rem;
   letter-spacing: 0.01rem;
   display: inline-block;
   vertical-align: top;
@@ -364,7 +365,9 @@ export default {
 }
 .ResultsQuery .pQ_value {
   display: inline-block;
-  vertical-align: sub;
+  /* vertical-align: sub; */
+  vertical-align: top;
+
 }
 .ResultsQuery .i_btn {
   height: 0.9rem;

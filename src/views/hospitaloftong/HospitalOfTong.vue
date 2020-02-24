@@ -1,6 +1,6 @@
 <template>
   <div class="HospitalOfTong">
-    <vue-headful title="院外通"></vue-headful>
+    <vue-headful title="智能搜药"></vue-headful>
     <div class="hot_top">
       <div class="inlineBlock verticalAlignTop address" @click="showArea = true">
         <div class="inlineBlock verticalAlignTop t_img1 Font_t1">
@@ -43,7 +43,7 @@
         </div>
       </template>
       <div :style="{height: '1.8rem'}"></div>
-      <div class="RQ_title">优惠券</div>
+      <div class="RQ_title">返现券</div>
       <template v-for="(item4,index4) in DiscountCouponArr ">
         <div class="DiscountCoupon FontSize0" :key="index4 + 'dc' ">
           <div class="dc_top S_font">
@@ -53,11 +53,11 @@
             </div>
             <div class="inlineBlock verticalAlignTop dc_tr">
               <div class="dc_tr_t S_font4">{{item4.name}}</div>
-              <div class="dc_tr_b S_font5">{{item4.info}}</div>
+              <div class="dc_tr_b S_font5 fontColor">{{item4.info}}</div>
             </div>
           </div>
           <div class="dc_bottom S_font">
-            <div class="inlineBlock verticalAlignTop dc_bl S_font6">有效期至&nbsp;{{item4.validity}}</div>
+            <div class="inlineBlock verticalAlignTop dc_bl S_font6 fontColor">有效期至&nbsp;{{item4.validity}}</div>
             <div class="inlineBlock verticalAlignTop dc_br">
               <van-button
                 @click="getUse(index4)"
@@ -153,16 +153,16 @@ export default {
         {
           id: 1,
           money: 20,
-          name: "安达唐药品专用优惠券",
-          info: "满100使用",
+          name: "安达唐药品专用返现券",
+          info: "购买20天之后返现20",
           validity: "2020.03.02",
           use: "立即领取"
         },
         {
           id: 2,
-          money: 50,
-          name: "金纳多药品专用优惠券",
-          info: "满200使用",
+          money: 20,
+          name: "安达唐药品专用返现券",
+          info: "购买20天之后返现20",
           validity: "2020.03.02",
           use: "立即领取"
         }
@@ -469,8 +469,17 @@ export default {
   line-height: 0.55rem;
   margin-top: 0.2rem;
   font-size: 0.28rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.01rem solid #49d691;
+  color: #49d691;
 }
 .HospitalOfTong .i_btn2 {
   background-color: rgba(255, 255, 255, 0.2) ;
+  border: 0.01rem solid #49696A;
+  color: #679393;
+}
+
+.HospitalOfTong .fontColor{
+  color: #A3A7AF;
 }
 </style>

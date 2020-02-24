@@ -5,7 +5,7 @@
       <van-swipe @change="onChange">
         <template v-for="(item,index) in picUrlArr ">
           <van-swipe-item :key="index + 'bi' ">
-            <img class="b_img" :src="item" alt />
+            <img @click="goUrl(index)" class="b_img" :src="item" alt />
           </van-swipe-item>
         </template>
         <div class="custom-indicator" slot="indicator">
@@ -15,18 +15,21 @@
         </div>
       </van-swipe>
     </div>
-    <div class="title">3盒40 包邮赠医药棉签50支 迪维 维A酸乳膏15g*1支/盒祛痘痘 痤疮膏 粉刺</div>
-    <div class="productCount">
+    <div class="title">达格列净片(安达唐) 2型糖尿病 成人 辅助饮食 血糖控制</div>
+    <div v-if="false" class="productCount">
       <div class="pc_left blockB_floatL">
-        <div class="price1 blockB_floatL">
+        <!-- <div class="price1 blockB_floatL">
           <span class="rmb_mark">￥</span>
           16.98
         </div>
-        <div class="price2 blockB_floatL">￥ &nbsp;18.98</div>
+        <div class="price2 blockB_floatL">￥ &nbsp;18.98</div>-->
       </div>
       <div v-if="ifShopping == false" class="pc_right blockB_floatL">
-        <div @click="BtnStatusChange()" class="btn_shopping">
+        <!-- <div @click="BtnStatusChange()" class="btn_shopping">
           <P class="shopping_font">加入购物车</P>
+        </div>-->
+        <div class="btn_shopping btn_shopping2">
+          <P class="shopping_font">进入线上平台</P>
         </div>
       </div>
 
@@ -100,7 +103,11 @@
         <van-goods-action-button id="moneyShow" type="danger" text @click="onClickButton" />
       </van-goods-action>-->
       <div class="textAlignCenter_w100">
-        <van-button @click="router_to('/dpcommunication')" round class="common_middle_btn common_fontsize i_btn">咨询医生</van-button>
+        <van-button
+          @click="router_to('/dpcommunication')"
+          round
+          class="common_middle_btn common_fontsize i_btn"
+        >咨询医生</van-button>
       </div>
       <div class="textAlignCenter_w100 flex_bottom_bg">此药品为处方药，需咨询医生开具处方购买</div>
     </div>
@@ -125,9 +132,10 @@ export default {
       current: 0,
       picNums: 3,
       picUrlArr: [
-        require("@/assets/pic/drug_1.jpg"),
-        require("@/assets/pic/drug_2.jpg"),
-        require("@/assets/pic/drug_3.jpg")
+        // require("@/assets/pic/drug_1.jpg"),
+        require("@/assets/pic/drug_n1.jpg"),
+        require("@/assets/pic/drug_n2.jpg"),
+        require("@/assets/pic/drug_n3.png")
       ],
       pic: {
         service_icon: require("@/assets/pic/service_icon.png"),
@@ -138,23 +146,23 @@ export default {
       productContent: [
         {
           subtitle: "品牌",
-          intro: "迪维"
+          intro: "AstraZeneca"
         },
         {
           subtitle: "产品名",
-          intro: "维A酸乳膏"
+          intro: "达格列净片(安达唐)"
         },
         {
           subtitle: "规格",
-          intro: "15g*1支/盒"
+          intro: "10mg*14s/盒"
         },
         {
           subtitle: "用法",
-          intro: "皮肤外用"
+          intro: "口服"
         },
         {
           subtitle: "剂型",
-          intro: "乳膏"
+          intro: "片装"
         },
         {
           subtitle: "使用剂量",
@@ -163,11 +171,10 @@ export default {
       ],
       DrugDetails: {
         infoArr: [
-          "[用法用量]外用。寻常痤疮:每晚1次，于睡前将药轻轻涂于患处。银屑病、鱼鳞病等皮疹位于遮盖部位的可一日1-3次或遵医嘱。用毕应洗手。",
-          "[不良反应]外用本品可能会引起皮肤刺激症状，如灼感、红斑及脱屑，可能使皮损更明显，但同时表明药物正在起作用，不是病情的加重。皮肤多半可适应及耐受，刺激现象可逐步消失。若刺激现象持续或加重，可在医师指导下间歇用药，或暂停用药。",
-          "[禁忌] 1、对维生素A衍生物过敏者禁用。2、孕妇禁用。3、急性或亚急性皮炎、湿疹类皮肤病患者禁用。4、眼部禁用。",
-          "[注意事项] 1、用药部位避免日光照射。2、 儿童慎用。3、 不应大面积使用。4、 不得用于皮肤破溃处。5、 哺乳期妇女在用药期间应停止哺乳，育龄妇女用药期间严禁受孕。6、 避免接触眼睛和其他黏膜(如口、鼻等)。7、用药部位如有烧灼感、瘙痒、红肿等情况应停药，并将局部药物洗净，必要时向医师咨询。8、用于治疗痤疮，起初数周可暂加剧，仍应继续治疗6周以上才能达到最大疗效。9、本品可能引起严重刺激或脱屑，不宜用于皮肤皱褶处。10、 对本品过敏者禁用，过敏体质者慎用。 11、 本品性状发生改变时禁止使用。 12、 请将本品放在儿童不能接触的地方。13、 儿童必须在成人监护下使用。14、 如正在使用其他药品，使用本品前请咨询医师或药师。",
-          "请仔细阅读说明书并遵医嘱使用。"
+          "[用法用量]1）推荐起始剂量是5mg每天1次，早晨服用，不受进食限制。 （2）在耐受FARXIGA需要附加血糖控制患者中剂量可增加至10 mg每天1次。 （3）开始FARXIGA前评估肾功能。如eGFR低于60 mL/min/1.73 m2不要开始FARXIGA。 （4）终止FARXIGA如eGFR下降持续低于60 mL/min/1.73 m2。",
+          "[不良反应]伴随FARXIGA最常见不良反应(5%或更高发生率)是女性生殖器真菌感染，鼻咽炎，和泌尿道感染。",
+          "[禁忌]（1）对FARXIGA严重超敏反应史； （2）严重肾受损，肾病终末期，或透析。",
+          "[注意事项]（1）低血压：开始FARXIGA前，评估血容量状态和在老年人，在有肾受损或低收缩压患者，和用利尿药患者中纠正低血容量。治疗期间监视体征和症状。 （2）肾功能受损：治疗期间监视肾功能。 （3）低血糖：在用FARXIGA服用胰岛素或一种胰岛素促分泌素患者，考虑较低剂量胰岛素或胰岛素促分泌素以减低低血糖风险。 （4）生殖器真菌感染：如适用监视和治疗。 （5）LDL-C增高：每标准医护监视和治疗。 （6）膀胱癌：在临床试验中观察到膀胱癌不平衡。有活动性膀胱癌患者中不应使用FARXIGA和有膀胱癌既往史患者中应谨慎使用。 （7）大血管病变结局：没有临床研究确定用FARXIGA或任何其他抗糖尿病药物减低大血管风险结论性证据。请仔细阅读说明书并遵医嘱使用。"
         ]
       }
     };
@@ -203,6 +210,11 @@ export default {
     //   </div>";
   },
   methods: {
+    goUrl(index){
+      if(index == 0){
+        window.location.href = "https://mp.weixin.qq.com/s/ywIrsNkvIv_ySmD4LIhwJg";
+      }
+    },
     router_to(str) {
       let vm = this;
       vm.$router.push({ path: str });
@@ -414,17 +426,16 @@ export default {
   width: 0.77rem;
   height: 0.41rem;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 0.28rem;
-  opacity: 0.2;
+  /* border-radius: 0.28rem; */
+  opacity: 0.5;
   display: inline-block;
   position: relative;
-  top: -1rem;
+  top: -1.4rem;
   left: 6.3rem;
-  -webkit-border-radius: 0.28rem;
-  -ms-border-radius: 0.28rem;
-  -o-border-radius: 0.28rem;
-  -moz-border-radius: 0.28rem;
   border-radius: 0.28rem;
+  line-height: 0.41rem;
+  padding-top: 0.08rem;
+  padding-left: 0.2rem;
 }
 .DrugsForDetails_Out .numFont {
   height: 0.33rem;
@@ -433,14 +444,14 @@ export default {
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
   line-height: 0.33rem;
-  display: inline-block;
-  position: relative;
+  /* display: inline-block; */
+  /* position: relative; */
   color: rgba(255, 255, 255, 1);
-  left: 0.1rem;
-  top: -0.76rem;
+  /* left: 0.1rem; */
+  /* top: -0.76rem; */
 }
 .DrugsForDetails_Out .title {
-  height: 0.9rem;
+  /* height: 0.9rem; */
   width: 6.7rem;
   padding: 0.32rem 0.4rem;
   font-size: 0.32rem;
@@ -468,6 +479,9 @@ export default {
   padding-top: 0.09rem;
   background: #49d691;
   border-radius: 0.3rem;
+}
+.DrugsForDetails_Out .btn_shopping2 {
+  width: 1.8rem;
 }
 .DrugsForDetails_Out .shopping_font {
   font-size: 0.24rem;

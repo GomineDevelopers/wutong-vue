@@ -282,7 +282,9 @@ export default {
   },
   methods: {
     goUrl(url) {
-      window.location.href = url;
+      // window.location.href = url;
+      // 客户要求： 临时处理 - 跳一张图片！
+      window.location.href = "https://baike.baidu.com/pic/%E4%B8%AD%E5%8D%8E%E5%8C%BB%E5%AD%A6%E4%BC%9A/2834115/0/63d0f703918fa0ec2bc45875259759ee3d6ddb42?fr=lemma&ct=single#aid=0&pic=63d0f703918fa0ec2bc45875259759ee3d6ddb42";
     },
     // 清空筛选
     clearCheck() {

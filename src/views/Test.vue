@@ -120,6 +120,7 @@
       <p @click="router_to('/recordupload')">随访通-随访记录上传</p>
       <p @click="router_to('/followuplist')">随访通-随访列表</p>
       <p @click="router_to('/recordlist')">随访通-随访列表（随访记录详情/随访通-复诊周期/随访通-复购周期）</p>
+      <p @click="router_to('/patientlist')">患者列表</p>
       <br />
 
       <br />

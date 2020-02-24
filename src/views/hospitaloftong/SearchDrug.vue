@@ -46,7 +46,7 @@
         <van-row class="pharmacy_detail_info" v-for="(item, index) in pharmacyList" :key="index">
           <van-row class="pharmacy_list_body2 inlineBlock verticalAlignTop">
             <van-row
-              @click="router_to('/pharmacydetail')"
+              @click="router_to('/drugsfordetails_out')"
               class="list_item_top flex flex_align_center list_item_top2"
             >
               <van-row class="flex_1 flex flex_align_center">
@@ -74,10 +74,10 @@
               <img class="phone_img" src="../../assets/newpic2/phone.png" />
             </div>
             <div class="phone_font">电话咨询</div>
-          </van-row> -->
+          </van-row>-->
 
           <!-- 药品列表开始 -->
-          <van-row @click="router_to('/pharmacydetail')" class="flex drug_body">
+          <van-row @click="router_to('/drugsfordetails_out')" class="flex drug_body">
             <van-row
               v-for="(drugItem, index2) in item.drugList"
               :key="index2 + 'drug'"
@@ -98,6 +98,16 @@
         </van-row>
       </van-row>
     </van-row>
+    <div class="flex_purchase">
+      <div class="textAlignCenter_w100">
+        <van-button
+          @click="router_to('/dpcommunication')"
+          round
+          class="common_middle_btn common_fontsize i_btn"
+        >咨询医生</van-button>
+      </div>
+      <div class="textAlignCenter_w100 flex_bottom_bg">此药品为处方药，需咨询医生开具处方购买</div>
+    </div>
   </van-row>
 </template>
 <script>
@@ -371,5 +381,25 @@ export default {
   font-size: 0.3rem;
   margin-top: 0.28rem;
   color: #73798b;
+}
+
+
+.SearchDrug .i_btn {
+  width: 3.6rem;
+  height: 0.9rem;
+  border: none;
+  margin-bottom: 0.4rem;
+}
+.SearchDrug .flex_purchase {
+  position: fixed;
+  bottom: 0rem;
+}
+.SearchDrug .flex_bottom_bg {
+  height: 0.5rem;
+  font-size: 0.24rem;
+  line-height: 0.5rem;
+  color: #ffffff;
+  background-color: #2a6b59;
+  bottom: 0;
 }
 </style>

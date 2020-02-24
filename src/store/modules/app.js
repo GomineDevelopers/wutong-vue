@@ -44,7 +44,7 @@ const app = {
                 id: 3,
                 type: "send",
                 message: "有个问题请教一下。",
-                time: 5,
+                time: 20,
                 infoType: 'voice',
                 date: "",
 
@@ -53,10 +53,42 @@ const app = {
                 id: 4,
                 type: "receive",
                 message: "您请说。",
-                time: 13,
+                time: 18,
                 infoType: 'voice',
                 date: "10-06 14:18",
 
+            },
+            {
+                id: 5,
+                type: "receive",
+                message: "这里推荐您安达唐，下面是购买链接。",
+                time: 13,
+                infoType: 'text',
+                date: "",
+            },
+            {
+                id: 6,
+                type: "receive",
+                message: "https://item.jkcsjd.com/100002196329.html",
+                time: 13,
+                infoType: 'url',
+                date: "",
+            },
+            {
+                id: 7,
+                type: "send",
+                message: "谢谢您，张医生。",
+                time: 5,
+                infoType: 'text',
+                date: "",
+            },
+            {
+                id: 8,
+                type: "receive",
+                message: "不客气。",
+                time: 13,
+                infoType: 'text',
+                date: "",
             },
         ],  // 测试
         /////////// 以下是数据格式参考模板

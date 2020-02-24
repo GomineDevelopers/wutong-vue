@@ -1,15 +1,16 @@
 <template>
   <van-row class="van_container">
-    <vue-headful title="病例通"></vue-headful>
+    <vue-headful title="随访通"></vue-headful>
     <van-row class="van_container_body height_auto flex flex_direction">
-      <img @click="router_to('/editpatientinfo')" src="../../assets/newpic2/hzzl.png" />
-      <img  @click="router_to('/recordupload')" src="../../assets/newpic2/sfjh.png" />
+      <img @click="router_to('/editpatientinfo')" src="../../assets/newpic2/hzdj.png" />
+      <img @click="router_to('/patientlist')" src="../../assets/newpic2/hzzl.png" />
+      <img @click="router_to('/followuplist')" src="../../assets/newpic2/hzsf.png" />
     </van-row>
   </van-row>
 </template>
 <script>
 export default {
-  name: "AnswerOfTong",
+  name: "FollowUpOfTong",
   data() {
     return {};
   },

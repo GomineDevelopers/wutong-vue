@@ -1,14 +1,64 @@
 <template>
   <div class="OnlineExamination">
     <vue-headful title="答题通-在线考试"></vue-headful>
-    <van-search
+    <!-- <van-search
       right-icon="search"
       v-model="searchContent"
       placeholder="请输入相关信息进行检索"
       shape="round"
       @search="onSearch"
       background="#ffffff"
-    ></van-search>
+    ></van-search>-->
+    <!-- 筛选模块开始 -->
+    <van-row class="metting_list_content">
+      <van-row class="filtrate_nav flex">
+        <span
+          :class="filtrateActive == 1 ? 'active' : ''"
+          class="flex flex_align_center"
+          @click="(filtrateShow = true), (filtrateActive = 1)"
+        >
+          分类筛选&nbsp;
+          <van-icon name="arrow-down" />
+        </span>
+      </van-row>
+    </van-row>
+
+    <van-row class="filtrate_body">
+      <van-popup v-model="filtrateShow" position="top">
+        <van-row class="filtrate_nav padding_mudule flex">
+          <span
+            :class="filtrateActive == 1 ? 'active' : ''"
+            class="flex flex_align_center"
+            @click="filtrateActive = 1"
+          >
+            分类筛选&nbsp;
+            <van-icon name="arrow-down" />
+          </span>
+        </van-row>
+        <van-row class="filtrate_content">
+          <van-row class="padding_mudule sort" v-show="filtrateActive == 1">
+            <van-row
+              class="main_font2"
+              :class="itemActive == 1 ? 'item_active' : ''"
+              @click="itemActive = 1"
+            >糖尿病</van-row>
+            <van-row
+              class="main_font2"
+              :class="itemActive == 2 ? 'item_active' : ''"
+              @click="itemActive = 2"
+            >合规</van-row>
+            <van-row
+              class="main_font2"
+              :class="itemActive == 3 ? 'item_active' : ''"
+              @click="itemActive = 3"
+            >抗生素</van-row>
+          </van-row>
+        
+        </van-row>
+      </van-popup>
+    </van-row>
+    <!-- 筛选模块结束 -->
+
     <div :style="{height: '0.24rem'}"></div>
     <template v-for="(item,index) in OnlineExaminationArr ">
       <div @click="OT_click(item.type,item.status)" class="PerRow" :key="index + 'oe' ">
@@ -64,6 +114,12 @@ export default {
   data() {
     return {
       searchContent: "",
+
+      filtrateShow: false,
+      filtrateActive: null, //筛选选中
+      itemActive: null, //自选项选中
+    
+
       activeName: "a",
       OnlineExaminationArr: [
         {
@@ -106,7 +162,7 @@ export default {
           rate: 3.5,
           type: "限时考试",
           time: "2019-12-02  ~ 2020-10-01 ",
-          status: "已过期"
+          status: "已参与"
         }
       ]
     };
@@ -115,6 +171,7 @@ export default {
     let vm = this;
   },
   methods: {
+
     OT_click(type, status) {
       if (type == "限时考试" && status == "点击参与") {
         this.router_toSpec("/timedexamination");
@@ -123,6 +180,10 @@ export default {
         this.router_toSpec("/openexamination");
       }
       if (type == "开放考试" && status == "已参与") {
+        this.router_to("/resultsquery");
+      }
+      if (type == "限时考试" && status == "已参与") {
+        // this.$toast.fail("已参与");
         this.router_to("/resultsquery");
       }
       if (status == "已过期") {
@@ -156,6 +217,10 @@ export default {
 };
 </script>
 <style>
+/* ****** 筛选 */
+.OnlineExamination .van-popup--top {
+  background-color: #1d2439;
+}
 /* ****** 输入框 */
 .OnlineExamination .van-search {
   padding: 0.1rem 0.32rem 0rem 0.16rem;
@@ -213,6 +278,48 @@ export default {
 <style scoped>
 .OnlineExamination {
 }
+
+/* ***** 筛选 新增 */
+.OnlineExamination .filtrate_body .filtrate_nav {
+  margin-bottom: 0.2rem;
+}
+.OnlineExamination span.active {
+  color: #55eba2;
+}
+.OnlineExamination .filtrate_content .sort .main_font2 {
+  margin: 0.4rem 0rem 0.56rem 0rem;
+}
+.OnlineExamination .filtrate_content .main_font2.item_active {
+  color: #55eba2;
+}
+
+.OnlineExamination .active_tip {
+  position: relative;
+  overflow: hidden;
+}
+.OnlineExamination .filtrate_tips {
+  height: 8.8rem;
+  overflow-y: auto;
+  padding-left: 0.32rem;
+}
+
+/* 列表开始 */
+.OnlineExamination .metting_list_content {
+  padding-left: 0.32rem;
+}
+.OnlineExamination .filtrate_nav {
+  /* height: 0.8rem; */
+  height: auto;
+  margin-top: 0.2rem;
+  font-size: 0.28rem;
+  color: #41485d;
+  font-weight: 500;
+}
+.OnlineExamination .filtrate_nav span {
+  margin-right: 1.2rem;
+}
+
+/* ***** */
 
 .OnlineExamination .examination_score {
   font-size: 0.28rem;

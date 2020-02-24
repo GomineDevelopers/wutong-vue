@@ -25,24 +25,24 @@
       <input class="i_input" type="text" placeholder="请输入患者体重" />
     </div>
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">血型</div>
-      <input class="i_input" type="text" placeholder="请输入患者血型" />
+      <div class="common_Stitle_font2 title_spaceRight">诊断</div>
+      <input class="i_input" type="text" placeholder="请输入诊断信息" />
     </div>
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">出生日期</div>
-      <input class="i_input" type="text" placeholder="请输入患者出生日期" />
+      <div class="common_Stitle_font2 title_spaceRight">就诊日期</div>
+      <input class="i_input" type="text" placeholder="请输入患者就诊日期" />
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">电话号码</div>
       <input class="i_input" type="text" placeholder="请输入患者电话号码" />
     </div>
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">籍贯</div>
-      <input class="i_input" type="text" placeholder="请输入患者籍贯" />
+      <div class="common_Stitle_font2 title_spaceRight">常驻城市</div>
+      <input class="i_input" type="text" placeholder="请输入患者常驻城市" />
     </div>
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">手术医院</div>
-      <input class="i_input" type="text" placeholder="请输入患者手术医院" />
+      <div class="common_Stitle_font2 title_spaceRight">医院</div>
+      <input class="i_input" type="text" placeholder="请输入患者目前所在医院" />
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">入院时间</div>
@@ -50,7 +50,11 @@
     </div>
     <div :style="{height: '0.48rem'}"></div>
     <div class="textAlignCenter_w100">
-      <van-button @click="router_to('/patientrecords')" round class="common_middle_btn common_fontsize i_btn">提交</van-button>
+      <van-button
+        @click="router_toSpec('/followupoftong')"
+        round
+        class="common_middle_btn common_fontsize i_btn"
+      >提交</van-button>
     </div>
     <div :style="{height: '0.48rem'}"></div>
   </div>
@@ -68,9 +72,12 @@ export default {
     let vm = this;
   },
   methods: {
-    router_to(str) {
+    router_toSpec(str) {
       let vm = this;
-      vm.$router.push({ path: str });
+      this.$toast.fail("提交成功，将返回主页面！");
+      setTimeout(() => {
+        vm.$router.push({ path: str });
+      }, 2000);
     }
   }
 };

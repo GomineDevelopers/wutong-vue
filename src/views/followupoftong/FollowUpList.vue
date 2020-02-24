@@ -10,7 +10,7 @@
           colspan="1"
         >
           <div class="font_p">{{item}}</div>
-          <div class="arrow_p">
+          <div v-if="index != 4" class="arrow_p">
             <van-icon v-show=" ListData.titleSort[index] == 1 " name="arrow-down" />
             <van-icon v-show=" ListData.titleSort[index] == 2 " name="arrow-up" />
           </div>
@@ -23,6 +23,7 @@
             v-for="(IChild,INDEXC) in item"
             :key="INDEXC + '1td' "
             colspan="1"
+            @click="router_to('/recordlist')"
           >
             <div class="font_p">{{IChild}}</div>
           </td>
@@ -33,10 +34,18 @@
             colspan="1"
             class="spec_td"
           >
-            <div class="font_p">{{IChild}}</div>
-            <div class="arrow_p arrow_p2">
-              <van-icon name="arrow" />
+            <div v-if="IChild != '线上交流'" class="font_p">{{IChild}}</div>
+            <div v-if="IChild == '线上交流'" class="font_p font_p2">
+              <van-button
+                @click="router_toSpec('/dpcommunication')"
+                round
+                class="common_middle_btn common_fontsize i_btnC"
+              >线上交流</van-button>
             </div>
+
+            <!-- <div class="arrow_p arrow_p2">
+              <van-icon name="arrow" />
+            </div>-->
           </td>
         </tr>
       </template>
@@ -56,13 +65,13 @@ export default {
   data() {
     return {
       ListData: {
-        title: ["姓名", "性别", "年龄", "随访次数", "入组时间"],
+        title: ["姓名", "性别", "随访次数", "入组时间", "线上交流"],
         titleSort: [1, 1, 1, 1, 1],
         data: [
-          ["张三", "男", "32", "3", "2020-01-23"],
-          ["张三", "男", "32", "3", "2020-01-23"],
-          ["张三", "男", "32", "3", "2020-01-23"],
-          ["张三", "男", "32", "3", "2020-01-23"]
+          ["张三", "男", "3", "2020-01-23", "线上交流"],
+          ["张三", "男", "3", "2020-01-23", "线上交流"],
+          ["张三", "男", "3", "2020-01-23", "线上交流"],
+          ["张三", "男", "3", "2020-01-23", "线上交流"]
         ]
       }
     };
@@ -73,10 +82,23 @@ export default {
   methods: {
     ContentFunc(index) {
       console.log(index);
-      this.$router.push({ path: "/recordlist" });
+      // this.$router.push({ path: "/recordlist" });
     },
     routerto_b() {
       this.$router.push({ path: "/recordupload" });
+    },
+    router_to(str) {
+      let vm = this;
+      vm.$router.push({ path: str });
+    },
+    router_toSpec(str) {
+      let vm = this;
+      vm.$router.push({
+        path: str,
+        query: {
+          CommunicationType: "reverse"
+        }
+      });
     },
     titleSort(index, status) {
       console.log(index);
@@ -131,21 +153,27 @@ export default {
 }
 
 .FollowUpList .tr_title td:nth-child(1) {
+  text-align: center;
   width: 1rem;
 }
 .FollowUpList .tr_title td:nth-child(2) {
+  text-align: center;
   width: 1rem;
 }
 .FollowUpList .tr_title td:nth-child(3) {
-  width: 1rem;
-}
-.FollowUpList .tr_title td:nth-child(4) {
+  text-align: center;
   width: 1.6rem;
 }
-.FollowUpList .tr_title td:nth-child(5) {
-  width: 2.2rem;
-  text-align: left;
+.FollowUpList .tr_title td:nth-child(4) {
+  text-align: center;
+  /* width: 2.2rem; */
+  /* text-align: center; */
+  width: 1.8rem;
 }
+.FollowUpList .tr_title td:nth-child(5) {
+  text-align: center;
+}
+
 .FollowUpList .tr_row td:nth-child(1) {
   text-align: center;
   width: 1rem;
@@ -156,18 +184,20 @@ export default {
   text-align: center;
   width: 1rem;
 }
+
 .FollowUpList .tr_row td:nth-child(3) {
-  text-align: center;
-  width: 1rem;
-}
-.FollowUpList .tr_row td:nth-child(4) {
   text-align: center;
   width: 1.4rem;
 }
+.FollowUpList .tr_row td:nth-child(4) {
+  text-align: center;
+  /* width: 2.4rem; */
+  width: 1.8rem;
+}
 .FollowUpList .tr_row td:nth-child(5) {
   text-align: center;
-  width: 2.4rem;
 }
+
 .FollowUpList .spec_td {
   text-align: left;
 }
@@ -176,6 +206,9 @@ export default {
   display: inline-block;
   vertical-align: top;
   height: 0.32rem;
+}
+.FollowUpList .font_p2 {
+  height: auto;
 }
 .FollowUpList .arrow_p {
   display: inline-block;
@@ -199,6 +232,12 @@ export default {
   width: 3.6rem;
   font-size: 0.28rem;
   letter-spacing: 0.03rem;
+}
+.FollowUpList .i_btnC {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  font-size: 0.22rem;
+  padding: 0 0.08rem;
 }
 </style>
 

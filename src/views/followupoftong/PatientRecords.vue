@@ -6,13 +6,14 @@
     <van-row class="top_info flex flex_align_center">
       <van-row class="flex flex_1 flex_align_center flex_direction">
         <div class="FontSize0">
-          <img src="../../assets/pic/head2.png" />
+          <img :src="pr_avatar" />
         </div>
         <div class="FontSize0 user_name_p">
-          <span class="user_name">张三</span>
+          <span class="user_name">{{pr_name}}</span>
         </div>
         <div class="FontSize0">
-          <span class="user_info">男|28岁|180cm|72kg|AB型</span>
+          <!-- <span class="user_info">{{pr_sex}}|{{pr_age}}岁|180cm|72kg|AB型</span> -->
+          <span class="user_info">{{pr_sex}}|{{pr_age}}岁|170cm|58kg</span>
         </div>
       </van-row>
     </van-row>
@@ -20,24 +21,24 @@
       <div class="common_Stitle_font2 title_spaceRight">患者信息</div>
     </div>
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">出生日期</div>
-      <input class="i_input" type="text" placeholder="1992年10月21日" />
+      <div class="common_Stitle_font2 title_spaceRight">就诊日期</div>
+      <input class="i_input" type="text" placeholder="2020年01月24日" />
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">电话号码</div>
       <input class="i_input" type="text" placeholder="18511241598" />
     </div>
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">籍贯</div>
+      <div class="common_Stitle_font2 title_spaceRight">常驻城市</div>
       <input class="i_input" type="text" placeholder="山东省" />
     </div>
     <div class="PerRow">
-      <div class="common_Stitle_font2 title_spaceRight">手术医院</div>
+      <div class="common_Stitle_font2 title_spaceRight">医院</div>
       <input class="i_input" type="text" placeholder="天津市第一人民医院" />
     </div>
     <div class="PerRow">
       <div class="common_Stitle_font2 title_spaceRight">入院时间</div>
-      <input class="i_input" type="text" placeholder="2018年10月5日" />
+      <input class="i_input" type="text" placeholder="2020年01月28日" />
     </div>
     <div class="textAlignCenter_w100p">
       <van-button
@@ -54,10 +55,22 @@ export default {
   name: "PatientRecords",
   components: {},
   data() {
-    return {};
+    return {
+      pr_name: "张三",
+      pr_avatar: require("@/assets/pic/head2.png"),
+      pr_sex: "男",
+      pr_age: "32"
+    };
   },
   mounted() {
     let vm = this;
+    console.log;
+    if (this.$route.query.id != undefined) {
+      this.pr_name = this.$route.query.name;
+      this.pr_avatar = this.$route.query.avatar;
+      this.pr_sex = this.$route.query.sex;
+      this.pr_age = this.$route.query.age;
+    }
   },
   methods: {
     router_to(str) {

@@ -1,6 +1,6 @@
 <template>
   <div class="DPCommunication">
-    <vue-headful title="医患沟通"></vue-headful>
+    <vue-headful :title="CTitle"></vue-headful>
     <div class="chat_bg">
       <div class="chat_name">
         <span>{{username}}</span>
@@ -17,6 +17,7 @@
           v-bind:infoType="item.infoType"
           v-bind:time="item.time"
           v-bind:date="item.date"
+          v-bind:CommunicationType="CommunicationType"
         ></div>
       </div>
       <div class="chat_input FontSize0">
@@ -69,7 +70,9 @@ export default {
       Msg: [],
       nextTodoId: null, //设置下一个 id的数值
       //   get_CurrentChatObjectUid: null,
-      get_CurrentChatObjectUid: 123
+      get_CurrentChatObjectUid: 123,
+      CommunicationType: "",
+      CTitle:"医患交流"
     };
   },
   mounted() {
@@ -95,6 +98,12 @@ export default {
       //       return false;
       //     });
     }, 500);
+    this.CommunicationType = this.$route.query.CommunicationType; // 无则 undefined
+    if (this.CommunicationType == "reverse") {
+      this.username = "张三";
+      this.CTitle = "线上交流";
+    }
+    // console.log(this.CommunicationType);
   },
   updated() {
     var divscll = document.getElementById("chat_box");
@@ -142,8 +151,15 @@ export default {
         infoType: infoType,
         date: date
       };
+      let ChatMsgManage1 = "send_ChatMsg";
+      let ChatMsgManage2 = "receive_ChatMsg";
+      if (this.CommunicationType == "reverse") {
+        ChatMsgManage1 = "receive_ChatMsg";
+        ChatMsgManage2 = "send_ChatMsg";
+      }
+
       vm.$store
-        .dispatch("send_ChatMsg", temp)
+        .dispatch(ChatMsgManage1, temp)
         .then(function(response) {
           vm.message = ""; //清空输入框
         })
@@ -160,7 +176,7 @@ export default {
           date: ""
         };
         vm.$store
-          .dispatch("receive_ChatMsg", temp)
+          .dispatch(ChatMsgManage2, temp)
           .then(function(response) {
             vm.message = ""; //清空输入框
           })
@@ -177,7 +193,7 @@ export default {
           date: ""
         };
         vm.$store
-          .dispatch("receive_ChatMsg", temp)
+          .dispatch(ChatMsgManage2, temp)
           .then(function(response) {
             vm.message = ""; //清空输入框
           })

@@ -28,8 +28,6 @@ Vue.use(Router);
 //● 我的患者 - MyPatient
 //● 患者信息 - PatientInfo  （UI改变）(前端先修改)- ing => OK
 
-// （医生编辑患者信息页面）- 编辑患者信息 - EditPatientInfo   (新增) -OK
-// （医生查看） - 患者档案 -  PatientRecords   (新增) -OK
 
 //● 基本信息-患者 - PatientBaseInfo   （UI改变）- ing => OK
 //● 个人中心-患者 - PatientPersonCenter
@@ -90,7 +88,9 @@ Vue.use(Router);
 //△ 随访通-用户画像（健康画像） HealthPortrait
 //△ 随访通-随访列表 FollowUpList               --OK
 //● 随访通-随访列表（随访记录详情/随访通-复诊周期/随访通-复购周期）  RecordList  --OK (临时版)
-
+// （医生编辑患者信息页面）- 编辑患者信息（编辑患者资料） - EditPatientInfo   (新增) -OK
+// （医生查看） - 患者档案 -  PatientRecords   (新增) -OK
+// 随访通-患者列表  PatientList （新增）
 
 export default new Router({
   mode: "history",
@@ -140,16 +140,7 @@ export default new Router({
       name: "PatientInfo",
       component: () => import("@/views/Doctor/PatientInfo")
     },
-    {
-      path: "/editpatientinfo",
-      name: "EditPatientInfo",
-      component: () => import("@/views/Doctor/EditPatientInfo")
-    },
-    {
-      path: "/patientrecords",
-      name: "PatientRecords",
-      component: () => import("@/views/Doctor/PatientRecords")
-    },
+
     {
       path: "/mypatient",
       name: "MyPatient",
@@ -397,5 +388,21 @@ export default new Router({
       name: "RecordList",
       component: () => import("@/views/followupoftong/RecordList")
     },
+    {
+      path: "/editpatientinfo",
+      name: "EditPatientInfo",
+      component: () => import("@/views/followupoftong/EditPatientInfo")
+    },
+    {
+      path: "/patientrecords",
+      name: "PatientRecords",
+      component: () => import("@/views/followupoftong/PatientRecords")
+    },
+    {
+      path: "/patientlist",
+      name: "PatientList",
+      component: () => import("@/views/followupoftong/PatientList")
+    },
+
   ]
 });

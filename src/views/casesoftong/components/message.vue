@@ -3,13 +3,14 @@
     <div v-if="date !=  ''" class="date_p">
       <div class="date">{{date}}</div>
     </div>
-    <div class="message me" v-if="type=='send'">
+    <div class="message me" v-if="type==type1">
       <div class="content">
         <div class="bubble bubble_primary right">
           <div class="bubble_cont bubble_cont2">
             <div class="plain">
               <div v-if="infoType == 'text'">{{ title }}</div>
-              <div v-if="infoType != 'text'">
+              <div @click="goUrl(title)" class="url_style" v-if="infoType == 'url'">{{ title }}</div>
+              <div v-if="infoType == 'voice'">
                 <div class="inlineBlock verticalAlignTop m_voice_img_p">
                   <img class="info_img" src="../../../assets/newpic2/voice.png" alt />
                 </div>
@@ -23,17 +24,18 @@
         <img class="avatar" src="../../../assets/pic/head1.png" />
       </div>
     </div>
-    <div class="message" v-if="type=='receive' && ifCurrentChatObjectUid()">
+    <div class="message" v-if="type==type2 && ifCurrentChatObjectUid()">
       <img class="avatar" src="../../../assets/pic/head2.png" />
       <div class="content">
-        <div class="doctor_info">张伟 副主任医师</div>
+        <div class="doctor_info">{{obj_name}}</div>
         <div class="bubble bubble-default left">
           <div class="bubble_cont bubble_cont3">
             <div class="plain">
               <div v-if="infoType == 'text'">{{ title }}</div>
-              <div v-if="infoType != 'text'">
+              <div @click="goUrl(title)" class="url_style" v-if="infoType == 'url'">{{ title }}</div>
+              <div v-if="infoType == 'voice'">
                 <div class="inlineBlock verticalAlignTop m_voice_img_p">
-                  <img class="info_img" src="../../../assets/newpic2/voice.png" alt />
+                  <img class="info_img" src="../../../assets/newpic2/voice2.png" alt />
                 </div>
                 <div class="inlineBlock verticalAlignTop m_time">
                   <div>{{ time }}</div>
@@ -57,16 +59,33 @@ export default {
     "get_CurrentChatObjectUid",
     "infoType",
     "time",
-    "date"
+    "date",
+    "CommunicationType"
   ],
   data() {
-    return {};
+    return {
+      type1: "send",
+      type2: "receive",
+      obj_name: "张伟 副主任医师"
+    };
   },
   mounted() {
     // console.log(this.infoType);
     console.log(this.date);
+    // //////
+    console.log(this.CommunicationType);
+
+    // console.log(CommunicationType);
+    if (this.CommunicationType == "reverse") {
+      this.type1 = "receive";
+      this.type2 = "send";
+      this.obj_name = "张三";
+    }
   },
   methods: {
+    goUrl(url) {
+      window.location.href = url;
+    },
     ifCurrentChatObjectUid() {
       let vm = this;
       // if (vm.chatObjectUid == vm.get_CurrentChatObjectUid) {
@@ -198,5 +217,8 @@ export default {
   color: rgba(255, 255, 255, 0.2);
   margin-top: 0.4rem;
   margin-bottom: 0.3rem;
+}
+.url_style {
+  text-decoration: underline;
 }
 </style>

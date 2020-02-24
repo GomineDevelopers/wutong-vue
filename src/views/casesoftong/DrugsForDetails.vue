@@ -79,6 +79,7 @@ export default {
       picNums: 3,
       picUrlArr: [
         require("@/assets/pic/drug_1.jpg"),
+        // require("@/assets/pic/theme.jpg"),
         require("@/assets/pic/drug_2.jpg"),
         require("@/assets/pic/drug_3.jpg")
       ],
